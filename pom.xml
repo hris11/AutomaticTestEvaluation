@@ -11,7 +11,7 @@
     <scm>
         <connection>scm:git:git@github.com:hris11/AutomaticTestEvaluation.git</connection>
         <developerConnection>scm:git:git@github.com:hris11/AutomaticTestEvaluation.git</developerConnection>
-        <url>scm:git:git@github.com:pabiagioli/hris11/AutomaticTestEvaluation.git</url>
+        <url>scm:git:git@github.com:/hris11/AutomaticTestEvaluation.git</url>
         <tag>HEAD</tag>
     </scm>
     <developers>
@@ -114,12 +114,56 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.1</version>                
                 <configuration>
-                    <!-- or whatever version you use -->
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>Build React app</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>npm</executable>
+                            <!-- optional -->
+                            <workingDirectory>${project.basedir}/automatic-test-evaluation</workingDirectory>
+                            <arguments>
+                                <argument>run</argument>
+                                <argument>build</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>                        
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>Copy production build to webapps directory</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/src/main/webapp</outputDirectory>
+                            <resources>          
+                                <resource>
+                                    <directory>automatic-test-evaluation/build</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>              
+                        </configuration>            
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
