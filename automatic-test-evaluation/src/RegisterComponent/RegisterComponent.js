@@ -12,8 +12,11 @@ class RegisterComponent extends Component {
             lastName:'',
             email:'',
             password:'',
-            submitState: true,
-            errorMessage: ''
+            submitState: false,
+            firstNameSubmitState: false,
+            secondNameSubmitState: false,
+            emailSubmitState: false,
+            passwordSubmitState: false
         }
     }
 
@@ -24,86 +27,117 @@ class RegisterComponent extends Component {
         // the router magic is here
     }
 
-    checkFirstNameField(event, newName) {
-        let otherErrorMessages = this.state.errorMessage;
-        let nameArray = newName.split('');
+    submitStateChecker() {
+        console.log("first: " + this.state.firstNameSubmitState,
+                "second: " + this.state.secondNameSubmitState,
+                "mail: " + this.state.emailSubmitState,
+                "pass: " + this.state.passwordSubmitState);
 
-        // TODO: to styleies the error messages
-
-        if (nameArray.contain(' ')) {
+        if (this.state.firstNameSubmitState === true &&
+            this.state.secondNameSubmitState === true &&
+            this.state.emailSubmitState === true &&
+            this.state.passwordSubmitState === true) {
             this.setState({
-                submitState: false,
-                errorMessage: otherErrorMessages.concat("Сгрешено име")
+                submitState: true
+            });
+        } else if (this.state.submitState === true) {
+            this.setState({
+                submitState: false
+            })
+        }
+    }
+
+    checkFirstNameField(event, newName) {
+        if (newName.indexOf(' ') >= 0 || newName === "") {
+            this.setState({
+                firstNameSubmitState: false,
+                firstName: newName
             });
         } else {
             this.setState({
+                firstNameSubmitState: true,
                 firstName: newName
             });
         }
+
+        this.submitStateChecker();
     }
 
     checkSecondNameField(event, newName) {
-        let otherErrorMessages = this.state.errorMessage;
-        let nameArray = newName.split('');
-
-        if (nameArray.contain(' ')) {
+        if (newName.indexOf(' ') >= 0 || newName === "") {
             this.setState({
-                submitState: false,
-                errorMessage: otherErrorMessages.concat("Сгрешенa фамилия")
+                secondNameSubmitState: false,
+                secondName: newName
             });
         } else {
             this.setState({
+                secondNameSubmitState: true,
                 secondName: newName
             });
         }
+
+        this.submitStateChecker();
+    }
+
+    // TODO: da citiram ot kude sum vzel koda : https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript
+
+    validateEmail(email) {
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     }
 
     checkEmailField(event, newValueOFEmail) {
-        // Check if the mail is in valid form
+        if (!this.validateEmail(newValueOFEmail)) {
+            /*
+                In case of NOT VALID mail
+            */
+            this.setState({
+                emailSubmitState: false,
+                email: newValueOFEmail
+            });
+        } else {
+            /*
+                In case of VALID mail
+            */
+            this.setState({
+                emailSubmitState: true,
+                email: newValueOFEmail
+            });
+        }
 
-        if (true);
-        /*
-            In case of miss spelled mail
-        */
-        this.setState({
-            buttonState: false
-        });
-        /*
-            In case of right typed mail
-        */
-        this.setState({
-            email: newValueOFEmail,
-            buttonState: true
-        });
+        this.submitStateChecker();
     }
 
     checkPasswordField(event, newPassword) {
-        let passwordArray = newPassword.split('');
-        let otherErrorMessages = this.state.errorMessage;
 
         // TODO: implement methood that all functions will use to compose error messages
 
-        if (!passwordArray.contain(/[A-Z]/)) {
+        if (newPassword.search(/[A-Z]/) < 0) {
+            // паролата Ви трябва да съдържа главна буква
             this.setState({
-                buttonState: false,
-                errorMessage: otherErrorMessages
-                // паролата Ви трябва да съдържа главна буква
+                passwordSubmitState: false,
+                password: newPassword
             });
-        }
-        if (!passwordArray.contain(/[a-z]/)) {
+        } else if (newPassword.search(/[a-z]/) < 0) {
+            // паролата Ви трябва да съдържа малка буква
             this.setState({
-                buttonState: false,
-                errorMessage: otherErrorMessages
-                // паролата Ви трябва да съдържа малка буква
+                passwordSubmitState: false,
+                password: newPassword
             });
-        }
-        if (!passwordArray.contain(/[0-9]/)) {
+        } else if (newPassword.search(/[0-9]/) < 0) {
+            // паролата Ви трябва да съдържа цифра
             this.setState({
-                buttonState: false,
-                errorMessage: otherErrorMessages
-                // паролата Ви трябва да съдържа главна буква
+                passwordSubmitState: false,
+                password: newPassword
             });
+        } else {
+            this.setState({
+                passwordSubmitState: true,
+                password: newPassword
+            })
         }
+
+        this.submitStateChecker();
     }
 
     render() {
@@ -143,15 +177,14 @@ class RegisterComponent extends Component {
                         <RaisedButton
                             label="Регистритране"
                             primary={true}
-                            style={style}
-                            onClick={(event) => this.registerSubmit(event)}/>
+                            onClick={(event) => this.registerSubmit(event)}
+                            disabled={!this.state.submitState}
+                        />
                     </div>
                 </MuiThemeProvider>
             </div>
         );
     }
 }
-const style = {
-    margin: 15,
-};
+
 export default RegisterComponent;

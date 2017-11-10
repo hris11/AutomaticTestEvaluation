@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="AutomaticTestEvaluation:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="AutomaticTestEvaluation.war">
+      <element id="artifact" artifact-name="AutomaticTestEvaluation:war exploded" />
+    </root>
+  </artifact>
+</component>
