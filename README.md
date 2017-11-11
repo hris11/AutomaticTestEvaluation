@@ -1,37 +1,55 @@
-jersey-guice-bootstrap
+Automatic Test Evaluation
 ======================
 
-RESTful Web Services Application Sample Project with Jersey 1.18.1 and Google Guice 3.0
+Web application to evaluate student tests automatically.
 
-Dependencies included
----------------------
-- Servlet 2.5
-- Jersey 1.18.1
-- Guice 3.0
-- guice-persist 3.0
-- gson 2.2.4
-- joda-time 2.4
-- JUnit 4.10
+# How to start developing
 
-Requirements
-------------
-- Java 7
-- Maven 3
-- Tomcat 7
+First run the backend as shown below and then the frontend.
 
-Building
---------
-- Make the war file <code> mvn clean package </code>
-- Deploy the war file in Tomcat 7 with Eclipse or manually
+Install frontend dependencies
+-----------------------------
+1. Go to *automatic-test-evaluation* directory
+2. Install npm dependencies (this is one time step)
 
-After Deploy on Application Server
-----------------------------------
-- The REST WS are accessible under /rest/*
-- Front-End not yet implemented.
+    `$ npm install`
 
-Creating a Local Maven Archetype
---------------------------------
-- Generate an archetype: <code> mvn archetype:create-from-project </code>
-- Go to <code>target/generated-sources/archetype</code> and run <code>mvn install </code>
-- Create a fresh project from Archetype <code> mvn archetype:generate -DarchetypeCatalog=local </code> using <code>com.pampanet:jersey-guice-bootstrap-archetype </code>
-- From Eclipse you have check the "include snapshot archetypes" checkbox, and select the archetype from the catalog after installing it.
+How to run backend
+------------------
+1. Build the project
+
+    `mvn clean install`
+2. Run following command in command prompt
+
+    `$ heroku local web`
+
+**Note:** If you change something in backend then you have to build and run it again
+
+How to run frontend
+-------------------
+1. Go to *automatic-test-evaluation* directory
+2. Start the frontend
+   
+    `$ npm start`
+3. Open your browser and type following URL in the address bar
+
+    `http://localhost:3000`
+
+**Note:** If you change something in frontend is enough to refresh the page to see the changes
+
+
+# Making release build
+
+1. Go to project root directory
+2. Run the following command:
+
+    `$ mvn clean install`
+
+# How to deploy on heroku
+1. Push to heroku repository
+
+    `$ git push heroku master`
+2. Then build and start the application
+
+    `$ heroku open`
+3. Open your browser and paste the URL that heroku provided to you
