@@ -17,7 +17,7 @@ class RegisterComponent extends Component {
             secondNameSubmitState: false,
             emailSubmitState: false,
             passwordSubmitState: false
-        }
+        };
     }
 
     registerSubmit() {
@@ -32,51 +32,49 @@ class RegisterComponent extends Component {
                 "second: " + this.state.secondNameSubmitState,
                 "mail: " + this.state.emailSubmitState,
                 "pass: " + this.state.passwordSubmitState);
-
+        
         if (this.state.firstNameSubmitState === true &&
             this.state.secondNameSubmitState === true &&
             this.state.emailSubmitState === true &&
             this.state.passwordSubmitState === true) {
-            this.setState({
-                submitState: true
-            });
+            return true;
         } else if (this.state.submitState === true) {
-            this.setState({
-                submitState: false
-            })
+            return false;
         }
     }
 
     checkFirstNameField(event, newName) {
+        let state;
         if (newName.indexOf(' ') >= 0 || newName === "") {
-            this.setState({
+            state = {
                 firstNameSubmitState: false,
                 firstName: newName
-            });
+            };
         } else {
-            this.setState({
+            state = {
                 firstNameSubmitState: true,
                 firstName: newName
-            });
+            };
         }
-
-        this.submitStateChecker();
+        
+        this.setState(state);
     }
 
     checkSecondNameField(event, newName) {
+        let state;
         if (newName.indexOf(' ') >= 0 || newName === "") {
-            this.setState({
+            state = {
                 secondNameSubmitState: false,
                 secondName: newName
-            });
+            };
         } else {
-            this.setState({
+            state = {
                 secondNameSubmitState: true,
                 secondName: newName
-            });
+            };
         }
 
-        this.submitStateChecker();
+        this.setState(state);
     }
 
     // TODO: da citiram ot kude sum vzel koda : https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript
@@ -87,57 +85,59 @@ class RegisterComponent extends Component {
     }
 
     checkEmailField(event, newValueOFEmail) {
+        let state;
         if (!this.validateEmail(newValueOFEmail)) {
             /*
                 In case of NOT VALID mail
             */
-            this.setState({
+            state = {
                 emailSubmitState: false,
                 email: newValueOFEmail
-            });
+            };
         } else {
             /*
                 In case of VALID mail
             */
-            this.setState({
+            state = {
                 emailSubmitState: true,
                 email: newValueOFEmail
-            });
+            };
         }
 
-        this.submitStateChecker();
+        this.setState(state);
     }
 
     checkPasswordField(event, newPassword) {
 
         // TODO: implement methood that all functions will use to compose error messages
 
+        let state;
         if (newPassword.search(/[A-Z]/) < 0) {
             // паролата Ви трябва да съдържа главна буква
-            this.setState({
+            state = {
                 passwordSubmitState: false,
                 password: newPassword
-            });
+            };
         } else if (newPassword.search(/[a-z]/) < 0) {
             // паролата Ви трябва да съдържа малка буква
-            this.setState({
+            state = {
                 passwordSubmitState: false,
                 password: newPassword
-            });
+            };
         } else if (newPassword.search(/[0-9]/) < 0) {
             // паролата Ви трябва да съдържа цифра
-            this.setState({
+            state = {
                 passwordSubmitState: false,
                 password: newPassword
-            });
+            };
         } else {
-            this.setState({
+            state = {
                 passwordSubmitState: true,
                 password: newPassword
-            })
+            };
         }
 
-        this.submitStateChecker();
+        this.setState(state);
     }
 
     render() {
@@ -178,7 +178,7 @@ class RegisterComponent extends Component {
                             label="Регистритране"
                             primary={true}
                             onClick={(event) => this.registerSubmit(event)}
-                            disabled={!this.state.submitState}
+                            disabled={!this.submitStateChecker()}
                         />
                     </div>
                 </MuiThemeProvider>
