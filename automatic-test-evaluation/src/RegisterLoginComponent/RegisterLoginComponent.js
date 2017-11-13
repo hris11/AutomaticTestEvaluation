@@ -4,6 +4,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Login from '../LoginComponent/LoginComponent';
 import Register from '../RegisterComponent/RegisterComponent';
 
+const compsStyle = {
+    content: 'center',
+    margin: "auto",
+    width: 400,
+};
+
 class RegisterLoginComponent extends Component {
     constructor(props){
         super(props);
@@ -54,7 +60,7 @@ class RegisterLoginComponent extends Component {
     }
     render() {
         return (
-            <div className="loginscreen">
+            <div className="loginscreen" style={compsStyle}>
                 {this.state.loginscreen}
                 <div>
                     {this.state.loginmessage}

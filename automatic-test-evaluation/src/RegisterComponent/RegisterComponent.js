@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import styles from './RegisterComponent.css'
 
 class RegisterComponent extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            firstName:'',
-            lastName:'',
-            email:'',
-            password:'',
+        this.state = {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
             firstNameSubmitState: false,
             lastNameSubmitState: false,
             emailSubmitState: false,
             passwordSubmitState: false,
-            passwordError:''
+            passwordError: ''
         };
     }
 
@@ -51,7 +52,7 @@ class RegisterComponent extends Component {
                 firstName: newName
             };
         }
-        
+
         this.setState(state);
     }
 
@@ -184,20 +185,20 @@ class RegisterComponent extends Component {
             <div>
                 <MuiThemeProvider>
                     <div>
-                        <AppBar
+                        {/*<AppBar
                             title="Регистрация"
-                        />
+                        />*/}
                         <TextField
                             hintText="Въведете име"
                             floatingLabelText="Име"
-                            onChange = {(event, newValue) => this.checkFirstNameField(event, newValue)}
+                            onChange={(event, newValue) => this.checkFirstNameField(event, newValue)}
                             errorText={this.firstNameErrorChecking()}
                         />
                         <br/>
                         <TextField
                             hintText="Въведете фамилия"
                             floatingLabelText="Фамилия"
-                            onChange = {(event, newValue) => this.checkLastNameField(event, newValue)}
+                            onChange={(event, newValue) => this.checkLastNameField(event, newValue)}
                             errorText={this.secondNameErrorChecking()}
                         />
                         <br/>
@@ -205,19 +206,20 @@ class RegisterComponent extends Component {
                             hintText="Въведете Email"
                             type="email"
                             floatingLabelText="Email"
-                            onChange = {(event, newValue) => this.checkEmailField(event, newValue)}
+                            onChange={(event, newValue) => this.checkEmailField(event, newValue)}
                             errorText={this.emailErrorChecking()}
                         />
                         <br/>
                         <TextField
                             hintText="Въведете парола"
-                            type = "password"
+                            type="password"
                             floatingLabelText="Парола"
-                            onChange = {(event, newValue) => this.checkPasswordField(event, newValue)}
+                            onChange={(event, newValue) => this.checkPasswordField(event, newValue)}
                             errorText={this.passwordErrorChecking()}
                         />
                         <br/>
                         <RaisedButton
+                            className={styles.submitButton}
                             label="Регистритране"
                             primary={true}
                             onClick={(event) => this.registerSubmit(event)}

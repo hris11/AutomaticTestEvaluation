@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import RegisterLoginComponent from './RegisterLoginComponent/RegisterLoginComponent'
 import ClassCreateComponent from './ClassCreateComponent/ClassCreateComponent'
+import AddNewStudentComponent from './AddNewStudentComponent/AddNewStudentComponent'
+import MainNavigationComponent from  './MainNavigationComponent/MainNavigationComponent'
 
 class App extends Component {
 
@@ -19,17 +21,14 @@ class App extends Component {
         };
         const self = this;
         fetch(url, options)
-            .then(function (response)
-            {
-                response.text().then(function (data)
-                {
-                    self.setState({data: data, error: ''});                        
+            .then(function (response) {
+                response.text().then(function (data) {
+                    self.setState({data: data, error: ''});
                 });
 
             })
-            .catch(function (error)
-            {
-                self.setState({data: '', error: error});              
+            .catch(function (error) {
+                self.setState({data: '', error: error});
             });
     }
 
@@ -44,8 +43,7 @@ class App extends Component {
         }
         return (
             <div>
-            <RegisterLoginComponent/>
-            <ClassCreateComponent/>
+                <MainNavigationComponent/>
             </div>
         );
     }
