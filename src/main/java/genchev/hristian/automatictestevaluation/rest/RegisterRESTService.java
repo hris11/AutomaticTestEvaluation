@@ -17,9 +17,9 @@ public class RegisterRESTService {
     @POST
     @Produces("application/json")
     public Response helloWorld(@FormParam("email") String email,
-                               @FormParam("email") String password,
-                               @FormParam("email") String firstName,
-                               @FormParam("email") String secondName){
+                               @FormParam("password") String password,
+                               @FormParam("firstName") String firstName,
+                               @FormParam("secondName") String secondName){
         return Response.ok(" ss"+"\n").build();
     }
 }

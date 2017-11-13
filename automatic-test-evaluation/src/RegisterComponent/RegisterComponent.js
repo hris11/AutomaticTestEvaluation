@@ -12,11 +12,11 @@ class RegisterComponent extends Component {
             lastName:'',
             email:'',
             password:'',
-            submitState: false,
             firstNameSubmitState: false,
-            secondNameSubmitState: false,
+            lastNameSubmitState: false,
             emailSubmitState: false,
-            passwordSubmitState: false
+            passwordSubmitState: false,
+            passwordError:''
         };
     }
 
@@ -28,17 +28,12 @@ class RegisterComponent extends Component {
     }
 
     submitStateChecker() {
-        console.log("first: " + this.state.firstNameSubmitState,
-                "second: " + this.state.secondNameSubmitState,
-                "mail: " + this.state.emailSubmitState,
-                "pass: " + this.state.passwordSubmitState);
-        
         if (this.state.firstNameSubmitState === true &&
-            this.state.secondNameSubmitState === true &&
+            this.state.lastNameSubmitState === true &&
             this.state.emailSubmitState === true &&
             this.state.passwordSubmitState === true) {
             return true;
-        } else if (this.state.submitState === true) {
+        } else { // TODO: edit
             return false;
         }
     }
@@ -60,17 +55,17 @@ class RegisterComponent extends Component {
         this.setState(state);
     }
 
-    checkSecondNameField(event, newName) {
+    checkLastNameField(event, newName) {
         let state;
         if (newName.indexOf(' ') >= 0 || newName === "") {
             state = {
-                secondNameSubmitState: false,
-                secondName: newName
+                lastNameSubmitState: false,
+                lastName: newName
             };
         } else {
             state = {
-                secondNameSubmitState: true,
-                secondName: newName
+                lastNameSubmitState: true,
+                lastName: newName
             };
         }
 
@@ -108,36 +103,80 @@ class RegisterComponent extends Component {
     }
 
     checkPasswordField(event, newPassword) {
-
-        // TODO: implement methood that all functions will use to compose error messages
-
         let state;
         if (newPassword.search(/[A-Z]/) < 0) {
-            // паролата Ви трябва да съдържа главна буква
             state = {
                 passwordSubmitState: false,
-                password: newPassword
+                password: newPassword,
+                passwordError: 'паролата Ви трябва да съдържа главна буква'
             };
         } else if (newPassword.search(/[a-z]/) < 0) {
-            // паролата Ви трябва да съдържа малка буква
             state = {
                 passwordSubmitState: false,
-                password: newPassword
+                password: newPassword,
+                passwordError: 'паролата Ви трябва да съдържа малка буква'
             };
         } else if (newPassword.search(/[0-9]/) < 0) {
-            // паролата Ви трябва да съдържа цифра
             state = {
                 passwordSubmitState: false,
-                password: newPassword
+                password: newPassword,
+                passwordError: 'паролата Ви трябва да съдържа цифра'
+            };
+        } else if (newPassword.length < 8) {
+            state = {
+                passwordSubmitState: false,
+                password: newPassword,
+                passwordError: 'паролата Ви трябва да е поне 8 символа'
             };
         } else {
             state = {
                 passwordSubmitState: true,
-                password: newPassword
+                password: newPassword,
+                passwordError: ''
             };
         }
 
         this.setState(state);
+    }
+
+    firstNameErrorChecking() {
+        if (this.state.firstName === '') {
+            return "Въвеждането на това поле е задължително";
+        } else if (this.state.firstNameSubmitState === false) {
+            return "Полето не трябва да съдържа символи, различни от букви";
+        } else {
+            return false;
+        }
+    }
+
+    secondNameErrorChecking() {
+        if (this.state.lastName === '') {
+            return "Въвеждането на това поле е задължително";
+        } else if (this.state.lastNameSubmitState === false) {
+            return "Полето не трябва да съдържа символи, различни от букви";
+        } else {
+            return false;
+        }
+    }
+
+    emailErrorChecking() {
+        if (this.state.email === '') {
+            return "Въвеждането на това поле е задължително";
+        } else if (this.state.emailSubmitState === false) {
+            return "Имейлът е невалиден";
+        } else {
+            return false;
+        }
+    }
+
+    passwordErrorChecking() {
+        if (this.state.password === '') {
+            return "Въвеждането на това поле е задължително";
+        } else if (this.state.passwordError !== '') {
+            return this.state.passwordError;
+        } else {
+            return false;
+        }
     }
 
     render() {
@@ -152,12 +191,14 @@ class RegisterComponent extends Component {
                             hintText="Въведете име"
                             floatingLabelText="Име"
                             onChange = {(event, newValue) => this.checkFirstNameField(event, newValue)}
+                            errorText={this.firstNameErrorChecking()}
                         />
                         <br/>
                         <TextField
                             hintText="Въведете фамилия"
                             floatingLabelText="Фамилия"
-                            onChange = {(event, newValue) => this.checkSecondNameField(event, newValue)}
+                            onChange = {(event, newValue) => this.checkLastNameField(event, newValue)}
+                            errorText={this.secondNameErrorChecking()}
                         />
                         <br/>
                         <TextField
@@ -165,6 +206,7 @@ class RegisterComponent extends Component {
                             type="email"
                             floatingLabelText="Email"
                             onChange = {(event, newValue) => this.checkEmailField(event, newValue)}
+                            errorText={this.emailErrorChecking()}
                         />
                         <br/>
                         <TextField
@@ -172,6 +214,7 @@ class RegisterComponent extends Component {
                             type = "password"
                             floatingLabelText="Парола"
                             onChange = {(event, newValue) => this.checkPasswordField(event, newValue)}
+                            errorText={this.passwordErrorChecking()}
                         />
                         <br/>
                         <RaisedButton

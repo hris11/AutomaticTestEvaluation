@@ -18,7 +18,6 @@ class RegisterLoginComponent extends Component {
     }
 
     handleClick(event){
-        // console.log("event",event);
         var loginmessage;
         if(this.state.isLogin){
             var loginscreen=[];
@@ -32,7 +31,7 @@ class RegisterLoginComponent extends Component {
             })
         }
         else{
-            var loginscreen=[];
+            loginscreen=[];
             loginscreen.push(<Login parentContext={this}/>);
             loginmessage = "Още нямате регистрация, регистрирайте се сега!";
             this.setState({
