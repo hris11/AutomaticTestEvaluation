@@ -3,6 +3,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RegisterLoginComponent from "../RegisterLoginComponent/RegisterLoginComponent";
 import AddNewStudentComponent from "../AddNewStudentComponent/AddNewStudentComponent";
+import CreateTemplateComponent from "./CreateTemplateComponent";
 
 const styles = {
     headline: {
@@ -39,7 +40,7 @@ class MainNavigationComponent extends Component {
                     onChange={this.handleChange}
                 >
                     <Tab label="Начало" value="a">
-                        <div className={styles.full}>
+                        <div>
                             <p>
 
                             </p>
@@ -63,6 +64,14 @@ class MainNavigationComponent extends Component {
                     <Tab label="Manage Classes" value="d">
                         <div>
                             <AddNewStudentComponent/>
+                        </div>
+                    </Tab>
+                    <Tab label="Генерирай бланка" value='e'>
+                        <div>
+                            <h2 style={styles.headline}>
+                                В момента нямате наличен профил, но можете да се регистрирате или да генерирате празна бланка за отговори <i>(без имената на учеици)</i>
+                            </h2>
+                            <CreateTemplateComponent/>
                         </div>
                     </Tab>
                 </Tabs>
