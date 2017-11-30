@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Divider, DropDownMenu, MenuItem, Paper, RaisedButton, Slider, TextField, Toggle} from "material-ui";
+import {Divider, DropDownMenu, List, MenuItem, Paper, RaisedButton, Slider, TextField, Toggle} from "material-ui";
+import SingleAnswerTemplateComponent from "../CreateTemplateComponents/SingleAnswerBlankList";
+import BlankManagerComponent from "../CreateTemplateComponents/BlankManager";
 
 const style = {
     elements: {
@@ -236,6 +238,7 @@ class CreateTemplateComponent extends Component {
                         />
                     </div>
                 </Paper>
+                <BlankManagerComponent/>
             </div>
         );
     }

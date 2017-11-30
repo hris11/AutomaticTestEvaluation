@@ -4,6 +4,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RegisterLoginComponent from "../RegisterLoginComponent/RegisterLoginComponent";
 import AddNewStudentComponent from "../AddNewStudentComponent/AddNewStudentComponent";
 import CreateTemplateComponent from "./CreateTemplateComponent";
+import BlankManagerFirstStepHandler from "../CreateTemplateComponents/BlankManagerFirstStepHandler";
+import BlankManager from "../CreateTemplateComponents/BlankManager";
 
 const styles = {
     headline: {
@@ -48,12 +50,7 @@ class MainNavigationComponent extends Component {
                     </Tab>
                     <Tab label="За нас" value="b">
                         <div>
-                            <h2 style={styles.headline}>Controllable Tab B</h2>
-                            <p>
-                                This is another example of a controllable tab. Remember, if you
-                                use controllable Tabs, you need to give all of your tabs values or else
-                                you wont be able to select them.
-                            </p>
+                            <BlankManager/>
                         </div>
                     </Tab>
                     <Tab label="Вписване" value="c">
@@ -68,10 +65,7 @@ class MainNavigationComponent extends Component {
                     </Tab>
                     <Tab label="Генерирай бланка" value='e'>
                         <div>
-                            <h2 style={styles.headline}>
-                                В момента нямате наличен профил, но можете да се регистрирате или да генерирате празна бланка за отговори <i>(без имената на учеици)</i>
-                            </h2>
-                            <CreateTemplateComponent/>
+                            <BlankManagerFirstStepHandler/>
                         </div>
                     </Tab>
                 </Tabs>

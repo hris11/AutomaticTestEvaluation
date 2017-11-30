@@ -56,7 +56,7 @@ class RegisterLoginComponent extends Component {
         this.setState({
             loginscreen:loginscreen,
             loginmessage:loginmessage
-        })
+        });
     }
     render() {
         return (

@@ -1,0 +1,21 @@
+.toggleMargins {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.barBox {
+    width: 70%;
+    height: 90%;
+    margin: 0 auto;
+    background: black;
+}
+
+.leftBarTab {
+    display: inline-block;
+    float: left;
+}
+
+.rightBarTab {
+    display: inline-block;
+    float: right;
+}

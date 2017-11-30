@@ -19,7 +19,7 @@ public class RegisterRESTService {
     public Response helloWorld(@FormParam("email") String email,
                                @FormParam("password") String password,
                                @FormParam("firstName") String firstName,
-                               @FormParam("secondName") String secondName){
+                               @FormParam("secondName") String secondName) {
         return Response.ok(" ss"+"\n").build();
     }
 }
