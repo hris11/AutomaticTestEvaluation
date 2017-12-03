@@ -5,13 +5,11 @@ import './SingleAnswerBlankList.css'
 class SingleAnswerBlankList extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            numberValue: this.props.defaultOptions
-        }
     }
 
     checkboxesGenerator(numberOfCheckboxes) {
         let newCheckBoxes = [];
+
         for (let index = 0; index < numberOfCheckboxes; index++) {
             newCheckBoxes.push(
                 <div className="check-box-style">
@@ -26,22 +24,19 @@ class SingleAnswerBlankList extends Component {
         return newCheckBoxes;
     }
 
+
     handleNumberChange(event, index, value) {
-
         this.checkboxesGenerator(value);
-
-        this.setState({
-            numberValue: value
-        });
+        this.props.optionsChange(this.props.index, value)
     }
 
     render() {
-        let checkBoxes = this.checkboxesGenerator(this.state.numberValue);
+        let checkBoxes = this.checkboxesGenerator(this.props.answersOptions[this.props.index]);
         return (
             <li >
                 {checkBoxes}
                 <DropDownMenu
-                    value={this.state.numberValue}
+                    value={this.props.answersOptions[this.props.index]}
                     onChange={
                         (event, index, value) => this.handleNumberChange(event, index, value)
                     }

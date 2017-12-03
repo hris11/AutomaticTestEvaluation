@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Divider, DropDownMenu, List, MenuItem, Paper, RaisedButton, Slider, TextField, Toggle} from "material-ui";
-import SingleAnswerTemplateComponent from "../CreateTemplateComponents/SingleAnswerBlankList";
+import SingleAnswerTemplateComponent from "../CreateTemplateComponents/SecondStep/SingleAnswerBlankList";
 import BlankManagerComponent from "../CreateTemplateComponents/BlankManager";
 
 const style = {

@@ -10,10 +10,13 @@ class BlankMenuManger extends Component {
     render() {
         return (
             <div>
-                <BlankMenuToggles/>
+                <BlankMenuToggles
+                    parentProps={this.props.parentProps}
+                />
                 <Divider/>
                 <BlankMenuSlider
-                    handleAnswerSlider={(value) => this.props.handleAnswerSlider(value)}
+                    handleSlider={(event, value) => this.props.parentProps.handleSlider(event, value)}
+                    sliderValue={this.props.parentProps.sliderValue}
                 />
             </div>
         );

@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import {Toggle} from "material-ui";
 import './BlankMenuToggles.css';
 
+const styles = {
+    barBox: {
+        display: 'block',
+        
+    }
+};
 
 class BlankMenuToggles extends Component {
     render() {
@@ -12,20 +18,21 @@ class BlankMenuToggles extends Component {
                         <Toggle
                             className="toggleMargins"
                             label="Поле за име"
-                            defaultToggled={true}
-                            onToggle={this.props.handleName}
+                            defaultToggled={this.props.parentProps.toggleName}
+                            onToggle={() => this.props.parentProps.handleToggleName()}
                         />
                         <Toggle
                             className="toggleMargins"
                             label="Поле за номер"
-                            defaultToggled={true}
-                            onToggle={this.props.handleName}
+                            defaultToggled={this.props.parentProps.toggleNumber}
+                            onToggle={() => this.props.parentProps.handleToggleNumber()}
                         />
                         <Toggle
                             className="toggleMargins"
                             label="Имена на учениците от списъка"
-                            defaultToggled={false}
-                            onToggle={this.props.handleName}
+                            defaultToggled={this.props.parentProps.toggleListName}
+                            onToggle={() => this.props.parentProps.handleToggleListName()}
+                            disabled={!this.props.parentProps.logged}
                         />
                     </div>
 
@@ -33,23 +40,24 @@ class BlankMenuToggles extends Component {
                         <Toggle
                             className="toggleMargins"
                             label="Поле за група"
-                            defaultToggled={true}
-                            onToggle={this.props.handleName}
+                            defaultToggled={this.props.parentProps.toggleGroup}
+                            onToggle={() => this.props.parentProps.handleToggleGroup}
                             labelPosition="right"
                         />
                         <Toggle
                             className="toggleMargins"
                             label="Поле за клас"
-                            defaultToggled={true}
-                            onToggle={this.props.handleName}
+                            defaultToggled={this.props.parentProps.toggleClass}
+                            onToggle={() => this.props.parentProps.handleToggleClass}
                             labelPosition="right"
                         />
                         <Toggle
                             className="toggleMargins"
                             label="Номер на учениците от списъка"
-                            defaultToggled={false}
-                            onToggle={this.props.handleName}
+                            defaultToggled={this.props.parentProps.toggleListNumber}
+                            onToggle={() => this.props.parentProps.handleToggleListNumber}
                             labelPosition="right"
+                            disabled={!this.props.parentProps.logged}
                         />
                     </div>
                 </div>

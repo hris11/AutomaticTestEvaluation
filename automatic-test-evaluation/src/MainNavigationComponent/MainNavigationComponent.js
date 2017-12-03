@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RegisterLoginComponent from "../RegisterLoginComponent/RegisterLoginComponent";
 import AddNewStudentComponent from "../AddNewStudentComponent/AddNewStudentComponent";
 import CreateTemplateComponent from "./CreateTemplateComponent";
-import BlankManagerFirstStepHandler from "../CreateTemplateComponents/BlankManagerFirstStepHandler";
+import BlankManagerFirstStepHandler from "../CreateTemplateComponents/FirstStep/BlankManagerFirstStepHandler";
 import BlankManager from "../CreateTemplateComponents/BlankManager";
 
 const styles = {

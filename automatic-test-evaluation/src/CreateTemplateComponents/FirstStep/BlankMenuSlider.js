@@ -4,18 +4,8 @@ import {Slider} from "material-ui";
 class BlankMenuSlider extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            sliderValue: 10
-        }
     }
 
-    handleSlider(event, value) {
-        this.setState({
-            sliderValue: value
-        });
-        
-        this.props.handleAnswerSlider(value);
-    }
 
     render() {
         return (
@@ -29,15 +19,15 @@ class BlankMenuSlider extends Component {
                     min={1}
                     max={60}
                     step={1}
-                    value={this.state.sliderValue}
-                    onChange={(event, value) => this.handleSlider(event, value)}
+                    value={this.props.sliderValue}
+                    onChange={(event, value) => this.props.handleSlider(event, value)}
                 />
                 <p>
                     <span>
                         {'Избран брой: '}
                     </span>
                     <span>
-                        {this.state.sliderValue}
+                        {this.props.sliderValue}
                     </span>
                 </p>
             </div>

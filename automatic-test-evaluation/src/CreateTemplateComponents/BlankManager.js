@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import SingleAnswerTemplateComponent from "./SingleAnswerBlankList";
+import SingleAnswerTemplateComponent from "./SecondStep/SingleAnswerBlankList";
 import {Divider, FlatButton, List, Paper, RaisedButton, Step, StepLabel, Stepper} from "material-ui";
-import BlankManagerFirstStepHandler from "./BlankManagerFirstStepHandler";
+import BlankManagerFirstStepHandler from "./FirstStep/BlankManagerFirstStepHandler";
 import './BlankManager.css';
-import './BlankMenuToggles.css';
-import BlankManagerSecondStepHandler from "./BlankManagerSecondStepHandler";
+import './FirstStep/BlankMenuToggles.css';
+import BlankManagerSecondStepHandler from "./SecondStep/BlankManagerSecondStepHandler";
 
 class BlankManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            logged: false,
             stepperFinished: false,
             stepperIndex: 0,
             nameToggle: true,
@@ -18,13 +19,48 @@ class BlankManager extends Component {
             groupToggle: true,
             listNameToggle: false,
             listNumberToggle: false,
-            numberOfRows: 10,
+            sliderValue: 10,
             defaultOptions: 4,
+            eachAnswerNumberOfOptions: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
         }
     }
 
     generatePrintablePage() {
 
+    }
+
+    handleSlider(event, value) {
+        let memEachAnswerNumberOfOptions = this.state.eachAnswerNumberOfOptions;
+
+        if (value > this.state.eachAnswerNumberOfOptions.length) {
+            for (let i = 0; i < value - this.state.eachAnswerNumberOfOptions.length + 1; i++) {
+                memEachAnswerNumberOfOptions.push(4);
+            }
+        } else if (value < this.state.eachAnswerNumberOfOptions.length) {
+            console.log("in second if");
+            for (let i = 0; i < this.state.eachAnswerNumberOfOptions.length - value + 1; i++) {
+                memEachAnswerNumberOfOptions.pop();
+            }
+        }
+
+        this.setState({
+            sliderValue: value,
+            eachAnswerNumberOfOptions: memEachAnswerNumberOfOptions
+        });
+    }
+
+    handleOptionsChange(index, newValue) {
+        let memEachAnswerNumberOfOptions = this.state.eachAnswerNumberOfOptions;
+
+        console.log(memEachAnswerNumberOfOptions);
+
+        memEachAnswerNumberOfOptions[index] = newValue;
+
+        console.log(memEachAnswerNumberOfOptions);
+
+        this.setState({
+            eachAnswerNumberOfOptions: memEachAnswerNumberOfOptions
+        });
     }
 
     stepperReset(event) {
@@ -62,14 +98,39 @@ class BlankManager extends Component {
     stepperGetStepContent(index) {
         switch (index) {
             case 0: {
+
+                /*
+                    nameToggle: true,
+                    numberToggle: true,
+                    classToggle: true,
+                    groupToggle: true,
+                    listNameToggle: false,
+                    listNumberToggle: false,*/
+
                 return <BlankManagerFirstStepHandler
-                    handleAnswerSlider={(value) => this.handleAnswerSlider(value)}
+                    handleSlider={(event, value) => this.handleSlider(event, value)}
+                    sliderValue={this.state.sliderValue}
+                    toggleName={this.state.nameToggle}
+                    toggleNumber={this.state.numberToggle}
+                    toggleClass={this.state.classToggle}
+                    toggleGroup={this.state.groupToggle}
+                    toggleListName={this.state.listNameToggle}
+                    toggleListNumber={this.state.listNumberToggle}
+                    handleToggleName={(event) => this.handleNameToggle(event)}
+                    handleToggleNumber={(event) => this.handleNumberToggle(event)}
+                    handleToggleClass={(event) => this.handleClassToggle(event)}
+                    handleToggleGroup={(event) => this.handleGroupToggle(event)}
+                    handleToggleListName={(event) => this.handleListNameToggle(event)}
+                    handleToggleListNumber={(event) => this.handleListNumberToggle(event)}
+                    logged={this.state.logged}
                 />
             }
                 break;
             case 1: {
                 return (<BlankManagerSecondStepHandler
-                    answers={this.state.numberOfRows}
+                    answers={this.state.sliderValue}
+                    answersOptions={this.state.eachAnswerNumberOfOptions}
+                    optionsChange={(index, newValue) => this.handleOptionsChange(index, newValue)}
                     defaultOptions={this.state.defaultOptions}
                 />);
             }

@@ -9,7 +9,7 @@ class BlankManagerFirstStepHandler extends Component {
     render() {
         return (
             <BlankMenuManger
-                handleAnswerSlider={(value) => this.props.handleAnswerSlider(value)}
+                parentProps={this.props}
             />
         );
     }

@@ -4,15 +4,16 @@
 }
 
 .barBox {
+    display: block;
     width: 70%;
     height: 90%;
     margin: 0 auto;
-    background: black;
 }
 
 .leftBarTab {
     display: inline-block;
     float: left;
+
 }
 
 .rightBarTab {
