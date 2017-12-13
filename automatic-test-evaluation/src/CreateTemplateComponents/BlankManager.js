@@ -5,6 +5,7 @@ import BlankManagerFirstStepHandler from "./FirstStep/BlankManagerFirstStepHandl
 import './BlankManager.css';
 import './FirstStep/BlankMenuToggles.css';
 import BlankManagerSecondStepHandler from "./SecondStep/BlankManagerSecondStepHandler";
+import PrintPage from "./PrintPage/PrintPage";
 
 class BlankManager extends Component {
     constructor(props) {
@@ -21,12 +22,53 @@ class BlankManager extends Component {
             listNumberToggle: false,
             sliderValue: 10,
             defaultOptions: 4,
-            eachAnswerNumberOfOptions: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+            eachAnswerNumberOfOptions: [
+                {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+                }, {
+                    options: 4,
+                    rightAnswer: -1,
+                    group: 0
+            }]
         }
     }
 
     generatePrintablePage() {
-
+        console.log(this.state);
     }
 
     handleSlider(event, value) {
@@ -34,7 +76,9 @@ class BlankManager extends Component {
 
         if (value > this.state.eachAnswerNumberOfOptions.length) {
             for (let i = 0; i < value - this.state.eachAnswerNumberOfOptions.length + 1; i++) {
-                memEachAnswerNumberOfOptions.push(4);
+                memEachAnswerNumberOfOptions.push({
+                    options: 4,
+                    rightAnswer: -1});
             }
         } else if (value < this.state.eachAnswerNumberOfOptions.length) {
             console.log("in second if");
@@ -54,7 +98,7 @@ class BlankManager extends Component {
 
         console.log(memEachAnswerNumberOfOptions);
 
-        memEachAnswerNumberOfOptions[index] = newValue;
+        memEachAnswerNumberOfOptions[index].options = newValue;
 
         console.log(memEachAnswerNumberOfOptions);
 
@@ -98,15 +142,6 @@ class BlankManager extends Component {
     stepperGetStepContent(index) {
         switch (index) {
             case 0: {
-
-                /*
-                    nameToggle: true,
-                    numberToggle: true,
-                    classToggle: true,
-                    groupToggle: true,
-                    listNameToggle: false,
-                    listNumberToggle: false,*/
-
                 return <BlankManagerFirstStepHandler
                     handleSlider={(event, value) => this.handleSlider(event, value)}
                     sliderValue={this.state.sliderValue}
@@ -195,17 +230,16 @@ class BlankManager extends Component {
                             <p>
                                 Успешно завършихте структурата на теста. В последствие няма да имате възможност да
                                 направите промени по структурата, но ако желате да смените нещо натиснете
-                                <a
-                                    href="#"
+                                <RaisedButton
+                                    label="Рестартиране"
                                     onClick={(event) => this.stepperReset(event)}
-                                >
-                                    ТУК
-                                </a>.
+                                />
                                 <RaisedButton
                                     label="Принтиране на теста"
                                     onClick={(event) => this.generatePrintablePage(event)}
                                     primary={true}
                                 />
+                                <PrintPage parentState={this.state}/>
                             </p>
                         ) : (
                             <div>

@@ -1,4 +1,5 @@
 import React, {Component} from  'react'
+import OptionsHandler from "./OptionsHandler";
 
 class PrintPage extends Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class PrintPage extends Component {
     render() {
         return (
             <div>
-
+                <p>Име...................................................................................</p>
+                <OptionsHandler parentState={this.props.parentState}/>
             </div>
         );
     }

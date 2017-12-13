@@ -31,12 +31,12 @@ class SingleAnswerBlankList extends Component {
     }
 
     render() {
-        let checkBoxes = this.checkboxesGenerator(this.props.answersOptions[this.props.index]);
+        let checkBoxes = this.checkboxesGenerator(this.props.answersOptions[this.props.index].options);
         return (
             <li >
                 {checkBoxes}
                 <DropDownMenu
-                    value={this.props.answersOptions[this.props.index]}
+                    value={this.props.answersOptions[this.props.index].options}
                     onChange={
                         (event, index, value) => this.handleNumberChange(event, index, value)
                     }
