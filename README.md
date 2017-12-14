@@ -56,23 +56,30 @@ How to run frontend
 
 Database relations
 ------------------
-    *User login information*
+1. *User login information*: 
+
     ` email, password, first name, last name, relation one to many with |Classes database| `
     
-    *Classes*
+2. *Classes*:
+
     ` relation one to many with |Students database|, class name, relation one to one with |Class information database|, relation one to many with |Blanks database| `
     
-    *Students*
+3. *Students*:
+
     ` first name, last name, number in class, average marks, ... `
     
-    *Class information*
+4. *Class information*:
+
     ` number of done tests, average marks, tests in common with other classes (used to calculate diagrams) `
     
-    *Blanks*
+5. *Blanks*:
+
     ` number of answer fields, relation one to many with |Answers database| `
     
-    *Answers*
+6. *Answers*:
+
     `group of answers, number of options, number of answer, right answer, ... `
     
-    *Survey information*
+7. *Survey information*:
+
     ` scoring value of the user given, optional - ide for improovment of the web app `
