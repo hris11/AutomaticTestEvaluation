@@ -49,7 +49,7 @@ class PrintPage extends Component {
         let classHeader = this.classHeaderGenerator();
 
         return (
-            <div>
+            <div className="blank-for-print">
                 <div className="site-header">this blank is created with automatic test evaluation</div>
                 <div className="qr-code-field">d</div>
                 <div className="content-headers">
