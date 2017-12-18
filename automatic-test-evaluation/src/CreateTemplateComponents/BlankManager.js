@@ -74,11 +74,16 @@ class BlankManager extends Component {
     handleSlider(event, value) {
         let memEachAnswerNumberOfOptions = this.state.eachAnswerNumberOfOptions;
 
+        console.log(value - this.state.eachAnswerNumberOfOptions.length);
+
         if (value > this.state.eachAnswerNumberOfOptions.length) {
             for (let i = 0; i < value - this.state.eachAnswerNumberOfOptions.length + 1; i++) {
+                console.log("adding one element");
                 memEachAnswerNumberOfOptions.push({
                     options: 4,
-                    rightAnswer: -1});
+                    rightAnswer: -1,
+                    group: 0
+                });
             }
         } else if (value < this.state.eachAnswerNumberOfOptions.length) {
             console.log("in second if");
@@ -163,7 +168,7 @@ class BlankManager extends Component {
                 break;
             case 1: {
                 return (<BlankManagerSecondStepHandler
-                    answers={this.state.sliderValue}
+                    answers={this.state.eachAnswerNumberOfOptions.length}
                     answersOptions={this.state.eachAnswerNumberOfOptions}
                     optionsChange={(index, newValue) => this.handleOptionsChange(index, newValue)}
                     defaultOptions={this.state.defaultOptions}
