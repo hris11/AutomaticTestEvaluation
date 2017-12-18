@@ -16,4 +16,14 @@
     .test {
         display: block;
     }
+    
+    .blank-for-print {
+        display: block;
+        margin-top: 10px;
+    }
+    
+    .navigation-main {
+        position: absolute;
+        top: -220px;
+    }
 }

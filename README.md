@@ -53,3 +53,33 @@ How to run frontend
 
     `$ heroku open`
 3. Open your browser and paste the URL that heroku provided to you
+
+Database relations
+------------------
+1. *User login information*: 
+
+    ` email, password, first name, last name, relation one to many with |Classes database| `
+    
+2. *Classes*:
+
+    ` relation one to many with |Students database|, class name, relation one to one with |Class information database|, relation one to many with |Blanks database| `
+    
+3. *Students*:
+
+    ` first name, last name, number in class, average marks, ... `
+    
+4. *Class information*:
+
+    ` number of done tests, average marks, tests in common with other classes (used to calculate diagrams) `
+    
+5. *Blanks*:
+
+    ` number of answer fields, relation one to many with |Answers database| `
+    
+6. *Answers*:
+
+    `group of answers, number of options, number of answer, right answer, ... `
+    
+7. *Survey information*:
+
+    ` scoring value of the user given, optional - ide for improovment of the web app `
