@@ -10,33 +10,57 @@ class PrintPage extends Component {
 
     nameHeaderGenerator() {
         if (this.props.parentState.nameToggle) {
-            return "Име: _____________________________________";
+            return ([
+                "Име:",
+                "______________________________"
+            ]);
         } else {
-            return "";
+            return ([
+                "",
+                ""
+            ]);
         }
     }
 
     classHeaderGenerator() {
         if (this.props.parentState.classToggle) {
-            return "Клас: ____";
+            return ([
+                "Клас:",
+                "________"
+            ]);
         } else {
-            return "";
+            return ([
+                "",
+                ""
+            ]);
         }
     }
 
     numberHeaderGenerator() {
         if (this.props.parentState.numberToggle) {
-            return "Номер: ____";
+            return ([
+                "Номер:",
+                "________"
+            ]);
         } else {
-            return "";
+            return ([
+                "",
+                ""
+            ]);
         }
     }
 
     groupHeaderGenerator() {
         if (this.props.parentState.groupToggle) {
-            return "Група: ____";
+            return ([
+                "Група:",
+                "________"
+            ]);
         } else {
-            return "";
+            return ([
+                "",
+                ""
+            ]);
         }
     }
 
@@ -49,12 +73,24 @@ class PrintPage extends Component {
         return (
             <div className="blank-for-print">
                 <div className="site-header">this blank is created with automatic test evaluation</div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" className="qr-code-field"/>
-                <div className="content-headers">
-                    <div className="name-header">{nameHeader}</div>
-                    <div className="class-header">{classHeader}</div>
-                    <div className="number-header">{numberHeader}</div>
-                    <div className="group-header">{groupHeader}</div>
+                <div className="main-header">
+                    <div className="content-headers">
+                        <div className="headers-floating" >
+                            <div>
+                                <div className="name-header">{nameHeader[0]}</div>
+                                <div className="class-header">{classHeader[0]}</div>
+                                <div className="number-header">{numberHeader[0]}</div>
+                                <div className="group-header">{groupHeader[0]}</div>
+                            </div>
+                            <div>
+                                <div className="header-field">{nameHeader[1]}</div>
+                                <div className="header-field">{classHeader[1]}</div>
+                                <div className="header-field">{numberHeader[1]}</div>
+                                <div className="header-field">{groupHeader[1]}</div>
+                            </div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" className="qr-code-field"/>
+                    </div>
                 </div>
                 <hr className="test-header-divider"/>
                 <div className="blank-lines-block">

@@ -40,21 +40,21 @@ class BlankMenuToggles extends Component {
                             className="toggleMargins"
                             label="Поле за група"
                             defaultToggled={this.props.parentProps.toggleGroup}
-                            onToggle={() => this.props.parentProps.handleToggleGroup}
+                            onToggle={() => this.props.parentProps.handleToggleGroup()}
                             labelPosition="right"
                         />
                         <Toggle
                             className="toggleMargins"
                             label="Поле за клас"
                             defaultToggled={this.props.parentProps.toggleClass}
-                            onToggle={() => this.props.parentProps.handleToggleClass}
+                            onToggle={() => this.props.parentProps.handleToggleClass()}
                             labelPosition="right"
                         />
                         <Toggle
                             className="toggleMargins"
                             label="Номер на учениците от списъка"
                             defaultToggled={this.props.parentProps.toggleListNumber}
-                            onToggle={() => this.props.parentProps.handleToggleListNumber}
+                            onToggle={() => this.props.parentProps.handleToggleListNumber()}
                             labelPosition="right"
                             disabled={!this.props.parentProps.logged}
                         />
