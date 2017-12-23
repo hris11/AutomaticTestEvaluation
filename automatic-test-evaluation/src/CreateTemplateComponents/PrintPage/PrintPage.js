@@ -1,27 +1,16 @@
 import React, {Component} from  'react';
 import OptionsHandler from "./OptionsHandler";
 import './PrintPage.css';
+import {Divider} from "material-ui";
 
 class PrintPage extends Component {
     constructor(props) {
         super(props)
     }
 
-    /*logged: false,
-    stepperFinished: false,
-    stepperIndex: 0,
-    nameToggle: true,
-    numberToggle: true,
-    classToggle: true,
-    groupToggle: true,
-    listNameToggle: false,
-    listNumberToggle: false,
-    sliderValue: 10,
-    defaultOptions: 4,*/
-
     nameHeaderGenerator() {
         if (this.props.parentState.nameToggle) {
-            return "Име: _____________________________________________________";
+            return "Име: _____________________________________";
         } else {
             return "";
         }
@@ -29,7 +18,7 @@ class PrintPage extends Component {
 
     classHeaderGenerator() {
         if (this.props.parentState.classToggle) {
-            return "Клас: _______";
+            return "Клас: ____";
         } else {
             return "";
         }
@@ -37,7 +26,15 @@ class PrintPage extends Component {
 
     numberHeaderGenerator() {
         if (this.props.parentState.numberToggle) {
-            return "Номер: ______";
+            return "Номер: ____";
+        } else {
+            return "";
+        }
+    }
+
+    groupHeaderGenerator() {
+        if (this.props.parentState.groupToggle) {
+            return "Група: ____";
         } else {
             return "";
         }
@@ -47,6 +44,7 @@ class PrintPage extends Component {
         let nameHeader = this.nameHeaderGenerator();
         let numberHeader = this.numberHeaderGenerator();
         let classHeader = this.classHeaderGenerator();
+        let groupHeader = this.groupHeaderGenerator();
 
         return (
             <div className="blank-for-print">
@@ -56,8 +54,13 @@ class PrintPage extends Component {
                     <div className="name-header">{nameHeader}</div>
                     <div className="class-header">{classHeader}</div>
                     <div className="number-header">{numberHeader}</div>
+                    <div className="group-header">{groupHeader}</div>
                 </div>
-                <OptionsHandler parentState={this.props.parentState}/>
+                <hr className="test-header-divider"/>
+                <div className="blank-lines-block">
+                    <OptionsHandler parentState={this.props.parentState}/>
+                </div>
+                <hr className="test-header-divider"/>
             </div>
         );
     }

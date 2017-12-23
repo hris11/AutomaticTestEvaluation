@@ -74,21 +74,13 @@ class BlankManager extends Component {
     handleSlider(event, value) {
         let memEachAnswerNumberOfOptions = this.state.eachAnswerNumberOfOptions;
 
-        console.log(value - this.state.eachAnswerNumberOfOptions.length);
-
-        if (value > this.state.eachAnswerNumberOfOptions.length) {
-            for (let i = 0; i < value - this.state.eachAnswerNumberOfOptions.length + 1; i++) {
-                console.log("adding one element");
+        if (this.state.eachAnswerNumberOfOptions.length < 60) {
+            for (let i = 0; i < 52; i++) {
                 memEachAnswerNumberOfOptions.push({
-                    options: 4,
+                    options: this.state.defaultOptions,
                     rightAnswer: -1,
                     group: 0
                 });
-            }
-        } else if (value < this.state.eachAnswerNumberOfOptions.length) {
-            console.log("in second if");
-            for (let i = 0; i < this.state.eachAnswerNumberOfOptions.length - value + 1; i++) {
-                memEachAnswerNumberOfOptions.pop();
             }
         }
 
@@ -163,12 +155,14 @@ class BlankManager extends Component {
                     handleToggleListName={(event) => this.handleListNameToggle(event)}
                     handleToggleListNumber={(event) => this.handleListNumberToggle(event)}
                     logged={this.state.logged}
+                    handleDefaultOptionsChange={(event, index, value) => this.handleDefaultOptionsChange(event, index, value)}
+                    defaultOptions={this.state.defaultOptions}
                 />
             }
                 break;
             case 1: {
                 return (<BlankManagerSecondStepHandler
-                    answers={this.state.eachAnswerNumberOfOptions.length}
+                    answers={this.state.sliderValue}
                     answersOptions={this.state.eachAnswerNumberOfOptions}
                     optionsChange={(index, newValue) => this.handleOptionsChange(index, newValue)}
                     defaultOptions={this.state.defaultOptions}
@@ -217,10 +211,26 @@ class BlankManager extends Component {
         });
     }
 
+    handleDefaultOptionsChange(event, index, value) {
+        let defaultOptions = value;
+        let memEachAnswerNumberOfOptions = this.state.eachAnswerNumberOfOptions;
+
+        for (let i = 0; i < memEachAnswerNumberOfOptions.length; i++) {
+            if (memEachAnswerNumberOfOptions[i].options === 4) {
+                memEachAnswerNumberOfOptions[i].options = value;
+            }
+        }
+
+        this.setState({
+            defaultOptions: defaultOptions,
+            eachAnswerNumberOfOptions: memEachAnswerNumberOfOptions
+        });
+    }
+
     render() {
         return (
-            <Paper>
-                <div style={{width: '100%', maxWidth: 1000, margin: 'auto'}}>
+            <Paper zDepth={0} style={style.paper}>
+                <div style={{width: '100%', maxWidth: 1000, margin: 'auto'}} className="blank-background-paper">
                     <Stepper activeStep={this.state.stepperIndex}>
                         <Step>
                             <StepLabel>Изберете какви атрибути да има теста</StepLabel>
@@ -232,27 +242,31 @@ class BlankManager extends Component {
 
                     <div style={{width: '100%'}}>
                         {this.state.stepperFinished ? (
-                            <p>
-                                Успешно завършихте структурата на теста. В последствие няма да имате възможност да
-                                направите промени по структурата, но ако желате да смените нещо натиснете
-                                <RaisedButton
-                                    label="Рестартиране"
-                                    onClick={(event) => this.stepperReset(event)}
-                                />
-                                <RaisedButton
-                                    label="Принтиране на теста"
-                                    onClick={(event) => this.generatePrintablePage(event)}
-                                    primary={true}
-                                />
+                            <div>
+                                <span className='final-step-header'>
+                                    Успешно завършихте структурата на теста. В последствие няма да имате възможност да
+                                    направите промени по нея, но ако желате да промените нещо натиснете
+                                    <div className="result-navigation-wrapper">
+                                        <RaisedButton
+                                            label="Рестартиране"
+                                            onClick={(event) => this.stepperReset(event)}
+                                        />
+                                        <RaisedButton
+                                            label="Принтиране на теста"
+                                            onClick={(event) => this.generatePrintablePage(event)}
+                                            primary={true}
+                                        />
+                                    </div>
+                                </span>
                                 <PrintPage parentState={this.state}/>
-                            </p>
+                            </div>
                         ) : (
                             <div>
                                 <div style={{display: 'block'}}>
                                     {this.stepperGetStepContent(this.state.stepperIndex)}
                                 </div>
 
-                                <div className="stepperNavigation">
+                                <div className="stepper-navigation">
                                     <FlatButton
                                         label="Назад"
                                         disabled={this.state.stepperIndex === 0}
@@ -272,5 +286,14 @@ class BlankManager extends Component {
         );
     }
 }
+
+const style = {
+    paper: {
+        padding: 30,
+        margin: '0 auto',
+        textAlign: 'center',
+        display: 'block',
+    }
+};
 
 export default BlankManager;

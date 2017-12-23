@@ -5,7 +5,6 @@ import './BlankMenuToggles.css';
 const styles = {
     barBox: {
         display: 'block',
-        
     }
 };
 

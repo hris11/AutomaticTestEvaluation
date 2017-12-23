@@ -1,17 +1,62 @@
 .site-header {
+    align-content: center;
+    display: block;
     font-style: italic;
     color: grey;
     font-size: 10px;
     margin: 0 auto;
     opacity: 0.5;
+    width: 100%;
+}
+
+.name-header, .class-header, .number-header {
+    display: inline-block;
+    margin-left: 15px;
 }
 
 .qr-code-field {
+    display: inline-block;
     width: 200px;
     height: 200px;
 }
 
+.content-headers {
+    display: inline-block;
+    width: 500px;
+}
+
+.blank-lines-block {
+    width: 100%;
+    height: 650px;
+}
+
+.final-step-header {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.blank-for-print {
+    text-align: justify;
+}
+
+.test-header-divider {
+    border-top: 1px solid #8c8b8b;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 @media print {
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    .qr-code-field {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+    }
 
     .test {
         display: block;
@@ -24,6 +69,14 @@
     
     .navigation-main {
         position: absolute;
-        top: -220px;
+        top: -160px;
     }
+
+    .final-step-header {
+        display: none;
+    }
+
+    .blank-background-paper {
+    }
+
 }

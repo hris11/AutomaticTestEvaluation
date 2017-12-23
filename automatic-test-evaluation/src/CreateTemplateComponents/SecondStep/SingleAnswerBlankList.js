@@ -33,7 +33,7 @@ class SingleAnswerBlankList extends Component {
     render() {
         let checkBoxes = this.checkboxesGenerator(this.props.answersOptions[this.props.index].options);
         return (
-            <li >
+            <li style={style}>
                 {checkBoxes}
                 <DropDownMenu
                     value={this.props.answersOptions[this.props.index].options}
@@ -52,5 +52,10 @@ class SingleAnswerBlankList extends Component {
         );
     }
 }
+
+const style = {
+    background: '#85144b',
+    borderRadius: 10,
+};
 
 export default SingleAnswerBlankList;

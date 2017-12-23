@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import BlankLine from "./BlankLine";
+import './OptionsHandler.css'
 
 class OptionsHandler extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class OptionsHandler extends Component {
     generateLines() {
         let lines = [];
 
-        for (let i = 0; i < this.props.parentState.eachAnswerNumberOfOptions.length; i++) {
+        for (let i = 0; i < this.props.parentState.sliderValue; i++) {
 
             lines.push(<BlankLine
                         information={this.props.parentState.eachAnswerNumberOfOptions[i]}
@@ -24,7 +25,7 @@ class OptionsHandler extends Component {
     render() {
         let lines = this.generateLines();
         return (
-            <ol>
+            <ol className="print-page-list">
                 {lines}
             </ol>
         );
