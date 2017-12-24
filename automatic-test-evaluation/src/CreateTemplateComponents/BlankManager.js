@@ -262,6 +262,19 @@ class BlankManager extends Component {
                             </div>
                         ) : (
                             <div>
+                                <div className="stepper-navigation">
+                                    <FlatButton
+                                        label="Назад"
+                                        disabled={this.state.stepperIndex === 0}
+                                        onClick={() => this.stepperHandlePrev()}
+                                    />
+                                    <RaisedButton
+                                        label={this.state.stepperIndex === 1 ? 'Завършване' : 'Напред'}
+                                        primary={true}
+                                        onClick={() => this.stepperHandleNext()}
+                                    />
+                                </div>
+
                                 <div style={{display: 'block'}}>
                                     {this.stepperGetStepContent(this.state.stepperIndex)}
                                 </div>

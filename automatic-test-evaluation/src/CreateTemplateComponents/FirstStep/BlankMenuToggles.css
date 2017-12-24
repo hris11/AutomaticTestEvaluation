@@ -4,7 +4,8 @@
 }
 
 .barBox {
-    display: block;
+    display: flex;
+    justify-content: space-around;
     width: 70%;
     height: 90%;
     margin: 0 auto;

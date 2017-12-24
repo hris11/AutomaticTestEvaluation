@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Divider, DropDownMenu, MenuItem, Paper} from "material-ui";
 import BlankMenuToggles from "./BlankMenuToggles";
 import BlankMenuSlider from "./BlankMenuSlider";
+import './BlankMenuManager.css'
 
 class BlankMenuManger extends Component {
     constructor(props) {
@@ -9,8 +10,11 @@ class BlankMenuManger extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="menu-bar">
                 <div className="default-options-bar">
+                    <div>
+                        Изберете колко опции да имат отговорите по подразбиране
+                    </div>
                     <DropDownMenu
                         value={this.props.parentProps.defaultOptions}
                         onChange={
@@ -25,6 +29,8 @@ class BlankMenuManger extends Component {
                         <MenuItem value={7} primaryText="7"/>
                     </DropDownMenu>
                 </div>
+
+                <Divider/>
 
                 <BlankMenuToggles
                     parentProps={this.props.parentProps}
