@@ -19,3 +19,4 @@ hs_err_pid*
 /src/main/webapp/*.html
 /src/main/webapp/*.ico
 /src/main/webapp/*.js
+/automatic-test-evaluation/nbproject/private/
