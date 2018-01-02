@@ -11,6 +11,15 @@ class BlankManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            navigationDisplay: {
+                display: 'inline'
+            },
+            printDisplay: {
+                display: 'none'
+            },
+            stepperDisplay: {
+                display: 'flex'
+            },
             logged: false,
             stepperFinished: false,
             stepperIndex: 0,
@@ -68,7 +77,17 @@ class BlankManager extends Component {
     }
 
     generatePrintablePage() {
-        console.log(this.state);
+        this.setState({
+            printDisplay: {
+                display: 'inline'
+            },
+            navigationDisplay: {
+                display: 'none'
+            },
+            stepperDisplay: {
+                display: 'none'
+            }
+        });
     }
 
     handleSlider(event, value) {
@@ -231,7 +250,7 @@ class BlankManager extends Component {
         return (
             <Paper zDepth={0} style={style.paper}>
                 <div style={{width: '100%', maxWidth: 1000, margin: 'auto'}} className="blank-background-paper">
-                    <Stepper activeStep={this.state.stepperIndex}>
+                    <Stepper activeStep={this.state.stepperIndex} style={this.state.stepperDisplay}>
                         <Step>
                             <StepLabel>Изберете какви атрибути да има теста</StepLabel>
                         </Step>
@@ -243,7 +262,7 @@ class BlankManager extends Component {
                     <div style={{width: '100%'}}>
                         {this.state.stepperFinished ? (
                             <div>
-                                <span className='final-step-header'>
+                                <span className='final-step-header' style={this.state.navigationDisplay}>
                                     Успешно завършихте структурата на теста. В последствие няма да имате възможност да
                                     направите промени по нея, но ако желате да промените нещо натиснете
                                     <div className="result-navigation-wrapper">
@@ -252,13 +271,16 @@ class BlankManager extends Component {
                                             onClick={(event) => this.stepperReset(event)}
                                         />
                                         <RaisedButton
-                                            label="Принтиране на теста"
+                                            label="Завършване"
                                             onClick={(event) => this.generatePrintablePage(event)}
                                             primary={true}
                                         />
                                     </div>
                                 </span>
-                                <PrintPage parentState={this.state}/>
+
+                                <div style={this.state.printDisplay}>
+                                    <PrintPage parentState={this.state}/>
+                                </div>
                             </div>
                         ) : (
                             <div>

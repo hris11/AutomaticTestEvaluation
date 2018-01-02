@@ -4,10 +4,7 @@
     <list default="true" id="5bf10219-dd49-49fb-a0a1-41300ea7424e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuManager.css" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuManager.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuSlider.css" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuSlider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuSlider.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuSlider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.css" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PrintPage.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PrintPage.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+            <state relative-caret-position="248">
+              <caret line="77" column="12" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -51,7 +48,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlankMenuManager.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlankManagerSecondStepHandler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/BlankManagerSecondStepHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupsBar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterLoginComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponent/RegisterLoginComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankMenuManager.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuManager.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -83,43 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlankMenuToggles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SingleAnswerBlankList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/SingleAnswerBlankList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="33" column="101" lean-forward="false" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlankMenuToggles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BlankManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="275" column="38" lean-forward="false" selection-start-line="275" selection-start-column="38" selection-end-line="275" selection-end-column="38" />
+            <state relative-caret-position="381">
+              <caret line="89" column="11" lean-forward="false" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -176,19 +173,19 @@
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/SingleAnswerBlankList.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/OptionsHandler.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/OptionsHandler.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponent/RegisterLoginComponent.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuSlider.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuSlider.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuManаger.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/FirstStep/BlankMenuManager.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
       </list>
     </option>
   </component>
@@ -490,7 +487,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86112000" />
+    <option name="totallyTimeSpent" value="89065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -761,21 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/BlankManagerSecondStepHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/OptionsHandler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -803,7 +785,7 @@
         <state relative-caret-position="-29">
           <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -826,13 +808,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-539">
           <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponent/RegisterLoginComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624">
-          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -879,30 +855,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
           <caret line="73" column="43" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="43" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="275" column="38" lean-forward="false" selection-start-line="275" selection-start-column="38" selection-end-line="275" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -927,6 +885,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/BlankManagerSecondStepHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponent/RegisterLoginComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="89" column="11" lean-forward="false" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="77" column="12" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
           <folding />
         </state>
       </provider>
