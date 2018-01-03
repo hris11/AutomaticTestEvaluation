@@ -1,0 +1,26 @@
+.color-box {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+
+.single-box {
+    margin-right: 8px;
+}
+
+.groups-legend {
+    display: flex;
+    justify-content: space-around;
+}
+
+.groups-column span {
+    margin-left: 10px;
+}
+
+.hidden-name-change {
+    text-align: center;
+}
+
+.group-change-input {
+    width: 1000px;
+}

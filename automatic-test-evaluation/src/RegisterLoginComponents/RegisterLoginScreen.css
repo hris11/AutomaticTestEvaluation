@@ -1,0 +1,19 @@
+.register-login-screen {
+    margin: auto;
+    width: 400px;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.register-login-screen-navigation {
+    margin-top: 20px;
+}
+
+.paper-box {
+    margin: auto;
+    margin-top: 50px;
+    width: 500px;
+
+}

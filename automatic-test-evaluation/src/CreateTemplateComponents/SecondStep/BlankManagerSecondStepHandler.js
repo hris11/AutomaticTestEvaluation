@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import SingleAnswerBlankList from "./SingleAnswerBlankList";
+import GroupsBar from "./GroupsBar";
+import {Divider} from "material-ui";
 
 class BlankManagerSecondStepHandler extends Component {
     constructor(props) {
@@ -24,9 +26,13 @@ class BlankManagerSecondStepHandler extends Component {
         }
 
         return (
-            <ol>
-                {elements.map((elem) => elem)}
-            </ol>
+            <div>
+                <GroupsBar/>
+                <Divider/>
+                <ol>
+                    {elements.map((elem) => elem)}
+                </ol>
+            </div>
         );
     }
 }

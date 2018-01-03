@@ -1,4 +1,4 @@
-package genchev.hristian.automatictestevaluation.Services;
+package genchev.hristian.automatictestevaluation.services;
 
 import genchev.hristian.automatictestevaluation.models.User;
 

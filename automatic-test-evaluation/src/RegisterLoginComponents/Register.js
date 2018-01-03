@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import styles from './RegisterComponent.css'
+import './Register.css'
 
 class RegisterComponent extends Component {
     constructor(props) {
@@ -182,7 +181,7 @@ class RegisterComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="register-block">
                 <MuiThemeProvider>
                     <div>
                         {/*<AppBar
@@ -219,7 +218,7 @@ class RegisterComponent extends Component {
                         />
                         <br/>
                         <RaisedButton
-                            className={styles.submitButton}
+                            className="register-submit-button"
                             label="Регистритране"
                             primary={true}
                             onClick={(event) => this.registerSubmit(event)}

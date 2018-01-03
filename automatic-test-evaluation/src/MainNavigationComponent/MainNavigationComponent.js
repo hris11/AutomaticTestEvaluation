@@ -1,23 +1,10 @@
 import React, {Component} from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RegisterLoginComponent from "../RegisterLoginComponent/RegisterLoginComponent";
+import RegisterLoginComponent from "../RegisterLoginComponents/RegisterLoginScreen";
 import AddNewStudentComponent from "../AddNewStudentComponent/AddNewStudentComponent";
 import BlankManagerFirstStepHandler from "../CreateTemplateComponents/FirstStep/BlankManagerFirstStepHandler";
 import BlankManager from "../CreateTemplateComponents/BlankManager";
-
-const styles = {
-    headline: {
-        fontSize: 24,
-        paddingTop: 16,
-        marginBottom: 12,
-        fontWeight: 400,
-    },
-    fullBody: {
-        width: "90%",
-        background: "pink",
-    },
-};
 
 class MainNavigationComponent extends Component {
     constructor(props) {

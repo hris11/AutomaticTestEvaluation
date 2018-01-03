@@ -1,14 +1,10 @@
 package genchev.hristian.automatictestevaluation.rest;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
-import com.google.inject.Inject;
-import com.google.inject.name.Named;
 import com.sun.jersey.spi.resource.Singleton;
-import genchev.hristian.automatictestevaluation.Services.UserService;
-import genchev.hristian.automatictestevaluation.models.User;
+import genchev.hristian.automatictestevaluation.services.UserService;
 
 @Singleton
 @Path("register")

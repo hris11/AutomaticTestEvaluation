@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import RegisterLoginComponent from './RegisterLoginComponent/RegisterLoginComponent'
+import RegisterLoginComponent from './RegisterLoginComponents/RegisterLoginScreen'
 import ClassCreateComponent from './ClassCreateComponent/ClassCreateComponent'
 import AddNewStudentComponent from './AddNewStudentComponent/AddNewStudentComponent'
 import MainNavigationComponent from  './MainNavigationComponent/MainNavigationComponent'
