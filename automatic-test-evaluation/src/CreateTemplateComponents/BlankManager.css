@@ -8,3 +8,33 @@
 .result-navigation-wrapper {
     margin-top: 30px;
 }
+
+.box-default-color {
+    background: none;
+}
+
+.box-first-color {
+    background: #7FDBFF;
+}
+
+.box-second-color {
+    background: #3D9970;
+}
+
+.box-third-color {
+    background: #01FF70;
+}
+
+.box-forth-color {
+    background: #FF4136;
+}
+
+.box-fifth-color {
+    background: #85144b;
+}
+
+.box-default-color, .box-first-color, .box-second-color, .box-third-color, .box-forth-color, .box-fifth-color {
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}

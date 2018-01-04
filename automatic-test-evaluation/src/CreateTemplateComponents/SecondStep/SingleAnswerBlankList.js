@@ -30,7 +30,7 @@ class SingleAnswerBlankList extends Component {
     render() {
         let checkBoxes = this.checkboxesGenerator(this.props.answersOptions[this.props.index].options);
         return (
-            <li style={style}>
+            <li className={this.props.answersOptions[this.props.index].cssClassName}>
                 {checkBoxes}
                 <DropDownMenu
                     value={this.props.answersOptions[this.props.index].options}
@@ -45,8 +45,26 @@ class SingleAnswerBlankList extends Component {
                     <MenuItem value={6} primaryText="6"/>
                     <MenuItem value={7} primaryText="7"/>
                 </DropDownMenu>
+
+                <DropDownMenu
+                    value={this.props.answersOptions[this.props.index].group}
+                    onChange={
+                        (event, index, value) => this.handleGroupChange(event, index, value)
+                    }
+                >
+                    <MenuItem value={0} primaryText={this.props.groups[0].name}/>
+                    <MenuItem value={1} primaryText={this.props.groups[1].name}/>
+                    <MenuItem value={2} primaryText={this.props.groups[2].name}/>
+                    <MenuItem value={3} primaryText={this.props.groups[3].name}/>
+                    <MenuItem value={4} primaryText={this.props.groups[4].name}/>
+                    <MenuItem value={5} primaryText={this.props.groups[5].name}/>
+                </DropDownMenu>
             </li>
         );
+    }
+
+    handleGroupChange(event, index, value) {
+        this.props.changeGroupOfLine(this.props.index, value);
     }
 }
 

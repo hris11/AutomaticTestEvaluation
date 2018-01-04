@@ -59,9 +59,6 @@ class LoginComponent extends Component {
             <div>
                 <MuiThemeProvider>
                     <div>
-                        {/*<AppBar
-                            title="Вписване"
-                        />*/}
                         <TextField
                             hintText="Въведете Email"
                             floatingLabelText="Email"

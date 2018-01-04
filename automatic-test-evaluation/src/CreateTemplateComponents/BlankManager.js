@@ -34,45 +34,132 @@ class BlankManager extends Component {
                 {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 }, {
                     options: 4,
                     rightAnswer: -1,
-                    group: 0
-            }]
+                    group: 0,
+                    cssClassName: 'box-default-color'
+            }],
+            groups:
+                [{
+                    name: 'група: 1',
+                    active: true,
+                    newValueOfName: 'група: 1'
+                }, {
+                    name: 'група: 2',
+                    active: true,
+                    newValueOfName: 'група: 2'
+                }, {
+                    name: 'група: 3',
+                    active: true,
+                    newValueOfName: 'група: 3'
+                }, {
+                    name: 'група: 4',
+                    active: true,
+                    newValueOfName: 'група: 4'
+                }, {
+                    name: 'група: 5',
+                    active: true,
+                    newValueOfName: 'група: 5'
+                }, {
+                    name: 'група: 6',
+                    active: true,
+                    newValueOfName: 'група: 6'
+                }],
+            lastGroupEdited: 0
         }
+    }
+
+    handleGroupEditing(event, index, value) {
+        this.setState({
+            lastGroupEdited: value
+        });
+    }
+
+    safeChanges(event) {
+        let oldGroups = this.state.groups;
+
+        for (let i = 0; i < oldGroups.length; i++) {
+            if (oldGroups[i].name !== oldGroups[i].newValueOfName) {
+                oldGroups[i].name = this.state.groups[i].newValueOfName;
+            }
+        }
+
+        //this.toggleMenu();
+
+        this.setState({
+            groups: oldGroups
+        });
+    }
+
+    discardChanges() {
+        let oldGroups = this.state.groups;
+
+        for (let i = 0; i < this.state.groups.length; i++) {
+            if (this.state.groups[i].name !== this.state.groups[i].newValueOfName) {
+                oldGroups[i].newValueOfName = oldGroups[i].name;
+            }
+        }
+
+        //this.toggleMenu();
+
+        this.setState({
+            groups: oldGroups
+        });
+    }
+
+    handleUpdateInput(event, newValue) {
+        let oldGroups = this.state.groups;
+
+        if (newValue !== '') {
+            oldGroups[this.state.lastGroupEdited].newValueOfName = newValue;
+        }
+
+        this.setState({
+            groups: oldGroups
+        })
     }
 
     generatePrintablePage() {
@@ -97,7 +184,8 @@ class BlankManager extends Component {
                 memEachAnswerNumberOfOptions.push({
                     options: this.state.defaultOptions,
                     rightAnswer: -1,
-                    group: 0
+                    group: 0,
+                    cssClassName: 'box-default-color'
                 });
             }
         }
@@ -154,6 +242,40 @@ class BlankManager extends Component {
         });
     }
 
+    changeGroupOfLine(index, value) {
+        let mem = this.state.eachAnswerNumberOfOptions;
+        mem[index].group = value;
+
+        switch (value) {
+            case 0: {
+                mem[index].cssClassName = 'box-default-color';
+            } break;
+            case 1: {
+                mem[index].cssClassName = 'box-first-color'
+            }break;
+            case 2: {
+                mem[index].cssClassName = 'box-second-color'
+            }break;
+            case 3: {
+                mem[index].cssClassName = 'box-third-color'
+            }break;
+            case 4: {
+                mem[index].cssClassName = 'box-forth-color'
+            }break;
+            case 5: {
+                mem[index].cssClassName = 'box-fifth-color'
+            }break;
+            default: {
+                console.log('shit happens');
+                mem[index].cssClassName = 'box-default-color'
+            }
+        }
+
+        this.setState({
+            eachAnswerNumberOfOptions: mem
+        });
+    }
+
     stepperGetStepContent(index) {
         switch (index) {
             case 0: {
@@ -179,6 +301,13 @@ class BlankManager extends Component {
             }
             case 1: {
                 return (<BlankManagerSecondStepHandler
+                    handleGroupEditing={(event, index, value) => this.handleGroupEditing(event, index, value)}
+                    safeChanges={(event) => this.safeChanges(event)}
+                    discardChanges={() => this.discardChanges()}
+                    handleUpdateInput={(event, newValue) => this.handleUpdateInput(event, newValue)}
+                    groups={this.state.groups}
+                    changeGroupOfLine={(index, value) => this.changeGroupOfLine(index, value)}
+                    lastGroupEdited={this.state.lastGroupEdited}
                     answers={this.state.sliderValue}
                     answersOptions={this.state.eachAnswerNumberOfOptions}
                     optionsChange={(index, newValue) => this.handleOptionsChange(index, newValue)}
