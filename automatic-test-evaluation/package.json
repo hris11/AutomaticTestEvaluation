@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "heroku-prebuild": "ln -s node_modules automatic-test-evaluation/node_modules && cd automatic-test-evaluation && ls -la",
+    "heroku-prebuild": "ln -s ./node_modules automatic-test-evaluation/node_modules && cd automatic-test-evaluation && ls -la",
     "preinstall": "ls -la"
   }
 }
