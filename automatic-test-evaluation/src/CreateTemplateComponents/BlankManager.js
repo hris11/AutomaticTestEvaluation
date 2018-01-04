@@ -19,7 +19,7 @@ class BlankManager extends Component {
             stepperDisplay: {
                 display: 'flex'
             },
-            logged: false,
+            logged: true,
             stepperFinished: false,
             stepperIndex: 0,
             nameToggle: true,

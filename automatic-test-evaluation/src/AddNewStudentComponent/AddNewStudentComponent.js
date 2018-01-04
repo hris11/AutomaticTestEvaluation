@@ -89,12 +89,6 @@ class AddNewStudentComponent extends Component {
                     />
                     <Divider/>
                 </Paper>
-                <FloatingActionButton
-                    style={buttonStyle}
-                    onClick={(event) => this.addNewStudent(event)}
-                >
-                    <ContentAdd/>
-                </FloatingActionButton>
             </MuiThemeProvider>
         );
     }

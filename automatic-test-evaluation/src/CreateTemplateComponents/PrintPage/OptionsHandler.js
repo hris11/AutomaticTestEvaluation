@@ -8,12 +8,11 @@ class OptionsHandler extends Component {
         let lines = [];
 
         for (let i = 0; i < this.props.parentState.sliderValue; i++) {
-
+            let key = "BlankLine" + i;
             lines.push(<BlankLine
-                        information={this.props.parentState.eachAnswerNumberOfOptions[i]}
+                key={key}
+                information={this.props.parentState.eachAnswerNumberOfOptions[i]}
             />);
-
-            console.log(this.props.parentState.eachAnswerNumberOfOptions[i]);
         }
 
         return lines;

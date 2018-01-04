@@ -8,8 +8,9 @@ class SingleAnswerBlankList extends Component {
         let newCheckBoxes = [];
 
         for (let index = 0; index < numberOfCheckboxes; index++) {
+            let key = "divCheckbox" + index;
             newCheckBoxes.push(
-                <div className="check-box-style">
+                <div className="check-box-style" key={key}>
                     <Checkbox
                         label=""
                         disabled={true}

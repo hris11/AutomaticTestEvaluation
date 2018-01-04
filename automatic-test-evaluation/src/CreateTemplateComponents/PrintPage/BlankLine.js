@@ -6,8 +6,16 @@ class BlankLine extends Component {
     constructLine(numberOfOptions) {
         let line = [];
 
+
         for (let i = 0; i < numberOfOptions; i++) {
-            line.push(<span className="blank-option">&#9711;</span>);
+            let key = "blankLineSpan" + i;
+            line.push(<span
+                className="blank-option"
+                key={key}
+            >
+                &#9711;
+            </span>
+            );
         }
         return line;
     }

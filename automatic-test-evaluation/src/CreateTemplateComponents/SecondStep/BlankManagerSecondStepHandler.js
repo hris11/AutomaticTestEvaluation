@@ -10,9 +10,10 @@ class BlankManagerSecondStepHandler extends Component {
         let elements = [];
 
         for (let index = 0; index < numberOfAnswers; index++) {
+            let key = "SingleAnswerBlankList" + index;
             elements.push(
                 <SingleAnswerBlankList
-                    key={index}
+                    key={key}
                     index={index}
                     answersOptions={this.props.answersOptions}
                     optionsChange={(index, newValue) => this.props.optionsChange(index, newValue)}
