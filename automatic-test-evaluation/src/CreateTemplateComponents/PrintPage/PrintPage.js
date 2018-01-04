@@ -1,12 +1,8 @@
 import React, {Component} from  'react';
 import OptionsHandler from "./OptionsHandler";
 import './PrintPage.css';
-import {Divider} from "material-ui";
 
 class PrintPage extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     nameHeaderGenerator() {
         if (this.props.parentState.nameToggle) {
@@ -89,7 +85,7 @@ class PrintPage extends Component {
                                 <div className="header-field">{groupHeader[1]}</div>
                             </div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" className="qr-code-field"/>
+                        <img alt="QR code / Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" className="qr-code-field"/>
                     </div>
                 </div>
                 <hr className="test-header-divider"/>

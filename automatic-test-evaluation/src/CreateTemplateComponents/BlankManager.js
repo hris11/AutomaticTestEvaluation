@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import SingleAnswerTemplateComponent from "./SecondStep/SingleAnswerBlankList";
-import {Divider, FlatButton, List, Paper, RaisedButton, Step, StepLabel, Stepper} from "material-ui";
+import {FlatButton, Paper, RaisedButton, Step, StepLabel, Stepper} from "material-ui";
 import BlankManagerFirstStepHandler from "./FirstStep/BlankManagerFirstStepHandler";
 import './BlankManager.css';
 import './FirstStep/BlankMenuToggles.css';
@@ -178,7 +177,6 @@ class BlankManager extends Component {
                     defaultOptions={this.state.defaultOptions}
                 />
             }
-                break;
             case 1: {
                 return (<BlankManagerSecondStepHandler
                     answers={this.state.sliderValue}
@@ -187,7 +185,6 @@ class BlankManager extends Component {
                     defaultOptions={this.state.defaultOptions}
                 />);
             }
-                break;
             default: {
                 return <h1>An error appeared</h1>
             }

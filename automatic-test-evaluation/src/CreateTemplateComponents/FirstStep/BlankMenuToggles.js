@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import {Toggle} from "material-ui";
 import './BlankMenuToggles.css';
 
-const styles = {
-    barBox: {
-        display: 'block',
-    }
-};
-
 class BlankMenuToggles extends Component {
     render() {
         return (

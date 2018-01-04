@@ -6,12 +6,6 @@ import Register from './Register';
 import './RegisterLoginScreen.css'
 import {Divider, Paper} from "material-ui";
 
-const compsStyle = {
-    content: 'center',
-    margin: "auto",
-    width: 400,
-};
-
 class RegisterLoginComponent extends Component {
     constructor(props) {
         super(props);

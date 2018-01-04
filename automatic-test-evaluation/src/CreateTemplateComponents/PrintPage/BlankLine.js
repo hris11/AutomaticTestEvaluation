@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import './BlankLine.css'
 
 class BlankLine extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     constructLine(numberOfOptions) {
         let line = [];

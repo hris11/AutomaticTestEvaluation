@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import {Checkbox, CommunicationChatBubble, DropDownMenu, ListItem, MenuItem} from "material-ui";
+import {Checkbox, DropDownMenu, MenuItem} from "material-ui";
 import './SingleAnswerBlankList.css'
 
 class SingleAnswerBlankList extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     checkboxesGenerator(numberOfCheckboxes) {
         let newCheckBoxes = [];

@@ -1,13 +1,11 @@
 import React, {Component} from 'react'
-import {Divider, DropDownMenu, MenuItem, Paper} from "material-ui";
+import {Divider, DropDownMenu, MenuItem} from "material-ui";
 import BlankMenuToggles from "./BlankMenuToggles";
 import BlankMenuSlider from "./BlankMenuSlider";
 import './BlankMenuManager.css'
 
 class BlankMenuManger extends Component {
-    constructor(props) {
-        super(props);
-    }
+
     render() {
         return (
             <div className="menu-bar">

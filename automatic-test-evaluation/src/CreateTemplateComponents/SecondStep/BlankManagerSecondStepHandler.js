@@ -4,10 +4,6 @@ import GroupsBar from "./GroupsBar";
 import {Divider} from "material-ui";
 
 class BlankManagerSecondStepHandler extends Component {
-    constructor(props) {
-        super(props)
-    }
-
 
     render() {
         let numberOfAnswers = this.props.answers;

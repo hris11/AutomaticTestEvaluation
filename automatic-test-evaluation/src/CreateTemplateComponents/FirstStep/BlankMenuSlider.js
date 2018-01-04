@@ -3,10 +3,6 @@ import {Slider} from "material-ui";
 import "./BlankMenuSlider.css"
 
 class BlankMenuSlider extends Component {
-    constructor(props) {
-        super(props);
-    }
-
 
     render() {
         return (

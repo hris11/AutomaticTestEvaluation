@@ -37,10 +37,6 @@ class GroupsBar extends Component {
         }
     }
 
-    showPopDownGroupChangeMenu() {
-
-    }
-
     handleGroupEditing(event, index, value) {
         this.setState({
             lastGroupEdited: value
@@ -80,12 +76,9 @@ class GroupsBar extends Component {
                         </div>
                     </div>
                 </div>
-                <RaisedButton
-                    label='Сменете име на група'
-                    primary={true}
-                    onclick={this.showPopDownGroupChangeMenu()}
-                />
-                <div className="hidden-name-change">
+
+
+                <div className="hidden-name-change" style={this.state.editGroupDisplayStyle}>
                     <div>
                         <DropDownMenu
                             value={this.state.lastGroupEdited}
@@ -111,12 +104,13 @@ class GroupsBar extends Component {
 
                     <Divider/>
 
-                    <div>
+                    <div className="group-navigation-management">
                         <RaisedButton
                             label="Премахни промените"
                             primary={false}
                             onClick={() => this.discardChanges()}
                         />
+                        <br/>
                         <RaisedButton
                             label="Завършване на промените по групата"
                             primary={true}
@@ -137,7 +131,7 @@ class GroupsBar extends Component {
             }
         }
 
-        console.log("shit happens", oldGroups);
+        //this.toggleMenu();
 
         this.setState({
             groups: oldGroups
@@ -152,6 +146,8 @@ class GroupsBar extends Component {
                 oldGroups[i].newValueOfName = oldGroups[i].name;
             }
         }
+
+        //this.toggleMenu();
 
         this.setState({
             groups: oldGroups

@@ -3,9 +3,6 @@ import BlankLine from "./BlankLine";
 import './OptionsHandler.css'
 
 class OptionsHandler extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     generateLines() {
         let lines = [];

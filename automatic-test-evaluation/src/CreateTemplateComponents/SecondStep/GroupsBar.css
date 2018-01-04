@@ -6,11 +6,17 @@
 
 .single-box {
     margin-right: 8px;
+    margin-bottom: 10px;
 }
 
 .groups-legend {
     display: flex;
     justify-content: space-around;
+}
+
+.group-navigation-management {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .groups-column span {
@@ -23,4 +29,9 @@
 
 .group-change-input {
     width: 1000px;
+}
+
+.main-bar {
+    display: flex;
+    justify-content: space-between;
 }
