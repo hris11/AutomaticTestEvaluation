@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,11 +45,21 @@ public class SampleRESTWebService {
 
             em = emf.createEntityManager(); // Retrieve an application managed entity manager
             // Work with the EM
+            
+            // Insert row
+            em.getTransaction().begin();
             Test name = new Test();
             name.setName("genchev");
-            
             em.persist(name);
+            em.getTransaction().commit();
             
+            // Select rows
+            em.getTransaction().begin();
+            List<Test> result = em.createQuery( "from Test", Test.class ).getResultList();
+            for ( Test test : result ) {
+                System.out.println( "Name: " +  test.getName());
+            }
+            em.getTransaction().commit();
 
         } catch (URISyntaxException ex) {
             Logger.getLogger(SampleRESTWebService.class.getName()).log(Level.SEVERE, null, ex);

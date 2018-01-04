@@ -12,9 +12,7 @@
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-<!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/automatic"/>
-            <property name="hibernate.connection.username" value="krasi"/>
-            <property name="hibernate.connection.password" value="asdfasdf"/>-->
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
  
