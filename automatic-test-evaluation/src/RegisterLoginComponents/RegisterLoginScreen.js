@@ -6,12 +6,6 @@ import Register from './Register';
 import './RegisterLoginScreen.css'
 import {Divider, Paper} from "material-ui";
 
-const compsStyle = {
-    content: 'center',
-    margin: "auto",
-    width: 400,
-};
-
 class RegisterLoginComponent extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +23,10 @@ class RegisterLoginComponent extends Component {
         let loginmessage;
         if (this.state.isLogin) {
             let loginscreen = [];
-            loginscreen.push(<Register parentContext={this}/>);
+            loginscreen.push(<Register
+                key="Register"
+                parentContext={this}
+            />);
             loginmessage = "Вече сте регистрирани, впишете се!";
             this.setState({
                 loginscreen: loginscreen,
@@ -40,7 +37,10 @@ class RegisterLoginComponent extends Component {
         }
         else {
             let loginscreen = [];
-            loginscreen.push(<Login parentContext={this}/>);
+            loginscreen.push(<Login
+                key="Login"
+                parentContext={this}
+            />);
             loginmessage = "Още нямате регистрация, регистрирайте се сега!";
             this.setState({
                 loginscreen: loginscreen,
@@ -53,7 +53,10 @@ class RegisterLoginComponent extends Component {
 
     componentWillMount() {
         let loginscreen = [];
-        loginscreen.push(<Login parentContext={this} appContext={this.props.parentContext}/>);
+        loginscreen.push(<Login
+            key="LoginFirstMount"
+            parentContext={this}
+            appContext={this.props.parentContext}/>);
         let loginmessage = "Още нямате регистрация, регистрирайте се сега!";
         this.setState({
             loginscreen: loginscreen,

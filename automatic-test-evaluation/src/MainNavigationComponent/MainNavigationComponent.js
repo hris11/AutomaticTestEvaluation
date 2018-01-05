@@ -3,7 +3,6 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RegisterLoginComponent from "../RegisterLoginComponents/RegisterLoginScreen";
 import AddNewStudentComponent from "../AddNewStudentComponent/AddNewStudentComponent";
-import BlankManagerFirstStepHandler from "../CreateTemplateComponents/FirstStep/BlankManagerFirstStepHandler";
 import BlankManager from "../CreateTemplateComponents/BlankManager";
 
 class MainNavigationComponent extends Component {
