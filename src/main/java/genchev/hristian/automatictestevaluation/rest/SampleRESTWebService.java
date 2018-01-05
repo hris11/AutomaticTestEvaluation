@@ -44,17 +44,17 @@ public class SampleRESTWebService {
             
             // Insert row
             em.getTransaction().begin();
-            Test name = new Test();
-            name.setName("genchev");
-            em.persist(name);
+//            Test name = new Test();
+//            name.setName("genchev");
+//            em.persist(name);
             em.getTransaction().commit();
             
             // Select rows
             em.getTransaction().begin();
-            List<Test> result = em.createQuery( "from Test", Test.class ).getResultList();
-            for ( Test test : result ) {
-                System.out.println( "Name: " +  test.getName());
-            }
+//            List<Test> result = em.createQuery( "from Test", Test.class ).getResultList();
+//            for ( Test test : result ) {
+//                System.out.println( "Name: " +  test.getName());
+//            }
             em.getTransaction().commit();
 
         } catch (URISyntaxException ex) {
