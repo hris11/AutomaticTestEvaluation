@@ -9,13 +9,9 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.sun.jersey.spi.resource.Singleton;
 import genchev.hristian.automatictestevaluation.models.Test;
+
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
