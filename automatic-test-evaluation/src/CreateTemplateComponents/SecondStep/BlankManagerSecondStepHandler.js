@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import SingleAnswerBlankList from "./SingleAnswerBlankList";
 import GroupsBar from "./GroupsBar";
 import {Divider} from "material-ui";
+import './BlankManagerSecondStepHandler.css';
 
 class BlankManagerSecondStepHandler extends Component {
 
@@ -37,7 +38,7 @@ class BlankManagerSecondStepHandler extends Component {
                     lastGroupEdited={this.props.lastGroupEdited}
                 />
                 <Divider/>
-                <ol>
+                <ol className="hr-group-list">
                     {elements.map((elem) => elem)}
                 </ol>
             </div>

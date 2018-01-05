@@ -58,10 +58,13 @@ class SingleAnswerBlankList extends Component {
     render() {
         /*let checkBoxes = this.checkboxesGenerator(this.props.answersOptions[this.props.index].options);*/
         let test = this.testGenerate(this.props.answersOptions[this.props.index].options);
-
+        
+        const cssClasses = `${this.props.answersOptions[this.props.index].cssClassName} list-item-wrapper`;
+        
         return (
-            <li className={this.props.answersOptions[this.props.index].cssClassName}>
+            <li className={cssClasses}>
                 <RadioButtonGroup
+                    className="radio-button-group"
                     onChange={(event, value) => this.handleAnswerChange(event, value)}
                     name="shipSpeed"
                     defaultSelected={0}

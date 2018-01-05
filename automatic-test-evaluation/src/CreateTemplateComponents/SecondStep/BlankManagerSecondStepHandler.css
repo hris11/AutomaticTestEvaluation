@@ -1,0 +1,12 @@
+.hr-group-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.hr-group-list li {
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+
