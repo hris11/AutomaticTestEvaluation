@@ -33,7 +33,7 @@ class RegisterLoginComponent extends Component {
                 loginmessage: loginmessage,
                 buttonLabel: "Вписване",
                 isLogin: false
-            })
+            });
         }
         else {
             let loginscreen = [];
@@ -47,7 +47,7 @@ class RegisterLoginComponent extends Component {
                 loginmessage: loginmessage,
                 buttonLabel: "Регистриране",
                 isLogin: true
-            })
+            });
         }
     }
 
