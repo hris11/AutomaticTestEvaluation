@@ -20,6 +20,8 @@ class BlankManagerSecondStepHandler extends Component {
                     defaultOptions={this.props.defaultOptions}
                     groups={this.props.groups}
                     changeGroupOfLine={(index, value) => this.props.changeGroupOfLine(index, value)}
+                    logged={this.props.logged}
+                    handleRightAnswerChange={(index, rightAnswerIndex) => this.props.handleRightAnswerChange(index, rightAnswerIndex)}
                 />
             );
         }

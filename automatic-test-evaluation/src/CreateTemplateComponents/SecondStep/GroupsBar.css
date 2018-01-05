@@ -25,6 +25,7 @@
 
 .hidden-name-change {
     text-align: center;
+    align-content: center;
 }
 
 .group-change-input {
@@ -34,4 +35,9 @@
 .main-bar {
     display: flex;
     justify-content: space-between;
+}
+
+.groups-input-handler {
+    width: 200px;
+    margin: 0 auto;
 }

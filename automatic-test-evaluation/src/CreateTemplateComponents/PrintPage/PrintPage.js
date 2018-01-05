@@ -66,6 +66,8 @@ class PrintPage extends Component {
         let classHeader = this.classHeaderGenerator();
         let groupHeader = this.groupHeaderGenerator();
 
+        console.log(this.props.parentState.eachAnswerNumberOfOptions);
+
         return (
             <div className="blank-for-print">
                 <div className="site-header">this blank is created with automatic test evaluation</div>

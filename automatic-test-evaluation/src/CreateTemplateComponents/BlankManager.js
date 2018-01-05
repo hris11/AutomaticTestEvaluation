@@ -33,52 +33,52 @@ class BlankManager extends Component {
             eachAnswerNumberOfOptions: [
                 {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 }, {
                     options: 4,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
             }],
@@ -183,7 +183,7 @@ class BlankManager extends Component {
             for (let i = 0; i < 52; i++) {
                 memEachAnswerNumberOfOptions.push({
                     options: this.state.defaultOptions,
-                    rightAnswer: -1,
+                    rightAnswer: 0,
                     group: 0,
                     cssClassName: 'box-default-color'
                 });
@@ -276,6 +276,16 @@ class BlankManager extends Component {
         });
     }
 
+    handleRightAnswerChange(index, rightAnswerIndex) {
+        let mem = this.state.eachAnswerNumberOfOptions;
+
+        mem[index].rightAnswer = rightAnswerIndex;
+
+        this.setState({
+            eachAnswerNumberOfOptions: mem
+        });
+    }
+
     stepperGetStepContent(index) {
         switch (index) {
             case 0: {
@@ -312,6 +322,8 @@ class BlankManager extends Component {
                     answersOptions={this.state.eachAnswerNumberOfOptions}
                     optionsChange={(index, newValue) => this.handleOptionsChange(index, newValue)}
                     defaultOptions={this.state.defaultOptions}
+                    logged={this.state.logged}
+                    handleRightAnswerChange={(index, rightAnswerIndex) => this.handleRightAnswerChange(index, rightAnswerIndex)}
                 />);
             }
             default: {

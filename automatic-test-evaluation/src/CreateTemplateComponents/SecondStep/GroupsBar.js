@@ -56,13 +56,15 @@ class GroupsBar extends Component {
                             <MenuItem value={5} primaryText={this.props.groups[5].name}/>
                         </DropDownMenu>
                     </div>
-
-                    <TextField
-                        hintText="Равностранен триъгълник"
-                        type="email"
-                        floatingLabelText="Променете име на групата"
-                        onChange={(event, newValue) => this.props.handleUpdateInput(event, newValue)}
-                    />
+                    <div className="groups-input-handler">
+                        <TextField
+                            hintText="Равностранен триъгълник"
+                            type="email"
+                            floatingLabelText="Променете име на групата"
+                            onChange={(event, newValue) => this.props.handleUpdateInput(event, newValue)}
+                            fullWidth={true}
+                        />
+                    </div>
 
                     <Divider/>
 
