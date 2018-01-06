@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MainNavigationComponent from  './MainNavigationComponent/MainNavigationComponent'
+import MainNavigationComponent from './Navigation/TopNavigation'
 
 class App extends Component {
 
@@ -7,8 +7,21 @@ class App extends Component {
         super(props);
         this.state = {
             data: '', // will contain response from AJAX request
-            error: '' // will contain any network errors occured from AJAX request
+            error: '', // will contain any network errors occured from AJAX request
+            loginStatus: true
         };
+    }
+
+    handleLogout() {
+        this.setState({
+            loginStatus: false
+        });
+    }
+
+    handleLogin() {
+        this.setState({
+            loginStatus: true
+        });
     }
 
     makeAjaxRequest(url) {
@@ -40,7 +53,11 @@ class App extends Component {
         }
         return (
             <div>
-                <MainNavigationComponent/>
+                <MainNavigationComponent
+                    logged={this.state.loginStatus}
+                    logout={() => this.handleLogout()}
+                    login={() => this.handleLogin()}
+                />
             </div>
         );
     }

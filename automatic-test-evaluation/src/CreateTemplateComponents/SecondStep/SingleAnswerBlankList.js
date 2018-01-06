@@ -4,26 +4,6 @@ import './SingleAnswerBlankList.css'
 
 class SingleAnswerBlankList extends Component {
 
-    /*checkboxesGenerator(numberOfCheckboxes) {
-        let newCheckBoxes = [];
-
-        for (let index = 0; index < numberOfCheckboxes; index++) {
-            let key = "divCheckbox" + index;
-            newCheckBoxes.push(
-                <div className="check-box-style" key={key}>
-                    <Checkbox
-                        index={index}
-                        checked={this.selectFieldsWhileCreation(index)}
-                        label=''
-                        disabled={!this.props.logged}
-                    />
-                </div>
-            );
-        }
-
-        return newCheckBoxes;
-    }
-*/
     testGenerate(count) {
         let test = [];
 
@@ -34,6 +14,7 @@ class SingleAnswerBlankList extends Component {
                     <RadioButton
                         key={key}
                         value={index}
+                        disabled={!this.props.logged}
                     />
             )
         }
@@ -41,24 +22,12 @@ class SingleAnswerBlankList extends Component {
         return test;
     }
 
-    selectFieldsWhileCreation(index) {
-        if (this.props.logged === true) {
-            if (index === 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
     handleNumberChange(event, index, value) {
         this.props.optionsChange(this.props.index, value)
     }
 
     render() {
-        /*let checkBoxes = this.checkboxesGenerator(this.props.answersOptions[this.props.index].options);*/
         let test = this.testGenerate(this.props.answersOptions[this.props.index].options);
-        
         const cssClasses = `${this.props.answersOptions[this.props.index].cssClassName} list-item-wrapper`;
         
         return (
@@ -67,7 +36,7 @@ class SingleAnswerBlankList extends Component {
                     className="radio-button-group"
                     onChange={(event, value) => this.handleAnswerChange(event, value)}
                     name="shipSpeed"
-                    defaultSelected={0}
+                    defaultSelected={this.props.logged ? 0 : -1}
                 >
                     {test}
                 </RadioButtonGroup>

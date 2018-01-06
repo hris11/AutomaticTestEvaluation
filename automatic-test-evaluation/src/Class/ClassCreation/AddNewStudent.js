@@ -10,18 +10,7 @@ const style = {
     marginLeft: 20,
 };
 
-const paperStyle = {
-    width: 300,
-    display: 'inline-block',
-    textAlign: 'center',
-};
-
-const buttonStyle = {
-    marginBottom: 50,
-    marginLeft: 100,
-};
-
-class AddNewStudentComponent extends Component {
+class AddNewStudent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,8 +53,7 @@ class AddNewStudentComponent extends Component {
         return (
             <MuiThemeProvider>
                 <Paper
-                    zDepth={4}
-                    style={paperStyle}
+                    zDepth={1}
                 >
                     <TextField
                         hintText="Име"
@@ -95,4 +83,4 @@ class AddNewStudentComponent extends Component {
 }
 
 
-export default AddNewStudentComponent;
+export default AddNewStudent;

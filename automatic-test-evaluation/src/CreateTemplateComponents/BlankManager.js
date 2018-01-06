@@ -19,7 +19,6 @@ class BlankManager extends Component {
             stepperDisplay: {
                 display: 'flex'
             },
-            logged: true,
             stepperFinished: false,
             stepperIndex: 0,
             nameToggle: true,
@@ -304,7 +303,7 @@ class BlankManager extends Component {
                     handleToggleGroup={(event) => this.handleGroupToggle(event)}
                     handleToggleListName={(event) => this.handleListNameToggle(event)}
                     handleToggleListNumber={(event) => this.handleListNumberToggle(event)}
-                    logged={this.state.logged}
+                    logged={this.props.logged}
                     handleDefaultOptionsChange={(event, index, value) => this.handleDefaultOptionsChange(event, index, value)}
                     defaultOptions={this.state.defaultOptions}
                 />
@@ -322,7 +321,7 @@ class BlankManager extends Component {
                     answersOptions={this.state.eachAnswerNumberOfOptions}
                     optionsChange={(index, newValue) => this.handleOptionsChange(index, newValue)}
                     defaultOptions={this.state.defaultOptions}
-                    logged={this.state.logged}
+                    logged={this.props.logged}
                     handleRightAnswerChange={(index, rightAnswerIndex) => this.handleRightAnswerChange(index, rightAnswerIndex)}
                 />);
             }

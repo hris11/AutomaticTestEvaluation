@@ -15,8 +15,6 @@ class LoginComponent extends Component {
     }
 
     handleLoginSubmit() {
-        console.log("Username: " + this.state.email + " Password: " + this.state.password)
-        
         let url = "/rest/auth/login";
         url += "?username="+this.state.email;
         url += "&password="+this.state.password;
