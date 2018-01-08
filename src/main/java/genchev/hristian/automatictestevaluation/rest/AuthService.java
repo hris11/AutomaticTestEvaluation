@@ -24,7 +24,7 @@ public class AuthService {
         System.out.println("Password: " + password);
         
         Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "success");
-        NewCookie nc = new NewCookie(loginCookie, "", 60, false);
+        NewCookie nc = new NewCookie(loginCookie, "", -1, false);
         
         return Response.ok().cookie(nc).build();
     }
@@ -34,7 +34,6 @@ public class AuthService {
     public Response logout(@QueryParam("username") String name, @CookieParam(SESSION_COOKIE_NAME) Cookie cookie) {
         System.out.println("Name: " + name);
         System.out.println("Logged in: " + cookie.getValue());
-        
         Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "false");
         NewCookie nc = new NewCookie(loginCookie, "", 0, false); // Ask the browser to delete the cookie
         

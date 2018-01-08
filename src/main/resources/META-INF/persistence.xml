@@ -8,7 +8,9 @@
         <description>My Persistence Unit</description>
         <!--<provider>org.hibernate.ejb.HibernatePersistence</provider>
         <jta-data-source>java:/DefaultDS</jta-data-source>-->
-        <class>genchev.hristian.automatictestevaluation.models.Test</class>
+
+        <class>genchev.hristian.automatictestevaluation.models.ClassInformation</class>
+
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>

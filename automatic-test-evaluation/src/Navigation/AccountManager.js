@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {RaisedButton} from "material-ui";
+import {Paper, RaisedButton} from "material-ui";
 import ExitAccount from 'material-ui/svg-icons/action/account-circle';
 import NewClass from 'material-ui/svg-icons/content/add-circle';
 import ClassesListPreview from "../Class/ClassesPreview/ClassesListPreview";
 import ClassBox from "../Class/ClassCreation/ClassBox";
+import './AccountManager.css'
 
 class AccountManager extends Component {
     constructor(props) {
@@ -21,8 +22,7 @@ class AccountManager extends Component {
 
     render() {
         return (
-            <div>
-                sum deep shit
+            <div className="account-manager">
                 <div className="account-navigation">
                     {/*
                         navigation:
@@ -32,26 +32,32 @@ class AccountManager extends Component {
                             -   etc
                     */}
                     <RaisedButton
+                        className="account-navigation-button"
                         primary={true}
                         label="Излез от профила"
                         icon={<ExitAccount/>}
                     />
                     <RaisedButton
+                        className="account-navigation-button"
                         primary={true}
                         onClick={(event) => this.handleNewClassButton(event)}
                         label="Нов Клас"
                         icon={<NewClass/>}
                     />
+                    <RaisedButton
+                        className="account-navigation-button"
+                        primary={true}
+                        onClick={(event) => this.handleNewClassButton(event)}
+                        label="Сравни класове"
+                    />
                 </div>
 
-                <div>
-                    {this.state.navigationDisplayContent}
-                </div>
-
-                <div className="account-classes">
-                    {/*
-                        lists all user classes like catalog
-                    */}
+                <div className="account-workplace">
+                    <Paper zDepth={2}>
+                        <div className="account-inner-workplace">
+                            {this.state.navigationDisplayContent}
+                        </div>
+                    </Paper>
                 </div>
             </div>
         );

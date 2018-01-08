@@ -1,0 +1,15 @@
+.account-navigation {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.account-workplace {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.account-inner-workplace {
+    display: flex;
+    justify-content: center;
+}

@@ -11,11 +11,16 @@ import genchev.hristian.automatictestevaluation.services.UserService;
 public class RegisterRESTService {
     UserService users = new UserService();
     @POST
-    @Produces("application/json")
-    public Response helloWorld(@FormParam("email") String email,
-                               @FormParam("password") String password,
-                               @FormParam("firstName") String firstName,
-                               @FormParam("secondName") String secondName) {
+    public Response helloWorld(@QueryParam("email") String email,
+                               @QueryParam("password") String password,
+                               @QueryParam("firstName") String firstName,
+                               @QueryParam("lastName") String secondName) {
+
+        System.out.println(email);
+        System.out.println(password);
+        System.out.println(firstName);
+        System.out.println(secondName);
+
         return Response.ok(" ss"+"\n").build();
     }
 }

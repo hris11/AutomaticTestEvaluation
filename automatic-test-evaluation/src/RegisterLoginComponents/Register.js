@@ -25,6 +25,37 @@ class RegisterComponent extends Component {
         // here we send the registration information to the backend and expect to be sent confirmation mail to the user's
         // mail
         // the router magic is here
+        let url = "/rest/register";
+        url += "?email="+this.state.email;
+        url += "&password="+this.state.password;
+        url += "&firstName="+this.state.firstName;
+        url += "&lastName="+this.state.lastName;
+
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
+        const options = {
+            method: 'POST',
+            body: {
+                email: this.state.email,
+                password: this.state.password,
+                firstName: this.state.firstName,
+                lastName: this.state.lastName
+            },
+            headers: headers
+        };
+
+        const self = this;
+        fetch(url, options)
+            .then(function (response) {
+                if (response.ok) {
+                    // update state for successful authentication
+                    console.log("qkata raota");
+                }
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
     }
 
     submitStateChecker() {

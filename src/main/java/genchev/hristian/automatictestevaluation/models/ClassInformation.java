@@ -1,8 +1,17 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Entity
+@Table(name = "classinformation")
 public class ClassInformation {
+
     private int id;
     private Date publishDate;
     private String description;
@@ -17,6 +26,9 @@ public class ClassInformation {
         this.score = score;
     }
 
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     public int getId() {
         return id;
     }

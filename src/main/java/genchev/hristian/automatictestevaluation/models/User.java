@@ -1,14 +1,18 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.util.List;
 
 public class User {
     /*email, password, first name, last name, relation one to many with |Classes database|*/
+    @JsonIgnore
     private int id;
     private String email;
     private String password;
     private String firstName;
     private String secondName;
+    @JsonIgnore
     private List<Class> classes;
 
     public User() {}
@@ -22,10 +26,12 @@ public class User {
         this.classes = classes;
     }
 
+    @JsonIgnore
     public int getId() {
         return id;
     }
 
+    @JsonIgnore
     public String getEmail() {
         return email;
     }
@@ -58,10 +64,12 @@ public class User {
         this.secondName = secondName;
     }
 
+    @JsonIgnore
     public List<Class> getClasses() {
         return classes;
     }
 
+    @JsonIgnore
     public void setClasses(List<Class> classes) {
         this.classes = classes;
     }
