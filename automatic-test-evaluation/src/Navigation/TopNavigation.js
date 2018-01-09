@@ -70,7 +70,9 @@ class MainNavigationComponent extends Component {
                         >
                             <div>
                                 <BlankManager
-                                    logged={this.props.logged}
+                                    // logged={this.props.logged}
+                                    logged={false}
+                                    navCall={true}
                                     logout={() => this.props.logout()}
                                     login={() => this.props.login()}
                                 />

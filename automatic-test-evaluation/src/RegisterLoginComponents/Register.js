@@ -16,8 +16,9 @@ class RegisterComponent extends Component {
             lastNameSubmitState: false,
             emailSubmitState: false,
             passwordSubmitState: false,
-            passwordError: ''
-        };
+            passwordError: '',
+            registerStatus: 1
+        }
     }
 
     registerSubmit() {
@@ -40,8 +41,7 @@ class RegisterComponent extends Component {
                 email: this.state.email,
                 password: this.state.password,
                 firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                classes: null
+                lastName: this.state.lastName
             }),
             headers: headers
         };
@@ -49,14 +49,21 @@ class RegisterComponent extends Component {
         const self = this;
         fetch(url, options)
             .then(function (response) {
+                self.handleRegisterStatus(3);
                 if (response.ok) {
-                    // update state for successful authentication
-                    console.log("qkata raota");
+                    self.handleRegisterStatus(2);
                 }
             })
             .catch(function (error) {
+                self.handleRegisterStatus(1);
                 console.error(error);
             });
+    }
+
+    handleRegisterStatus(value) {
+        this.setState({
+            registerStatus: value
+        });
     }
 
     submitStateChecker() {
@@ -211,53 +218,79 @@ class RegisterComponent extends Component {
         }
     }
 
+    getRegisterContent() {
+        if (this.state.registerStatus === 1) {
+            return (<MuiThemeProvider>
+                <div>
+                    {/*<AppBar
+                            title="Регистрация"
+                        />*/}
+                    <TextField
+                        hintText="Въведете име"
+                        floatingLabelText="Име"
+                        onChange={(event, newValue) => this.checkFirstNameField(event, newValue)}
+                        errorText={this.firstNameErrorChecking()}
+                    />
+                    <br/>
+                    <TextField
+                        hintText="Въведете фамилия"
+                        floatingLabelText="Фамилия"
+                        onChange={(event, newValue) => this.checkLastNameField(event, newValue)}
+                        errorText={this.secondNameErrorChecking()}
+                    />
+                    <br/>
+                    <TextField
+                        hintText="Въведете Email"
+                        type="email"
+                        floatingLabelText="Email"
+                        onChange={(event, newValue) => this.checkEmailField(event, newValue)}
+                        errorText={this.emailErrorChecking()}
+                    />
+                    <br/>
+                    <TextField
+                        hintText="Въведете парола"
+                        type="password"
+                        floatingLabelText="Парола"
+                        onChange={(event, newValue) => this.checkPasswordField(event, newValue)}
+                        errorText={this.passwordErrorChecking()}
+                    />
+                    <br/>
+                    <RaisedButton
+                        className="register-submit-button"
+                        label="Регистритране"
+                        primary={true}
+                        onClick={(event) => this.registerSubmit(event)}
+                        disabled={!this.submitStateChecker()}
+                    />
+                </div>
+            </MuiThemeProvider>);
+        } else if (this.state.registerStatus === 2) {
+            return (
+                <div>
+                    Регистрирахте се успешно
+                    <br/>
+                    {this.state.firstName} {this.state.lastName}
+                </div>
+            );
+        } else if (this.state.registerStatus === 3) {
+            return (
+                <div>
+                    Proceeding request
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    An error appeared
+                </div>
+            );
+        }
+    }
+
     render() {
         return (
             <div className="register-block">
-                <MuiThemeProvider>
-                    <div>
-                        {/*<AppBar
-                            title="Регистрация"
-                        />*/}
-                        <TextField
-                            hintText="Въведете име"
-                            floatingLabelText="Име"
-                            onChange={(event, newValue) => this.checkFirstNameField(event, newValue)}
-                            errorText={this.firstNameErrorChecking()}
-                        />
-                        <br/>
-                        <TextField
-                            hintText="Въведете фамилия"
-                            floatingLabelText="Фамилия"
-                            onChange={(event, newValue) => this.checkLastNameField(event, newValue)}
-                            errorText={this.secondNameErrorChecking()}
-                        />
-                        <br/>
-                        <TextField
-                            hintText="Въведете Email"
-                            type="email"
-                            floatingLabelText="Email"
-                            onChange={(event, newValue) => this.checkEmailField(event, newValue)}
-                            errorText={this.emailErrorChecking()}
-                        />
-                        <br/>
-                        <TextField
-                            hintText="Въведете парола"
-                            type="password"
-                            floatingLabelText="Парола"
-                            onChange={(event, newValue) => this.checkPasswordField(event, newValue)}
-                            errorText={this.passwordErrorChecking()}
-                        />
-                        <br/>
-                        <RaisedButton
-                            className="register-submit-button"
-                            label="Регистритране"
-                            primary={true}
-                            onClick={(event) => this.registerSubmit(event)}
-                            disabled={!this.submitStateChecker()}
-                        />
-                    </div>
-                </MuiThemeProvider>
+                {this.getRegisterContent()}
             </div>
         );
     }

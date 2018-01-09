@@ -28,15 +28,25 @@ public class UserService {
             /*
             * Email is not valid*/
             return 3;
-        } else if (containsEmail(user)) {
+        } else if (false
+                //containsEmail(user)
+                ) {
             /*
             * Email already exists*/
             return 4;
-        } else if (!user.getPassword().matches("[A-Za-z0-9]")) {
+        } else if (false
+//                !user.getPassword().matches("[A-Za-z0-9]")
+                ) {
             /*
             * Incorrect password*/
             return 5;
         }
+
+        /*
+        * All checks are done*/
+        UserRepository userRepository = new UserRepository();
+        userRepository.registerUser(user);
+
         return 0;
     }
 

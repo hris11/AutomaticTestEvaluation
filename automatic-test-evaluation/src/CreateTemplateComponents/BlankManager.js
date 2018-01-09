@@ -306,6 +306,7 @@ class BlankManager extends Component {
                     logged={this.props.logged}
                     handleDefaultOptionsChange={(event, index, value) => this.handleDefaultOptionsChange(event, index, value)}
                     defaultOptions={this.state.defaultOptions}
+                    navCall={this.props.navCall}
                 />
             }
             case 1: {
@@ -323,6 +324,7 @@ class BlankManager extends Component {
                     defaultOptions={this.state.defaultOptions}
                     logged={this.props.logged}
                     handleRightAnswerChange={(index, rightAnswerIndex) => this.handleRightAnswerChange(index, rightAnswerIndex)}
+                    navCall={this.props.navCall}
                 />);
             }
             default: {

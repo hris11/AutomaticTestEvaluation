@@ -5,6 +5,7 @@ import genchev.hristian.automatictestevaluation.rest.SampleRESTWebService;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.ws.rs.core.Response;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
@@ -76,4 +77,34 @@ public class UserRepository {
 
         return result;
     }
+
+    public void registerUser(User user) {
+        EntityManagerFactory emf = null;
+        EntityManager em = null;
+        Map<String, Object> configOverrides = null;
+        try {
+            configOverrides = ConfigDBConnection.configureDbConnection();
+            emf = Persistence.createEntityManagerFactory("my-pu", configOverrides);
+
+            em = emf.createEntityManager(); // Retrieve an application managed entity manager
+            // Work with the EM
+
+            // Insert row
+            em.getTransaction().begin();
+            em.persist(user);
+            em.getTransaction().commit();
+
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(SampleRESTWebService.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            if (emf != null) {
+                emf.close(); //close at application end
+            }
+        }
+    }
+
+
 }

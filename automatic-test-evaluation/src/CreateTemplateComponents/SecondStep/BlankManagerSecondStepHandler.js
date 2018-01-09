@@ -29,6 +29,20 @@ class BlankManagerSecondStepHandler extends Component {
 
         return (
             <div>
+                {this.handleDisplayGroupBar()}
+                <Divider/>
+                <ol className="hr-group-list">
+                    {elements.map((elem) => elem)}
+                </ol>
+            </div>
+        );
+    }
+
+    handleDisplayGroupBar() {
+        if (this.props.navCall === true) {
+            return '';
+        } else {
+            return (
                 <GroupsBar
                     handleGroupEditing={(event, index, value) => this.props.handleGroupEditing(event, index, value)}
                     safeChanges={(event) => this.props.safeChanges(event)}
@@ -37,12 +51,8 @@ class BlankManagerSecondStepHandler extends Component {
                     groups={this.props.groups}
                     lastGroupEdited={this.props.lastGroupEdited}
                 />
-                <Divider/>
-                <ol className="hr-group-list">
-                    {elements.map((elem) => elem)}
-                </ol>
-            </div>
-        );
+            );
+        }
     }
 }
 

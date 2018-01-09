@@ -3,6 +3,39 @@ import {Toggle} from "material-ui";
 import './BlankMenuToggles.css';
 
 class BlankMenuToggles extends Component {
+
+    handleDisplayToggleListName() {
+        if (this.props.parentProps.navCall === true) {
+            return '';
+        } else {
+            return (
+                <Toggle
+                    className="toggleMargins"
+                    label="Имена на учениците от списъка"
+                    defaultToggled={this.props.parentProps.toggleListName}
+                    onToggle={() => this.props.parentProps.handleToggleListName()}
+                    disabled={!this.props.parentProps.logged}
+                />
+            );
+        }
+    }
+
+    handleDisplayToggleListNumbers() {
+        if (this.props.parentProps.navCall === true) {
+            return '';
+        } else {
+            return (
+                <Toggle
+                    className="toggleMargins"
+                    label="Номер на учениците от списъка"
+                    defaultToggled={this.props.parentProps.toggleListNumber}
+                    onToggle={() => this.props.parentProps.handleToggleListNumber()}
+                    labelPosition="right"
+                    disabled={!this.props.parentProps.logged}
+                />
+            );
+        }
+    }
     render() {
         return (
             <div>
@@ -20,13 +53,7 @@ class BlankMenuToggles extends Component {
                             defaultToggled={this.props.parentProps.toggleNumber}
                             onToggle={() => this.props.parentProps.handleToggleNumber()}
                         />
-                        <Toggle
-                            className="toggleMargins"
-                            label="Имена на учениците от списъка"
-                            defaultToggled={this.props.parentProps.toggleListName}
-                            onToggle={() => this.props.parentProps.handleToggleListName()}
-                            disabled={!this.props.parentProps.logged}
-                        />
+                        {this.handleDisplayToggleListName()}
                     </div>
 
                     <div className="rightBarTab">
@@ -44,14 +71,7 @@ class BlankMenuToggles extends Component {
                             onToggle={() => this.props.parentProps.handleToggleClass()}
                             labelPosition="right"
                         />
-                        <Toggle
-                            className="toggleMargins"
-                            label="Номер на учениците от списъка"
-                            defaultToggled={this.props.parentProps.toggleListNumber}
-                            onToggle={() => this.props.parentProps.handleToggleListNumber()}
-                            labelPosition="right"
-                            disabled={!this.props.parentProps.logged}
-                        />
+                        {this.handleDisplayToggleListNumbers()}
                     </div>
                 </div>
             </div>
