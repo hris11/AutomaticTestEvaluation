@@ -10,11 +10,16 @@
         <jta-data-source>java:/DefaultDS</jta-data-source>-->
 
         <class>genchev.hristian.automatictestevaluation.models.ClassInformation</class>
+        <class>genchev.hristian.automatictestevaluation.models.User</class>
+        <class>genchev.hristian.automatictestevaluation.models.Student</class>
+        <class>genchev.hristian.automatictestevaluation.models.Class</class>
+        <class>genchev.hristian.automatictestevaluation.models.Blank</class>
+        <class>genchev.hristian.automatictestevaluation.models.Answer</class>
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="false"/>
         </properties>
     </persistence-unit>

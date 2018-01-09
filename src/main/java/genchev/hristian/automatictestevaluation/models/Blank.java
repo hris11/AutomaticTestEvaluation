@@ -1,34 +1,47 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "blanks")
 public class Blank {
     /*number of answer fields, relation one to many with |Answers database|*/
-    private int id;
-    private int numberOfAnswers;
+    @JsonIgnore
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private Integer id;
+    @Column(nullable = false)
+    private Integer numberOfAnswers;
+    @OneToMany
+    @JoinColumn(name = "id")
     private List<Answer> answers;
 
     public Blank() {}
 
-    public Blank(int id, int numberOfAnswers, List<Answer> answers) {
+    public Blank(Integer id, Integer numberOfAnswers, List<Answer> answers) {
         this.id = id;
         this.numberOfAnswers = numberOfAnswers;
         this.answers = answers;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getNumberOfAnswers() {
+    public Integer getNumberOfAnswers() {
         return numberOfAnswers;
     }
 
-    public void setNumberOfAnswers(int numberOfAnswers) {
+    public void setNumberOfAnswers(Integer numberOfAnswers) {
         this.numberOfAnswers = numberOfAnswers;
     }
 

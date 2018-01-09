@@ -8,12 +8,9 @@ import javax.ws.rs.core.Response;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.sun.jersey.spi.resource.Singleton;
-import genchev.hristian.automatictestevaluation.models.Test;
+import genchev.hristian.automatictestevaluation.repository.ConfigDBConnection;
 
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,7 +33,7 @@ public class SampleRESTWebService {
         EntityManager em = null;
         Map<String, Object> configOverrides = null;
         try {
-            configOverrides = configureDbConnection();
+            configOverrides = ConfigDBConnection.configureDbConnection();
             emf = Persistence.createEntityManagerFactory("my-pu", configOverrides);
 
             em = emf.createEntityManager(); // Retrieve an application managed entity manager
@@ -69,28 +66,6 @@ public class SampleRESTWebService {
         }
 
         return Response.ok(helloWorldString + "\n").build();
-    }
-
-    // Test method that will be removed in near future
-    private Map<String, Object> configureDbConnection() throws URISyntaxException {
-        URI dbUri = new URI(System.getenv("DATABASE_URL"));
-        System.out.println("DATABASE_URL: " + System.getenv("DATABASE_URL"));
-
-        Map<String, Object> configOverrides = new HashMap<String, Object>();
-
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-
-        configOverrides.put("hibernate.connection.url", dbUrl);
-        configOverrides.put("hibernate.connection.username", username);
-        configOverrides.put("hibernate.connection.password", password);
-
-        System.out.println(username);
-        System.out.println(password);
-        System.out.println(dbUrl);
-
-        return configOverrides;
     }
 
 }

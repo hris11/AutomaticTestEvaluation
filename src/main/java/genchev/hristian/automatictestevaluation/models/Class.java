@@ -1,18 +1,37 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "classes")
 public class Class {
    /* relation one to many with |Students database|, class name, rel
             ation one to many with |Class information database|, relation one to
     many with |Blanks database|*/
-   private int id;
-   private String name;
-   private List<Student> students;
-   private List<ClassInformation> classInformation;
-   private List<Blank> blanks;
+    @JsonIgnore
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private Integer id;
+    @Column(nullable = false, length = 30)
+    private String name;
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<Student> students;
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<ClassInformation> classInformation;
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<Blank> blanks;
 
-    public Class(int id, String name, List<Student> students, List<ClassInformation> classInformation, List<Blank> blanks) {
+    public Class() {}
+
+    public Class(Integer id, String name, List<Student> students, List<ClassInformation> classInformation, List<Blank> blanks) {
         this.id = id;
         this.name = name;
         this.students = students;
@@ -20,11 +39,11 @@ public class Class {
         this.blanks = blanks;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

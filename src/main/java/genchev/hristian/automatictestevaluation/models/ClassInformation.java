@@ -1,25 +1,32 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "classinformation")
 public class ClassInformation {
-
-    private int id;
+    @JsonIgnore
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private Integer id;
+    @Temporal(TemporalType.DATE)
+    @CreationTimestamp
+    @Column(nullable = false)
     private Date publishDate;
+    @Column(nullable = false, length = 200)
     private String description;
-    private int score;
+    @Column(nullable = false)
+    private Integer score;
 
     public ClassInformation() {}
 
-    public ClassInformation(int id, Date publishDate, String description, int score) {
+    public ClassInformation(Integer id, Date publishDate, String description, Integer score) {
         this.id = id;
         this.publishDate = publishDate;
         this.description = description;
@@ -29,11 +36,11 @@ public class ClassInformation {
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -53,11 +60,11 @@ public class ClassInformation {
         this.description = description;
     }
 
-    public int getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
 

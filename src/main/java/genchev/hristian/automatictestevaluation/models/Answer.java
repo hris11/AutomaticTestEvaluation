@@ -1,16 +1,31 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "answers")
 public class Answer {
     /*group of answers, number of options, number of answer, right answer, ...*/
-    private int id;
-    private int group;
-    private int options;
-    private int index;
-    private int rightAnswer;
+    @JsonIgnore
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private Integer id;
+    @Column(nullable = false)
+    private Integer group;
+    @Column(nullable = false)
+    private Integer options;
+    @Column(nullable = false)
+    private Integer index;
+    @Column(nullable = false)
+    private Integer rightAnswer;
 
     public Answer() {}
 
-    public Answer(int id, int group, int options, int index, int rightAnswer) {
+    public Answer(Integer id, Integer group, Integer options, Integer index, Integer rightAnswer) {
         this.id = id;
         this.group = group;
         this.options = options;
@@ -18,43 +33,43 @@ public class Answer {
         this.rightAnswer = rightAnswer;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getGroup() {
+    public Integer getGroup() {
         return group;
     }
 
-    public void setGroup(int group) {
+    public void setGroup(Integer group) {
         this.group = group;
     }
 
-    public int getOptions() {
+    public Integer getOptions() {
         return options;
     }
 
-    public void setOptions(int options) {
+    public void setOptions(Integer options) {
         this.options = options;
     }
 
-    public int getIndex() {
+    public Integer getIndex() {
         return index;
     }
 
-    public void setIndex(int index) {
+    public void setIndex(Integer index) {
         this.index = index;
     }
 
-    public int getRightAnswer() {
+    public Integer getRightAnswer() {
         return rightAnswer;
     }
 
-    public void setRightAnswer(int rightAnswer) {
+    public void setRightAnswer(Integer rightAnswer) {
         this.rightAnswer = rightAnswer;
     }
 

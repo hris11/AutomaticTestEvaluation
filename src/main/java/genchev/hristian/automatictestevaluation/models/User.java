@@ -1,37 +1,54 @@
 package genchev.hristian.automatictestevaluation.models;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import javax.ws.rs.Consumes;
 import java.util.List;
 
+@Entity
+@Table(name = "users")
 public class User {
+
+
     /*email, password, first name, last name, relation one to many with |Classes database|*/
     @JsonIgnore
-    private int id;
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private Integer id;
+    @Column(nullable = false, length = 50)
     private String email;
+    @Column(nullable = false, length = 30)
     private String password;
+    @Column( nullable = false, length = 30)
     private String firstName;
-    private String secondName;
-    @JsonIgnore
-    private List<Class> classes;
+    @Column(nullable = false, length = 30)
+    private String lastName;
+    /*@OneToMany
+    @JoinColumn(name = "id")
+    private List<Class> classes;*/
 
     public User() {}
 
-    public User(int id, String email, String password, String firstName, String secondName, List<Class> classes) {
+    public User(Integer id, String email, String password, String firstName, String lastName, List<Class> classes) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
-        this.secondName = secondName;
-        this.classes = classes;
+        this.lastName = lastName;
+//        this.classes = classes;
     }
 
-    @JsonIgnore
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    @JsonIgnore
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -56,25 +73,23 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getSecondName() {
-        return secondName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    @JsonIgnore
-    public List<Class> getClasses() {
+    /*public List<Class> getClasses() {
         return classes;
     }
 
-    @JsonIgnore
     public void setClasses(List<Class> classes) {
         this.classes = classes;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
@@ -87,7 +102,7 @@ public class User {
             return false;
         if (getFirstName() != null ? !getFirstName().equals(user.getFirstName()) : user.getFirstName() != null)
             return false;
-        if (getSecondName() != null ? !getSecondName().equals(user.getSecondName()) : user.getSecondName() != null)
+        if (getLastName() != null ? !getLastName().equals(user.getLastName()) : user.getLastName() != null)
             return false;
         return getClasses() != null ? getClasses().equals(user.getClasses()) : user.getClasses() == null;
     }
@@ -98,9 +113,8 @@ public class User {
         result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
         result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
         result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
-        result = 31 * result + (getSecondName() != null ? getSecondName().hashCode() : 0);
+        result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
         result = 31 * result + (getClasses() != null ? getClasses().hashCode() : 0);
         return result;
-    }
-
+    }*/
 }

@@ -1,12 +1,12 @@
 package genchev.hristian.automatictestevaluation.rest;
 
 import com.sun.jersey.spi.resource.Singleton;
-import javax.ws.rs.CookieParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
+import genchev.hristian.automatictestevaluation.models.User;
+import genchev.hristian.automatictestevaluation.services.UserService;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 
@@ -38,6 +38,19 @@ public class AuthService {
         NewCookie nc = new NewCookie(loginCookie, "", 0, false); // Ask the browser to delete the cookie
         
         return Response.ok().cookie(nc).build();
+    }
+
+    @POST
+    @Path("register")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public User register(User u) {
+        UserService userService = new UserService();
+
+        System.out.println("Email: " + u.getEmail());
+        System.out.println(userService.registerUser(u));
+
+        return u;
     }
     
 }

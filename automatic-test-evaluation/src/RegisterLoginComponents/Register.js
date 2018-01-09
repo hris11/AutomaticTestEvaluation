@@ -25,7 +25,7 @@ class RegisterComponent extends Component {
         // here we send the registration information to the backend and expect to be sent confirmation mail to the user's
         // mail
         // the router magic is here
-        let url = "/rest/register";
+        let url = "/rest/auth/register";
 //        url += "?email="+this.state.email;
 //        url += "&password="+this.state.password;
 //        url += "&firstName="+this.state.firstName;
@@ -40,7 +40,8 @@ class RegisterComponent extends Component {
                 email: this.state.email,
                 password: this.state.password,
                 firstName: this.state.firstName,
-                secondName: this.state.lastName
+                lastName: this.state.lastName,
+                classes: null
             }),
             headers: headers
         };
