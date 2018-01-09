@@ -26,22 +26,22 @@ class RegisterComponent extends Component {
         // mail
         // the router magic is here
         let url = "/rest/register";
-        url += "?email="+this.state.email;
-        url += "&password="+this.state.password;
-        url += "&firstName="+this.state.firstName;
-        url += "&lastName="+this.state.lastName;
+//        url += "?email="+this.state.email;
+//        url += "&password="+this.state.password;
+//        url += "&firstName="+this.state.firstName;
+//        url += "&lastName="+this.state.lastName;
 
         let headers = new Headers();
         headers.append("Content-Type", "application/json");
 
         const options = {
             method: 'POST',
-            body: {
+            body: JSON.stringify({
                 email: this.state.email,
                 password: this.state.password,
                 firstName: this.state.firstName,
-                lastName: this.state.lastName
-            },
+                secondName: this.state.lastName
+            }),
             headers: headers
         };
 
