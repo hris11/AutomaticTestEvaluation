@@ -9,26 +9,34 @@ import javax.persistence.*;
 @Entity
 @Table(name = "students")
 public class Student implements Serializable {
-    /*first name, last name, number in class, average marks, ...*/
+
     @JsonIgnore
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
     private Integer id;
+
     @Column(nullable = false, length = 50)
     private String firstName;
+
     @Column(nullable = false, length = 50)
     private String lastName;
+
     @Column(nullable = false)
     private Integer number;
 
+    @Column(name = "class_id")
+    @JsonIgnore
+    private Integer classId;
+
     public Student() {}
 
-    public Student(Integer id, String firstName, String lastName, Integer number) {
+    public Student(Integer id, String firstName, String lastName, Integer number, Integer classId) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.number = number;
+        this.classId = classId;
     }
 
     public Integer getId() {
@@ -63,6 +71,14 @@ public class Student implements Serializable {
         this.number = number;
     }
 
+    public Integer getClassId() {
+        return classId;
+    }
+
+    public void setClassId(Integer classId) {
+        this.classId = classId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,7 +91,8 @@ public class Student implements Serializable {
             return false;
         if (getLastName() != null ? !getLastName().equals(student.getLastName()) : student.getLastName() != null)
             return false;
-        return getNumber() != null ? getNumber().equals(student.getNumber()) : student.getNumber() == null;
+        if (getNumber() != null ? !getNumber().equals(student.getNumber()) : student.getNumber() != null) return false;
+        return getClassId() != null ? getClassId().equals(student.getClassId()) : student.getClassId() == null;
     }
 
     @Override
@@ -84,6 +101,7 @@ public class Student implements Serializable {
         result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
         result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
         result = 31 * result + (getNumber() != null ? getNumber().hashCode() : 0);
+        result = 31 * result + (getClassId() != null ? getClassId().hashCode() : 0);
         return result;
     }
 }

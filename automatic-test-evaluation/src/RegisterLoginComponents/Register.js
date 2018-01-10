@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import RefreshIndicator from 'material-ui/RefreshIndicator';
 import './Register.css'
+import {CircularProgress} from "material-ui";
 
 class RegisterComponent extends Component {
     constructor(props) {
@@ -22,15 +24,10 @@ class RegisterComponent extends Component {
     }
 
     registerSubmit() {
-        // here is where the magic happens
-        // here we send the registration information to the backend and expect to be sent confirmation mail to the user's
-        // mail
-        // the router magic is here
+        this.handleRegisterStatus(3);
+        /*
+        * Started spinner*/
         let url = "/rest/auth/register";
-//        url += "?email="+this.state.email;
-//        url += "&password="+this.state.password;
-//        url += "&firstName="+this.state.firstName;
-//        url += "&lastName="+this.state.lastName;
 
         let headers = new Headers();
         headers.append("Content-Type", "application/json");
@@ -41,7 +38,8 @@ class RegisterComponent extends Component {
                 email: this.state.email,
                 password: this.state.password,
                 firstName: this.state.firstName,
-                lastName: this.state.lastName
+                lastName: this.state.lastName,
+                classes: [{name: 'test'}, {name: 'test2'}, {name: 'test3'}]
             }),
             headers: headers
         };
@@ -49,12 +47,15 @@ class RegisterComponent extends Component {
         const self = this;
         fetch(url, options)
             .then(function (response) {
-                self.handleRegisterStatus(3);
                 if (response.ok) {
+                    /*
+                    * Welcome message*/
                     self.handleRegisterStatus(2);
                 }
             })
             .catch(function (error) {
+                /*
+                * Return to register*/
                 self.handleRegisterStatus(1);
                 console.error(error);
             });
@@ -275,7 +276,7 @@ class RegisterComponent extends Component {
         } else if (this.state.registerStatus === 3) {
             return (
                 <div>
-                    Proceeding request
+                    <CircularProgress />
                 </div>
             );
         } else {

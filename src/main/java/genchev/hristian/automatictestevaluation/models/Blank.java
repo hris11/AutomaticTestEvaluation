@@ -10,24 +10,31 @@ import java.util.List;
 @Entity
 @Table(name = "blanks")
 public class Blank implements Serializable {
-    /*number of answer fields, relation one to many with |Answers database|*/
+
     @JsonIgnore
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
     private Integer id;
+
     @Column(nullable = false)
     private Integer numberOfAnswers;
-    @OneToMany
-    @JoinColumn(name = "id")
+
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "blank_id")
     private List<Answer> answers;
+
+    @Column(name = "class_id")
+    @JsonIgnore
+    private Integer classId;
 
     public Blank() {}
 
-    public Blank(Integer id, Integer numberOfAnswers, List<Answer> answers) {
+    public Blank(Integer id, Integer numberOfAnswers, List<Answer> answers, Integer classId) {
         this.id = id;
         this.numberOfAnswers = numberOfAnswers;
         this.answers = answers;
+        this.classId = classId;
     }
 
     public Integer getId() {
@@ -54,6 +61,14 @@ public class Blank implements Serializable {
         this.answers = answers;
     }
 
+    public Integer getClassId() {
+        return classId;
+    }
+
+    public void setClassId(Integer classId) {
+        this.classId = classId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,16 +76,19 @@ public class Blank implements Serializable {
 
         Blank blank = (Blank) o;
 
-        if (getId() != blank.getId()) return false;
-        if (getNumberOfAnswers() != blank.getNumberOfAnswers()) return false;
-        return getAnswers() != null ? getAnswers().equals(blank.getAnswers()) : blank.getAnswers() == null;
+        if (getId() != null ? !getId().equals(blank.getId()) : blank.getId() != null) return false;
+        if (getNumberOfAnswers() != null ? !getNumberOfAnswers().equals(blank.getNumberOfAnswers()) : blank.getNumberOfAnswers() != null)
+            return false;
+        if (getAnswers() != null ? !getAnswers().equals(blank.getAnswers()) : blank.getAnswers() != null) return false;
+        return getClassId() != null ? getClassId().equals(blank.getClassId()) : blank.getClassId() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = getId();
-        result = 31 * result + getNumberOfAnswers();
+        int result = getId() != null ? getId().hashCode() : 0;
+        result = 31 * result + (getNumberOfAnswers() != null ? getNumberOfAnswers().hashCode() : 0);
         result = 31 * result + (getAnswers() != null ? getAnswers().hashCode() : 0);
+        result = 31 * result + (getClassId() != null ? getClassId().hashCode() : 0);
         return result;
     }
 }

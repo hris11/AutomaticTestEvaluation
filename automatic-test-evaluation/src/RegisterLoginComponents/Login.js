@@ -2,6 +2,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import React, {Component} from 'react'
+import {CircularProgress} from "material-ui";
 
 class LoginComponent extends Component {
 
@@ -11,25 +12,94 @@ class LoginComponent extends Component {
             email:'',
             password:'',
             emailSubmitState: false,
+            loginContent: 'login'
         }
     }
 
-    handleLoginSubmit() {
+    handleLoginSubmit(event) {
+        console.log("Starting fetch");
+        this.handleLoginStatus('spinner');
         let url = "/rest/auth/login";
-        url += "?username="+this.state.email;
-        url += "&password="+this.state.password;
+
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
         const options = {
-            method: 'POST'
+            method: 'POST',
+            body: JSON.stringify({
+                email: this.state.email,
+                password: this.state.password,
+            }),
+            headers: headers
         };
         const self = this;
         fetch(url, options)
-        .then(function (response) {
-            if (response.ok) {
-                // update state for successful authentication
-            }
-        })
+            .then(function (response) {
+                if (response.ok) {
+                    self.handleLoginStatus('success');
+                } else if(response.status === 401) {
+                    self.handleLoginStatus('login');
+                } else {
+                    console.log("Kefi se");
+                }
+            })
         .catch(function (error) {
             console.error(error);        
+        });
+    }
+
+    getLoginContent() {
+        if (this.state.loginContent === 'login') {
+            return (
+                <MuiThemeProvider>
+                    <div>
+                        <TextField
+                            hintText="Въведете Email"
+                            floatingLabelText="Email"
+                            onChange = {(event, newValue) => this.checkEmailField(event, newValue)}
+                        /> <br/>
+
+                        <TextField
+                            type="password"
+                            hintText="Въведете парола"
+                            floatingLabelText="Парола"
+                            onChange = {(event, newValue) => this.setState({password: newValue})}
+                        />
+                        <br/>
+                        <RaisedButton
+                            label="Вписване"
+                            primary={true}
+                            style={style}
+                            onClick={(event) => this.handleLoginSubmit(event)}
+                            disabled={!this.handleSubmitButtonState()}
+                        />
+                    </div>
+                </MuiThemeProvider>
+            );
+        } else if (this.state.loginContent === 'spinner') {
+            return (
+                <div>
+                    <CircularProgress />
+                </div>
+            );
+        } else if (this.state.loginContent === 'success') {
+            return (
+                <div>
+                    WELCOME
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    Error apeared;
+                </div>
+            );
+        }
+    }
+
+    handleLoginStatus(screen) {
+        this.setState({
+            loginContent: screen
         });
     }
 
@@ -72,30 +142,7 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-                <MuiThemeProvider>
-                    <div>
-                        <TextField
-                            hintText="Въведете Email"
-                            floatingLabelText="Email"
-                            onChange = {(event, newValue) => this.checkEmailField(event, newValue)}
-                        /> <br/>
-
-                        <TextField
-                            type="password"
-                            hintText="Въведете парола"
-                            floatingLabelText="Парола"
-                            onChange = {(event, newValue) => this.setState({password: newValue})}
-                        />
-                        <br/>
-                        <RaisedButton
-                            label="Вписване"
-                            primary={true}
-                            style={style}
-                            onClick={() => this.handleLoginSubmit()}
-                            disabled={!this.handleSubmitButtonState()}
-                        />
-                    </div>
-                </MuiThemeProvider>
+                {this.getLoginContent()}
             </div>
         );
     }

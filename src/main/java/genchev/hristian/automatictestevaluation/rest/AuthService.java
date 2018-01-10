@@ -2,6 +2,7 @@ package genchev.hristian.automatictestevaluation.rest;
 
 import com.google.inject.Inject;
 import com.sun.jersey.spi.resource.Singleton;
+import genchev.hristian.automatictestevaluation.models.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.services.UserService;
 
@@ -27,14 +28,22 @@ public class AuthService {
     
     @POST
     @Path("login")
-    public Response login(@QueryParam("username") String name, @QueryParam("password") String password) {
-        System.out.println("Name: " + name);
-        System.out.println("Password: " + password);
-        
-        Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "success");
-        NewCookie nc = new NewCookie(loginCookie, "", -1, false);
-        
-        return Response.ok().cookie(nc).build();
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response login(LoginUser loginUser) {
+        System.out.println("email: " + loginUser.getEmail());
+        System.out.println("password: " + loginUser.getPassword());
+
+        if (userService.authLoginUser(loginUser)) {
+            Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "success");
+            NewCookie nc = new NewCookie(loginCookie, "", -1, false);
+
+            System.out.println("Lognat si chestito");
+            return Response.ok().cookie(nc).build();
+        } else {
+            System.out.println("new si lognat brat");
+            return Response.status(401).build();
+        }
+
     }
     
     @POST

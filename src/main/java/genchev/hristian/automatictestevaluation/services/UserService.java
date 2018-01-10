@@ -1,6 +1,7 @@
 package genchev.hristian.automatictestevaluation.services;
 
 import com.google.inject.Inject;
+import genchev.hristian.automatictestevaluation.models.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.repository.UserRepository;
 import java.util.List;
@@ -40,16 +41,20 @@ public class UserService {
             * Incorrect password*/
             return 5;
         }
-
+        containsEmail(user);
         /*
         * All checks are done*/
-        userRepository.save(user);
+        userRepository.insert(user);
 
         return 0;
     }
 
     public boolean containsEmail(User user) {
-        List<User> users = userRepository.findByEmail(user);
+        List<User> users = userRepository.getUsers();
+
+        for (User u : users) {
+            System.out.println(u.getEmail());
+        }
 
         if (users != null && users.size() != 0) {
             return true;
@@ -58,5 +63,7 @@ public class UserService {
         return false;
     }
 
-
+    public boolean authLoginUser(LoginUser loginUser) {
+        return userRepository.checkLogin(loginUser);
+    }
 }

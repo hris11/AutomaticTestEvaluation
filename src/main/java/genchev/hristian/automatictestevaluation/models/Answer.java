@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "answers")
 public class Answer implements Serializable {
-    /*group of answers, number of options, number of answer, right answer, ...*/
+
     @JsonIgnore
     @Id
     @GeneratedValue(generator="increment")
@@ -28,14 +28,19 @@ public class Answer implements Serializable {
     @Column(nullable = false)
     private Integer rightAnswer;
 
+    @Column(name = "blank_id")
+    @JsonIgnore
+    private Integer blankId;
+
     public Answer() {}
 
-    public Answer(Integer id, Integer groups, Integer options, Integer index, Integer rightAnswer) {
+    public Answer(Integer id, Integer groups, Integer options, Integer index, Integer rightAnswer, Integer blankId) {
         this.id = id;
         this.groups = groups;
         this.options = options;
         this.index = index;
         this.rightAnswer = rightAnswer;
+        this.blankId = blankId;
     }
 
     public Integer getId() {
@@ -78,6 +83,14 @@ public class Answer implements Serializable {
         this.rightAnswer = rightAnswer;
     }
 
+    public Integer getBlankId() {
+        return blankId;
+    }
+
+    public void setBlankId(Integer blankId) {
+        this.blankId = blankId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -85,20 +98,24 @@ public class Answer implements Serializable {
 
         Answer answer = (Answer) o;
 
-        if (getId().compareTo(answer.getId()) != 0) return false;
-        if (getGroup().compareTo(answer.getGroup()) != 0) return false;
-        if (getOptions().compareTo(answer.getOptions()) != 0) return false;
-        if (getIndex().compareTo(answer.getIndex()) != 0) return false;
-        return getRightAnswer().compareTo(answer.getRightAnswer()) == 0;
+        if (getId() != null ? !getId().equals(answer.getId()) : answer.getId() != null) return false;
+        if (groups != null ? !groups.equals(answer.groups) : answer.groups != null) return false;
+        if (getOptions() != null ? !getOptions().equals(answer.getOptions()) : answer.getOptions() != null)
+            return false;
+        if (getIndex() != null ? !getIndex().equals(answer.getIndex()) : answer.getIndex() != null) return false;
+        if (getRightAnswer() != null ? !getRightAnswer().equals(answer.getRightAnswer()) : answer.getRightAnswer() != null)
+            return false;
+        return getBlankId() != null ? getBlankId().equals(answer.getBlankId()) : answer.getBlankId() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = getId();
-        result = 31 * result + getGroup();
-        result = 31 * result + getOptions();
-        result = 31 * result + getIndex();
-        result = 31 * result + getRightAnswer();
+        int result = getId() != null ? getId().hashCode() : 0;
+        result = 31 * result + (groups != null ? groups.hashCode() : 0);
+        result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+        result = 31 * result + (getIndex() != null ? getIndex().hashCode() : 0);
+        result = 31 * result + (getRightAnswer() != null ? getRightAnswer().hashCode() : 0);
+        result = 31 * result + (getBlankId() != null ? getBlankId().hashCode() : 0);
         return result;
     }
 }

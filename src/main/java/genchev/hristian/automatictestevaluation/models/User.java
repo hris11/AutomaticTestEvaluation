@@ -12,24 +12,27 @@ import java.util.List;
 @Table(name = "users")
 public class User implements Serializable {
 
-
-    /*email, password, first name, last name, relation one to many with |Classes database|*/
     @JsonIgnore
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
     private Integer id;
+
     @Column(nullable = false, length = 50)
     private String email;
-    @Column(nullable = false, length = 30)
+
+    @Column(nullable = false, length = 32)
     private String password;
+
     @Column( nullable = false, length = 30)
     private String firstName;
+
     @Column(nullable = false, length = 30)
     private String lastName;
-    /*@OneToMany
-    @JoinColumn(name = "id")
-    private List<Class> classes;*/
+
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "user_id")
+    private List<Class> classes;
 
     public User() {}
 
@@ -39,7 +42,7 @@ public class User implements Serializable {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-//        this.classes = classes;
+        this.classes = classes;
     }
 
     public Integer getId() {
@@ -82,15 +85,15 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    /*public List<Class> getClasses() {
+    public List<Class> getClasses() {
         return classes;
     }
 
     public void setClasses(List<Class> classes) {
         this.classes = classes;
-    }*/
+    }
 
-    /*@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
@@ -117,5 +120,5 @@ public class User implements Serializable {
         result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
         result = 31 * result + (getClasses() != null ? getClasses().hashCode() : 0);
         return result;
-    }*/
+    }
 }
