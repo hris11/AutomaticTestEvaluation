@@ -8,7 +8,7 @@ class App extends Component {
         this.state = {
             data: '', // will contain response from AJAX request
             error: '', // will contain any network errors occured from AJAX request
-            loginStatus: false
+            loginStatus: true
         };
     }
 

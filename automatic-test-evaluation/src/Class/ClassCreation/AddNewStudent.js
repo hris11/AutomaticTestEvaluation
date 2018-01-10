@@ -10,43 +10,7 @@ const style = {
 };
 
 class AddNewStudent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            studentFirstName: '',
-            studentSecondName: '',
-            studentLastName: ''
-        }
-    }
 
-    handleFirstName(event, value) {
-        console.log(event);
-        let state;
-        state = {
-            studentFirstName: value
-        };
-        this.setState(state);
-    }
-
-    handleSecondName(event, value) {
-        let state;
-        state = {
-            studentSecondName: value
-        };
-        this.setState(state);
-    }
-
-    handleLastName(event, value) {
-        let state;
-        state = {
-            studentLastName: value
-        };
-        this.setState(state);
-    }
-
-    addNewStudent(event) {
-        // router magic here
-    }
 
     render() {
         return (
@@ -58,21 +22,21 @@ class AddNewStudent extends Component {
                         hintText="Име"
                         style={style}
                         underlineShow={false}
-                        onChange={(event, value) => this.handleFirstName(event, value)}
-                    />
-                    <Divider/>
-                    <TextField
-                        hintText="Презиме"
-                        style={style}
-                        underlineShow={false}
-                        onChange={(event, value) => this.handleSecondName(event, value)}
+                        onChange={(event, value) => this.props.handleFirstName(event, value)}
                     />
                     <Divider/>
                     <TextField
                         hintText="Фамилия"
                         style={style}
                         underlineShow={false}
-                        onChange={(event, value) => this.handleLastName(event, value)}
+                        onChange={(event, value) => this.props.handleLastName(event, value)}
+                    />
+                    <Divider/>
+                    <TextField
+                        hintText="Номер"
+                        style={style}
+                        underlineShow={false}
+                        onChange={(event, value) => this.props.handleNumber(event, value)}
                     />
                     <Divider/>
                 </Paper>

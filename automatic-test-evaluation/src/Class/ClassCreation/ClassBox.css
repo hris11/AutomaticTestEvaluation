@@ -1,0 +1,15 @@
+.class-box-main-box{
+    text-align: center;
+    width: 50%;
+}
+
+.class-box-content-holder {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.class-box-name-picker {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

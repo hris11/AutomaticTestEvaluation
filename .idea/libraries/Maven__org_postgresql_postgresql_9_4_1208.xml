@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.4.1208/postgresql-9.4.1208.jar!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.4.1208/postgresql-9.4.1208-sources.jar!/" />
     </SOURCES>

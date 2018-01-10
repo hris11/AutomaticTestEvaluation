@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-servlet/3.0/guice-servlet-3.0.jar!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-servlet/3.0/guice-servlet-3.0-sources.jar!/" />
     </SOURCES>

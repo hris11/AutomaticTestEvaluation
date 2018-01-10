@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TextField} from "material-ui";
+import {RaisedButton, TextField} from "material-ui";
 import AddNewStudent from "./AddNewStudent";
 import './ClassBox.css';
 import ClassNamePicker from "./ClassNamePicker";
@@ -11,7 +11,25 @@ class ClassBox extends Component {
             className: '',
             newClassName: '',
             students: [],
-            newClassButtonState: false
+            newClassButtonState: false,
+
+            studentFirstName: '',
+            studentLastName: '',
+            studentNumber: undefined,
+
+            data: [
+                {
+                    studentFirstName: 'TEst',
+                    studentSecondName: 'lastNameTEST',
+                    studentNumber: 12
+                },
+                {
+                    studentFirstName: 'TEst2',
+                    studentSecondName: 'lastNameTEST2',
+                    studentNumber: 13
+                }
+            ]
+
         }
     }
 
@@ -37,8 +55,6 @@ class ClassBox extends Component {
     nameChangeErrorText() {
         if (this.state.newClassName === '') {
             return 'Моля изберете име';
-        } else if (false) { /*implement the checking if exists*/
-
         } else {
             return false;
         }
@@ -52,46 +68,110 @@ class ClassBox extends Component {
         }
     }
 
+    handleFirstName(event, value) {
+        console.log(event);
+        let state;
+        state = {
+            studentFirstName: value
+        };
+        this.setState(state);
+    }
+
+    handleLastName(event, value) {
+        let state;
+        state = {
+            studentLastName: value
+        };
+        this.setState(state);
+    }
+
+    handleNumber(event, value) {
+        let state;
+        state = {
+            studentLastName: value
+        };
+        this.setState(state);
+    }
+
+    getStudents() {
+        let result = [];
+
+        for (let i = 0; i < this.state.data.length; i++) {
+            let key = "mn test" + i;
+            result.push(
+                <li key={key}>
+                    {this.state.data[i].studentFirstName}
+                    {this.state.data[i].studentLastName}
+                    {this.state.data[i].studentNumber}
+                </li>
+            )
+        }
+
+        return result;
+    }
+
     getContent() {
         if (this.state.className === '') {
             /*the name is not picked yet*/
-            return <ClassNamePicker
-                handleNameChange={(event, newValue) => this.handleNameChange(event, newValue)}
-                nameChangeErrorText={() => this.nameChangeErrorText()}
-                handleNameChangeButton={(event) => this.handleNameChangeButton(event)}
-            />
+            return (
+                <div className="class-box-name-picker">
+                    <ClassNamePicker
+                        buttonState={this.state.newClassButtonState}
+                        handleNameChange={(event, newValue) => this.handleNameChange(event, newValue)}
+                        nameChangeErrorText={() => this.nameChangeErrorText()}
+                        handleNameChangeButton={(event) => this.handleNameChangeButton(event)}
+                    />
+                </div>
+            );
         } else {
             /*the name is selected and now the user can add new Students*/
-            return 'yes';
+            return (
+                <div className="class-box-content-holder">
+                    <div>
+                        Students:
+                        <ol>
+                            {this.getStudents()}
+                        </ol>
+                    </div>
+                    <div>
+                        <AddNewStudent
+                            handleFirstName={(event, value) => this.handleFirstName(event, value)}
+                            handleLastName={(event, value) => this.handleLastName(event, value)}
+                            handleNumber={(event, value) => this.handleNumber(event, value)}
+                        />
+                        <RaisedButton
+                            primary={true}
+                            label="Добави ученик"
+                            onClick={(event) =>this.addNewStudent(event)}
+                        />
+                    </div>
+                </div>
+            );
+
         }
     }
 
     render() {
         return (
-            <div>
+            <div className="class-box-main-box">
+                <span>{this.state.className}</span>
                 {this.getContent()}
-
-            {/*<div className="class-name-picker">
-                <div>
-                    <p>
-                        Изберете име на класа
-                    </p>
-
-                </div>
-                <div className="class-box-students-list">
-
-                        Load the list of Students
-
-                </div>
-                <div className="class-box-new-student">
-
-                        Can add new Student to the list
-
-                    <AddNewStudent/>
-                </div>
-            </div>*/}
             </div>
         );
+    }
+
+    addNewStudent(event) {
+        let mem = this.state.data;
+
+        mem.push({
+            studentFirstName: this.state.studentFirstName,
+            studentSecondName: this.state.studentLastName,
+            studentNumber: this.state.studentNumber
+        });
+
+        this.setState({
+            data: mem
+        });
     }
 }
 

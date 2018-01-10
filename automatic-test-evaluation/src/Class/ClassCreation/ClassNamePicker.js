@@ -9,14 +9,15 @@ class ClassNamePicker extends Component {
             <div className="class-name-picker-box">
                 <TextField
                     hintText="Име на класа"
-                    floatingLabelText="dsa"
+                    floatingLabelText="Клас"
                     onChange={(event, newValue) => this.props.handleNameChange(event, newValue)}
                     errorText={this.props.nameChangeErrorText()}
                 />
+                <br/>
                 <RaisedButton
                     primary={true}
-                    label="Напред"
-                    onClick={(event) => this.props.handleNameChangeButton(event)}
+                    label="Избери"
+                    onClick={(event) => this.props.handleNameChangeButton()}
                 />
             </div>
         );
