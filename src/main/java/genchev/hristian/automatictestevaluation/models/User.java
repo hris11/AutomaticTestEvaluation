@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
 
     /*email, password, first name, last name, relation one to many with |Classes database|*/

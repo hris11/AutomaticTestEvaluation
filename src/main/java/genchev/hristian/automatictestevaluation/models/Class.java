@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -8,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "classes")
-public class Class {
+public class Class implements Serializable {
    /* relation one to many with |Students database|, class name, rel
             ation one to many with |Class information database|, relation one to
     many with |Blanks database|*/

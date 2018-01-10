@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.rest;
 
+import com.google.inject.Inject;
 import com.sun.jersey.spi.resource.Singleton;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.services.UserService;
@@ -16,6 +17,13 @@ public class AuthService {
     private static final long serialVersionUID = 1L;
     
     private final String SESSION_COOKIE_NAME = "ate-session";
+    
+    private UserService userService;
+    
+    @Inject
+    public AuthService(UserService userService) {
+        this.userService = userService;
+    }
     
     @POST
     @Path("login")
@@ -45,7 +53,6 @@ public class AuthService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public User register(User u) {
-        UserService userService = new UserService();
 
         System.out.println("Email: " + u.getEmail());
         System.out.println(userService.registerUser(u));

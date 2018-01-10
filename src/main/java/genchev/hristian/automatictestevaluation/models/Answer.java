@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -7,27 +8,31 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "answers")
-public class Answer {
+public class Answer implements Serializable {
     /*group of answers, number of options, number of answer, right answer, ...*/
     @JsonIgnore
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
     private Integer id;
+    
     @Column(nullable = false)
-    private Integer group;
+    private Integer groups;
+    
     @Column(nullable = false)
     private Integer options;
+    
     @Column(nullable = false)
     private Integer index;
+    
     @Column(nullable = false)
     private Integer rightAnswer;
 
     public Answer() {}
 
-    public Answer(Integer id, Integer group, Integer options, Integer index, Integer rightAnswer) {
+    public Answer(Integer id, Integer groups, Integer options, Integer index, Integer rightAnswer) {
         this.id = id;
-        this.group = group;
+        this.groups = groups;
         this.options = options;
         this.index = index;
         this.rightAnswer = rightAnswer;
@@ -42,11 +47,11 @@ public class Answer {
     }
 
     public Integer getGroup() {
-        return group;
+        return groups;
     }
 
-    public void setGroup(Integer group) {
-        this.group = group;
+    public void setGroup(Integer groups) {
+        this.groups = groups;
     }
 
     public Integer getOptions() {
@@ -80,11 +85,11 @@ public class Answer {
 
         Answer answer = (Answer) o;
 
-        if (getId() != answer.getId()) return false;
-        if (getGroup() != answer.getGroup()) return false;
-        if (getOptions() != answer.getOptions()) return false;
-        if (getIndex() != answer.getIndex()) return false;
-        return getRightAnswer() == answer.getRightAnswer();
+        if (getId().compareTo(answer.getId()) != 0) return false;
+        if (getGroup().compareTo(answer.getGroup()) != 0) return false;
+        if (getOptions().compareTo(answer.getOptions()) != 0) return false;
+        if (getIndex().compareTo(answer.getIndex()) != 0) return false;
+        return getRightAnswer().compareTo(answer.getRightAnswer()) == 0;
     }
 
     @Override

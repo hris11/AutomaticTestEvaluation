@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -7,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "students")
-public class Student {
+public class Student implements Serializable {
     /*first name, last name, number in class, average marks, ...*/
     @JsonIgnore
     @Id

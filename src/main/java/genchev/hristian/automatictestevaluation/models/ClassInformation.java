@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.models;
 
+import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
@@ -9,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "classinformation")
-public class ClassInformation {
+public class ClassInformation implements Serializable{
     @JsonIgnore
     @Id
     @GeneratedValue(generator="increment")

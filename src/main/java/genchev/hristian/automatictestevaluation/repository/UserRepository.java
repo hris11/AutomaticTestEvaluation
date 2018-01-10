@@ -1,110 +1,33 @@
 package genchev.hristian.automatictestevaluation.repository;
 
+import com.google.inject.Inject;
 import genchev.hristian.automatictestevaluation.models.User;
-import genchev.hristian.automatictestevaluation.rest.SampleRESTWebService;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.ws.rs.core.Response;
-import java.net.URISyntaxException;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.persistence.EntityManager;
 
 public class UserRepository {
 
+    private EntityManager entityManager;
+
+    @Inject
+    public UserRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public void save(User object) {
+        this.entityManager.getTransaction().begin();
+        entityManager.persist(object);
+        this.entityManager.getTransaction().commit();
+    }
+
     public List<User> getUsers() {
-        EntityManagerFactory emf = null;
-        EntityManager em = null;
-        Map<String, Object> configOverrides = null;
-        List<User> result = null;
-        try {
-            configOverrides = ConfigDBConnection.configureDbConnection();
-            emf = Persistence.createEntityManagerFactory("my-pu", configOverrides);
-
-            em = emf.createEntityManager(); // Retrieve an application managed entity manager
-            // Work with the EM
-
-            // Select rows
-            em.getTransaction().begin();
-                result = em.createQuery( "from users", User.class ).getResultList();
-            em.getTransaction().commit();
-
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(SampleRESTWebService.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-            if (emf != null) {
-                emf.close(); //close at application end
-            }
-        }
-
-        return result;
+        return entityManager.createQuery("from users", User.class).getResultList();
     }
 
     public List<User> findByEmail(User user) {
-        EntityManagerFactory emf = null;
-        EntityManager em = null;
-        Map<String, Object> configOverrides = null;
-        List<User> result = null;
-        try {
-            configOverrides = ConfigDBConnection.configureDbConnection();
-            emf = Persistence.createEntityManagerFactory("my-pu", configOverrides);
-
-            em = emf.createEntityManager(); // Retrieve an application managed entity manager
-            // Work with the EM
-
-            // Select rows
-            em.getTransaction().begin();
-            result = em.createQuery( "from users where name = :email", User.class )
-                    .setParameter("email", user.getEmail())
-                    .getResultList();
-            em.getTransaction().commit();
-
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(SampleRESTWebService.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-            if (emf != null) {
-                emf.close(); //close at application end
-            }
-        }
-
-        return result;
+        return entityManager.createQuery("from users where name = :email", User.class)
+                .setParameter("email", user.getEmail())
+                .getResultList();
     }
-
-    public void registerUser(User user) {
-        EntityManagerFactory emf = null;
-        EntityManager em = null;
-        Map<String, Object> configOverrides = null;
-        try {
-            configOverrides = ConfigDBConnection.configureDbConnection();
-            emf = Persistence.createEntityManagerFactory("my-pu", configOverrides);
-
-            em = emf.createEntityManager(); // Retrieve an application managed entity manager
-            // Work with the EM
-
-            // Insert row
-            em.getTransaction().begin();
-            em.persist(user);
-            em.getTransaction().commit();
-
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(SampleRESTWebService.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-            if (emf != null) {
-                emf.close(); //close at application end
-            }
-        }
-    }
-
 
 }
