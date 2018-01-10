@@ -34,8 +34,9 @@ public class AuthService {
         System.out.println("password: " + loginUser.getPassword());
 
         if (userService.authLoginUser(loginUser)) {
+
             Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "success");
-            NewCookie nc = new NewCookie(loginCookie, "", -1, false);
+            NewCookie nc = new NewCookie(loginCookie, "", 60*60*24, false);
 
             System.out.println("Lognat si chestito");
             return Response.ok().cookie(nc).build();
