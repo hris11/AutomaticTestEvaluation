@@ -24,11 +24,13 @@ public class UserRepository implements RepositoryInterface<User>{
         return result;
     }
 
-    public List<User> findByEmail(User user) {
+
+    public List<User> findByEmail(String email) {
+
         List<User> result = null;
         this.entityManager.getTransaction().begin();
         result = entityManager.createQuery("from User where email = :email", User.class)
-                .setParameter("email", user.getEmail())
+                .setParameter("email", email)
                 .getResultList();
         this.entityManager.getTransaction().commit();
 

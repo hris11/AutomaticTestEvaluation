@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import MainNavigationComponent from './Navigation/TopNavigation'
 
+/*
+* Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
+Copyright (c) 1995-2003 by Internet Software Consortium*/
+
 class App extends Component {
 
     constructor(props) {
@@ -8,17 +12,24 @@ class App extends Component {
         this.state = {
             data: '', // will contain response from AJAX request
             error: '', // will contain any network errors occured from AJAX request
-            loginStatus: false
+            loginStatus: false,
+            loggedMail: ''
         };
     }
 
-    handleLogout() {
+    handleLogout(event) {
         this.setState({
             loginStatus: false
         });
     }
 
-    handleLogin() {
+    setMail(mail) {
+        this.setState({
+            loggedMail: mail
+        })
+    }
+
+    handleLogin(event) {
         this.setState({
             loginStatus: true
         });
@@ -55,8 +66,10 @@ class App extends Component {
             <div>
                 <MainNavigationComponent
                     logged={this.state.loginStatus}
-                    logout={() => this.handleLogout()}
-                    login={() => this.handleLogin()}
+                    logout={(event) => this.handleLogout(event)}
+                    login={(event) => this.handleLogin(event)}
+                    setMail={(mail) => this.setMail(mail)}
+                    email={this.state.loggedMail}
                 />
             </div>
         );

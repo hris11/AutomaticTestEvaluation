@@ -50,11 +50,7 @@ public class UserService {
     }
 
     public boolean containsEmail(User user) {
-        List<User> users = userRepository.getUsers();
-
-        for (User u : users) {
-            System.out.println(u.getEmail());
-        }
+        List<User> users = userRepository.findByEmail(user.getEmail());
 
         if (users != null && users.size() != 0) {
             return true;

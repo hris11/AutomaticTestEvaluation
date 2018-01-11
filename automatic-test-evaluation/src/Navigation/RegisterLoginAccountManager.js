@@ -15,14 +15,16 @@ class RegisterLoginAccountManager extends Component {
         if (this.props.logged === true) {
             return <AccountManager
                 logged={this.props.logged}
-                logout={() => this.props.logout()}
-                login={() => this.props.login()}
+                logout={(event) => this.props.logout(event)}
+                login={(event) => this.props.login(event)}
+                email={this.props.email}
             />;
         } else {
             return <RegisterLoginComponent
                 logged={this.props.logged}
-                logout={() => this.props.logout()}
-                login={() => this.props.login()}
+                logout={(event) => this.props.logout(event)}
+                login={(event) => this.props.login(event)}
+                setMail={(mail) => this.props.setMail(mail)}
             />;
         }
     }

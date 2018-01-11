@@ -10,13 +10,25 @@ class AccountManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            navigationDisplayContent: <ClassesListPreview/>
+            navigationDisplayContent: <ClassesListPreview
+                email={this.props.email}
+            />
         }
     }
 
     handleNewClassButton(event) {
         this.setState({
-            navigationDisplayContent: <ClassBox/>
+            navigationDisplayContent: <ClassBox
+                email={this.props.email}
+            />
+        })
+    }
+
+    handlePreviewClasses(event) {
+        this.setState({
+            navigationDisplayContent: <ClassesListPreview
+                email={this.props.email}
+            />
         })
     }
 
@@ -42,6 +54,13 @@ class AccountManager extends Component {
                         primary={true}
                         onClick={(event) => this.handleNewClassButton(event)}
                         label="Нов Клас"
+                        icon={<NewClass/>}
+                    />
+                    <RaisedButton
+                        className="account-navigation-button"
+                        primary={true}
+                        onClick={(event) => this.handlePreviewClasses(event)}
+                        label="Мойте класове"
                         icon={<NewClass/>}
                     />
                     <RaisedButton

@@ -37,6 +37,7 @@ class LoginComponent extends Component {
             .then(function (response) {
                 if (response.ok) {
                     self.handleLoginStatus('success');
+                    self.props.setMail(self.state.email)
                 } else if(response.status === 401) {
                     self.handleLoginStatus('login');
                 } else {
@@ -86,6 +87,11 @@ class LoginComponent extends Component {
             return (
                 <div>
                     WELCOME
+                    <RaisedButton
+                        label="Напред"
+                        primary={true}
+                        onClick={(event) => this.props.login(event)}
+                    />
                 </div>
             );
         } else {
