@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.sun.jersey.spi.resource.Singleton;
 import genchev.hristian.automatictestevaluation.models.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
+import genchev.hristian.automatictestevaluation.services.SecurityService;
 import genchev.hristian.automatictestevaluation.services.UserService;
 
 import javax.ws.rs.*;
@@ -20,10 +21,12 @@ public class AuthService {
     private final String SESSION_COOKIE_NAME = "ate-session";
     
     private UserService userService;
+    private SecurityService securityService;
     
     @Inject
-    public AuthService(UserService userService) {
+    public AuthService(UserService userService, SecurityService securityService) {
         this.userService = userService;
+        this.securityService = securityService;
     }
     
     @POST
@@ -33,6 +36,9 @@ public class AuthService {
         System.out.println("email: " + loginUser.getEmail());
         System.out.println("password: " + loginUser.getPassword());
 
+        loginUser.setPassword(
+            securityService.encryptPassword(loginUser.getPassword())
+        );
         if (userService.authLoginUser(loginUser)) {
 
             Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "success");
@@ -64,6 +70,9 @@ public class AuthService {
     @Produces(MediaType.APPLICATION_JSON)
     public User register(User u) {
 
+        u.setPassword(
+            securityService.encryptPassword(u.getPassword())
+        );
         System.out.println("Email: " + u.getEmail());
         System.out.println(userService.registerUser(u));
 

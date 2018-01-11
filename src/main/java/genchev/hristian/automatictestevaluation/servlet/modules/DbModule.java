@@ -42,10 +42,6 @@ public class DbModule extends AbstractModule {
             configOverrides.put("hibernate.connection.url", dbUrl);
             configOverrides.put("hibernate.connection.username", username);
             configOverrides.put("hibernate.connection.password", password);
-
-            System.out.println(username);
-            System.out.println(password);
-            System.out.println(dbUrl);
         } catch (URISyntaxException ex) {
             ex.printStackTrace();
         }
