@@ -11,7 +11,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Singleton
-@Path("user/classes")
+@Path("user")
 public class ClassREST {
 
     private ClassServiece classServiece;
@@ -22,12 +22,21 @@ public class ClassREST {
     }
 
     @POST
+    @Path("classes")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public List<Class> getClasses(GetClasses input) {
         String mail = input.getEmail();
-        System.out.println("priemam  zaqvkata");
+        System.out.println("email kato poluchava zaqvka: " + mail);
 
         return classServiece.getAllClasses(mail);
+    }
+
+    @POST
+    @Path("classes/new")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void createClass(Class input) {
+
+        classServiece.createClass(input);
     }
 }

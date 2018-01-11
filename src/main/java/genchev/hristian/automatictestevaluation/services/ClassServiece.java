@@ -21,15 +21,23 @@ public class ClassServiece {
         this.classRepository = classRepository;
     }
 
-    public Integer createClass(Class newClass) {
-        return null;
+    public void createClass(Class newClass) {
+        List<User> users = userRepository.findByEmail("hristiangenchev99@gmail.com");
+        newClass.setUserId(users.get(0).getId());
+
+        classRepository.insert(newClass);
     }
 
     public List<Class> getAllClasses(String email) {
         List<User> users = userRepository.findByEmail(email);
+
+        System.out.println("before loop and email for compare: " + email);
+        for (User u: users) {
+            System.out.println("email: " + u.getEmail());
+            System.out.println("ID: " + u.getId());
+        }
         List<Class> result = null;
 
-        System.out.println("HELLO FROM GET ALL CLASSES");
 
         result = classRepository.findById(users.get(0).getId());
 

@@ -8,10 +8,12 @@ class ClassesListPreview extends Component {
         let headers = new Headers();
         headers.append("Content-Type", "application/json");
 
+        console.log(this.props.email);
+
         const options = {
             method: 'POST',
             body: JSON.stringify({
-                email: this.props.email
+                email: "hristiangenchev99@gmail.com"
             }),
             headers: headers
         };

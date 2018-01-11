@@ -66,6 +66,7 @@ class ClassBox extends Component {
                className: this.state.newClassName
             });
         }
+        this.insertNewClass();
     }
 
     handleFirstName(event, value) {
@@ -172,6 +173,31 @@ class ClassBox extends Component {
         this.setState({
             data: mem
         });
+    }
+
+    insertNewClass() {
+        let url = "/rest/user/classes/new";
+
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify({
+                name: this.state.newClassName
+            }),
+            headers: headers
+        };
+
+        const self = this;
+        fetch(url, options)
+            .then(function (response) {
+                if (response.ok) {
+                }
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
     }
 }
 
