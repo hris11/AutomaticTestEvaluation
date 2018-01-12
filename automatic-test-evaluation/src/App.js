@@ -20,29 +20,38 @@ class App extends Component {
     }
 
     handleLogout(event) {
+        document.cookie = "ate-session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
         this.setState({
             loginStatus: false
         });
     }
 
-    setMail(mail) {
-        console.log(mail);
-        this.setState({
-            loggedMail: mail
-        })
-    }
+    handleLogin(email) {
+        this.setCookie('ate-session', 'true', 1);
+        this.setCookie('email', email, 1);
 
-    handleLogin(event) {
-        const cookies = new Cookies();
-        // TODO citirai https://www.npmjs.com/package/universal-cookie
-        cookies.set('ate-session', "true", { path: '/' });
         this.setState({
-            loginStatus: true
+            loginStatus: true,
+            loggedMail: email
         });
     }
 
     componentWillMount() {
-        console.log(this.getCookie("ate-session"));
+        if (this.getCookie('ate-session') === 'true') {
+            this.setState({
+                loginStatus: true,
+                loggedMail: this.getCookie('email')
+            });
+        }
+    }
+
+    setCookie(cname, cvalue, exdays) {
+        let d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
     getCookie(cname) {
@@ -93,7 +102,7 @@ class App extends Component {
                 <MainNavigationComponent
                     logged={this.state.loginStatus}
                     logout={(event) => this.handleLogout(event)}
-                    login={(event) => this.handleLogin(event)}
+                    login={(email) => this.handleLogin(email)}
                     setMail={(mail) => this.setMail(mail)}
                     email={this.state.loggedMail}
                 />

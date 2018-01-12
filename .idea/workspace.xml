@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bb1c67-adb4-4619-a9b8-5837bfe239dd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/inputModels/NewClassInput.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/inputModels/NewStudentInput.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/StudentRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentREST.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/GetClasses.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/inputModels/InputEmail.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/LoginUser.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/inputModels/LoginUser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/.idea/workspace.xml" afterPath="$PROJECT_DIR$/automatic-test-evaluation/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/App.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/AddNewStudent.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/AddNewStudent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ClassBox.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ClassBox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/ClassesListPreview.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/ClassesListPreview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/SingleClassPreview.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/SingleClassPreview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/RESTCalls/RestCalls.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/RESTCalls/RestCalls.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/RegisterLoginAccountManager.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/RegisterLoginAccountManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/TopNavigation.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/TopNavigation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/RegisterLoginScreen.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/RegisterLoginScreen.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/index.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ClassRepository.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ClassRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthService.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ClassREST.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ClassREST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ClassServiece.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ClassServiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/UserService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/automatic-test-evaluation/node_modules/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -126,16 +111,28 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
-                <marker date="1515794195055" expanded="true" signature="1504:1510" ph="{...}" />
-                <marker date="1515794195055" expanded="true" signature="1537:1996" ph="{...}" />
-                <marker date="1515794195055" expanded="true" signature="1595:1632" ph="{&quot;method&quot;: 'GET'...}" />
-                <marker date="1515794195055" expanded="true" signature="1727:1878" ph="{...}" />
-                <marker date="1515794195055" expanded="true" signature="1916:1988" ph="{...}" />
-                <marker date="1515794195055" expanded="true" signature="2071:2135" ph="{...}" />
-                <marker date="1515794195055" expanded="true" signature="2196:2263" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="658:915" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="865:907" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="940:1138" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="1058:1130" ph="{&quot;loggedMail&quot;: email...}" />
+                <marker date="1515796056805" expanded="true" signature="1165:1369" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="1221:1363" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="1249:1351" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="1408:1627" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="1650:2103" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="1834:2078" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="1903:1954" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="2130:2589" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="2188:2225" ph="{&quot;method&quot;: 'GET'...}" />
+                <marker date="1515796056805" expanded="true" signature="2320:2471" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="2375:2454" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="2664:2728" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="2789:2856" ph="{...}" />
+                <marker date="1515796056805" expanded="true" signature="2886:3259" ph="&lt;div/&gt;" />
+                <marker date="1515796056805" expanded="true" signature="2908:3240" ph="&lt;MainNavigationComponent/&gt;" />
               </folding>
             </state>
           </provider>
@@ -516,12 +513,12 @@
       <workItem from="1515543532860" duration="2836000" />
       <workItem from="1515602982306" duration="437000" />
       <workItem from="1515707389280" duration="49000" />
-      <workItem from="1515777671472" duration="11858000" />
+      <workItem from="1515777671472" duration="11916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44866000" />
+    <option name="totallyTimeSpent" value="44924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -954,16 +951,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
-            <marker date="1515794195055" expanded="true" signature="1504:1510" ph="{...}" />
-            <marker date="1515794195055" expanded="true" signature="1537:1996" ph="{...}" />
-            <marker date="1515794195055" expanded="true" signature="1595:1632" ph="{&quot;method&quot;: 'GET'...}" />
-            <marker date="1515794195055" expanded="true" signature="1727:1878" ph="{...}" />
-            <marker date="1515794195055" expanded="true" signature="1916:1988" ph="{...}" />
-            <marker date="1515794195055" expanded="true" signature="2071:2135" ph="{...}" />
-            <marker date="1515794195055" expanded="true" signature="2196:2263" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="658:915" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="865:907" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="940:1138" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="1058:1130" ph="{&quot;loggedMail&quot;: email...}" />
+            <marker date="1515796056805" expanded="true" signature="1165:1369" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="1221:1363" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="1249:1351" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="1408:1627" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="1650:2103" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="1834:2078" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="1903:1954" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="2130:2589" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="2188:2225" ph="{&quot;method&quot;: 'GET'...}" />
+            <marker date="1515796056805" expanded="true" signature="2320:2471" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="2375:2454" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="2664:2728" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="2789:2856" ph="{...}" />
+            <marker date="1515796056805" expanded="true" signature="2886:3259" ph="&lt;div/&gt;" />
+            <marker date="1515796056805" expanded="true" signature="2908:3240" ph="&lt;MainNavigationComponent/&gt;" />
           </folding>
         </state>
       </provider>

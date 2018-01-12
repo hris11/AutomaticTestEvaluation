@@ -48,6 +48,7 @@ class AccountManager extends Component {
                         primary={true}
                         label="Излез от профила"
                         icon={<ExitAccount/>}
+                        onClick={(event) => this.props.logout(event)}
                     />
                     <RaisedButton
                         className="account-navigation-button"

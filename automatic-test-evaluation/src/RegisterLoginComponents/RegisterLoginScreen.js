@@ -26,7 +26,7 @@ class RegisterLoginComponent extends Component {
             loginscreen.push(<Register
                 logged={this.props.logged}
                 logout={(event) => this.props.logout(event)}
-                login={(event) => this.props.login(event)}
+                login={(email) => this.props.login(email)}
                 key="Register"
                 parentContext={this}
             />);
@@ -43,7 +43,7 @@ class RegisterLoginComponent extends Component {
             loginscreen.push(<Login
                 logged={this.props.logged}
                 logout={(event) => this.props.logout(event)}
-                login={(event) => this.props.login(event)}
+                login={(email) => this.props.login(email)}
                 setMail={(mail) => this.props.setMail(mail)}
                 key="Login"
                 parentContext={this}
@@ -63,7 +63,7 @@ class RegisterLoginComponent extends Component {
         loginscreen.push(<Login
             logged={this.props.logged}
             logout={(event) => this.props.logout(event)}
-            login={(event) => this.props.login(event)}
+            login={(email) => this.props.login(email)}
             setMail={(mail) => this.props.setMail(mail)}
             key="LoginFirstMount"
             parentContext={this}

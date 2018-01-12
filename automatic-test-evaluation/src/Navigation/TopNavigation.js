@@ -87,7 +87,7 @@ class MainNavigationComponent extends Component {
                                 <RegisterLoginAccountManager
                                     logged={this.props.logged}
                                     logout={(event) => this.props.logout(event)}
-                                    login={(event) => this.props.login(event)}
+                                    login={(email) => this.props.login(email)}
                                     setMail={(mail) => this.props.setMail(mail)}
                                     email={this.props.email}
                                 />
