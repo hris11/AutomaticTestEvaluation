@@ -32,9 +32,6 @@ class RegisterComponent extends Component {
         * Started spinner*/
         let url = "/rest/auth/register";
 
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-
         let body = {
             email: this.state.email,
             password: this.state.password,
@@ -56,7 +53,7 @@ class RegisterComponent extends Component {
             }
         };
 
-        RestCalls.post(url, headers, body, success);
+        RestCalls.post(url, undefined, body, success);
 
     }
 
