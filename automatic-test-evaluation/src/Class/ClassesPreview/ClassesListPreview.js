@@ -1,43 +1,60 @@
 import React, {Component} from 'react';
+import RestCalls from "../../RESTCalls/RestCalls";
+import SingleClassPreview from "./SingleClassPreview";
 
 class ClassesListPreview extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: []
+        }
+    }
+
     fetchUserClasses() {
-        let url = "/rest/user/classes/";
-
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-
-        console.log(this.props.email);
-
-        const options = {
-            method: 'POST',
-            body: JSON.stringify({
-                email: "hristiangenchev99@gmail.com"
-            }),
-            headers: headers
+        const url = "/rest/user/classes/";
+        const body = {
+            email: this.props.email
+        };
+        let self = this;
+        let callback = (response) => {
+            if (response.ok) {
+                response.json().then(function (response) {
+                    console.log(response);
+                    self.setState({
+                        data: response
+                    });
+                });
+            }
         };
 
-        const self = this;
-        fetch(url, options)
-            .then(function (response) {
+        RestCalls.post(url, undefined, body, callback);
+    }
 
-                console.log(response);
+    createClassFields() {
+        let result = [];
+        let data = Object.assign([], this.state.data);
 
-                if (response.ok) {
+        for (let i = 0; i < data.length; i++) {
+            result.push(<SingleClassPreview
+                data={data[i]}
+            />)
+        }
 
-                }
-            })
-            .catch(function (error) {
-                console.error(error);
-            });
+        return result;
+    }
+
+    componentDidMount() {
+        this.fetchUserClasses();
     }
 
     render() {
         return (
             <div>
-                {this.fetchUserClasses()}
                 Classes List Preview
+                <ul>
+                    {this.createClassFields()}
+                </ul>
             </div>
         );
     }

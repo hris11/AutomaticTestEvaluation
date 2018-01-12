@@ -23,6 +23,7 @@ class AddNewStudent extends Component {
                         style={style}
                         underlineShow={false}
                         onChange={(event, value) => this.props.handleFirstName(event, value)}
+                        value={this.props.studentFirstName}
                     />
                     <Divider/>
                     <TextField
@@ -30,6 +31,7 @@ class AddNewStudent extends Component {
                         style={style}
                         underlineShow={false}
                         onChange={(event, value) => this.props.handleLastName(event, value)}
+                        value={this.props.studentLastName}
                     />
                     <Divider/>
                     <TextField
@@ -37,6 +39,7 @@ class AddNewStudent extends Component {
                         style={style}
                         underlineShow={false}
                         onChange={(event, value) => this.props.handleNumber(event, value)}
+                        value={this.props.studentNumber}
                     />
                     <Divider/>
                 </Paper>

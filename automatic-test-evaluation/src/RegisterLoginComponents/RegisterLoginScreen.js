@@ -64,7 +64,7 @@ class RegisterLoginComponent extends Component {
             logged={this.props.logged}
             logout={(event) => this.props.logout(event)}
             login={(event) => this.props.login(event)}
-            setMail={(mail) => this.props.setMail()}
+            setMail={(mail) => this.props.setMail(mail)}
             key="LoginFirstMount"
             parentContext={this}
             appContext={this.props.parentContext}/>);

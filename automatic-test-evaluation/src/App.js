@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MainNavigationComponent from './Navigation/TopNavigation'
+import Cookies from 'universal-cookie';
 
 /*
 * Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
@@ -15,6 +16,7 @@ class App extends Component {
             loginStatus: false,
             loggedMail: ''
         };
+        console.log(props);
     }
 
     handleLogout(event) {
@@ -34,6 +36,26 @@ class App extends Component {
         this.setState({
             loginStatus: true
         });
+    }
+
+    componentWillMount() {
+        console.log(this.getCookie("ate-session"));
+    }
+
+    getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
     }
 
     makeAjaxRequest(url) {

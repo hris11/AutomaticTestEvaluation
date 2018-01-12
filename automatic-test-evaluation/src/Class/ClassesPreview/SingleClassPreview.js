@@ -2,10 +2,11 @@ import React,{Component} from 'react';
 
 class SingleClassPreview extends Component {
     render() {
+        console.log(this.props.data);
         return (
-            <div>
-
-            </div>
+            <li>
+                name: {this.props.data.name}
+            </li>
         );
     }
 }

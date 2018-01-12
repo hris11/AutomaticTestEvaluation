@@ -3,6 +3,7 @@ import {RaisedButton, TextField} from "material-ui";
 import AddNewStudent from "./AddNewStudent";
 import './ClassBox.css';
 import ClassNamePicker from "./ClassNamePicker";
+import RestCalls from "../../RESTCalls/RestCalls";
 
 class ClassBox extends Component {
     constructor(props) {
@@ -13,22 +14,11 @@ class ClassBox extends Component {
             students: [],
             newClassButtonState: false,
 
-            studentFirstName: '',
+            studentFirstName: 'dsd',
             studentLastName: '',
-            studentNumber: undefined,
+            studentNumber: '',
 
-            data: [
-                {
-                    studentFirstName: 'TEst',
-                    studentSecondName: 'lastNameTEST',
-                    studentNumber: 12
-                },
-                {
-                    studentFirstName: 'TEst2',
-                    studentSecondName: 'lastNameTEST2',
-                    studentNumber: 13
-                }
-            ]
+            data: []
 
         }
     }
@@ -70,7 +60,6 @@ class ClassBox extends Component {
     }
 
     handleFirstName(event, value) {
-        console.log(event);
         let state;
         state = {
             studentFirstName: value
@@ -89,7 +78,7 @@ class ClassBox extends Component {
     handleNumber(event, value) {
         let state;
         state = {
-            studentLastName: value
+            studentNumber: value
         };
         this.setState(state);
     }
@@ -101,9 +90,9 @@ class ClassBox extends Component {
             let key = "mn test" + i;
             result.push(
                 <li key={key}>
-                    {this.state.data[i].studentFirstName}
-                    {this.state.data[i].studentLastName}
-                    {this.state.data[i].studentNumber}
+                    {this.state.data[i].firstName}
+                    {this.state.data[i].lastName}
+                    {this.state.data[i].number}
                 </li>
             )
         }
@@ -139,6 +128,9 @@ class ClassBox extends Component {
                             handleFirstName={(event, value) => this.handleFirstName(event, value)}
                             handleLastName={(event, value) => this.handleLastName(event, value)}
                             handleNumber={(event, value) => this.handleNumber(event, value)}
+                            studentFirstName={this.state.studentFirstName}
+                            studentLastName={this.state.studentLastName}
+                            studentNumber={this.state.studentNumber}
                         />
                         <RaisedButton
                             primary={true}
@@ -162,42 +154,76 @@ class ClassBox extends Component {
     }
 
     addNewStudent(event) {
-        let mem = Object.assign([], this.state.data);
+        const url = "/rest/students/new";
+        const body = {
+            newClassInput: {
+                inputEmail: {
+                    email: this.props.email
+                },
+                newClass: {
+                    name: this.state.newClassName
+                }
+            },
+            newStudent: {
+                firstName: this.state.studentFirstName,
+                lastName: this.state.studentLastName,
+                number: parseInt(this.state.studentNumber)
+            }
+        };
 
-        mem.push({
-            studentFirstName: this.state.studentFirstName,
-            studentSecondName: this.state.studentLastName,
-            studentNumber: this.state.studentNumber
-        });
+        let self = this;
 
-        this.setState({
-            data: mem
-        });
+        const callback = (response) => {
+            if (response.ok) {
+                // self.clearInputFields();
+                let data = [];
+                response.json().then(function (response) {
+                    response.forEach(function (student) {
+                        data.push(student);
+                    });
+                    self.setState({
+                        studentFirstName: '',
+                        studentLastName: '',
+                        studentNumber: '',
+                        data: data
+                    });
+                });
+            }
+        };
+        RestCalls.post(url, undefined, body, callback);
+
+
+
+    }
+
+    clearInputFields() {
+        const state = {
+            studentFirstName: '',
+            studentLastName: '',
+            studentNumber: ''
+        };
+
+        this.setState(state);
     }
 
     insertNewClass() {
-        let url = "/rest/user/classes/new";
-
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-
-        const options = {
-            method: 'POST',
-            body: JSON.stringify({
+        const url = "/rest/user/classes/new";
+        const body = {
+            inputEmail: {
+                email: this.props.email
+            },
+            newClass: {
                 name: this.state.newClassName
-            }),
-            headers: headers
+            }
         };
 
-        const self = this;
-        fetch(url, options)
-            .then(function (response) {
-                if (response.ok) {
-                }
-            })
-            .catch(function (error) {
-                console.error(error);
-            });
+        const callback = (response) => {
+            if (response.ok) {
+
+            }
+        };
+
+        RestCalls.post(url, undefined, body, callback);
     }
 }
 

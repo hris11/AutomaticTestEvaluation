@@ -1,6 +1,7 @@
 package genchev.hristian.automatictestevaluation.models;
 
 public class GetClasses {
+    
     private String email;
 
     public GetClasses() {}
