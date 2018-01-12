@@ -24,6 +24,7 @@ class App extends Component {
     }
 
     setMail(mail) {
+        console.log(mail);
         this.setState({
             loggedMail: mail
         })

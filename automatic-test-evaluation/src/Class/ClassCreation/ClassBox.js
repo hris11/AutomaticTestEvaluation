@@ -162,7 +162,7 @@ class ClassBox extends Component {
     }
 
     addNewStudent(event) {
-        let mem = this.state.data;
+        let mem = Object.assign([], this.state.data);
 
         mem.push({
             studentFirstName: this.state.studentFirstName,

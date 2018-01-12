@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 import './Register.css'
 import {CircularProgress} from "material-ui";
+import RestCalls from '../RESTCalls/RestCalls'
 
 class RegisterComponent extends Component {
     constructor(props) {
@@ -23,6 +24,8 @@ class RegisterComponent extends Component {
         }
     }
 
+
+
     registerSubmit() {
         this.handleRegisterStatus(3);
         /*
@@ -32,33 +35,29 @@ class RegisterComponent extends Component {
         let headers = new Headers();
         headers.append("Content-Type", "application/json");
 
-        const options = {
-            method: 'POST',
-            body: JSON.stringify({
-                email: this.state.email,
-                password: this.state.password,
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                classes: [{name: 'test'}, {name: 'test2'}, {name: 'test3'}]
-            }),
-            headers: headers
+        let body = {
+            email: this.state.email,
+            password: this.state.password,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            classes: [{name: 'test'}, {name: 'test2'}, {name: 'test3'}]
         };
 
         const self = this;
-        fetch(url, options)
-            .then(function (response) {
-                if (response.ok) {
-                    /*
-                    * Welcome message*/
-                    self.handleRegisterStatus(2);
-                }
-            })
-            .catch(function (error) {
+        const success = (response) => {
+            if (response.ok) {
+                /*
+                * Welcome message*/
+                self.handleRegisterStatus(2);
+            } else {
                 /*
                 * Return to register*/
                 self.handleRegisterStatus(1);
-                console.error(error);
-            });
+            }
+        };
+
+        RestCalls.post(url, headers, body, success);
+
     }
 
     handleRegisterStatus(value) {

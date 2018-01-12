@@ -20,9 +20,9 @@ public class SecurityService {
             BigInteger bi = new BigInteger(1, thedigest);
             encrypted = bi.toString(16);
         } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(AuthService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SecurityService.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(AuthService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SecurityService.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return encrypted;

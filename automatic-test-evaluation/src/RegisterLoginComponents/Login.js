@@ -37,6 +37,7 @@ class LoginComponent extends Component {
             .then(function (response) {
                 if (response.ok) {
                     self.handleLoginStatus('success');
+                    console.log("from login: " + self.state.email);
                     self.props.setMail(self.state.email)
                 } else if(response.status === 401) {
                     self.handleLoginStatus('login');
