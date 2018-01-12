@@ -1,12 +1,14 @@
 package genchev.hristian.automatictestevaluation.services;
 
 import com.google.inject.Inject;
+import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.models.Class;
+import genchev.hristian.automatictestevaluation.models.Student;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.repository.ClassRepository;
+import genchev.hristian.automatictestevaluation.repository.StudentRepository;
 import genchev.hristian.automatictestevaluation.repository.UserRepository;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public class ClassServiece {
@@ -15,14 +17,21 @@ public class ClassServiece {
 
     private ClassRepository classRepository;
 
+    private StudentRepository studentRepository;
+
     @Inject
-    public ClassServiece(UserRepository userRepository, ClassRepository classRepository) {
+    public ClassServiece(UserRepository userRepository, ClassRepository classRepository, StudentRepository studentRepository) {
         this.userRepository = userRepository;
         this.classRepository = classRepository;
+        this.studentRepository = studentRepository;
     }
 
-    public void createClass(Class newClass) {
-        List<User> users = userRepository.findByEmail("hristiangenchev99@gmail.com");
+    public void createClass(NewClassInput input) {
+
+        List<User> users = userRepository.findByEmail(input.getInputEmail().getEmail());
+
+
+        Class newClass = input.getNewClass();
         newClass.setUserId(users.get(0).getId());
 
         classRepository.insert(newClass);
@@ -65,4 +74,6 @@ public class ClassServiece {
 
         return result;
     }
+
+
 }

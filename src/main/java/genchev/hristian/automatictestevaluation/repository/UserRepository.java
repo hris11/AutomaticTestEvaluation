@@ -1,7 +1,7 @@
 package genchev.hristian.automatictestevaluation.repository;
 
 import com.google.inject.Inject;
-import genchev.hristian.automatictestevaluation.models.LoginUser;
+import genchev.hristian.automatictestevaluation.inputModels.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
 import java.util.List;
 import javax.persistence.EntityManager;

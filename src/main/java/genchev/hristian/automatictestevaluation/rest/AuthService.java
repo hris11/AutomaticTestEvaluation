@@ -2,7 +2,7 @@ package genchev.hristian.automatictestevaluation.rest;
 
 import com.google.inject.Inject;
 import com.sun.jersey.spi.resource.Singleton;
-import genchev.hristian.automatictestevaluation.models.LoginUser;
+import genchev.hristian.automatictestevaluation.inputModels.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.services.SecurityService;
 import genchev.hristian.automatictestevaluation.services.UserService;

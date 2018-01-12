@@ -27,6 +27,18 @@ public class ClassRepository implements RepositoryInterface<Class>{
         return result;
     }
 
+    public Class findByIdAndName(Integer userId, String className) {
+        Class result;
+        this.entityManager.getTransaction().begin();
+        result = entityManager.createQuery("from Class where user_id = :user_id and name = :className", Class.class)
+                .setParameter("user_id", userId)
+                .setParameter("className", className)
+                .getSingleResult();
+        this.entityManager.getTransaction().commit();
+
+        return result;
+    }
+
     @Override
     public void insert(Class aClass) {
         this.entityManager.getTransaction().begin();

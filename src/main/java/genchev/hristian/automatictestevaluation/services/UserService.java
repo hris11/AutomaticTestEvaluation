@@ -1,11 +1,10 @@
 package genchev.hristian.automatictestevaluation.services;
 
 import com.google.inject.Inject;
-import genchev.hristian.automatictestevaluation.models.LoginUser;
+import genchev.hristian.automatictestevaluation.inputModels.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.repository.UserRepository;
 import java.util.List;
-import org.codehaus.jackson.map.ObjectMapper;
 
 public class UserService {
 

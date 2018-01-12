@@ -33,6 +33,9 @@ class App extends Component {
     }
 
     handleLogin(event) {
+        const cookies = new Cookies();
+        // TODO citirai https://www.npmjs.com/package/universal-cookie
+        cookies.set('ate-session', "true", { path: '/' });
         this.setState({
             loginStatus: true
         });

@@ -1,6 +1,7 @@
-package genchev.hristian.automatictestevaluation.models;
+package genchev.hristian.automatictestevaluation.inputModels;
 
 public class LoginUser {
+
     private String email;
     private String password;
 

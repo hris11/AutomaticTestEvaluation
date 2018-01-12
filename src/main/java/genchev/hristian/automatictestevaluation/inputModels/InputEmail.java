@@ -1,12 +1,12 @@
-package genchev.hristian.automatictestevaluation.models;
+package genchev.hristian.automatictestevaluation.inputModels;
 
-public class GetClasses {
-    
+public class InputEmail {
+
     private String email;
 
-    public GetClasses() {}
+    public InputEmail() {}
 
-    public GetClasses(String email) {
+    public InputEmail(String email) {
         this.email = email;
     }
 
@@ -21,9 +21,9 @@ public class GetClasses {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof GetClasses)) return false;
+        if (!(o instanceof InputEmail)) return false;
 
-        GetClasses that = (GetClasses) o;
+        InputEmail that = (InputEmail) o;
 
         return getEmail() != null ? getEmail().equals(that.getEmail()) : that.getEmail() == null;
     }
