@@ -54,18 +54,18 @@ class ClassesListPreview extends Component {
     deleteClass(classId) {
         let url = `/rest/user/classes/${classId}`;
         let callback = (response) => {
-            if (response.ok) {
-
-            }
+            this.fetchUserClasses();
         };
         RestCalls.delete(url, callback);
+
+
     }
 
     render() {
         return (
             <div>
                 <h3>Classes List Preview</h3>
-                <ul class="class-list">
+                <ul className="class-list">
                     {this.createClassFields()}
                 </ul>
             </div>
