@@ -2,6 +2,7 @@ package genchev.hristian.automatictestevaluation.repository;
 
 import com.google.inject.Inject;
 import genchev.hristian.automatictestevaluation.models.Class;
+import org.hibernate.query.Query;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -15,7 +16,7 @@ public class ClassRepository implements RepositoryInterface<Class>{
         this.entityManager = entityManager;
     }
 
-    public List<Class> findById(Integer user_id) {
+    public List<Class> findByUserId(Integer user_id) {
         List<Class> result = null;
 
         this.entityManager.getTransaction().begin();
@@ -37,6 +38,25 @@ public class ClassRepository implements RepositoryInterface<Class>{
         this.entityManager.getTransaction().commit();
 
         return result;
+    }
+
+    public Class findById(Integer id) {
+        Class result;
+        this.entityManager.getTransaction().begin();
+        result = entityManager.createQuery("from Class where id = :id", Class.class)
+                .setParameter("id", id)
+                .getSingleResult();
+        this.entityManager.getTransaction().commit();
+
+        return result;
+    }
+
+    public void deleteById(Integer id) {
+        this.entityManager.getTransaction().begin();
+        entityManager.createQuery("delete Class where id = :id")
+                .setParameter("id", id)
+                .executeUpdate();
+        this.entityManager.getTransaction().commit();
     }
 
     @Override

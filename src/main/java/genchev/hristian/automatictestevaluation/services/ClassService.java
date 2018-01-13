@@ -3,7 +3,6 @@ package genchev.hristian.automatictestevaluation.services;
 import com.google.inject.Inject;
 import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.models.Class;
-import genchev.hristian.automatictestevaluation.models.Student;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.repository.ClassRepository;
 import genchev.hristian.automatictestevaluation.repository.StudentRepository;
@@ -11,7 +10,7 @@ import genchev.hristian.automatictestevaluation.repository.UserRepository;
 
 import java.util.List;
 
-public class ClassServiece {
+public class ClassService {
 
     private UserRepository userRepository;
 
@@ -20,7 +19,7 @@ public class ClassServiece {
     private StudentRepository studentRepository;
 
     @Inject
-    public ClassServiece(UserRepository userRepository, ClassRepository classRepository, StudentRepository studentRepository) {
+    public ClassService(UserRepository userRepository, ClassRepository classRepository, StudentRepository studentRepository) {
         this.userRepository = userRepository;
         this.classRepository = classRepository;
         this.studentRepository = studentRepository;
@@ -48,7 +47,7 @@ public class ClassServiece {
         List<Class> result = null;
 
 
-        result = classRepository.findById(users.get(0).getId());
+        result = classRepository.findByUserId(users.get(0).getId());
 
         /*if (users.size() != 0) {
             user = users.get(0);
@@ -61,7 +60,7 @@ public class ClassServiece {
         }
 
         if (userId != 0) {
-            result = classRepository.findById(userId);
+            result = classRepository.findByUserId(userId);
         } else {
             return null;
         }*/
@@ -76,4 +75,9 @@ public class ClassServiece {
     }
 
 
+    public void deleteById(Integer classId) {
+        Class theClass = classRepository.findById(classId);
+
+        classRepository.delete(theClass);
+    }
 }

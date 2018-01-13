@@ -5,31 +5,56 @@ import NewClass from 'material-ui/svg-icons/content/add-circle';
 import ClassesListPreview from "../Class/ClassesPreview/ClassesListPreview";
 import ClassBox from "../Class/ClassCreation/ClassBox";
 import './AccountManager.css'
+import ModifyClass from "../Class/ClassCreation/ModifyClass";
 
 class AccountManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            navigationDisplayContent: <ClassesListPreview
-                email={this.props.email}
-            />
+            navigationDisplayContent: 'class-list-preview',
+            currentClass: ''
         }
     }
 
     handleNewClassButton(event) {
         this.setState({
-            navigationDisplayContent: <ClassBox
-                email={this.props.email}
-            />
-        })
+            navigationDisplayContent: 'class-box'
+        });
     }
 
     handlePreviewClasses(event) {
         this.setState({
-            navigationDisplayContent: <ClassesListPreview
-                email={this.props.email}
-            />
-        })
+            navigationDisplayContent: 'class-list-preview'
+        });
+    }
+
+    handleModifyClass(classTitle) {
+        this.setState({
+            navigationDisplayContent: 'modify-class',
+            currentClass: classTitle
+        });
+    }
+
+    getContent() {
+        switch (this.state.navigationDisplayContent) {
+            case 'class-list-preview': {
+                return <ClassesListPreview
+                    email={this.props.email}
+                    modifyClass={(classTitle) => this.handleModifyClass(classTitle)}
+                />
+            }
+            case 'class-box': {
+                return <ClassBox
+                    email={this.props.email}
+                />
+            }
+            case 'modify-class': {
+                return <ModifyClass
+                    classTitle={this.state.currentClass}
+                    email={this.props.email}
+                />
+            }
+        }
     }
 
     render() {
@@ -75,7 +100,7 @@ class AccountManager extends Component {
                 <div className="account-workplace">
                     <Paper zDepth={2}>
                         <div className="account-inner-workplace">
-                            {this.state.navigationDisplayContent}
+                            {this.getContent()}
                         </div>
                     </Paper>
                 </div>

@@ -27,7 +27,21 @@ const post = (url, headers, body, callback) => {
         });
 };
 
+const deleteReq = (url, callback) => {
+
+    const options = {
+        method: 'DELETE'
+    };
+
+    fetch(url, options)
+        .then(callback)
+        .catch(function (error) {
+            console.error(error);
+        });
+};
+
 export default {
     get: get,
-    post: post
+    post: post,
+    delete: deleteReq
 };

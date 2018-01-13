@@ -1,0 +1,4 @@
+.class-preview-line {
+    display: flex;
+    justify-content: space-between;
+}

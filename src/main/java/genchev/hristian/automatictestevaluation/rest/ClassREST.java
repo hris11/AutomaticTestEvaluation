@@ -6,24 +6,25 @@ import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.models.Class;
 import genchev.hristian.automatictestevaluation.inputModels.InputEmail;
 import genchev.hristian.automatictestevaluation.models.Student;
-import genchev.hristian.automatictestevaluation.services.ClassServiece;
+import genchev.hristian.automatictestevaluation.services.ClassService;
 import genchev.hristian.automatictestevaluation.services.StudentService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Singleton
 @Path("user")
 public class ClassREST {
 
-    private ClassServiece classServiece;
+    private ClassService classService;
 
     private StudentService studentService;
 
     @Inject
-    public ClassREST(ClassServiece classServiece, StudentService studentService) {
-        this.classServiece = classServiece;
+    public ClassREST(ClassService classService, StudentService studentService) {
+        this.classService = classService;
         this.studentService = studentService;
     }
 
@@ -35,7 +36,7 @@ public class ClassREST {
         String mail = input.getEmail();
         System.out.println("email kato poluchava zaqvka: " + mail);
 
-        return classServiece.getAllClasses(mail);
+        return classService.getAllClasses(mail);
     }
 
     @POST
@@ -44,7 +45,15 @@ public class ClassREST {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Student> createClass(NewClassInput input) {
 
-        classServiece.createClass(input);
+        classService.createClass(input);
         return studentService.getStudents(input);
+    }
+
+    @DELETE
+    @Path("classes/{id}")
+    public Response deleteClassById(@PathParam("id") Integer classId) {
+        classService.deleteById(classId);
+
+        return Response.ok().build();
     }
 }

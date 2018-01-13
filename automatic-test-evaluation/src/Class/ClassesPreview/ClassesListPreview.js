@@ -38,6 +38,8 @@ class ClassesListPreview extends Component {
         for (let i = 0; i < data.length; i++) {
             result.push(<SingleClassPreview
                 data={data[i]}
+                modifyClass={(classTitle) => this.props.modifyClass(classTitle)}
+                deleteClass={(classId) => this.deleteClass(classId)}
             />)
         }
 
@@ -46,6 +48,16 @@ class ClassesListPreview extends Component {
 
     componentDidMount() {
         this.fetchUserClasses();
+    }
+
+    deleteClass(classId) {
+        let url = `/rest/user/classes/${classId}`;
+        let callback = (response) => {
+            if (response.ok) {
+
+            }
+        };
+        RestCalls.delete(url, callback);
     }
 
     render() {

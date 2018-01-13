@@ -2,6 +2,7 @@ package genchev.hristian.automatictestevaluation.rest;
 
 
 import com.sun.jersey.spi.resource.Singleton;
+import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.inputModels.NewStudentInput;
 import genchev.hristian.automatictestevaluation.models.Student;
 import genchev.hristian.automatictestevaluation.services.StudentService;
@@ -23,6 +24,14 @@ public class StudentREST {
     @Inject
     public StudentREST(StudentService studentService) {
         this.studentService = studentService;
+    }
+
+    @POST
+    @Path("all")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Student> getStudents(NewClassInput input) {
+        return studentService.getStudents(input);
     }
 
     @POST
