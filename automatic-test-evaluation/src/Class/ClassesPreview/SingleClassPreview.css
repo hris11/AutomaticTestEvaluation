@@ -1,4 +1,11 @@
 .class-preview-line {
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px 30px;
+    background: #ededed;
+    float: left;
+    position: relative;
+    display: inline;
+    margin: 15px;
+    max-width: 120px;
 }

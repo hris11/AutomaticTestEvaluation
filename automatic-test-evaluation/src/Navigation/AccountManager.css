@@ -13,3 +13,7 @@
     display: flex;
     justify-content: center;
 }
+
+.account-inner-workplace div:first-child {
+    text-align: center;
+}

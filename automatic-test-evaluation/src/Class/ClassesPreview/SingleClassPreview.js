@@ -6,16 +6,20 @@ class SingleClassPreview extends Component {
     render() {
         return (
             <li className="class-preview-line">
-                name: {this.props.data.name}
-                <RaisedButton
-                    label="Промени"
-                    secondary={true}
-                    onClick={(classTitle) => this.props.modifyClass(this.props.data.name)}
-                />
-                <RaisedButton
-                    label="Изтрии"
-                    onClick={(classId) => this.props.deleteClass(this.props.data.id)}
-                />
+                <div>{this.props.data.name}</div>
+                <div>
+                    <RaisedButton
+                        label="Промени"
+                        secondary={true}
+                        onClick={(classTitle) => this.props.modifyClass(this.props.data.name)}
+                    />
+                </div>
+                <div>
+                    <RaisedButton
+                        label="Изтрии"
+                        onClick={(classId) => this.props.deleteClass(this.props.data.id)}
+                    />
+                </div>
             </li>
         );
     }

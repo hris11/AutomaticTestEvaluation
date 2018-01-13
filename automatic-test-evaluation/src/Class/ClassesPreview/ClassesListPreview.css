@@ -1,0 +1,7 @@
+.class-list {
+    display: block;
+    list-style: none;
+    width: 600px;
+    max-width: 600px;
+    position: relative;
+}

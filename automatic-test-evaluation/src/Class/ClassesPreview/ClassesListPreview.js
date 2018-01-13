@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import RestCalls from "../../RESTCalls/RestCalls";
 import SingleClassPreview from "./SingleClassPreview";
+import "./ClassesListPreview.css";
 
 class ClassesListPreview extends Component {
 
@@ -63,8 +64,8 @@ class ClassesListPreview extends Component {
     render() {
         return (
             <div>
-                Classes List Preview
-                <ul>
+                <h3>Classes List Preview</h3>
+                <ul class="class-list">
                     {this.createClassFields()}
                 </ul>
             </div>
