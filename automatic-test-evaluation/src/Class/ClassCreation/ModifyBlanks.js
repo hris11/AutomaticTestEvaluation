@@ -66,6 +66,8 @@ class ModifyBlanks extends Component {
         this.setState({
             blankName: this.state.pickerBlankName
         });
+
+        this.props.handleNewBlank(this.state.pickerBlankName);
     }
 
     nameChangeErrorText() {
@@ -86,7 +88,7 @@ class ModifyBlanks extends Component {
                 buttonState={this.state.pickerBlankName === ''}
             />
         } else {
-            this.props.handleNewBlank(this.state.blankName);
+            return null;
         }
     }
 

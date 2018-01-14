@@ -49,7 +49,7 @@ class AccountManager extends Component {
 
     handleNewBlank(blankTitle) {
         this.setState({
-            navigationDisplay: 'new-blank',
+            navigationDisplayContent: 'new-blank',
             newBlankName: blankTitle
         });
     }
@@ -77,6 +77,7 @@ class AccountManager extends Component {
             case 'modify-blanks': {
                 return <ModifyBlanks
                     classId={this.state.currentClassId}
+                    handleNewBlank={(blankTitle) => this.handleNewBlank(blankTitle)}
                 />
             }
             case 'new-blank': {
