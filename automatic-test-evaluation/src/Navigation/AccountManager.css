@@ -4,8 +4,14 @@
     margin-top: 40px;
 }
 
+@media print {
+    .account-navigation {
+        display: none;
+    }
+}
+
 .account-workplace {
-    width: 80%;
+    width: 100%;
     margin: 30px auto;
 }
 
@@ -16,4 +22,5 @@
 
 .account-inner-workplace div:first-child {
     text-align: center;
+    width: 100%;
 }
