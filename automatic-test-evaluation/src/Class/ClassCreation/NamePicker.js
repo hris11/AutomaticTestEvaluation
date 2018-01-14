@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TextField from 'material-ui/TextField';
 import {RaisedButton} from "material-ui";
-import './ClassNamePicker.css';
+import './NamePicker.css';
 
 class ClassNamePicker extends Component {
     render() {
@@ -17,7 +17,8 @@ class ClassNamePicker extends Component {
                 <RaisedButton
                     primary={true}
                     label="Избери"
-                    onClick={(event) => this.props.handleNameChangeButton()}
+                    onClick={(event) => this.props.handleNameChangeButton(event)}
+                    disabled={this.props.buttonState}
                 />
             </div>
         );

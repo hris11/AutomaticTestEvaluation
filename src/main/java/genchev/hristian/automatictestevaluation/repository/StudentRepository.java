@@ -5,6 +5,7 @@ import genchev.hristian.automatictestevaluation.models.Student;
 import genchev.hristian.automatictestevaluation.models.User;
 
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentRepository implements RepositoryInterface<Student>{
@@ -37,7 +38,7 @@ public class StudentRepository implements RepositoryInterface<Student>{
     }
 
     public List<Student> getStudetnsById(Integer id) {
-        List<Student> result = null;
+        List<Student> result = new ArrayList<>();
         this.entityManager.getTransaction().begin();
         result = entityManager.createQuery("from Student where class_id = :class_id", Student.class)
                 .setParameter("class_id", id)

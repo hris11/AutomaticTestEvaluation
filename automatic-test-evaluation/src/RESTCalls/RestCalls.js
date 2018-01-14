@@ -1,5 +1,13 @@
-const get = (url, headers, callback) => {
+const get = (url, callback) => {
+    const options = {
+        method: 'GET'
+    };
 
+    fetch(url, options)
+        .then(callback)
+        .catch(function (error) {
+            console.error(error);
+        });
 };
 
 const post = (url, headers, body, callback) => {

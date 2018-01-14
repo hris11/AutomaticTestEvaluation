@@ -5,6 +5,7 @@ import genchev.hristian.automatictestevaluation.models.Class;
 import org.hibernate.query.Query;
 
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClassRepository implements RepositoryInterface<Class>{
@@ -17,7 +18,7 @@ public class ClassRepository implements RepositoryInterface<Class>{
     }
 
     public List<Class> findByUserId(Integer user_id) {
-        List<Class> result = null;
+        List<Class> result = new ArrayList<>();
 
         this.entityManager.getTransaction().begin();
         result = entityManager.createQuery("from Class where user_id = :user_id", Class.class)

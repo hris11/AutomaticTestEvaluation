@@ -13,7 +13,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 
-@Singleton
 @Path("auth")
 public class AuthService {
     private static final long serialVersionUID = 1L;

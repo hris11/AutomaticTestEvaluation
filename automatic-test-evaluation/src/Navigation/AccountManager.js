@@ -6,13 +6,17 @@ import ClassesListPreview from "../Class/ClassesPreview/ClassesListPreview";
 import ClassBox from "../Class/ClassCreation/ClassBox";
 import './AccountManager.css'
 import ModifyClass from "../Class/ClassCreation/ModifyClass";
+import BlankManager from "../CreateTemplateComponents/BlankManager";
+import ModifyBlanks from "../Class/ClassCreation/ModifyBlanks";
 
 class AccountManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
             navigationDisplayContent: 'class-list-preview',
-            currentClass: ''
+            currentClass: '',
+            currentClassId: 0,
+            newBlankName: ''
         }
     }
 
@@ -35,12 +39,28 @@ class AccountManager extends Component {
         });
     }
 
+    handleModifyBlanks(classId, className) {
+        this.setState({
+            navigationDisplayContent: 'modify-blanks',
+            currentClassId: classId,
+            currentClass: className
+        });
+    }
+
+    handleNewBlank(blankTitle) {
+        this.setState({
+            navigationDisplay: 'new-blank',
+            newBlankName: blankTitle
+        });
+    }
+
     getContent() {
         switch (this.state.navigationDisplayContent) {
             case 'class-list-preview': {
                 return <ClassesListPreview
                     email={this.props.email}
                     modifyClass={(classTitle) => this.handleModifyClass(classTitle)}
+                    modifyBlanks={(classId) => this.handleModifyBlanks(classId)}
                 />
             }
             case 'class-box': {
@@ -52,6 +72,18 @@ class AccountManager extends Component {
                 return <ModifyClass
                     classTitle={this.state.currentClass}
                     email={this.props.email}
+                />
+            }
+            case 'modify-blanks': {
+                return <ModifyBlanks
+                    classId={this.state.currentClassId}
+                />
+            }
+            case 'new-blank': {
+                return <BlankManager
+                    blankTitle={this.state.newBlankName}
+                    logged={this.props.logged}
+                    navCall={false}
                 />
             }
         }

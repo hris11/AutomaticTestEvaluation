@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {RaisedButton, TextField} from "material-ui";
 import AddNewStudent from "./AddNewStudent";
 import './ClassBox.css';
-import ClassNamePicker from "./ClassNamePicker";
+import ClassNamePicker from "./NamePicker";
 import RestCalls from "../../RESTCalls/RestCalls";
 import ModifyClass from "./ModifyClass";
 
@@ -58,7 +58,7 @@ class ClassBox extends Component {
             return (
                 <div className="class-box-name-picker">
                     <ClassNamePicker
-                        buttonState={this.state.newClassButtonState}
+                        buttonState={this.state.newClassButtonState === ''}
                         handleNameChange={(event, newValue) => this.handleNameChange(event, newValue)}
                         nameChangeErrorText={() => this.nameChangeErrorText()}
                         handleNameChangeButton={(event) => this.handleNameChangeButton(event)}

@@ -20,15 +20,15 @@ public class Class implements Serializable {
     @Column(nullable = false, length = 30)
     private String name;
 
-    @OneToMany(cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.REMOVE})
     @JoinColumn(name = "class_id")
     private List<Student> students;
 
-    @OneToMany(cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.REMOVE})
     @JoinColumn(name = "class_id")
     private List<ClassInformation> classInformation;
 
-    @OneToMany(cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.REMOVE})
     @JoinColumn(name = "class_id")
     private List<Blank> blanks;
 

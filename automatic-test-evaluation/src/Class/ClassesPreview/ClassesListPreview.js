@@ -40,6 +40,7 @@ class ClassesListPreview extends Component {
             result.push(<SingleClassPreview
                 data={data[i]}
                 modifyClass={(classTitle) => this.props.modifyClass(classTitle)}
+                modifyBlanks={(classId) => this.props.modifyBlanks(classId)}
                 deleteClass={(classId) => this.deleteClass(classId)}
             />)
         }
