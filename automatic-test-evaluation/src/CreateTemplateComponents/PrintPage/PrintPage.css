@@ -35,7 +35,8 @@
 .headers-floating {
     margin-top: 70px;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
+    width: 100%;
     
 }
 

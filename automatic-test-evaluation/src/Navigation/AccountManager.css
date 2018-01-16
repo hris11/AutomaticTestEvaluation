@@ -4,11 +4,7 @@
     margin-top: 40px;
 }
 
-@media print {
-    .account-navigation {
-        display: none;
-    }
-}
+
 
 .account-workplace {
     width: 100%;
@@ -20,7 +16,33 @@
     justify-content: center;
 }
 
-.account-inner-workplace div:first-child {
+.account-inner-workplace > div {
     text-align: center;
     width: 100%;
+}
+
+@media print {
+    .account-navigation {
+        display: none;
+    }
+    .account-workplace {
+        margin: 0px auto;
+    }
+    .account-workplace > div {
+        box-shadow: none !important;
+    }
+    .account-inner-workplace > div {
+        padding: 20px !important;
+    }
+}
+
+.headers-floating .header-titles {
+    flex: 1 0 0;
+}
+
+.headers-floating .header-fields {
+    flex: 7 0 0;
+}
+.headers-floating .header-qr {
+    flex: 1 0 0;
 }
