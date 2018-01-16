@@ -34,4 +34,10 @@ public class BlankREST {
         blankService.insert(classId, blank);
     }
 
+    @DELETE
+    @Path("blanks/{blank_id}")
+    public void deleteBlankById(@PathParam("blank_id") Integer blank_id) {
+        blankService.deleteBlankById(blank_id);
+    }
+
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import RestCalls from "../../RESTCalls/RestCalls";
 import ClassNamePicker from "./NamePicker";
+import {RaisedButton} from "material-ui";
 
 class ModifyBlanks extends Component {
 
@@ -37,13 +38,20 @@ class ModifyBlanks extends Component {
     generateExistingBlanks() {
         let data = Object.assign([], this.state.blanks);
         let result = [];
-        for (let i = 0; i < data.length; i++) {
-            result.push(
+
+        let self = this;
+
+        result = data.map(function (blank) {
+            return (
                 <li>
-                    BlankName: {data[i].name}
+                    <span>{blank.name}</span>
+                    <RaisedButton
+                        label="Изтриване"
+                        onClick={() => self.deleteBlank(blank.id)}
+                    />
                 </li>
             );
-        }
+        });
 
         if (result.length === 0) {
             return "Все още нямате бланки";
@@ -103,6 +111,16 @@ class ModifyBlanks extends Component {
                 </div>
             </div>
         );
+    }
+
+    deleteBlank(id) {
+        const url = `/rest/user/class/blanks/${id}`;
+        let self = this;
+        let callback = (response) => {
+            self.fetchExistingBlanks();
+        };
+
+        RestCalls.delete(url, callback);
     }
 }
 export default ModifyBlanks;

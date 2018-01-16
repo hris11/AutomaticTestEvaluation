@@ -48,4 +48,15 @@ public class BlankRepository implements RepositoryInterface<Blank> {
         entityManager.merge(blank);
         this.entityManager.getTransaction().commit();
     }
+
+    public Blank getById(Integer blankId) {
+        Blank result;
+        this.entityManager.getTransaction().begin();
+        result = entityManager.createQuery("from Blank where id = :blank_id", Blank.class)
+                .setParameter("blank_id", blankId)
+                .getSingleResult();
+        this.entityManager.getTransaction().commit();
+
+        return result;
+    }
 }

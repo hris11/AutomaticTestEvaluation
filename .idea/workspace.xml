@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f3bb1c67-adb4-4619-a9b8-5837bfe239dd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/.idea/workspace.xml" afterPath="$PROJECT_DIR$/automatic-test-evaluation/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentREST.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentREST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentService.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyBlanks.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyBlanks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/automatic-test-evaluation/node_modules/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,16 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Class.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/Class.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ClassREST.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ClassREST.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -39,34 +29,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Blank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/Blank.java">
+      <file leaf-file-name="BlankRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+            <state relative-caret-position="390">
+              <caret line="56" column="35" lean-forward="false" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlankREST.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankREST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="391">
+              <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1145#1146#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentREST.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentREST.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentREST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="16">
               <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="15" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,10 +98,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ClassRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ClassRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="40" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StudentRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/StudentRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
+            <state relative-caret-position="578">
               <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="75" selection-end-line="42" selection-end-column="83" />
               <folding />
             </state>
@@ -99,26 +123,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Answer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/Answer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -179,16 +183,16 @@
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ClassRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/StudentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/Class.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthService.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ClassREST.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/RegisterRESTService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/Blank.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentREST.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java" />
       </list>
     </option>
   </component>
@@ -490,7 +494,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62733000" />
+    <option name="totallyTimeSpent" value="64501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -772,37 +776,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ClassRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/RegisterRESTService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -823,14 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -883,24 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/StudentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="75" selection-end-line="42" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -914,9 +862,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentREST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="16">
           <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/StudentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="75" selection-end-line="42" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ClassRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="40" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="56" column="35" lean-forward="false" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1145#1146#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

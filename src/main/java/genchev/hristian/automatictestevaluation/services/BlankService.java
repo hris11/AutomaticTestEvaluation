@@ -22,4 +22,9 @@ public class BlankService {
         blank.setClassId(classId);
         blankRepository.insert(blank);
     }
+
+    public void deleteBlankById(Integer blankId) {
+        Blank blank = blankRepository.getById(blankId);
+        blankRepository.delete(blank);
+    }
 }
