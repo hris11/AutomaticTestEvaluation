@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
     <groupId>genchev.hristian</groupId>
     <artifactId>AutomaticTestEvaluation</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>AutomaticTestEvaluation</name>
-    <url>https://github.com/hris11/AutomaticTestEvaluation</url>
+    
+    <name>Automatic Test Evaluation</name>
     <description>Archetype for building RESTful Web Services with Jersey 1.18.1 and Google Guice 3.0</description>
+    
+    <url>https://github.com/hris11/AutomaticTestEvaluation</url>
+    
     <scm>
         <connection>scm:git:git@github.com:hris11/AutomaticTestEvaluation.git</connection>
         <developerConnection>scm:git:git@github.com:hris11/AutomaticTestEvaluation.git</developerConnection>
         <url>scm:git:git@github.com:/hris11/AutomaticTestEvaluation.git</url>
         <tag>HEAD</tag>
     </scm>
+    
     <developers>
         <developer>
             <name>Hristian Genchev</name>
