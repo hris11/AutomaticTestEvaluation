@@ -5,6 +5,7 @@ import './BlankManager.css';
 import './FirstStep/BlankMenuToggles.css';
 import BlankManagerSecondStepHandler from "./SecondStep/BlankManagerSecondStepHandler";
 import PrintPage from "./PrintPage/PrintPage";
+import RestCalls from "../RESTCalls/RestCalls";
 
 class BlankManager extends Component {
     constructor(props) {
@@ -25,8 +26,8 @@ class BlankManager extends Component {
             numberToggle: true,
             classToggle: true,
             groupToggle: true,
-            listNameToggle: false,
-            listNumberToggle: false,
+            listNameToggle: true,
+            listNumberToggle: true,
             sliderValue: 10,
             defaultOptions: 4,
             eachAnswerNumberOfOptions: [
@@ -161,7 +162,43 @@ class BlankManager extends Component {
         })
     }
 
+    generateAnswers() {
+        let result = [];
+
+        result = this.state.eachAnswerNumberOfOptions.slice(0, this.state.sliderValue).map(function (answer, index) {
+            return {
+                options: answer.options,
+                rightAnswer: answer.rightAnswer,
+                group: answer.group,
+                index: index
+            }
+        });
+
+        return result;
+    }
+
+    postTest() {
+        const url = `/rest/user/class/${this.props.classId}/blanks`;
+
+        const body = {
+            numberOfAnswers: this.state.sliderValue,
+            name: this.props.blankTitle,
+            answers: this.generateAnswers(),
+            classId: this.props.classId
+        };
+
+        let callback = (response) => {
+
+        };
+
+        RestCalls.post(url, undefined, body, callback);
+    }
+
     generatePrintablePage() {
+        if (!this.props.navCall) {
+            this.postTest();
+        }
+
         this.setState({
             printDisplay: {
                 display: 'inline'
@@ -242,7 +279,7 @@ class BlankManager extends Component {
     }
 
     changeGroupOfLine(index, value) {
-        let mem = this.state.eachAnswerNumberOfOptions;
+        let mem = Object.assign([], this.state.eachAnswerNumberOfOptions);
         mem[index].group = value;
 
         switch (value) {
@@ -276,7 +313,7 @@ class BlankManager extends Component {
     }
 
     handleRightAnswerChange(index, rightAnswerIndex) {
-        let mem = this.state.eachAnswerNumberOfOptions;
+        let mem = Object.assign([], this.state.eachAnswerNumberOfOptions);
 
         mem[index].rightAnswer = rightAnswerIndex;
 

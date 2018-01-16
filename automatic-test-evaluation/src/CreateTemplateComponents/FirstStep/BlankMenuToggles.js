@@ -4,9 +4,22 @@ import './BlankMenuToggles.css';
 
 class BlankMenuToggles extends Component {
 
-    handleDisplayToggleListName() {
+    handleDisplayLeft() {
         if (this.props.parentProps.navCall === true) {
-            return '';
+            return (<div>
+                <Toggle
+                    className="toggleMargins"
+                    label="Поле за име"
+                    defaultToggled={this.props.parentProps.toggleName}
+                    onToggle={() => this.props.parentProps.handleToggleName()}
+                />
+                <Toggle
+                    className="toggleMargins"
+                    label="Поле за номер"
+                    defaultToggled={this.props.parentProps.toggleNumber}
+                    onToggle={() => this.props.parentProps.handleToggleNumber()}
+                />
+            </div>);
         } else {
             return (
                 <Toggle
@@ -20,9 +33,24 @@ class BlankMenuToggles extends Component {
         }
     }
 
-    handleDisplayToggleListNumbers() {
+    handleDisplayRight() {
         if (this.props.parentProps.navCall === true) {
-            return '';
+            return (<div>
+                <Toggle
+                    className="toggleMargins"
+                    label="Поле за група"
+                    defaultToggled={this.props.parentProps.toggleGroup}
+                    onToggle={() => this.props.parentProps.handleToggleGroup()}
+                    labelPosition="right"
+                />
+                <Toggle
+                    className="toggleMargins"
+                    label="Поле за клас"
+                    defaultToggled={this.props.parentProps.toggleClass}
+                    onToggle={() => this.props.parentProps.handleToggleClass()}
+                    labelPosition="right"
+                />
+            </div>);
         } else {
             return (
                 <Toggle
@@ -36,42 +64,17 @@ class BlankMenuToggles extends Component {
             );
         }
     }
+
     render() {
         return (
             <div>
                 <div className="barBox">
                     <div className="leftBarTab">
-                        <Toggle
-                            className="toggleMargins"
-                            label="Поле за име"
-                            defaultToggled={this.props.parentProps.toggleName}
-                            onToggle={() => this.props.parentProps.handleToggleName()}
-                        />
-                        <Toggle
-                            className="toggleMargins"
-                            label="Поле за номер"
-                            defaultToggled={this.props.parentProps.toggleNumber}
-                            onToggle={() => this.props.parentProps.handleToggleNumber()}
-                        />
-                        {this.handleDisplayToggleListName()}
+                        {this.handleDisplayLeft()}
                     </div>
 
                     <div className="rightBarTab">
-                        <Toggle
-                            className="toggleMargins"
-                            label="Поле за група"
-                            defaultToggled={this.props.parentProps.toggleGroup}
-                            onToggle={() => this.props.parentProps.handleToggleGroup()}
-                            labelPosition="right"
-                        />
-                        <Toggle
-                            className="toggleMargins"
-                            label="Поле за клас"
-                            defaultToggled={this.props.parentProps.toggleClass}
-                            onToggle={() => this.props.parentProps.handleToggleClass()}
-                            labelPosition="right"
-                        />
-                        {this.handleDisplayToggleListNumbers()}
+                        {this.handleDisplayRight()}
                     </div>
                 </div>
             </div>

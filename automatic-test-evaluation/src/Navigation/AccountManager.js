@@ -85,6 +85,7 @@ class AccountManager extends Component {
                     blankTitle={this.state.newBlankName}
                     logged={this.props.logged}
                     navCall={false}
+                    classId={this.state.currentClassId}
                 />
             }
         }

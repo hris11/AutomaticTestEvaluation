@@ -18,7 +18,8 @@ public class BlankService {
         return blankRepository.getClassBlanksByClassId(classId);
     }
 
-    public void insert(Blank blank) {
+    public void insert(Integer classId, Blank blank) {
+        blank.setClassId(classId);
         blankRepository.insert(blank);
     }
 }

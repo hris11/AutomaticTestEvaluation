@@ -23,7 +23,7 @@ public class Blank implements Serializable {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(cascade = {CascadeType.REMOVE})
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "blank_id")
     private List<Answer> answers;
 

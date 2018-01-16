@@ -28,10 +28,10 @@ public class BlankREST {
     }
 
     @POST
-    @Path("blanks/new")
+    @Path("{id}/blanks")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void createNewBlank(Blank blank) {
-        blankService.insert(blank);
+    public void createNewBlank(@PathParam("id") Integer classId, Blank blank) {
+        blankService.insert(classId, blank);
     }
 
 }
