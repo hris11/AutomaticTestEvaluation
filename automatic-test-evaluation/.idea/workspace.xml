@@ -14,103 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AccountManager.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Navigation/AccountManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="83" column="29" lean-forward="false" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterLoginAccountManager.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Navigation/RegisterLoginAccountManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopNavigation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Navigation/TopNavigation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="73" column="49" lean-forward="false" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModifyBlanks.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Class/ClassCreation/ModifyBlanks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="69" column="24" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <marker date="1515965384618" expanded="true" signature="2458:2747" ph="..." />
-                <marker date="1515965384618" expanded="true" signature="2518:2593" ph="..." />
-                <marker date="1515965384618" expanded="true" signature="2519:2571" ph="..." />
-                <marker date="1515965384618" expanded="true" signature="2658:2728" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrintPage.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-              <folding>
-                <marker date="1516128703998" expanded="true" signature="471:528" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="548:642" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="663:724" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="836:864" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="887:972" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="987:1334" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="1000:1030" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="1042:1073" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="1100:1157" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="1184:1239" ph="{...}" />
-                <marker date="1516128703998" expanded="true" signature="1264:1294" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlankMenuToggles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="40" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlankManagerFirstStepHandler.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/FirstStep/BlankManagerFirstStepHandler.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BlankManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/BlankManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="185" column="43" lean-forward="false" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="43" />
+            <state relative-caret-position="116">
+              <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="28" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -118,11 +26,85 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RegisterLoginComponents/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestCalls.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RESTCalls/RestCalls.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RegisterLoginComponents/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="39" column="68" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="68" />
+            <state relative-caret-position="-850">
+              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrintPage.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="76" column="26" lean-forward="false" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptionsHandler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/OptionsHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptionsHandler.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/OptionsHandler.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankLine.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/BlankLine.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassesListPreview.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Class/ClassesPreview/ClassesListPreview.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="27" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -131,17 +113,10 @@
       <file leaf-file-name="PrintPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
-              <caret line="96" column="49" lean-forward="false" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="49" />
+            <state relative-caret-position="102">
+              <caret line="117" column="43" lean-forward="false" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="43" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
-                <marker date="1516126860228" expanded="true" signature="1308:3534" ph="{...}" />
-                <marker date="1516126860228" expanded="true" signature="1632:3517" ph="&lt;div/&gt;" />
-                <marker date="1516126860228" expanded="true" signature="1786:3240" ph="&lt;div/&gt;" />
-                <marker date="1516126860228" expanded="true" signature="1836:3217" ph="&lt;div/&gt;" />
-                <marker date="1516126860228" expanded="true" signature="1894:1962" ph="&lt;div/&gt;" />
-                <marker date="1516126860228" expanded="true" signature="1958:1962" ph="&lt;div/&gt;" />
-                <marker date="1516126860228" expanded="true" signature="3311:3444" ph="&lt;div/&gt;" />
               </folding>
             </state>
           </provider>
@@ -169,6 +144,9 @@
       <find>stepperGetStepContent</find>
       <find>name</find>
       <find>handleNewBlank</find>
+      <find>com</find>
+      <find>re</find>
+      <find>render</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -219,10 +197,11 @@
         <option value="$PROJECT_DIR$/src/Class/ClassCreation/NamePicker.js" />
         <option value="$PROJECT_DIR$/src/Navigation/TopNavigation.js" />
         <option value="$PROJECT_DIR$/src/Class/ClassCreation/ModifyBlanks.js" />
-        <option value="$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
         <option value="$PROJECT_DIR$/src/CreateTemplateComponents/FirstStep/BlankMenuToggles.js" />
         <option value="$PROJECT_DIR$/src/Navigation/AccountManager.js" />
         <option value="$PROJECT_DIR$/src/CreateTemplateComponents/BlankManager.js" />
+        <option value="$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.js" />
+        <option value="$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
       </list>
     </option>
   </component>
@@ -433,7 +412,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121225000" />
+    <option name="totallyTimeSpent" value="125494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -477,14 +456,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FooterComponent/FooterComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddNewStudentComponent/AddNewStudentComponent.js" />
     <entry file="file://$PROJECT_DIR$/src/ClassCreateComponent/ClassCreateComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -549,17 +520,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RegisterLoginComponents/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="101" column="25" lean-forward="false" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -577,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/OptionsHandler.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/BlankLine.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -598,25 +558,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RESTCalls/RestCalls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Class/ClassesPreview/ClassesListPreview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Class/ClassCreation/ModifyClass.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="143" column="5" lean-forward="false" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,6 +579,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,48 +619,11 @@
         <state relative-caret-position="1139">
           <caret line="69" column="24" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
             <marker date="1515965384618" expanded="true" signature="2458:2747" ph="..." />
             <marker date="1515965384618" expanded="true" signature="2518:2593" ph="..." />
             <marker date="1515965384618" expanded="true" signature="2519:2571" ph="..." />
             <marker date="1515965384618" expanded="true" signature="2658:2728" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="96" column="49" lean-forward="false" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1516126860228" expanded="true" signature="1308:3534" ph="{...}" />
-            <marker date="1516126860228" expanded="true" signature="1632:3517" ph="&lt;div/&gt;" />
-            <marker date="1516126860228" expanded="true" signature="1786:3240" ph="&lt;div/&gt;" />
-            <marker date="1516126860228" expanded="true" signature="1836:3217" ph="&lt;div/&gt;" />
-            <marker date="1516126860228" expanded="true" signature="1894:1962" ph="&lt;div/&gt;" />
-            <marker date="1516126860228" expanded="true" signature="1958:1962" ph="&lt;div/&gt;" />
-            <marker date="1516126860228" expanded="true" signature="3311:3444" ph="&lt;div/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding>
-            <marker date="1516128703998" expanded="true" signature="471:528" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="548:642" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="663:724" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="836:864" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="887:972" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="987:1334" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="1000:1030" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="1042:1073" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="1100:1157" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="1184:1239" ph="{...}" />
-            <marker date="1516128703998" expanded="true" signature="1264:1294" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -762,16 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/BlankManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="185" column="43" lean-forward="false" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/FirstStep/BlankMenuSlider.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -784,8 +686,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RegisterLoginComponents/Register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="39" column="68" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="68" />
+        <state relative-caret-position="-850">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/OptionsHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/OptionsHandler.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/BlankLine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RESTCalls/RestCalls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Class/ClassesPreview/ClassesListPreview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="27" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RegisterLoginComponents/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/BlankManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="117" column="43" lean-forward="false" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CreateTemplateComponents/PrintPage/PrintPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="76" column="26" lean-forward="false" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
           <folding />
         </state>
       </provider>

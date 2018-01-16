@@ -1,10 +1,12 @@
 import React, {Component} from  'react';
 import OptionsHandler from "./OptionsHandler";
 import './PrintPage.css';
+import QRCode from 'react-qr-component'
 
 class PrintPage extends Component {
 
     nameHeaderGenerator() {
+
         if (this.props.parentState.nameToggle) {
             return ([
                 "Име:",
@@ -12,8 +14,8 @@ class PrintPage extends Component {
             ]);
         } else {
             return ([
-                "",
-                ""
+                null,
+                null
             ]);
         }
     }
@@ -26,8 +28,8 @@ class PrintPage extends Component {
             ]);
         } else {
             return ([
-                "",
-                ""
+                null,
+                null
             ]);
         }
     }
@@ -40,8 +42,8 @@ class PrintPage extends Component {
             ]);
         } else {
             return ([
-                "",
-                ""
+                null,
+                null
             ]);
         }
     }
@@ -54,15 +56,59 @@ class PrintPage extends Component {
             ]);
         } else {
             return ([
-                "",
-                ""
+                null,
+                null
             ]);
         }
     }
 
+    studentName() {
+        if (this.props.parentState.listNameToggle) {
+            return ([
+                "Име: ",
+                `${this.props.student.firstName} ${this.props.student.lastName}`
+            ]);
+        } else {
+            return ([
+                null,
+                null
+            ]);
+        }
+    }
+
+    studentNumber() {
+        if (this.props.parentState.listNumberToggle) {
+            return ([
+                "Номер: ",
+                `${this.props.student.number}`
+            ]);
+        } else {
+            return ([
+                null,
+                null
+            ]);
+        }
+    }
+
+    getQr() {
+        if (this.props.navCall === true) {
+            return <QRCode value="https://evening-sierra-80012.herokuapp.com/" />
+        } else {
+            return <QRCode value={`${this.props.student.id}`} />
+        }
+    }
+
     render() {
-        let nameHeader = this.nameHeaderGenerator();
-        let numberHeader = this.numberHeaderGenerator();
+        let nameHeader = null;
+        let numberHeader = null;
+        if (this.props.navCall === true) {
+            nameHeader = this.nameHeaderGenerator();
+            numberHeader = this.numberHeaderGenerator();
+        } else {
+            nameHeader = this.studentName();
+            numberHeader = this.studentNumber();
+        }
+
         let classHeader = this.classHeaderGenerator();
         let groupHeader = this.groupHeaderGenerator();
 
@@ -87,10 +133,10 @@ class PrintPage extends Component {
                                 <div className="header-field">{groupHeader[1]}</div>
                             </div>
                             <div className="header-qr">
-                                <img alt="QR code / Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" className="qr-code-field"/>
+                                {this.getQr()}
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <hr className="test-header-divider"/>
@@ -101,6 +147,8 @@ class PrintPage extends Component {
             </div>
         );
     }
+
+
 }
 
 export default PrintPage;

@@ -55,4 +55,8 @@ public class StudentService {
 
         return classId;
     }
+
+    public List<Student> getStudentsById(Integer classId) {
+        return studentRepository.getStudetnsById(classId);
+    }
 }

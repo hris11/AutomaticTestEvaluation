@@ -74,6 +74,7 @@
     .blank-for-print {
         display: block;
         margin-top: 10px;
+        padding-bottom: 15px;
     }
     
     .navigation-main {

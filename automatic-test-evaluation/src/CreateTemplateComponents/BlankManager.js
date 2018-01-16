@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FlatButton, Paper, RaisedButton, Step, StepLabel, Stepper} from "material-ui";
+import {CircularProgress, FlatButton, Paper, RaisedButton, Step, StepLabel, Stepper} from "material-ui";
 import BlankManagerFirstStepHandler from "./FirstStep/BlankManagerFirstStepHandler";
 import './BlankManager.css';
 import './FirstStep/BlankMenuToggles.css';
@@ -22,14 +22,16 @@ class BlankManager extends Component {
             },
             stepperFinished: false,
             stepperIndex: 0,
-            nameToggle: true,
-            numberToggle: true,
-            classToggle: true,
-            groupToggle: true,
-            listNameToggle: true,
-            listNumberToggle: true,
+            nameToggle: props.navCall,
+            numberToggle: props.navCall,
+            classToggle: props.navCall,
+            groupToggle: props.navCall,
+            listNameToggle: !props.navCall,
+            listNumberToggle: !props.navCall,
             sliderValue: 10,
             defaultOptions: 4,
+            studentsFetched: false,
+            students: [],
             eachAnswerNumberOfOptions: [
                 {
                     options: 4,
@@ -423,6 +425,9 @@ class BlankManager extends Component {
     }
 
     render() {
+        if (this.props.navCall === false && this.state.studentsFetched === false) {
+            return <CircularProgress />;
+        }
         return (
             <Paper zDepth={0} style={style.paper}>
                 <div style={{width: '100%', maxWidth: 1000, margin: 'auto'}} className="blank-background-paper">
@@ -453,9 +458,8 @@ class BlankManager extends Component {
                                         />
                                     </div>
                                 </span>
-
                                 <div style={this.state.printDisplay}>
-                                    <PrintPage parentState={this.state}/>
+                                    {this.getPrintablePages()}
                                 </div>
                             </div>
                         ) : (
@@ -495,6 +499,49 @@ class BlankManager extends Component {
                 </div>
             </Paper>
         );
+    }
+
+    getPrintablePages() {
+        if (this.props.navCall) {
+            return (
+                <PrintPage
+                    parentState={this.state}
+                    navCall={this.props.navCall}
+                />
+            );
+        } else {
+            let self = this;
+            return this.state.students.map(function (student) {
+               return (
+                   <PrintPage
+                       parentState={self.state}
+                       navCall={self.props.navCall}
+                       student={student}
+                   />
+               );
+            });
+        }
+
+    }
+
+    componentDidMount() {
+        if (this.props.navCall === false) {
+            const url = `/rest/students/all/${this.props.classId}`;
+
+            let self = this;
+            let callback = (response) => {
+                if (response.ok) {
+                    response.json().then(function (response) {
+                        self.setState({
+                            students: response,
+                            studentsFetched: true
+                        });
+                    });
+                }
+            };
+
+            RestCalls.get(url, callback);
+        }
     }
 }
 
