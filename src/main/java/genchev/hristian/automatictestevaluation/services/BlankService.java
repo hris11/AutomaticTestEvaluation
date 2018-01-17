@@ -27,4 +27,8 @@ public class BlankService {
         Blank blank = blankRepository.getById(blankId);
         blankRepository.delete(blank);
     }
+
+    public Blank getBlankById(Integer blankId) {
+        return blankRepository.getById(blankId);
+    }
 }

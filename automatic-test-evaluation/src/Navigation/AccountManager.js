@@ -8,6 +8,8 @@ import './AccountManager.css'
 import ModifyClass from "../Class/ClassCreation/ModifyClass";
 import BlankManager from "../CreateTemplateComponents/BlankManager";
 import ModifyBlanks from "../Class/ClassCreation/ModifyBlanks";
+import PrintPage from "../CreateTemplateComponents/PrintPage/PrintPage";
+import RestCalls from "../RESTCalls/RestCalls";
 
 class AccountManager extends Component {
     constructor(props) {
@@ -16,7 +18,9 @@ class AccountManager extends Component {
             navigationDisplayContent: 'class-list-preview',
             currentClass: '',
             currentClassId: 0,
-            newBlankName: ''
+            newBlankName: '',
+            childResponse: {},
+            students: {}
         }
     }
 
@@ -78,6 +82,7 @@ class AccountManager extends Component {
                 return <ModifyBlanks
                     classId={this.state.currentClassId}
                     handleNewBlank={(blankTitle) => this.handleNewBlank(blankTitle)}
+                    displayBlank={(response) => this.displayBlank(response)}
                 />
             }
             case 'new-blank': {
@@ -87,6 +92,29 @@ class AccountManager extends Component {
                     navCall={false}
                     classId={this.state.currentClassId}
                 />
+            }
+            case 'display-blank': {
+                let data = Object.assign([], this.state.students);
+                let self = this;
+                console.log(data.students)
+
+                return data.students.map(function (student, index) {
+                    return (
+                        <PrintPage
+                            numberToggle={false}
+                            groupToggle={false}
+                            classToggle={false}
+                            nameToggle={false}
+                            listNameToggle={true}
+                            listNumberToggle={true}
+                            sliderValue={self.state.childResponse.numberOfAnswers}
+                            eachAnswerNumberOfOptions={self.state.childResponse.answers}
+
+                            navCall={false}
+                            student={student}
+                        />
+                    );
+                });
             }
         }
     }
@@ -140,6 +168,29 @@ class AccountManager extends Component {
                 </div>
             </div>
         );
+    }
+
+    displayBlank(response) {
+        let childResponse = response;
+        const classId = response.classId;
+        console.log(response.classId);
+        const url = `/rest/user/classes/8`;
+        let self = this;
+
+        let callback = (response) => {
+            if (response.ok) {
+                response.json().then(function (response) {
+                    self.setState({
+                        childResponse: childResponse,
+                        students: response,
+                        navigationDisplayContent: 'display-blank'
+                    });
+                });
+            }
+        };
+
+        RestCalls.get(url, callback)
+
     }
 }
 

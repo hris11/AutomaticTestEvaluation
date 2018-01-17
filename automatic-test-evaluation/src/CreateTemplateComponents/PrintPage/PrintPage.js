@@ -7,7 +7,7 @@ class PrintPage extends Component {
 
     nameHeaderGenerator() {
 
-        if (this.props.parentState.nameToggle) {
+        if (this.props.nameToggle) {
             return ([
                 "Име:",
                 "______________________________"
@@ -21,7 +21,7 @@ class PrintPage extends Component {
     }
 
     classHeaderGenerator() {
-        if (this.props.parentState.classToggle) {
+        if (this.props.classToggle) {
             return ([
                 "Клас:",
                 "________"
@@ -35,7 +35,7 @@ class PrintPage extends Component {
     }
 
     numberHeaderGenerator() {
-        if (this.props.parentState.numberToggle) {
+        if (this.props.numberToggle) {
             return ([
                 "Номер:",
                 "________"
@@ -49,7 +49,7 @@ class PrintPage extends Component {
     }
 
     groupHeaderGenerator() {
-        if (this.props.parentState.groupToggle) {
+        if (this.props.groupToggle) {
             return ([
                 "Група:",
                 "________"
@@ -63,7 +63,7 @@ class PrintPage extends Component {
     }
 
     studentName() {
-        if (this.props.parentState.listNameToggle) {
+        if (this.props.listNameToggle) {
             return ([
                 "Име: ",
                 `${this.props.student.firstName} ${this.props.student.lastName}`
@@ -77,7 +77,7 @@ class PrintPage extends Component {
     }
 
     studentNumber() {
-        if (this.props.parentState.listNumberToggle) {
+        if (this.props.listNumberToggle) {
             return ([
                 "Номер: ",
                 `${this.props.student.number}`
@@ -101,6 +101,9 @@ class PrintPage extends Component {
     render() {
         let nameHeader = null;
         let numberHeader = null;
+        let classHeader = [null, null];
+        let groupHeader = [null, null];
+
         if (this.props.navCall === true) {
             nameHeader = this.nameHeaderGenerator();
             numberHeader = this.numberHeaderGenerator();
@@ -109,10 +112,12 @@ class PrintPage extends Component {
             numberHeader = this.studentNumber();
         }
 
-        let classHeader = this.classHeaderGenerator();
-        let groupHeader = this.groupHeaderGenerator();
+        if (this.props.navCall) {
+            classHeader = this.classHeaderGenerator();
+            groupHeader = this.groupHeaderGenerator();
+        }
 
-        console.log(this.props.parentState.eachAnswerNumberOfOptions);
+
 
         return (
             <div className="blank-for-print">
@@ -141,7 +146,10 @@ class PrintPage extends Component {
                 </div>
                 <hr className="test-header-divider"/>
                 <div className="blank-lines-block">
-                    <OptionsHandler parentState={this.props.parentState}/>
+                    <OptionsHandler
+                        sliderValue={this.props.sliderValue}
+                        eachAnswerNumberOfOptions={this.props.eachAnswerNumberOfOptions}
+                    />
                 </div>
                 <hr className="test-header-divider"/>
             </div>

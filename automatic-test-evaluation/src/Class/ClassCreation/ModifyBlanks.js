@@ -46,6 +46,11 @@ class ModifyBlanks extends Component {
                 <li>
                     <span>{blank.name}</span>
                     <RaisedButton
+                        label="Принтиране"
+                        onClick={() => self.printBlank(blank.id)}
+                        primary={true}
+                    />
+                    <RaisedButton
                         label="Изтриване"
                         onClick={() => self.deleteBlank(blank.id)}
                     />
@@ -121,6 +126,23 @@ class ModifyBlanks extends Component {
         };
 
         RestCalls.delete(url, callback);
+    }
+
+    printBlank(id) {
+        const url = `/rest/user/class/blanks/${id}`;
+        let self = this;
+        let callback = (response) => {
+            if (response.ok) {
+                /*mounts the print component*/
+                response.json().then(function (response) {
+                    self.props.displayBlank(response);
+                });
+
+            }
+        };
+
+        RestCalls.get(url, callback);
+
     }
 }
 export default ModifyBlanks;

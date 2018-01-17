@@ -33,7 +33,6 @@ public class ClassREST {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Class> getClasses(InputEmail input) {
         String mail = input.getEmail();
-        System.out.println("email kato poluchava zaqvka: " + mail);
 
         return classService.getAllClasses(mail);
     }
@@ -47,6 +46,14 @@ public class ClassREST {
         classService.createClass(input);
         return studentService.getStudents(input);
     }
+
+    @GET
+    @Path("classes/{id}")
+    @Produces(MediaType.APPLICATION_JSON)   
+    public Class getClassById(@PathParam("id") Integer classId) {
+        return classService.getClassById(classId);
+    }
+
 
     @DELETE
     @Path("classes/{id}")

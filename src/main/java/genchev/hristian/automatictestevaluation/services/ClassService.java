@@ -80,4 +80,8 @@ public class ClassService {
 
         classRepository.delete(theClass);
     }
+
+    public Class getClassById(Integer classId) {
+        return classRepository.findById(classId);
+    }
 }

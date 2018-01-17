@@ -27,6 +27,13 @@ public class BlankREST {
         return blankService.getClassBlanksByClassId(classId);
     }
 
+    @GET
+    @Path("blanks/{blank_id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Blank getBlankById(@PathParam("blank_id") Integer blankId) {
+        return blankService.getBlankById(blankId);
+    }
+
     @POST
     @Path("{id}/blanks")
     @Consumes(MediaType.APPLICATION_JSON)

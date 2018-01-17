@@ -505,7 +505,15 @@ class BlankManager extends Component {
         if (this.props.navCall) {
             return (
                 <PrintPage
-                    parentState={this.state}
+                    numberToggle={this.state.numberToggle}
+                    groupToggle={this.state.groupToggle}
+                    classToggle={this.state.classToggle}
+                    nameToggle={this.state.nameToggle}
+                    listNameToggle={this.state.listNameToggle}
+                    listNumberToggle={this.state.listNumberToggle}
+                    sliderValue={this.state.sliderValue}
+                    eachAnswerNumberOfOptions={this.state.eachAnswerNumberOfOptions}
+
                     navCall={this.props.navCall}
                 />
             );
@@ -514,7 +522,15 @@ class BlankManager extends Component {
             return this.state.students.map(function (student) {
                return (
                    <PrintPage
-                       parentState={self.state}
+                       numberToggle={self.state.numberToggle}
+                       groupToggle={self.state.groupToggle}
+                       classToggle={self.state.classToggle}
+                       nameToggle={self.state.nameToggle}
+                       listNameToggle={self.state.listNameToggle}
+                       listNumberToggle={self.state.listNumberToggle}
+                       sliderValue={self.state.sliderValue}
+                       eachAnswerNumberOfOptions={self.state.eachAnswerNumberOfOptions}
+
                        navCall={self.props.navCall}
                        student={student}
                    />
