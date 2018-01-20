@@ -49,7 +49,7 @@ public class ClassREST {
 
     @GET
     @Path("classes/{id}")
-    @Produces(MediaType.APPLICATION_JSON)   
+    @Produces(MediaType.APPLICATION_JSON)
     public Class getClassById(@PathParam("id") Integer classId) {
         return classService.getClassById(classId);
     }
