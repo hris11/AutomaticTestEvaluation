@@ -1,11 +1,24 @@
 package genchev.hristian.automatictestevaluation.rest;
 
 import com.google.inject.Inject;
-import com.sun.jersey.spi.resource.Singleton;
 import genchev.hristian.automatictestevaluation.inputModels.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.services.SecurityService;
 import genchev.hristian.automatictestevaluation.services.UserService;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import javax.imageio.ImageIO;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.NotFoundException;
+import com.google.zxing.Result;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
+import com.google.zxing.common.HybridBinarizer;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
@@ -16,18 +29,18 @@ import javax.ws.rs.core.Response;
 @Path("auth")
 public class AuthService {
     private static final long serialVersionUID = 1L;
-    
+
     private final String SESSION_COOKIE_NAME = "ate-session";
-    
+
     private UserService userService;
     private SecurityService securityService;
-    
+
     @Inject
     public AuthService(UserService userService, SecurityService securityService) {
         this.userService = userService;
         this.securityService = securityService;
     }
-    
+
     @POST
     @Path("login")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -36,7 +49,7 @@ public class AuthService {
         System.out.println("password: " + loginUser.getPassword());
 
         loginUser.setPassword(
-            securityService.encryptPassword(loginUser.getPassword())
+                securityService.encryptPassword(loginUser.getPassword())
         );
         if (userService.authLoginUser(loginUser)) {
 
@@ -51,7 +64,7 @@ public class AuthService {
         }
 
     }
-    
+
     @POST
     @Path("logout")
     public Response logout(@QueryParam("username") String name, @CookieParam(SESSION_COOKIE_NAME) Cookie cookie) {
@@ -59,7 +72,7 @@ public class AuthService {
         System.out.println("Logged in: " + cookie.getValue());
         Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "false");
         NewCookie nc = new NewCookie(loginCookie, "", 0, false); // Ask the browser to delete the cookie
-        
+
         return Response.ok().cookie(nc).build();
     }
 
@@ -70,12 +83,33 @@ public class AuthService {
     public User register(User u) {
 
         u.setPassword(
-            securityService.encryptPassword(u.getPassword())
+                securityService.encryptPassword(u.getPassword())
         );
         System.out.println("Email: " + u.getEmail());
         System.out.println(userService.registerUser(u));
 
         return u;
     }
-    
+
+    @GET
+    @Path("qr")
+    public void readQr() throws NotFoundException, IOException {
+        String filePath = "qr-wikipedia.jpg"; // absolute path to image
+        String charset = "UTF-8"; // or "ISO-8859-1"
+        Map hintMap = new HashMap();
+        hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+
+        System.out.println("Data read from QR Code: "
+                + readQRCode(filePath, charset, hintMap));
+    }
+
+    public static String readQRCode(String filePath, String charset, Map hintMap)
+            throws FileNotFoundException, IOException, NotFoundException {
+        BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(
+                new BufferedImageLuminanceSource(
+                        ImageIO.read(new FileInputStream(filePath)))));
+        Result qrCodeResult = new MultiFormatReader().decode(binaryBitmap,
+                hintMap);
+        return qrCodeResult.getText();
+    }
 }
