@@ -15,6 +15,8 @@
         <class>genchev.hristian.automatictestevaluation.models.Class</class>
         <class>genchev.hristian.automatictestevaluation.models.Blank</class>
         <class>genchev.hristian.automatictestevaluation.models.Answer</class>
+        <class>genchev.hristian.automatictestevaluation.models.Result</class>
+        <class>genchev.hristian.automatictestevaluation.models.ResultAnswer</class>
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />

@@ -90,26 +90,4 @@ public class AuthService {
 
         return u;
     }
-
-    @GET
-    @Path("qr")
-    public void readQr() throws NotFoundException, IOException {
-        String filePath = "qr-wikipedia.jpg"; // absolute path to image
-        String charset = "UTF-8"; // or "ISO-8859-1"
-        Map hintMap = new HashMap();
-        hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
-
-        System.out.println("Data read from QR Code: "
-                + readQRCode(filePath, charset, hintMap));
-    }
-
-    public static String readQRCode(String filePath, String charset, Map hintMap)
-            throws FileNotFoundException, IOException, NotFoundException {
-        BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(
-                new BufferedImageLuminanceSource(
-                        ImageIO.read(new FileInputStream(filePath)))));
-        Result qrCodeResult = new MultiFormatReader().decode(binaryBitmap,
-                hintMap);
-        return qrCodeResult.getText();
-    }
 }

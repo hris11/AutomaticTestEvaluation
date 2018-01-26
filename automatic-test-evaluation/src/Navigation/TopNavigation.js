@@ -8,8 +8,9 @@ import RegisterLoginAccountManager from "./RegisterLoginAccountManager";
 import Home from 'material-ui/svg-icons/action/home';
 import AccountCircle from 'material-ui/svg-icons/action/account-box';
 import SettingsApplication from 'material-ui/svg-icons/action/build';
-import Info from 'material-ui/svg-icons/action/perm-device-information';
+import Upload from 'material-ui/svg-icons/file/file-upload';
 import Results from 'material-ui/svg-icons/action/assignment';
+import UploadPicture from "./UploadPicture";
 
 class MainNavigationComponent extends Component {
     constructor(props) {
@@ -46,12 +47,12 @@ class MainNavigationComponent extends Component {
                             </div>
                         </Tab>
                         <Tab
-                            label="За нас"
+                            label="Качване на снимка"
                             value="b"
-                            icon={<Info/>}
+                            icon={<Upload/>}
                         >
-                            <div className='test'>
-                                <BlankManager/>
+                            <div className='upload-picture'>
+                                <UploadPicture/>
                             </div>
                         </Tab>
                         <Tab
