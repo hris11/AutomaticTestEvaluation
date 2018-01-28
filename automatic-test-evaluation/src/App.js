@@ -47,6 +47,8 @@ class App extends Component {
         }
     }
 
+    // TODO: da se citira https://www.w3schools.com/js/js_cookies.asp
+
     setCookie(cname, cvalue, exdays) {
         let d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -70,33 +72,7 @@ class App extends Component {
         return "";
     }
 
-    makeAjaxRequest(url) {
-        console.log('clicked');
-        const options = {
-            method: 'GET'
-        };
-        const self = this;
-        fetch(url, options)
-            .then(function (response) {
-                response.text().then(function (data) {
-                    self.setState({data: data, error: ''});
-                });
-
-            })
-            .catch(function (error) {
-                self.setState({data: '', error: error});
-            });
-    }
-
     render() {
-        let data;
-        if (this.state.data.length > 0) {
-            data = (<p>Data: {this.state.data}</p>);
-        }
-        let error;
-        if (this.state.error.length > 0) {
-            error = (<p>Error: {this.state.error}</p>);
-        }
         return (
             <div>
                 <MainNavigationComponent

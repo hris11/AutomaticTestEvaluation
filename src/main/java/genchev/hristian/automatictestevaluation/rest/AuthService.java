@@ -28,10 +28,6 @@ import javax.ws.rs.core.Response;
 
 @Path("auth")
 public class AuthService {
-    private static final long serialVersionUID = 1L;
-
-    private final String SESSION_COOKIE_NAME = "ate-session";
-
     private UserService userService;
     private SecurityService securityService;
 
@@ -45,27 +41,18 @@ public class AuthService {
     @Path("login")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response login(LoginUser loginUser) {
-        System.out.println("email: " + loginUser.getEmail());
-        System.out.println("password: " + loginUser.getPassword());
-
         loginUser.setPassword(
                 securityService.encryptPassword(loginUser.getPassword())
         );
         if (userService.authLoginUser(loginUser)) {
-
-            Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "success");
-            NewCookie nc = new NewCookie(loginCookie, "", 60*60*24, false);
-
-            System.out.println("Lognat si chestito");
-            return Response.ok().cookie(nc).build();
+            return Response.ok().build();
         } else {
-            System.out.println("new si lognat brat");
             return Response.status(401).build();
         }
 
     }
 
-    @POST
+    /*@POST
     @Path("logout")
     public Response logout(@QueryParam("username") String name, @CookieParam(SESSION_COOKIE_NAME) Cookie cookie) {
         System.out.println("Name: " + name);
@@ -74,7 +61,7 @@ public class AuthService {
         NewCookie nc = new NewCookie(loginCookie, "", 0, false); // Ask the browser to delete the cookie
 
         return Response.ok().cookie(nc).build();
-    }
+    }*/
 
     @POST
     @Path("register")
@@ -85,8 +72,8 @@ public class AuthService {
         u.setPassword(
                 securityService.encryptPassword(u.getPassword())
         );
-        System.out.println("Email: " + u.getEmail());
-        System.out.println(userService.registerUser(u));
+
+        userService.registerUser(u);
 
         return u;
     }
