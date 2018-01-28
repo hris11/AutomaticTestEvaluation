@@ -2,7 +2,7 @@
   "name": "automatic-test-evaluation",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:8080/",
   "dependencies": {
     "material-ui": "0.20.0",
     "react": "^16.0.0",

@@ -10,7 +10,7 @@ const get = (url, callback) => {
         });
 };
 
-const post = (url, headers, body, callback) => {
+const post = (url, headers, body, callback, fileUpload) => {
 
     let head = new Headers();
 
@@ -18,13 +18,13 @@ const post = (url, headers, body, callback) => {
         Object.keys(headers).forEach(function (key) {
             head.append(key, headers[key]);
         });
-    } else {
+    } else if(!fileUpload) {
         head.append("Content-Type", "application/json");
     }
 
     const options = {
         method: 'POST',
-        body: JSON.stringify(body),
+        body: fileUpload ? body : JSON.stringify(body),
         headers: head
     };
 
