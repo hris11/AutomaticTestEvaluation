@@ -96,8 +96,8 @@ class AccountManager extends Component {
             case 'display-blank': {
                 let data = Object.assign([], this.state.students);
                 let self = this;
-                console.log(data.students)
-
+                console.log(data.students);
+                
                 return data.students.map(function (student, index) {
                     return (
                         <PrintPage
@@ -174,7 +174,7 @@ class AccountManager extends Component {
         let childResponse = response;
         const classId = response.classId;
         console.log(response.classId);
-        const url = `/rest/user/classes/8`;
+        const url = `/rest/user/classes/1`;
         let self = this;
 
         let callback = (response) => {

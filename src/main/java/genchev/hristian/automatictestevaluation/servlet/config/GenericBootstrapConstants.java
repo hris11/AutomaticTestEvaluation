@@ -1,11 +1,5 @@
 package genchev.hristian.automatictestevaluation.servlet.config;
 
-/**
- * Generic constants for Bootstrapping the WebApp
- * 
- * @author pablo.biagioli
- *
- */
 public class GenericBootstrapConstants {
 
 	/**

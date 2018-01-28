@@ -6,6 +6,7 @@ import genchev.hristian.automatictestevaluation.models.Blank;
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
+import javax.transaction.Transactional;
 
 public class BlankRepository implements RepositoryInterface<Blank> {
 

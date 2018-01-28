@@ -5,6 +5,7 @@ import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.sun.jersey.core.header.FormDataContentDisposition;
+
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
@@ -19,24 +20,22 @@ import java.util.Map;
 public class ImageService {
     public void uploadImage(InputStream inputStream, FormDataContentDisposition fileDetail) throws Exception {
         byte bytes[] = streamToByteArray(inputStream, fileDetail);
+        System.out.println("size: " + bytes.length);
         Mat src = Imgcodecs.imdecode(new MatOfByte(bytes), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
         BufferedImage bf = Mat2BufferedImage(src);
         readQr(bf);
     }
 
     public byte[] streamToByteArray(InputStream inputStream, FormDataContentDisposition fileDetail) throws IOException {
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        byte bytes[] = new byte[(int) fileDetail.getSize()];
-        int count = 0;
-        int offset = 0;
-        while ((count = inputStream.read(bytes)) != -1) {
-            bos.write(bytes, offset, count);
-            offset += count;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        byte[] buf = new byte[4096];
+        while(true) {
+          int n = inputStream.read(buf);
+          if( n < 0 ) break;
+          baos.write(buf, 0, n);
         }
-        bos.flush();
-        bos.close();
 
-        return bytes;
+        return baos.toByteArray();
     }
 
     public static String readQRCode(BufferedImage bf, String charset, Map hintMap)

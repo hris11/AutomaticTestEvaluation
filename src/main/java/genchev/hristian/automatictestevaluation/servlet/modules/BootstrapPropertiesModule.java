@@ -8,14 +8,7 @@ import java.util.Properties;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
 import genchev.hristian.automatictestevaluation.servlet.config.GenericBootstrapConstants;
-/**
- * Guice Module to load Properties file and bind it to Guice Injector.<br>
- * Properties can later be used in constructor or field injection by using: <br> 
- * <code>@Inject @Named("name.of.the.key") private String propValue;</code>
- * 
- * @author pablo.biagioli
- *
- */
+
 public class BootstrapPropertiesModule extends AbstractModule{
 
 	@Override

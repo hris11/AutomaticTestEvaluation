@@ -8,9 +8,11 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.MediaType;
+
 import java.io.IOException;
 import java.io.InputStream;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("image")
 public class ImageREST {
@@ -28,6 +30,7 @@ public class ImageREST {
     public void uploadImage(@FormDataParam("file") InputStream inputStream,
                             @FormDataParam("file") FormDataContentDisposition fileDetail) throws Exception {
 
+        System.out.println("uploadImage");
         imageService.uploadImage(inputStream, fileDetail);
     }
 }
