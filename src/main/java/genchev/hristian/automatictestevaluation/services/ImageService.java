@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.services;
 
+import com.google.inject.Inject;
 import genchev.hristian.automatictestevaluation.comparators.ImageRowComparator;
 
 import com.google.zxing.*;
@@ -8,6 +9,7 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 
+import genchev.hristian.automatictestevaluation.models.Blank;
 import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
@@ -19,18 +21,41 @@ import java.io.*;
 import java.util.*;
 
 public class ImageService {
+
+    private BlankService blankService;
+
+    @Inject
+    public ImageService(BlankService blankService) {
+        this.blankService = blankService;
+    }
+
     public void uploadImage(InputStream inputStream, FormDataContentDisposition fileDetail) throws Exception {
         byte bytes[] = streamToByteArray(inputStream, fileDetail);
         Mat src = Imgcodecs.imdecode(new MatOfByte(bytes), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
         Core.rotate(src, src, Core.ROTATE_90_CLOCKWISE); //ROTATE_180 or ROTATE_90_COUNTERCLOCKWISE
+        Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\matsrc.png", src);
         BufferedImage bf = Mat2BufferedImage(src);
-        readQr(bf);
+        String qrValue = readQr(bf);
+
+        String[] qrValuesArray = qrValue.split("-");
+
+        Integer studentId = 0, blankId = 0;
+
+        if (qrValuesArray != null && qrValuesArray.length == 2) {
+            studentId = Integer.valueOf(qrValuesArray[0]);
+            blankId = Integer.valueOf(qrValuesArray[1]);
+        } else {
+            return;
+        }
 
         if (src.empty()) {
             throw new ImageAccessException("cannot convert to mat");
         }
 
+        Blank blank = blankService.getBlankById(blankId);
+
         Mat colorsub = getBlankAndWhite(src.clone());
+        Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\cls.png", colorsub);
 
         Mat gray = new Mat();
         Imgproc.cvtColor(src, gray, Imgproc.COLOR_BGR2GRAY);
@@ -40,10 +65,11 @@ public class ImageService {
         Mat circles = new Mat();
         Imgproc.HoughCircles(gray, circles, Imgproc.HOUGH_GRADIENT, 1.0,
                 (double) gray.rows() / 128, // change this value to detect circles with different distances to each other
-                100.0, 30.0, 30, 50); // change the last two parameters
+                100.0, 30.0, 20, 70); // change the last two parameters
         // (min_radius & max_radius) to detect larger circles
 
         List<Point> orderedPoints = getAllRowsOrdered(circles);
+        System.out.println("Number OF circles:" + orderedPoints.size());
         int index = 0;
         for (Point orderedPoint : orderedPoints) {
             System.out.println("circle index: " + ++index);
@@ -60,7 +86,7 @@ public class ImageService {
             System.out.println();
         }
 
-        /*for (int x = 0; x < circles.cols(); x++) {
+        for (int x = 0; x < circles.cols(); x++) {
             double[] c = circles.get(0, x);
             Point center = new Point(c[0], c[1]);
 
@@ -73,7 +99,8 @@ public class ImageService {
         }
 
         Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\output.png", src);
-        Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\cls.png", colorsub);*/
+
+        /*Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\cls.png", colorsub);*/
     }
 
     public Mat getBlankAndWhite(Mat colorsub) {
@@ -123,26 +150,23 @@ public class ImageService {
     }
 
     public static List<Point> getAllRowsOrdered(Mat circles) {
-        Point topLeft = determineTopLeft(circles);
-        Point topRight = determineTopRight(circles);
         List<Point> allOrdered = new ArrayList<>();
 
-        Point offsetLeft = topLeft.clone();
-        Point offsetRight = topRight.clone();
+        Point top = determineTop(circles);
 
+        double rad = circles.get(0, 0)[2];
 
         /*трябва да намерим следващия най-ляв и най-десен У от следващия ред*/
-        for (int i = 0; i < 10; i++) {
-            allOrdered.addAll(orderRow(offsetLeft, offsetRight, circles));
+        for (int i = 0; i < 4; i++) {
+            allOrdered.addAll(orderRow(new Point(top.x, top.y - rad * 3 / 4), new Point(top.x, top.y + rad * 3 / 4), circles));
             /*трябва дасе намери следващите по големина*/
             for (int x = 0; x < circles.cols(); x++) {
                 double[] c = circles.get(0, x);
                 Point center = new Point(c[0], c[1]);
                 double radius = c[2];
 
-                if (center.y >= offsetLeft.y + (2 * radius) && center.y <= offsetLeft.y + (4 * radius)) {
-                    offsetLeft = new Point(center.x, center.y + (radius * (3 / 4)));
-                    offsetRight = new Point(center.x, center.y - (radius * (3 / 4)));
+                if (center.y >= top.y + (2 * radius) && center.y <= top.y + (4 * radius)) {
+                    top = center.clone();
                     break;
                 }
             }
@@ -173,11 +197,6 @@ public class ImageService {
 
         pointsOnRow = sortRow(pointsOnRow);
 
-        /*System.out.println(pointsOnRow.size());
-        for (Point point : pointsOnRow) {
-            System.out.println("x: " + point.x + " y: " + point.y);
-        }*/
-
         return pointsOnRow;
     }
 
@@ -186,32 +205,15 @@ public class ImageService {
         return input;
     }
 
-    public static Point determineTopLeft(Mat circles) {
+    public static Point determineTop(Mat circles) {
         Point result = null;
         for (int x = 0; x < circles.cols(); x++) {
 
             double[] c = circles.get(0, x);
 
             Point center = new Point(Math.round(c[0]), Math.round(c[1]));
-            if (result == null) {
-                result = center.clone();
-            } else if (center.x <= result.x && center.y <= result.y) {
-                result = center.clone();
-            }
-        }
-        return result;
-    }
 
-    public static Point determineTopRight(Mat circles) {
-        Point result = null;
-        for (int x = 0; x < circles.cols(); x++) {
-
-            double[] c = circles.get(0, x);
-
-            Point center = new Point(c[0], c[1]);
-            if (result == null) {
-                result = center.clone();
-            } else if (center.x >= result.x && center.y <= result.y) {
+            if (result == null || center.y <= result.y) {
                 result = center.clone();
             }
         }
@@ -240,13 +242,12 @@ public class ImageService {
         return qrCodeResult.getText();
     }
 
-    public static void readQr(BufferedImage bf) throws NotFoundException, IOException {
+    public static String readQr(BufferedImage bf) throws NotFoundException, IOException {
         String charset = "UTF-8"; // or "ISO-8859-1"
         Map hintMap = new HashMap();
         hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
 
-        System.out.println("Data read from QR Code: "
-                + readQRCode(bf, charset, hintMap));
+        return readQRCode(bf, charset, hintMap);
     }
 
     static BufferedImage Mat2BufferedImage(Mat matrix) throws Exception {

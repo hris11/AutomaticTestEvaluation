@@ -6,8 +6,8 @@ import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.inputModels.NewStudentInput;
 import genchev.hristian.automatictestevaluation.models.Student;
 import genchev.hristian.automatictestevaluation.services.StudentService;
+import com.google.inject.Inject;
 
-import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;

@@ -3,8 +3,7 @@ package genchev.hristian.automatictestevaluation.rest;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 import genchev.hristian.automatictestevaluation.services.ImageService;
-
-import javax.inject.Inject;
+import com.google.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;

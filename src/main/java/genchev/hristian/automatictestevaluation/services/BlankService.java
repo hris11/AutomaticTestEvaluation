@@ -2,8 +2,8 @@ package genchev.hristian.automatictestevaluation.services;
 
 import genchev.hristian.automatictestevaluation.models.Blank;
 import genchev.hristian.automatictestevaluation.repository.BlankRepository;
+import com.google.inject.Inject;
 
-import javax.inject.Inject;
 import java.util.List;
 
 public class BlankService {

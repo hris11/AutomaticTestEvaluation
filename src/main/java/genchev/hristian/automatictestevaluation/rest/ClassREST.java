@@ -1,7 +1,6 @@
 package genchev.hristian.automatictestevaluation.rest;
 
 import com.google.inject.Inject;
-import com.sun.jersey.spi.resource.Singleton;
 import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.models.Class;
 import genchev.hristian.automatictestevaluation.inputModels.InputEmail;
