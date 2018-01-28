@@ -112,6 +112,7 @@ class AccountManager extends Component {
 
                             navCall={false}
                             student={student}
+                            blankId={self.state.childResponse.id}
                         />
                     );
                 });
@@ -170,18 +171,15 @@ class AccountManager extends Component {
         );
     }
 
-    displayBlank(response) {
-        let childResponse = response;
-        const classId = response.classId;
-        console.log(response.classId);
-        const url = `/rest/user/classes/1`;
+    displayBlank(blankResponse) {
+        const url = `/rest/user/classes/${this.state.currentClassId}`;
         let self = this;
 
         let callback = (response) => {
             if (response.ok) {
                 response.json().then(function (response) {
                     self.setState({
-                        childResponse: childResponse,
+                        childResponse: blankResponse,
                         students: response,
                         navigationDisplayContent: 'display-blank'
                     });

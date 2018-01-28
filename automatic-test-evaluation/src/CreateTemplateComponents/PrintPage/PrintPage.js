@@ -94,7 +94,7 @@ class PrintPage extends Component {
         if (this.props.navCall === true) {
             return <QRCode value="https://evening-sierra-80012.herokuapp.com/" />
         } else {
-            return <QRCode value={`${this.props.student.id}`} />
+            return <QRCode value={`${this.props.student.id}-${this.props.blankId}`} />
         }
     }
 
@@ -116,7 +116,6 @@ class PrintPage extends Component {
             classHeader = this.classHeaderGenerator();
             groupHeader = this.groupHeaderGenerator();
         }
-
 
 
         return (

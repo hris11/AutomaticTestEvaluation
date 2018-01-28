@@ -20,6 +20,7 @@ class BlankManager extends Component {
             stepperDisplay: {
                 display: 'flex'
             },
+            blankId: 0,
             stepperFinished: false,
             stepperIndex: 0,
             nameToggle: props.navCall,
@@ -180,7 +181,7 @@ class BlankManager extends Component {
     }
 
     postTest() {
-        const url = `/rest/user/class/${this.props.classId}/blanks`;
+        const url = `/rest/users/classes/${this.props.classId}/blanks`;
 
         const body = {
             numberOfAnswers: this.state.sliderValue,
@@ -189,8 +190,25 @@ class BlankManager extends Component {
             classId: this.props.classId
         };
 
+        let self = this;
         let callback = (response) => {
-
+            if (response.ok) {
+                response.json().then(function (response) {
+                    console.log("response blank post id: " + response.id);
+                    self.setState({
+                        blankId: response.id,
+                        printDisplay: {
+                            display: 'inline'
+                        },
+                        navigationDisplay: {
+                            display: 'none'
+                        },
+                        stepperDisplay: {
+                            display: 'none'
+                        }
+                    });
+                });
+            }
         };
 
         RestCalls.post(url, undefined, body, callback);
@@ -199,6 +217,7 @@ class BlankManager extends Component {
     generatePrintablePage() {
         if (!this.props.navCall) {
             this.postTest();
+            return;
         }
 
         this.setState({
@@ -518,24 +537,33 @@ class BlankManager extends Component {
                 />
             );
         } else {
-            let self = this;
-            return this.state.students.map(function (student) {
-               return (
-                   <PrintPage
-                       numberToggle={self.state.numberToggle}
-                       groupToggle={self.state.groupToggle}
-                       classToggle={self.state.classToggle}
-                       nameToggle={self.state.nameToggle}
-                       listNameToggle={self.state.listNameToggle}
-                       listNumberToggle={self.state.listNumberToggle}
-                       sliderValue={self.state.sliderValue}
-                       eachAnswerNumberOfOptions={self.state.eachAnswerNumberOfOptions}
+            if (this.state.blankId !== 0) {
+                let self = this;
+                return this.state.students.map(function (student) {
+                    return (
+                        <PrintPage
+                            numberToggle={self.state.numberToggle}
+                            groupToggle={self.state.groupToggle}
+                            classToggle={self.state.classToggle}
+                            nameToggle={self.state.nameToggle}
+                            listNameToggle={self.state.listNameToggle}
+                            listNumberToggle={self.state.listNumberToggle}
+                            sliderValue={self.state.sliderValue}
+                            eachAnswerNumberOfOptions={self.state.eachAnswerNumberOfOptions}
+                            blankId={self.state.blankId}
 
-                       navCall={self.props.navCall}
-                       student={student}
-                   />
-               );
-            });
+                            navCall={self.props.navCall}
+                            student={student}
+                        />
+                    );
+                });
+            } else {
+                return (
+                    <div>
+                        <CircularProgress/>
+                    </div>
+                );
+            }
         }
 
     }

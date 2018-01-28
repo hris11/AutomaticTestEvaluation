@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.transaction.Transactional;
 
+@Transactional
 public class BlankRepository implements RepositoryInterface<Blank> {
 
     private EntityManager entityManager;
@@ -55,6 +56,18 @@ public class BlankRepository implements RepositoryInterface<Blank> {
         this.entityManager.getTransaction().begin();
         result = entityManager.createQuery("from Blank where id = :blank_id", Blank.class)
                 .setParameter("blank_id", blankId)
+                .getSingleResult();
+        this.entityManager.getTransaction().commit();
+
+        return result;
+    }
+
+    public Blank getBlankByClassIdAndBlankName(Integer classId, Blank blank) {
+        Blank result;
+        this.entityManager.getTransaction().begin();
+        result = entityManager.createQuery("from Blank where class_id = :class_id and name = :name", Blank.class)
+                .setParameter("class_id", classId)
+                .setParameter("name", blank.getName())
                 .getSingleResult();
         this.entityManager.getTransaction().commit();
 

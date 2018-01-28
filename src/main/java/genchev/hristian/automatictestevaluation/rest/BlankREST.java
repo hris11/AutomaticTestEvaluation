@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("user/class")
+@Path("users/classes")
 public class BlankREST {
 
     private BlankService blankService;
@@ -35,10 +35,11 @@ public class BlankREST {
     }
 
     @POST
-    @Path("{id}/blanks")
+    @Path("{class_id}/blanks")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void createNewBlank(@PathParam("id") Integer classId, Blank blank) {
-        blankService.insert(classId, blank);
+    @Produces(MediaType.APPLICATION_JSON)
+    public Blank createNewBlank(@PathParam("class_id") Integer classId, Blank blank) {
+        return blankService.insert(classId, blank);
     }
 
     @DELETE

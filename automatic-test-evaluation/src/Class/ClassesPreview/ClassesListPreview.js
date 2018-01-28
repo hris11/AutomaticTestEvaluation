@@ -13,7 +13,7 @@ class ClassesListPreview extends Component {
     }
 
     fetchUserClasses() {
-        const url = "/rest/user/classes/";
+        const url = "/rest/user/classes";
         const body = {
             email: this.props.email
         };

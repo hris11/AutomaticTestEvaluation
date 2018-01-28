@@ -37,6 +37,14 @@ public class ClassREST {
         return classService.getAllClasses(mail);
     }
 
+    @GET
+    @Path("{user_id}/classes")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Class> getClasses(@PathParam("user_id") Integer userId) {
+        return classService.getAllClassesById(userId);
+    }
+
     @POST
     @Path("classes/new")
     @Consumes(MediaType.APPLICATION_JSON)

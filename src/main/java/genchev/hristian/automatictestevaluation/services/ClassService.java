@@ -84,4 +84,8 @@ public class ClassService {
     public Class getClassById(Integer classId) {
         return classRepository.findById(classId);
     }
+
+    public List<Class> getAllClassesById(Integer userId) {
+        return classRepository.findByUserId(userId);
+    }
 }

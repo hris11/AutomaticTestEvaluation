@@ -15,7 +15,7 @@ class ModifyBlanks extends Component {
     }
 
     fetchExistingBlanks() {
-        let url = `/rest/user/class/${this.props.classId}/blanks`;
+        let url = `/rest/users/classes/${this.props.classId}/blanks`;
         let self = this;
         let callback = (response) => {
             if (response.ok) {
@@ -119,7 +119,7 @@ class ModifyBlanks extends Component {
     }
 
     deleteBlank(id) {
-        const url = `/rest/user/class/blanks/${id}`;
+        const url = `/rest/users/classes/blanks/${id}`;
         let self = this;
         let callback = (response) => {
             self.fetchExistingBlanks();
@@ -129,7 +129,7 @@ class ModifyBlanks extends Component {
     }
 
     printBlank(id) {
-        const url = `/rest/user/class/blanks/${id}`;
+        const url = `/rest/users/classes/blanks/${id}`;
         let self = this;
         let callback = (response) => {
             if (response.ok) {
