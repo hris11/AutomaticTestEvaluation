@@ -19,18 +19,18 @@ public class ResultAnswer implements Serializable {
     @Column(nullable = false)
     private Integer index;
 
+
     @Column(nullable = false)
-    private Integer chosenOpsion;
+    private Boolean correct;
 
     @Column(name = "result_id")
     private Integer resultId;
 
     public ResultAnswer() {}
 
-    public ResultAnswer(Integer id, Integer index, Integer chosenOpsion, Integer resultId) {
-        this.id = id;
+    public ResultAnswer(Integer index, Boolean correct, Integer resultId) {
         this.index = index;
-        this.chosenOpsion = chosenOpsion;
+        this.correct = correct;
         this.resultId = resultId;
     }
 
@@ -50,13 +50,6 @@ public class ResultAnswer implements Serializable {
         this.index = index;
     }
 
-    public Integer getChosenOpsion() {
-        return chosenOpsion;
-    }
-
-    public void setChosenOpsion(Integer chosenOpsion) {
-        this.chosenOpsion = chosenOpsion;
-    }
 
     public Integer getResultId() {
         return resultId;
@@ -64,6 +57,15 @@ public class ResultAnswer implements Serializable {
 
     public void setResultId(Integer resultId) {
         this.resultId = resultId;
+    }
+
+
+    public Boolean getCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(Boolean correct) {
+        this.correct = correct;
     }
 
     @Override
@@ -75,8 +77,7 @@ public class ResultAnswer implements Serializable {
 
         if (getId() != null ? !getId().equals(that.getId()) : that.getId() != null) return false;
         if (getIndex() != null ? !getIndex().equals(that.getIndex()) : that.getIndex() != null) return false;
-        if (getChosenOpsion() != null ? !getChosenOpsion().equals(that.getChosenOpsion()) : that.getChosenOpsion() != null)
-            return false;
+        if (getCorrect() != null ? !getCorrect().equals(that.getCorrect()) : that.getCorrect() != null) return false;
         return getResultId() != null ? getResultId().equals(that.getResultId()) : that.getResultId() == null;
     }
 
@@ -84,7 +85,7 @@ public class ResultAnswer implements Serializable {
     public int hashCode() {
         int result = getId() != null ? getId().hashCode() : 0;
         result = 31 * result + (getIndex() != null ? getIndex().hashCode() : 0);
-        result = 31 * result + (getChosenOpsion() != null ? getChosenOpsion().hashCode() : 0);
+        result = 31 * result + (getCorrect() != null ? getCorrect().hashCode() : 0);
         result = 31 * result + (getResultId() != null ? getResultId().hashCode() : 0);
         return result;
     }

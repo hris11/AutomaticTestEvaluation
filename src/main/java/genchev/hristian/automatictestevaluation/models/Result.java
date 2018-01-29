@@ -23,16 +23,20 @@ public class Result implements Serializable {
     @Column(nullable = false)
     private Integer blankId;
 
+    @Column(nullable = false)
+    private Double mark;
+
     @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "result_id")
     private List<ResultAnswer> answers;
 
     public Result() {}
 
-    public Result(Integer id, Integer studentId, Integer blankId, List<ResultAnswer> answers) {
+    public Result(Integer id, Integer studentId, Integer blankId, Double mark, List<ResultAnswer> answers) {
         this.id = id;
         this.studentId = studentId;
         this.blankId = blankId;
+        this.mark = mark;
         this.answers = answers;
     }
 
@@ -68,6 +72,14 @@ public class Result implements Serializable {
         this.blankId = blankId;
     }
 
+    public Double getMark() {
+        return mark;
+    }
+
+    public void setMark(Double mark) {
+        this.mark = mark;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -80,6 +92,7 @@ public class Result implements Serializable {
             return false;
         if (getBlankId() != null ? !getBlankId().equals(result.getBlankId()) : result.getBlankId() != null)
             return false;
+        if (getMark() != null ? !getMark().equals(result.getMark()) : result.getMark() != null) return false;
         return getAnswers() != null ? getAnswers().equals(result.getAnswers()) : result.getAnswers() == null;
     }
 
@@ -88,6 +101,7 @@ public class Result implements Serializable {
         int result = getId() != null ? getId().hashCode() : 0;
         result = 31 * result + (getStudentId() != null ? getStudentId().hashCode() : 0);
         result = 31 * result + (getBlankId() != null ? getBlankId().hashCode() : 0);
+        result = 31 * result + (getMark() != null ? getMark().hashCode() : 0);
         result = 31 * result + (getAnswers() != null ? getAnswers().hashCode() : 0);
         return result;
     }

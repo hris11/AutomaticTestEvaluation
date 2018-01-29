@@ -9,7 +9,10 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 
+import genchev.hristian.automatictestevaluation.models.Answer;
 import genchev.hristian.automatictestevaluation.models.Blank;
+import genchev.hristian.automatictestevaluation.models.ResultAnswer;
+import genchev.hristian.automatictestevaluation.repository.ResultRepository;
 import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
@@ -24,16 +27,18 @@ public class ImageService {
 
     private BlankService blankService;
 
+    private ResultRepository resultRepository;
+
     @Inject
-    public ImageService(BlankService blankService) {
+    public ImageService(BlankService blankService, ResultRepository resultRepository) {
         this.blankService = blankService;
+        this.resultRepository = resultRepository;
     }
 
     public void uploadImage(InputStream inputStream, FormDataContentDisposition fileDetail) throws Exception {
         byte bytes[] = streamToByteArray(inputStream, fileDetail);
         Mat src = Imgcodecs.imdecode(new MatOfByte(bytes), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
         Core.rotate(src, src, Core.ROTATE_90_CLOCKWISE); //ROTATE_180 or ROTATE_90_COUNTERCLOCKWISE
-        Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\matsrc.png", src);
         BufferedImage bf = Mat2BufferedImage(src);
         String qrValue = readQr(bf);
 
@@ -55,7 +60,6 @@ public class ImageService {
         Blank blank = blankService.getBlankById(blankId);
 
         Mat colorsub = getBlankAndWhite(src.clone());
-        Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\cls.png", colorsub);
 
         Mat gray = new Mat();
         Imgproc.cvtColor(src, gray, Imgproc.COLOR_BGR2GRAY);
@@ -69,38 +73,82 @@ public class ImageService {
         // (min_radius & max_radius) to detect larger circles
 
         List<Point> orderedPoints = getAllRowsOrdered(circles);
-        System.out.println("Number OF circles:" + orderedPoints.size());
-        int index = 0;
+
+        List<Boolean> marked = new ArrayList<>();
         for (Point orderedPoint : orderedPoints) {
-            System.out.println("circle index: " + ++index);
-            System.out.println("x: " + orderedPoint.x + " y: " + orderedPoint.y);
             double[] res = colorsub.get((int) orderedPoint.y, (int) orderedPoint.x);
-            for (double re : res) {
-                System.out.println(re);
-            }
             if (res[0] == 0) {
-                System.out.println("markirano");
+                marked.add(true);
             } else {
-                System.out.println("ne e");
+                marked.add(false);
             }
-            System.out.println();
         }
 
-        for (int x = 0; x < circles.cols(); x++) {
-            double[] c = circles.get(0, x);
-            Point center = new Point(c[0], c[1]);
+        Integer blankSize = getBlankSize(blank);
+        Integer offset = 0;
 
-            int radius = (int) Math.round(c[2]);
-
-            System.out.println();
-
-            Imgproc.circle(src, center, 1, new Scalar(0, 100, 100), 3, 8, 0);
-            Imgproc.circle(src, center, radius, new Scalar(255, 0, 255), 3, 8, 0);
+        if (blankSize != orderedPoints.size()) {
+            System.out.println("different blank size");
+            return;
         }
 
-        Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\output.png", src);
+        genchev.hristian.automatictestevaluation.models.Result result =
+                new genchev.hristian.automatictestevaluation.models.Result();
 
-        /*Imgcodecs.imwrite("C:\\Users\\hrist\\Desktop\\cls.png", colorsub);*/
+        List<ResultAnswer> resultAnswers = new ArrayList<>();
+        Integer index = 1;
+        Integer numberOfCorrect = 0;
+
+        System.out.println("cikal za proverka");
+
+        for (Answer answer : blank.getAnswers()) {
+            boolean multiChosen = false;
+            ResultAnswer resultAnswer = new ResultAnswer();
+            if (marked.get(offset + answer.getRightAnswer())) {
+                for (int i = offset; i < offset + answer.getOptions(); i++) {
+                    if (marked.get(i) && i != offset + answer.getRightAnswer()) {
+                        /*in case there is more than one chosen option*/
+                        multiChosen = true;
+                        break;
+                    }
+                }
+
+                if (multiChosen) {
+                    resultAnswer.setCorrect(false);
+                } else {
+                    numberOfCorrect++;
+                    resultAnswer.setCorrect(true);
+                }
+            } else {
+                resultAnswer.setCorrect(false);
+            }
+
+            resultAnswer.setIndex(index);
+
+            resultAnswers.add(resultAnswer);
+
+            offset += answer.getOptions();
+            index++;
+        }
+
+        Double mark = 2.0 + (((double) numberOfCorrect / (double) blank.getNumberOfAnswers() * 4));
+        System.out.println(mark);
+
+        result.setAnswers(resultAnswers);
+        result.setMark(mark);
+        result.setBlankId(blankId);
+        result.setStudentId(studentId);
+
+        resultRepository.insert(result);
+    }
+
+    private Integer getBlankSize(Blank blank) {
+        Integer result = 0;
+        for (Answer answer : blank.getAnswers()) {
+            result += answer.getOptions();
+        }
+
+        return result;
     }
 
     public Mat getBlankAndWhite(Mat colorsub) {
