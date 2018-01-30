@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import MainNavigationComponent from './Navigation/TopNavigation'
-import Cookies from 'universal-cookie';
 
 /*
 * Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")

@@ -53,7 +53,24 @@ class SingleAnswerBlankList extends Component {
                     <MenuItem value={6} primaryText="6"/>
                     <MenuItem value={7} primaryText="7"/>
                 </DropDownMenu>
+                {this.getGroupContent()}
+            </li>
+        );
+    }
 
+    handleGroupChange(event, index, value) {
+        this.props.changeGroupOfLine(this.props.index, value);
+    }
+
+    handleAnswerChange(event, value) {
+        this.props.handleRightAnswerChange(this.props.index, value)
+    }
+
+    getGroupContent() {
+        if (this.props.navCall === true) {
+            return null;
+        } else {
+            return (
                 <DropDownMenu
                     value={this.props.answersOptions[this.props.index].group}
                     onChange={
@@ -67,16 +84,8 @@ class SingleAnswerBlankList extends Component {
                     <MenuItem value={4} primaryText={this.props.groups[4].name}/>
                     <MenuItem value={5} primaryText={this.props.groups[5].name}/>
                 </DropDownMenu>
-            </li>
-        );
-    }
-
-    handleGroupChange(event, index, value) {
-        this.props.changeGroupOfLine(this.props.index, value);
-    }
-
-    handleAnswerChange(event, value) {
-        this.props.handleRightAnswerChange(this.props.index, value)
+            );
+        }
     }
 }
 

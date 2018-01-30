@@ -65,13 +65,12 @@ class MainNavigationComponent extends Component {
                             </div>
                         </Tab>
                         <Tab
-                            label="Генерирай бланка"
+                            label="Генериране на бланка"
                             value='e'
                             icon={<SettingsApplication/>}
                         >
                             <div>
                                 <BlankManager
-                                    // logged={this.props.logged}
                                     blankTitle={''}
                                     logged={false}
                                     navCall={true}
