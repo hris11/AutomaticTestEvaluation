@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Paper, RaisedButton} from "material-ui";
 import ExitAccount from 'material-ui/svg-icons/action/account-circle';
 import NewClass from 'material-ui/svg-icons/content/add-circle';
+import Compare from 'material-ui/svg-icons/action/compare-arrows';
+import Class from 'material-ui/svg-icons/action/class';
 import ClassesListPreview from "../Class/ClassesPreview/ClassesListPreview";
 import ClassBox from "../Class/ClassCreation/ClassBox";
 import './AccountManager.css'
@@ -134,7 +136,7 @@ class AccountManager extends Component {
                     <RaisedButton
                         className="account-navigation-button"
                         primary={true}
-                        label="Излез от профила"
+                        label="Излизане от профила"
                         icon={<ExitAccount/>}
                         onClick={(event) => this.props.logout(event)}
                     />
@@ -142,21 +144,22 @@ class AccountManager extends Component {
                         className="account-navigation-button"
                         primary={true}
                         onClick={(event) => this.handleNewClassButton(event)}
-                        label="Нов Клас"
+                        label="Създаване на клас"
                         icon={<NewClass/>}
                     />
                     <RaisedButton
                         className="account-navigation-button"
                         primary={true}
                         onClick={(event) => this.handlePreviewClasses(event)}
-                        label="Мойте класове"
-                        icon={<NewClass/>}
+                        label="Моите класове"
+                        icon={<Class/>}
                     />
                     <RaisedButton
                         className="account-navigation-button"
                         primary={true}
                         onClick={(event) => this.handleNewClassButton(event)}
-                        label="Сравни класове"
+                        label="Сравняване на класове"
+                        icon={<Compare/>}
                     />
                 </div>
 

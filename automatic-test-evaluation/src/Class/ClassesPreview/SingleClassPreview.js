@@ -9,21 +9,21 @@ class SingleClassPreview extends Component {
                 <div>{this.props.data.name}</div>
                 <div>
                     <RaisedButton
-                        label="Промени"
+                        label="Промяна"
                         secondary={true}
                         onClick={(classTitle) => this.props.modifyClass(this.props.data.name)}
                     />
                 </div>
                 <div>
                     <RaisedButton
-                        label="Тестове"
+                        label="Бланки"
                         primary={true}
                         onClick={(classId) => this.props.modifyBlanks(this.props.data.id)}
                     />
                 </div>
                 <div>
                     <RaisedButton
-                        label="Изтрии"
+                        label="Изтриване"
                         onClick={(classId) => this.props.deleteClass(this.props.data.id)}
                     />
                 </div>

@@ -65,7 +65,7 @@ class ClassesListPreview extends Component {
     render() {
         return (
             <div>
-                <h3>Classes List Preview</h3>
+                <h3>Моите класове</h3>
                 <ul className="class-list">
                     {this.createClassFields()}
                 </ul>
