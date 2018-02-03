@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import React, {Component} from 'react'
 import {CircularProgress} from "material-ui";
+import RestCalls from "../RESTCalls/RestCalls";
 
 class LoginComponent extends Component {
 
@@ -19,34 +20,26 @@ class LoginComponent extends Component {
     handleLoginSubmit(event) {
         console.log("Starting fetch");
         this.handleLoginStatus('spinner');
-        let url = "/rest/auth/login";
+        const url = "/rest/auth/login";
 
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-
-        const options = {
-            method: 'POST',
-            body: JSON.stringify({
-                email: this.state.email,
-                password: this.state.password,
-            }),
-            headers: headers
+        const body = {
+            email: this.state.email,
+            password: this.state.password,
         };
         const self = this;
-        fetch(url, options)
-            .then(function (response) {
-                if (response.ok) {
-                    self.handleLoginStatus('success');
-                    self.props.login(self.state.email);
-                } else if(response.status === 401) {
-                    self.handleLoginStatus('login');
-                } else {
-                    console.log("Kefi se");
-                }
-            })
-        .catch(function (error) {
-            console.error(error);        
-        });
+        
+        const callback = (response) => {
+            if (response.ok) {
+                self.handleLoginStatus('success');
+                self.props.login(self.state.email);
+            } else if(response.status === 401) {
+                self.handleLoginStatus('login');
+            } else {
+                console.log("Kefi se");
+            }
+        };
+        
+        RestCalls.post(url, undefined, body, callback);
     }
 
     getLoginContent() {

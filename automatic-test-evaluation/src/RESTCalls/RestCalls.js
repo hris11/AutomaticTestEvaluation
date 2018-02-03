@@ -1,8 +1,10 @@
 const get = (url, callback) => {
     const options = {
-        method: 'GET'
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'same-origin'
     };
-
+    
     fetch(url, options)
         .then(callback)
         .catch(function (error) {
@@ -25,9 +27,11 @@ const post = (url, headers, body, callback, fileUpload) => {
     const options = {
         method: 'POST',
         body: fileUpload ? body : JSON.stringify(body),
-        headers: head
+        headers: head,
+        mode: 'cors',
+        credentials: 'same-origin'
     };
-
+    
     fetch(url, options)
         .then(callback)
         .catch(function (error) {
@@ -38,7 +42,9 @@ const post = (url, headers, body, callback, fileUpload) => {
 const deleteReq = (url, callback) => {
 
     const options = {
-        method: 'DELETE'
+        method: 'DELETE',
+        mode: 'cors',
+        credentials: 'same-origin'
     };
 
     fetch(url, options)

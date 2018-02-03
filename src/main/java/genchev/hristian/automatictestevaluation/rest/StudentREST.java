@@ -11,8 +11,10 @@ import com.google.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 
 @Path("students")
+@RequiresAuthentication
 public class StudentREST {
 
     private StudentService studentService;

@@ -20,16 +20,12 @@ class App extends Component {
     }
 
     handleLogout(event) {
-        document.cookie = "ate-session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
         this.setState({
             loginStatus: false
         });
     }
 
     handleLogin(email) {
-        this.setCookie('ate-session', 'true', 1);
         this.setCookie('email', email, 1);
 
         this.setState({
@@ -39,7 +35,7 @@ class App extends Component {
     }
 
     componentWillMount() {
-        if (this.getCookie('ate-session') === 'true') {
+        if (this.getCookie('email').length > 0) {
             this.setState({
                 loginStatus: true,
                 loggedMail: this.getCookie('email')

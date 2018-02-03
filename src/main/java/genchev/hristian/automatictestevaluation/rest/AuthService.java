@@ -5,26 +5,16 @@ import genchev.hristian.automatictestevaluation.inputModels.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
 import genchev.hristian.automatictestevaluation.services.SecurityService;
 import genchev.hristian.automatictestevaluation.services.UserService;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import javax.imageio.ImageIO;
-import com.google.zxing.BinaryBitmap;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.MultiFormatReader;
-import com.google.zxing.NotFoundException;
-import com.google.zxing.Result;
-import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
-import com.google.zxing.common.HybridBinarizer;
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-
 import javax.ws.rs.*;
-import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 
 @Path("auth")
 public class AuthService {
@@ -44,24 +34,44 @@ public class AuthService {
         loginUser.setPassword(
                 securityService.encryptPassword(loginUser.getPassword())
         );
-        if (userService.authLoginUser(loginUser)) {
-            return Response.ok().build();
-        } else {
-            return Response.status(401).build();
-        }
 
+        int status = 401;
+        Subject currentUser = SecurityUtils.getSubject();
+        if (!currentUser.isAuthenticated()) {
+            UsernamePasswordToken token = new UsernamePasswordToken(loginUser.getEmail(), loginUser.getPassword());
+            
+            try {
+                currentUser.login(token);
+                //System.out.println("if no exception, that's it, we're done!");
+                status = 200;
+            } catch (UnknownAccountException uae) {
+                //username wasn't in the system, show them an error message?
+                //System.out.println("username wasn't in the system, show them an error message?");
+            } catch (IncorrectCredentialsException ice) {
+                //password didn't match, try again?
+                //System.out.println("password didn't match, try again?");
+            } catch (LockedAccountException lae) {
+                //account for that username is locked - can't login.  Show them a message?
+                //System.out.println("account for that username is locked - can't login.  Show them a message?");
+            } catch (AuthenticationException ae) {
+                //unexpected condition - error?
+                //System.out.println("unexpected condition - error?");
+            }
+        }
+        
+        return Response.status(status).build();
     }
 
-    /*@POST
+    @POST
     @Path("logout")
-    public Response logout(@QueryParam("username") String name, @CookieParam(SESSION_COOKIE_NAME) Cookie cookie) {
-        System.out.println("Name: " + name);
-        System.out.println("Logged in: " + cookie.getValue());
-        Cookie loginCookie = new Cookie(SESSION_COOKIE_NAME, "false");
-        NewCookie nc = new NewCookie(loginCookie, "", 0, false); // Ask the browser to delete the cookie
-
-        return Response.ok().cookie(nc).build();
-    }*/
+    public Response logout() {
+        Subject currentUser = SecurityUtils.getSubject();
+        if (currentUser.isAuthenticated()) {
+            currentUser.logout();
+        }
+        
+        return Response.ok().build();
+    }
 
     @POST
     @Path("register")

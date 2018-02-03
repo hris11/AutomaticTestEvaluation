@@ -12,8 +12,10 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 
 @Path("user")
+@RequiresAuthentication
 public class ClassREST {
 
     private ClassService classService;
