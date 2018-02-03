@@ -72,7 +72,7 @@ public class ImageService {
                 100.0, 30.0, 20, 70); // change the last two parameters
         // (min_radius & max_radius) to detect larger circles
 
-        List<Point> orderedPoints = getAllRowsOrdered(circles);
+        List<Point> orderedPoints = getAllRowsOrdered(circles, blank.getNumberOfAnswers());
 
         List<Boolean> marked = new ArrayList<>();
         for (Point orderedPoint : orderedPoints) {
@@ -197,7 +197,7 @@ public class ImageService {
         return colorsub;
     }
 
-    public static List<Point> getAllRowsOrdered(Mat circles) {
+    public static List<Point> getAllRowsOrdered(Mat circles, Integer numberOfAnswers) {
         List<Point> allOrdered = new ArrayList<>();
 
         Point top = determineTop(circles);
@@ -205,7 +205,7 @@ public class ImageService {
         double rad = circles.get(0, 0)[2];
 
         /*трябва да намерим следващия най-ляв и най-десен У от следващия ред*/
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < numberOfAnswers; i++) {
             allOrdered.addAll(orderRow(new Point(top.x, top.y - rad * 3 / 4), new Point(top.x, top.y + rad * 3 / 4), circles));
             /*трябва дасе намери следващите по големина*/
             for (int x = 0; x < circles.cols(); x++) {

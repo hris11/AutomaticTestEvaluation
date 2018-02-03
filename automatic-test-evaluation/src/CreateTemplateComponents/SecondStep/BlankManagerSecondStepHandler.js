@@ -23,6 +23,7 @@ class BlankManagerSecondStepHandler extends Component {
                     changeGroupOfLine={(index, value) => this.props.changeGroupOfLine(index, value)}
                     logged={this.props.logged}
                     handleRightAnswerChange={(index, rightAnswerIndex) => this.props.handleRightAnswerChange(index, rightAnswerIndex)}
+                    navCall={this.props.navCall}
                 />
             );
         }
@@ -40,7 +41,7 @@ class BlankManagerSecondStepHandler extends Component {
 
     handleDisplayGroupBar() {
         if (this.props.navCall === true) {
-            return '';
+            return null;
         } else {
             return (
                 <GroupsBar

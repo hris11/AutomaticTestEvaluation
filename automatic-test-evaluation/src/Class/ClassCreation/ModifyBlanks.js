@@ -51,6 +51,11 @@ class ModifyBlanks extends Component {
                         primary={true}
                     />
                     <RaisedButton
+                        label="Резултати"
+                        secondary={true}
+                        onClick={() => self.getBlankResults(blank.id)}
+                    />
+                    <RaisedButton
                         label="Изтриване"
                         onClick={() => self.deleteBlank(blank.id)}
                     />
@@ -67,6 +72,10 @@ class ModifyBlanks extends Component {
                 </ul>
             );
         }
+    }
+
+    getBlankResults(id) {
+
     }
 
     handleNameChange(event, newValue) {
