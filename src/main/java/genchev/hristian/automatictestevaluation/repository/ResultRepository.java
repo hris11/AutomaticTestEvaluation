@@ -6,7 +6,6 @@ import genchev.hristian.automatictestevaluation.models.Result;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Transactional
@@ -53,18 +52,20 @@ public class ResultRepository implements RepositoryInterface<Result> {
         return result;
     }
 
-    public BlankMarks getBlankmarks(Integer blankId) {
+    public BlankMarks getBlankmarks(Integer blankId) {       
         BlankMarks blankMarks;
 
-        blankMarks = entityManager.createQuery("SELECT" +
+        blankMarks = entityManager.createQuery(
+                "SELECT NEW genchev.hristian.automatictestevaluation.OutputModels.BlankMarks(" +
                 "  COUNT(CASE WHEN r.mark >= 2 AND r.mark < 3 then 2 end) as mark2," +
                 "  COUNT(CASE WHEN r.mark >= 3 AND r.mark < 3.5 then 3 end) as mark3," +
                 "  COUNT(CASE WHEN r.mark >= 3.5 AND r.mark < 4.5 then 4 end) as mark4," +
                 "  COUNT(CASE WHEN r.mark >= 4.5 AND r.mark < 5.5 then 5 end) as mark5," +
-                "  COUNT(CASE WHEN r.mark >= 5.5 then 6 end) as mark6 " +
-                "FROM Result r", BlankMarks.class)
+                "  COUNT(CASE WHEN r.mark >= 5.5 then 6 end) as mark6) " +
+                "FROM Result r WHERE blankid = :blank_id", BlankMarks.class)
+                .setParameter("blank_id", blankId)
                 .getSingleResult();
-
+        
         return  blankMarks;
     }
 }
