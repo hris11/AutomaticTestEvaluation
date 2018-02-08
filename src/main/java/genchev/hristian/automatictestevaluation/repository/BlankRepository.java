@@ -81,6 +81,11 @@ public class BlankRepository implements RepositoryInterface<Blank> {
                 .getResultList();
         this.entityManager.getTransaction().commit();
 
+        System.out.println("teeeeeeeeeeeest");
+
+        for (Blank blank : result) {
+            System.out.println(blank.getId());
+        }
         return result;
     }
 }

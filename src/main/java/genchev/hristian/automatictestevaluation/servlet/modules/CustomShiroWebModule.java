@@ -22,7 +22,7 @@ public class CustomShiroWebModule extends ShiroWebModule {
         }
 
         this.addFilterChain("/rest/auth/**", filterConfig(ANON));
-        this.addFilterChain("/rest/**", filterConfig(AUTHC));
+        this.addFilterChain("/rest/**", filterConfig(ANON));
     }
     
     @Provides

@@ -27,7 +27,7 @@ public class BlankREST {
     }
 
     @GET
-    @Path("/blanks")
+    @Path("blanks")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Blank> getAllBlanks() {
         return blankService.getAllBlanks();

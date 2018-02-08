@@ -11,6 +11,7 @@ import SettingsApplication from 'material-ui/svg-icons/action/build';
 import Upload from 'material-ui/svg-icons/file/file-upload';
 import Results from 'material-ui/svg-icons/action/assignment';
 import UploadPicture from "./UploadPicture";
+import BlanksResultList from "../Blanks/BlanksResultList";
 
 class MainNavigationComponent extends Component {
     constructor(props) {
@@ -61,7 +62,7 @@ class MainNavigationComponent extends Component {
                             icon={<Results/>}
                         >
                             <div>
-
+                                <BlanksResultList/>
                             </div>
                         </Tab>
                         <Tab
