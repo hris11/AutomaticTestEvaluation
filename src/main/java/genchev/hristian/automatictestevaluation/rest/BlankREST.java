@@ -27,6 +27,13 @@ public class BlankREST {
     }
 
     @GET
+    @Path("/blanks")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Blank> getAllBlanks() {
+        return blankService.getAllBlanks();
+    }
+
+    @GET
     @Path("blanks/{blank_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Blank getBlankById(@PathParam("blank_id") Integer blankId) {
@@ -46,5 +53,7 @@ public class BlankREST {
     public void deleteBlankById(@PathParam("blank_id") Integer blank_id) {
         blankService.deleteBlankById(blank_id);
     }
+
+
 
 }

@@ -32,4 +32,8 @@ public class BlankService {
     public Blank getBlankById(Integer blankId) {
         return blankRepository.getById(blankId);
     }
+
+    public List<Blank> getAllBlanks() {
+        return blankRepository.getAllBlanks();
+    }
 }

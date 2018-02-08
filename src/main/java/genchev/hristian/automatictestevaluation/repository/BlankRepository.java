@@ -73,4 +73,14 @@ public class BlankRepository implements RepositoryInterface<Blank> {
 
         return result;
     }
+
+    public List<Blank> getAllBlanks() {
+        List<Blank> result;
+        this.entityManager.getTransaction().begin();
+        result = entityManager.createQuery("from Blank", Blank.class)
+                .getResultList();
+        this.entityManager.getTransaction().commit();
+
+        return result;
+    }
 }
