@@ -2,6 +2,7 @@ package genchev.hristian.automatictestevaluation.rest;
 
 import com.google.inject.Inject;
 import genchev.hristian.automatictestevaluation.OutputModels.BlankMarks;
+import genchev.hristian.automatictestevaluation.OutputModels.StudentMark;
 import genchev.hristian.automatictestevaluation.models.Result;
 import genchev.hristian.automatictestevaluation.services.ResultServiceImpl;
 
@@ -40,7 +41,7 @@ public class ResultRESTImpl implements ResultREST {
     @GET
     @Path("{blank_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Result> getBlankResult(@PathParam("blank_id") Integer blankId) {
+    public List<StudentMark> getBlankResult(@PathParam("blank_id") Integer blankId) {
         return resultService.getBlankResult(blankId);
     }
 

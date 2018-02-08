@@ -75,15 +75,16 @@ class ModifyBlanks extends Component {
     }
 
     getBlankResults(id) {
-        const url = `/rest/result/${id}/marks`;
-
+        /*const url = `/rest/result/${id}/marks`;
+        let self = this;
         let callback = (response) => {
             response.json().then(function (response) {
-                console.log(response)
+                self.props.displayBlankResult(response, id);
             });
         };
 
-        RestCalls.get(url, callback);
+        RestCalls.get(url, callback);*/
+        this.props.displayBlankResult(id);
     }
 
     handleNameChange(event, newValue) {

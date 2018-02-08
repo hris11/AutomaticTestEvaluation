@@ -12,6 +12,7 @@ import BlankManager from "../CreateTemplateComponents/BlankManager";
 import ModifyBlanks from "../Class/ClassCreation/ModifyBlanks";
 import PrintPage from "../CreateTemplateComponents/PrintPage/PrintPage";
 import RestCalls from "../RESTCalls/RestCalls";
+import BlankResult from "../Class/ClassCreation/BlankResult";
 
 class AccountManager extends Component {
     constructor(props) {
@@ -22,7 +23,9 @@ class AccountManager extends Component {
             currentClassId: 0,
             newBlankName: '',
             childResponse: {},
-            students: {}
+            students: {},
+            result: null,
+            blankId: null
         }
     }
 
@@ -85,6 +88,7 @@ class AccountManager extends Component {
                     classId={this.state.currentClassId}
                     handleNewBlank={(blankTitle) => this.handleNewBlank(blankTitle)}
                     displayBlank={(response) => this.displayBlank(response)}
+                    displayBlankResult={(response) => this.displayBlankResult(response)}
                 />
             }
             case 'new-blank': {
@@ -118,6 +122,13 @@ class AccountManager extends Component {
                         />
                     );
                 });
+            }
+            case 'display-result': {
+                return (
+                    <BlankResult
+                        blankId={this.state.blankId}
+                    />
+                );
             }
         }
     }
@@ -172,6 +183,13 @@ class AccountManager extends Component {
                 </div>
             </div>
         );
+    }
+
+    displayBlankResult(id) {
+        this.setState({
+            navigationDisplayContent: 'display-result',
+            blankId: id
+        });
     }
 
     displayBlank(blankResponse) {

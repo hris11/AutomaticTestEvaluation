@@ -48,4 +48,15 @@ public class StudentRepository implements RepositoryInterface<Student>{
         return result;
     }
 
+    public Student getStudentByHisId(Integer studentId) {
+        Student result;
+        this.entityManager.getTransaction().begin();
+        result = entityManager.createQuery("from Student where id = :id", Student.class)
+                .setParameter("id", studentId)
+                .getSingleResult();
+        this.entityManager.getTransaction().commit();
+
+        return result;
+    }
+
 }

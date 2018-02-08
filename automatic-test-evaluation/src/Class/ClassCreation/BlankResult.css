@@ -1,0 +1,40 @@
+.student-result-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*TODO citirane https://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/*/
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.result-li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+.result-li:last-child {
+    border: none;
+}
+
+.result-li .blank-result-list {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.result-li .blank-result-list:hover {
+    font-size: 30px;
+    background: #f6f6f6;
+}
