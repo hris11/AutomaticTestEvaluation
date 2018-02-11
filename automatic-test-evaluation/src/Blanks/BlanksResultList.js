@@ -3,6 +3,7 @@ import {RaisedButton} from "material-ui";
 import {CircularProgress} from "material-ui";
 import RestCalls from "../RESTCalls/RestCalls";
 import BlankResult from "../Class/ClassCreation/BlankResult";
+import './BlanksResultList.css';
 
 class  BlanksResultList extends Component {
 
@@ -71,15 +72,16 @@ class  BlanksResultList extends Component {
             return <CircularProgress/>
         }
         return (
-            <div>
+            <div className="blank-result-list">
 
                 <RaisedButton
                     label="обновяване на резултати"
                     primary={true}
                     onClick={() => this.fetchBlanks()}
+                    className="refresh-results"
                 />
                 {this.getResultForBlank()}
-                <ul>
+                <ul className="result-list">
                     {this.getAllBlanks()}
                 </ul>
             </div>

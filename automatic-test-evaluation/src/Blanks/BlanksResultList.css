@@ -1,0 +1,11 @@
+.refresh-results {
+    margin: 10px 0 0 40px;
+}
+
+.result-list li div {
+    margin: 5px;
+}
+
+.result-list li div button div {
+    margin: 0;
+}

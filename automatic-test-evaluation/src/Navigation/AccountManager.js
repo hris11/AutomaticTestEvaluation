@@ -102,24 +102,24 @@ class AccountManager extends Component {
             case 'display-blank': {
                 let data = Object.assign([], this.state.students);
                 let self = this;
-                console.log(data.students);
+                console.log('students', data.students);
                 
                 return data.students.map(function (student, index) {
                     return (
-                        <PrintPage
-                            numberToggle={false}
-                            groupToggle={false}
-                            classToggle={false}
-                            nameToggle={false}
-                            listNameToggle={true}
-                            listNumberToggle={true}
-                            sliderValue={self.state.childResponse.numberOfAnswers}
-                            eachAnswerNumberOfOptions={self.state.childResponse.answers}
+                            <PrintPage
+                                numberToggle={false}
+                                groupToggle={false}
+                                classToggle={false}
+                                nameToggle={false}
+                                listNameToggle={true}
+                                listNumberToggle={true}
+                                sliderValue={self.state.childResponse.numberOfAnswers}
+                                eachAnswerNumberOfOptions={self.state.childResponse.answers}
 
-                            navCall={false}
-                            student={student}
-                            blankId={self.state.childResponse.id}
-                        />
+                                navCall={false}
+                                student={student}
+                                blankId={self.state.childResponse.id}
+                            />
                     );
                 });
             }
@@ -134,6 +134,9 @@ class AccountManager extends Component {
     }
 
     render() {
+        const displayClass = this.state.navigationDisplayContent === 'display-blank'
+            ? 'class-blanks'
+            : 'account-inner-workplace';
         return (
             <div className="account-manager">
                 <div className="account-navigation">
@@ -176,7 +179,7 @@ class AccountManager extends Component {
 
                 <div className="account-workplace">
                     <Paper zDepth={2}>
-                        <div className="account-inner-workplace">
+                        <div className={displayClass}>
                             {this.getContent()}
                         </div>
                     </Paper>

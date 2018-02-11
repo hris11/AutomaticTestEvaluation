@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import RestCalls from "../../RESTCalls/RestCalls";
 import ClassNamePicker from "./NamePicker";
 import {RaisedButton} from "material-ui";
+import './ModifyBlanks.css';
 
 class ModifyBlanks extends Component {
 

@@ -21,6 +21,12 @@
     width: 100%;
 }
 
+.class-blanks {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
 @media print {
     .account-navigation {
         display: none;
