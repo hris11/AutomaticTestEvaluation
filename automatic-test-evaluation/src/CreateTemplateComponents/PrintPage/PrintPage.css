@@ -45,6 +45,10 @@
     height: 650px;
 }
 
+.blank-lines-block li {
+    list-style-type: decimal;
+}
+
 .final-step-header {
     margin-left: 40px;
     margin-right: 40px;

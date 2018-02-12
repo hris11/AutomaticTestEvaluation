@@ -27,6 +27,7 @@ public class ResultRESTImpl implements ResultREST {
     @GET
     @Path("{blank_id}/{student_id}")
     @Produces(MediaType.APPLICATION_JSON)
+    @Override
     public Result getStudentResult(@PathParam("blank_id") Integer blankId, @PathParam("student_id") Integer studentId) {
         Result result = null;
         try {
@@ -41,6 +42,7 @@ public class ResultRESTImpl implements ResultREST {
     @GET
     @Path("{blank_id}")
     @Produces(MediaType.APPLICATION_JSON)
+    @Override
     public List<StudentMark> getBlankResult(@PathParam("blank_id") Integer blankId) {
         return resultService.getBlankResult(blankId);
     }
@@ -48,6 +50,7 @@ public class ResultRESTImpl implements ResultREST {
     @GET
     @Path("{blank_id}/marks")
     @Produces(MediaType.APPLICATION_JSON)
+    @Override
     public BlankMarks getBlankMarks(@PathParam("blank_id") Integer blankId) {
         return resultService.getBlankMarks(blankId);
     }
