@@ -6,6 +6,9 @@ import Register from './Register';
 import './RegisterLoginScreen.css'
 import {Divider, Paper} from "material-ui";
 
+/*
+* Some parts of the code are taken from: https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede*/
+
 class RegisterLoginComponent extends Component {
     constructor(props) {
         super(props);
@@ -59,8 +62,8 @@ class RegisterLoginComponent extends Component {
     }
 
     componentWillMount() {
-        let loginscreen = [];
-        loginscreen.push(<Login
+        let loginScreen = [];
+        loginScreen.push(<Login
             logged={this.props.logged}
             logout={(event) => this.props.logout(event)}
             login={(email) => this.props.login(email)}
@@ -70,7 +73,7 @@ class RegisterLoginComponent extends Component {
             appContext={this.props.parentContext}/>);
         let loginmessage = "Още нямате регистрация, регистрирайте се сега!";
         this.setState({
-            loginscreen: loginscreen,
+            loginscreen: loginScreen,
             loginmessage: loginmessage
         });
     }

@@ -153,7 +153,9 @@ public class ImageService {
 
     public Mat getBlankAndWhite(Mat colorsub) {
 
-        //TODO: citirane http://answers.opencv.org/question/24578/select-only-gray-pixels-in-color-image/
+        /*
+        * The next part of code is taken from: http://answers.opencv.org/question/24578/select-only-gray-pixels-in-color-image/
+        * */
 
         byte[] data = new byte[3];
         byte[] black = new byte[]{0, 0, 0};

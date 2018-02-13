@@ -42,7 +42,9 @@ class App extends Component {
         }
     }
 
-    // TODO: da se citira https://www.w3schools.com/js/js_cookies.asp
+    /*
+    * The next part of code is taken from: https://www.w3schools.com/js/js_cookies.asp
+    * */
 
     setCookie(cname, cvalue, exdays) {
         let d = new Date();

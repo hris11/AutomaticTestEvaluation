@@ -24,7 +24,9 @@ class UploadPicture extends Component {
             <Paper zDepth={3}>
                 <div className="image-upload-box">
                     <form action="" onSubmit={(evt) => this.submitForm(evt)}>
-                        {/*TODO citirane https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/*/}
+                        {/*
+                            * The next part of code is taken from: https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+                        */}
                         {/*<input type="file" accept="image/*" name="file"/>
                         <input type="submit" value="качване на снимка"/>*/}
                         <input type="file" name="file" id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple hidden={true}/>

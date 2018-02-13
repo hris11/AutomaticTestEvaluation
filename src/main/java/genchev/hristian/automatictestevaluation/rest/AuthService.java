@@ -35,6 +35,10 @@ public class AuthService {
                 securityService.encryptPassword(loginUser.getPassword())
         );
 
+        /*
+        * The next part of code is taken from: https://shiro.apache.org/10-minute-tutorial.html
+        * */
+
         int status = 401;
         Subject currentUser = SecurityUtils.getSubject();
         if (!currentUser.isAuthenticated()) {

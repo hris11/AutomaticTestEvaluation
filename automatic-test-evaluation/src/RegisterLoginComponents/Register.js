@@ -108,8 +108,9 @@ class RegisterComponent extends Component {
         this.setState(state);
     }
 
-    // TODO: da citiram ot kude sum vzel koda : https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript
-
+    /*
+    * The next part of code is taken from: https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript
+    * */
     validateEmail(email) {
         let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
