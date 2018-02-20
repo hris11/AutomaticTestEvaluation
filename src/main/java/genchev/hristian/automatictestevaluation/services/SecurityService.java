@@ -11,7 +11,9 @@ import java.util.logging.Logger;
 public class SecurityService {
 
     public String encryptPassword(String password) {
-
+        /*
+        * The next part of code is taken from: https://stackoverflow.com/questions/415953/how-can-i-generate-an-md5-hash
+        * */
         String encrypted = null;
         try {
             byte[] bytesOfMessage = password.getBytes("UTF-8");

@@ -69,7 +69,7 @@ class RegisterComponent extends Component {
             this.state.emailSubmitState === true &&
             this.state.passwordSubmitState === true) {
             return true;
-        } else { // TODO: edit
+        } else {
             return false;
         }
     }

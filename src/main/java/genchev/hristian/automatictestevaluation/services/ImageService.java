@@ -40,7 +40,12 @@ public class ImageService {
         Mat src = Imgcodecs.imdecode(new MatOfByte(bytes), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
         Core.rotate(src, src, Core.ROTATE_90_CLOCKWISE); //ROTATE_180 or ROTATE_90_COUNTERCLOCKWISE
         BufferedImage bf = Mat2BufferedImage(src);
-        String qrValue = readQr(bf);
+        String qrValue = "";
+        try {
+            qrValue = readQr(bf);
+        } catch (Exception ex) {
+            return;
+        }
 
         String[] qrValuesArray = qrValue.split("-");
 
@@ -99,7 +104,6 @@ public class ImageService {
         Integer index = 1;
         Integer numberOfCorrect = 0;
 
-        System.out.println("cikal za proverka");
 
         for (Answer answer : blank.getAnswers()) {
             boolean multiChosen = false;
