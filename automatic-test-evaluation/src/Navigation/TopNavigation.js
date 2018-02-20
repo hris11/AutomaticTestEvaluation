@@ -12,6 +12,7 @@ import Upload from 'material-ui/svg-icons/file/file-upload';
 import Results from 'material-ui/svg-icons/action/assignment';
 import UploadPicture from "./UploadPicture";
 import BlanksResultList from "../Blanks/BlanksResultList";
+import UploadFiles from "../CreateTemplateComponents/SecondStep/UploadFiles";
 
 class MainNavigationComponent extends Component {
     constructor(props) {
@@ -42,9 +43,7 @@ class MainNavigationComponent extends Component {
                             icon={<Home/>}
                         >
                             <div>
-                                <p>
-
-                                </p>
+                                <UploadFiles/>
                             </div>
                         </Tab>
                         <Tab

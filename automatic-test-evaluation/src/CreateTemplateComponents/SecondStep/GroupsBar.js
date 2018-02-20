@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './GroupsBar.css';
 import {Divider, DropDownMenu, MenuItem, RaisedButton} from "material-ui";
 import TextField from 'material-ui/TextField';
+import UploadFiles from "./UploadFiles";
 
 class GroupsBar extends Component {
 
@@ -81,6 +82,11 @@ class GroupsBar extends Component {
                             onClick={(event) => this.props.safeChanges(event)}
                         />
                     </div>
+
+
+                </div>
+                <div>
+                    <UploadFiles/>
                 </div>
             </div>
         );

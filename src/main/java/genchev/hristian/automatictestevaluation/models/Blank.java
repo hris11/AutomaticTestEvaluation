@@ -27,17 +27,21 @@ public class Blank implements Serializable {
     @JoinColumn(name = "blank_id")
     private List<Answer> answers;
 
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "blank_id")
+    private List<File> files;
+
     @Column(name = "class_id")
     @JsonIgnore
     private Integer classId;
 
     public Blank() {}
 
-    public Blank(Integer id, Integer numberOfAnswers, String name, List<Answer> answers, Integer classId) {
-        this.id = id;
+    public Blank(Integer numberOfAnswers, String name, List<Answer> answers, List<File> files, Integer classId) {
         this.numberOfAnswers = numberOfAnswers;
         this.name = name;
         this.answers = answers;
+        this.files = files;
         this.classId = classId;
     }
 
@@ -57,6 +61,14 @@ public class Blank implements Serializable {
         this.numberOfAnswers = numberOfAnswers;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public List<Answer> getAnswers() {
         return answers;
     }
@@ -65,21 +77,20 @@ public class Blank implements Serializable {
         this.answers = answers;
     }
 
+    public List<File> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<File> files) {
+        this.files = files;
+    }
+
     public Integer getClassId() {
         return classId;
     }
 
     public void setClassId(Integer classId) {
         this.classId = classId;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
@@ -94,6 +105,7 @@ public class Blank implements Serializable {
             return false;
         if (getName() != null ? !getName().equals(blank.getName()) : blank.getName() != null) return false;
         if (getAnswers() != null ? !getAnswers().equals(blank.getAnswers()) : blank.getAnswers() != null) return false;
+        if (getFiles() != null ? !getFiles().equals(blank.getFiles()) : blank.getFiles() != null) return false;
         return getClassId() != null ? getClassId().equals(blank.getClassId()) : blank.getClassId() == null;
     }
 
@@ -103,6 +115,7 @@ public class Blank implements Serializable {
         result = 31 * result + (getNumberOfAnswers() != null ? getNumberOfAnswers().hashCode() : 0);
         result = 31 * result + (getName() != null ? getName().hashCode() : 0);
         result = 31 * result + (getAnswers() != null ? getAnswers().hashCode() : 0);
+        result = 31 * result + (getFiles() != null ? getFiles().hashCode() : 0);
         result = 31 * result + (getClassId() != null ? getClassId().hashCode() : 0);
         return result;
     }
