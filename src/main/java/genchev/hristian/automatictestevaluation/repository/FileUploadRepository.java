@@ -2,9 +2,11 @@ package genchev.hristian.automatictestevaluation.repository;
 
 import com.google.inject.Inject;
 import com.google.inject.persist.Transactional;
+import genchev.hristian.automatictestevaluation.OutputModels.DisplayMaterial;
 import genchev.hristian.automatictestevaluation.models.File;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 
 public class FileUploadRepository implements RepositoryInterface<File> {
@@ -18,10 +20,7 @@ public class FileUploadRepository implements RepositoryInterface<File> {
 
     @Override
     public void insert(File file) {
-        entityManager.getTransaction().begin();
-        System.out.println("in insert");
         entityManager.persist(file);
-        entityManager.getTransaction().commit();
     }
 
     @Override
@@ -32,5 +31,14 @@ public class FileUploadRepository implements RepositoryInterface<File> {
     @Override
     public void update(File file) {
         entityManager.merge(file);
+    }
+
+    public List<File> getAllMaterials(Integer blankId) {
+        List<File> result;
+        result = entityManager.createQuery("from File where blankid = :blankId", File.class)
+                .setParameter("blankId", blankId)
+                .getResultList();
+
+        return result;
     }
 }

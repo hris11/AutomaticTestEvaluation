@@ -5,16 +5,15 @@ import com.sun.jersey.core.header.ContentDisposition;
 import com.sun.jersey.multipart.BodyPart;
 import com.sun.jersey.multipart.FormDataBodyPart;
 import com.sun.jersey.multipart.FormDataParam;
+import genchev.hristian.automatictestevaluation.OutputModels.DisplayMaterial;
 import genchev.hristian.automatictestevaluation.models.File;
 import genchev.hristian.automatictestevaluation.services.FileUploadServiceImpl;
 import org.apache.commons.io.IOUtils;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.*;
+import java.util.List;
 
 @Path("files")
 public class FilesUploadRESTImpl implements FilesUploadREST {
@@ -52,4 +51,12 @@ public class FilesUploadRESTImpl implements FilesUploadREST {
             }
         }
     }
+
+    @GET
+    @Path("materials/{blank_id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<DisplayMaterial> getAllMaterials(@PathParam("blank_id") Integer blankId) {
+        return fileUploadService.getAllMaterials(blankId);
+    }
+
 }
