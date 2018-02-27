@@ -12,6 +12,8 @@ import org.apache.commons.io.IOUtils;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.StreamingOutput;
 import java.io.*;
 import java.util.List;
 
@@ -57,6 +59,26 @@ public class FilesUploadRESTImpl implements FilesUploadREST {
     @Produces(MediaType.APPLICATION_JSON)
     public List<DisplayMaterial> getAllMaterials(@PathParam("blank_id") Integer blankId) {
         return fileUploadService.getAllMaterials(blankId);
+    }
+
+    @GET
+    @Path("{material_id}")
+    @Produces(MediaType.APPLICATION_OCTET_STREAM)
+    public Response getFile(@PathParam("material_id") Integer materialId) {
+        File file = fileUploadService.getMaterial(materialId);
+        StreamingOutput stream = new StreamingOutput() {
+            @Override
+            public void write(OutputStream os) throws IOException,
+                    WebApplicationException {
+                InputStream data = IOUtils.toInputStream(new String(file.getFile()));
+                IOUtils.copy(data, os);
+            }
+        };
+
+        return Response.ok(stream)
+                .header("Content-Disposition",  "attachment; filename=" + file.getFilename())
+                .header("Content-Type", "text/plain")
+                .build();
     }
 
 }

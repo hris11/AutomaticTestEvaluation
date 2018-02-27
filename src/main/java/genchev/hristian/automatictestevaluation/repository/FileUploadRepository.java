@@ -35,10 +35,16 @@ public class FileUploadRepository implements RepositoryInterface<File> {
 
     public List<File> getAllMaterials(Integer blankId) {
         List<File> result;
-        result = entityManager.createQuery("from File where blankid = :blankId", File.class)
+        result = entityManager.createQuery("from File where blank_id = :blankId", File.class)
                 .setParameter("blankId", blankId)
                 .getResultList();
 
         return result;
+    }
+
+    public File getMaterial(Integer materialId) {
+        return entityManager.createQuery("from File where id = :material_id", File.class)
+                .setParameter("material_id", materialId)
+                .getSingleResult();
     }
 }

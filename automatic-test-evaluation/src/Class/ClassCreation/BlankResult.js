@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import Radar from 'react-d3-radar';
 import RestCalls from "../../RESTCalls/RestCalls";
-import {CircularProgress} from "material-ui";
+import {CircularProgress, RaisedButton} from "material-ui";
 import './BlankResult.css';
+import FileDownload from "../../WgetComponent/FileDownload";
+import * as FileSaver from "file-saver";
 
 class BlankResult extends Component {
 
@@ -10,7 +12,9 @@ class BlankResult extends Component {
         super(props);
         this.state = {
             result: null,
-            studentMarks: null
+            studentMarks: null,
+            materials: null,
+            matUrl: ''
         }
     }
 
@@ -30,11 +34,13 @@ class BlankResult extends Component {
         const url = `/rest/result/${this.props.blankId}/marks`;
         let self = this;
         let callback = (response) => {
-            response.json().then(function (response) {
-                self.setState({
-                    result: response
+            if (response.ok) {
+                response.json().then(function (response) {
+                    self.setState({
+                        result: response
+                    });
                 });
-            });
+            }
         };
 
         RestCalls.get(url, callback);
@@ -44,29 +50,33 @@ class BlankResult extends Component {
         const url = `/rest/result/${this.props.blankId}`;
         let self = this;
         let callback = (response) => {
-            response.json().then(function (response) {
-                self.setState({
-                    studentMarks: response
+            if (response.ok) {
+                response.json().then(function (response) {
+                    self.setState({
+                        studentMarks: response
+                    });
                 });
-            });
+            }
         };
 
         RestCalls.get(url, callback);
     }
 
-    /*fetchMaterials() {
-        const url = `/rest/result/${this.props.blankId}`;
+    fetchMaterials() {
+        const url = `/rest/files/materials/${this.props.blankId}`;
         let self = this;
         let callback = (response) => {
-            response.json().then(function (response) {
-                self.setState({
-                    studentMarks: response
+            if (response.ok) {
+                response.json().then(function (response) {
+                    self.setState({
+                        materials: response
+                    });
                 });
-            });
+            }
         };
 
         RestCalls.get(url, callback);
-    }*/
+    }
 
     getEachStudentMark() {
         return (
@@ -89,6 +99,7 @@ class BlankResult extends Component {
 
     componentWillMount() {
         this.fetchMarks();
+        this.fetchMaterials();
         this.fetchStudentsAndMarks();
     }
 
@@ -97,6 +108,7 @@ class BlankResult extends Component {
         if (result === null || this.state.studentMarks === null) {
             return <CircularProgress/>
         } else {
+
             return (
                 <div>
                     <h1>Оценки от бланката</h1>
@@ -145,9 +157,49 @@ class BlankResult extends Component {
                             </ul>
                         </div>
                     </div>
+                    <div className="materials">
+                        <ul>
+                            {this.getMaterials()}
+                        </ul>
+                    </div>
                 </div>
             );
         }
+    }
+
+    getMaterials() {
+        if (this.state.materials === null) {
+            return null
+        } else {
+            let mats = Object.assign([], this.state.materials);
+            let self = this;
+            return (
+                mats.map(function (material) {
+                    return (
+                        <li>
+                            <span>{material.name}</span>
+                            <RaisedButton
+                                label="сваляне"
+                                onClick={(id, name) => self.downloadMaterial(material.id, material.name)}
+                            />
+                        </li>
+                    );
+                })
+            );
+        }
+    }
+
+    downloadMaterial(id, name) {
+        let callback = (response) => {
+            if (response.ok) {
+                response.blob().then(function(blob) {
+                    FileSaver.saveAs(blob, name);
+                });
+            }
+        };
+
+        const url2 = `/rest/files/${id}`;
+        RestCalls.get(url2, callback);
     }
 }
 

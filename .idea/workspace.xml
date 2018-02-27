@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bb1c67-adb4-4619-a9b8-5837bfe239dd" name="Default" comment="Small removes">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/DisplayMaterial.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/FileDownload.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/Widget.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/package.json" afterPath="$PROJECT_DIR$/automatic-test-evaluation/package.json" />
+      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js" />
       <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java" />
@@ -23,31 +26,12 @@
       <file leaf-file-name="FilesUploadRESTImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="58" column="46" lean-forward="true" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+            <state relative-caret-position="196">
+              <caret line="70" column="50" lean-forward="false" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#855#856#0" expanded="true" />
-                <element signature="e#913#914#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DisplayMaterial.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/DisplayMaterial.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding>
-                <element signature="e#343#344#0" expanded="true" />
-                <element signature="e#370#371#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
+                <element signature="e#930#931#0" expanded="true" />
+                <element signature="e#988#989#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,19 +40,59 @@
       <file leaf-file-name="FileUploadService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="25" />
+            <state relative-caret-position="153">
+              <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileUploadServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileUploadServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="37" column="45" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+              <folding>
+                <element signature="e#1188#1189#0" expanded="true" />
+                <element signature="e#1255#1256#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankResult.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-              <folding />
+              <caret line="196" column="19" lean-forward="true" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileDownload.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/FileDownload.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="33" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#151#190#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Widget.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/Widget.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,8 +120,8 @@
       <file leaf-file-name="FileUploadRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="264">
+              <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
               <folding>
                 <element signature="e#638#639#0" expanded="true" />
                 <element signature="e#681#682#0" expanded="true" />
@@ -116,35 +140,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ImageService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepositoryInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/RepositoryInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -179,9 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/ResultAnswer.java" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/BlankManagerSecondStepHandler.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/SingleAnswerBlankList.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/SingleClassPreview.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/SingleClassPreview.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/ClassesListPreview.js" />
@@ -222,14 +223,17 @@
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/AccountManager.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/UploadFiles.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/servlet/modules/CustomShiroWebModule.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/DisplayMaterial.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/RepositoryInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/RESTCalls/Widget.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/Widget.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/FileDownload.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js" />
       </list>
     </option>
   </component>
@@ -409,6 +413,13 @@
               <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="RESTCalls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
+              <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WgetComponent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
@@ -706,7 +717,7 @@
       <workItem from="1519066157797" duration="4246000" />
       <workItem from="1519142374471" duration="914000" />
       <workItem from="1519153067157" duration="9117000" />
-      <workItem from="1519739808947" duration="7450000" />
+      <workItem from="1519739808947" duration="13236000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented blank iterating and align rows and if circle is black or white">
       <created>1517160130172</created>
@@ -782,7 +793,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202487000" />
+    <option name="totallyTimeSpent" value="208273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -845,27 +856,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/RegisterLoginAccountManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/RegisterLoginScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="106" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3094">
@@ -1093,7 +1083,7 @@
         <state relative-caret-position="187">
           <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1103,7 +1093,7 @@
         <state relative-caret-position="102">
           <caret line="46" column="36" lean-forward="false" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1113,7 +1103,7 @@
         <state relative-caret-position="153">
           <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1131,7 +1121,7 @@
         <state relative-caret-position="221">
           <caret line="61" column="60" lean-forward="false" selection-start-line="61" selection-start-column="60" selection-end-line="61" selection-end-column="60" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1141,7 +1131,7 @@
         <state relative-caret-position="60">
           <caret line="137" column="27" lean-forward="false" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1188,16 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/servlet/modules/CustomShiroRealm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -1227,23 +1207,15 @@
         <state relative-caret-position="264">
           <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding>
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="false" />
+            <element signature="e#370#371#0" expanded="false" />
+            <element signature="e#410#411#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#472#473#0" expanded="false" />
+            <element signature="e#497#498#0" expanded="false" />
+            <element signature="e#534#535#0" expanded="false" />
+            <element signature="e#562#563#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,8 +1261,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="264">
+          <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
           <folding>
             <element signature="e#638#639#0" expanded="true" />
             <element signature="e#681#682#0" expanded="true" />
@@ -1298,23 +1270,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RESTCalls/Widget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="58" column="46" lean-forward="true" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/Widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="493">
+          <caret line="37" column="45" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+          <folding>
+            <element signature="e#1188#1189#0" expanded="true" />
+            <element signature="e#1255#1256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="70" column="50" lean-forward="false" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/FileDownload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#151#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="196" column="19" lean-forward="true" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

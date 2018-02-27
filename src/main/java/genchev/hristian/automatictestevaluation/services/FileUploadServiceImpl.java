@@ -32,4 +32,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 
         return materials;
     }
+
+    @Override
+    public File getMaterial(Integer materialId) {
+        return fileUploadRepository.getMaterial(materialId);
+    }
 }

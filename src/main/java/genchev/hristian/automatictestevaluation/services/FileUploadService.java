@@ -9,4 +9,6 @@ public interface FileUploadService {
     void uploadFile(File file);
 
     List<DisplayMaterial> getAllMaterials(Integer blankId);
+
+    File getMaterial(Integer materialId);
 }
