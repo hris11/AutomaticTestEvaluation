@@ -12,6 +12,7 @@ import org.apache.commons.io.IOUtils;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import java.io.*;
 
@@ -26,10 +27,10 @@ public class FilesUploadRESTImpl implements FilesUploadREST {
     }
 
     @POST
-    @Path("upload")
+    @Path("upload/{blank_id}")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Override
-    public void uploadMultiple(@FormDataParam("files") FormDataBodyPart body){
+    public void uploadMultiple(@FormDataParam("files") FormDataBodyPart body, @PathParam("blank_id") Integer blank_id){
         for(BodyPart part : body.getParent().getBodyParts()){
             InputStream is = part.getEntityAs(InputStream.class);
             ContentDisposition meta = part.getContentDisposition();
@@ -40,7 +41,7 @@ public class FilesUploadRESTImpl implements FilesUploadREST {
                 file = new File();
                 file.setFile(bytes);
                 file.setFilename(meta.getFileName());
-                file.setBlankId(15);
+                file.setBlankId(blank_id);
             } catch (IOException e) {
                 e.printStackTrace();
             }

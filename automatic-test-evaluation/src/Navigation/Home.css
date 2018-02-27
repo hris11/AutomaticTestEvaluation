@@ -1,0 +1,7 @@
+.paper-wrapper {
+    padding: 10%;
+}
+
+.paper-body > p {
+    background: black;
+}

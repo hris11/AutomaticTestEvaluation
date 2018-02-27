@@ -9,5 +9,5 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
 public interface FilesUploadREST {
-    void uploadMultiple(FormDataBodyPart body);
+    void uploadMultiple(FormDataBodyPart body, Integer blankId);
 }

@@ -83,10 +83,6 @@ class GroupsBar extends Component {
                         />
                     </div>
 
-
-                </div>
-                <div>
-                    <UploadFiles/>
                 </div>
             </div>
         );

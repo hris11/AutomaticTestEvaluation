@@ -57,9 +57,15 @@ class ModifyBlanks extends Component {
                         onClick={() => self.getBlankResults(blank.id)}
                     />
                     <RaisedButton
+                        label="Добавяне на материали"
+                        primary={true}
+                        onClick={(id) => self.props.displayMaterialBar(blank.id)}
+                    />
+                    <RaisedButton
                         label="Изтриване"
                         onClick={() => self.deleteBlank(blank.id)}
                     />
+
                 </li>
             );
         });
@@ -161,6 +167,10 @@ class ModifyBlanks extends Component {
         };
 
         RestCalls.get(url, callback);
+
+    }
+
+    addMaterials(id) {
 
     }
 }

@@ -54,6 +54,20 @@ class BlankResult extends Component {
         RestCalls.get(url, callback);
     }
 
+    /*fetchMaterials() {
+        const url = `/rest/result/${this.props.blankId}`;
+        let self = this;
+        let callback = (response) => {
+            response.json().then(function (response) {
+                self.setState({
+                    studentMarks: response
+                });
+            });
+        };
+
+        RestCalls.get(url, callback);
+    }*/
+
     getEachStudentMark() {
         return (
             this.state.studentMarks.map(function (studentResult) {

@@ -6,7 +6,7 @@ class UploadFiles extends Component {
     submitForm(evt) {
         evt.preventDefault();
 
-        const url = "/rest/files/upload";
+        const url = `/rest/files/upload/${this.props.blankId}`;
         const body = new FormData(evt.target);
 
         /*const iter = body.values();
@@ -17,9 +17,10 @@ class UploadFiles extends Component {
             }
             console.log(i);
         }*/
+        let self = this;
         const callback = (response) => {
             if (response.ok) {
-                console.log('image uploaded');
+                self.props.handlePreviewClasses(undefined);
             }
         };
 

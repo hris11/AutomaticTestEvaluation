@@ -21,8 +21,13 @@ public class CustomShiroWebModule extends ShiroWebModule {
             addError(e);
         }
 
-        this.addFilterChain("/rest/auth/**", ANON);
         this.addFilterChain("/rest/**", ANON);
+        this.addFilterChain("/rest/user/classes", AUTHC);
+        this.addFilterChain("/rest/user/classes/new", AUTHC);
+        this.addFilterChain("/rest/users/classes/*/blanks", AUTHC);
+        this.addFilterChain("/rest/students/new", AUTHC);
+
+
     }
     
     @Provides

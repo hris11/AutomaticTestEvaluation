@@ -5,7 +5,7 @@ import RegisterLoginComponent from "../RegisterLoginComponents/RegisterLoginScre
 import AddNewStudentComponent from "../Class/ClassCreation/AddNewStudent";
 import BlankManager from "../CreateTemplateComponents/BlankManager";
 import RegisterLoginAccountManager from "./RegisterLoginAccountManager";
-import Home from 'material-ui/svg-icons/action/home';
+import HomeIcon from 'material-ui/svg-icons/action/home';
 import AccountCircle from 'material-ui/svg-icons/action/account-box';
 import SettingsApplication from 'material-ui/svg-icons/action/build';
 import Upload from 'material-ui/svg-icons/file/file-upload';
@@ -13,6 +13,7 @@ import Results from 'material-ui/svg-icons/action/assignment';
 import UploadPicture from "./UploadPicture";
 import BlanksResultList from "../Blanks/BlanksResultList";
 import UploadFiles from "../CreateTemplateComponents/SecondStep/UploadFiles";
+import Home from "./Home";
 
 class MainNavigationComponent extends Component {
     constructor(props) {
@@ -40,10 +41,10 @@ class MainNavigationComponent extends Component {
                         <Tab
                             label="Начало"
                             value="a"
-                            icon={<Home/>}
+                            icon={<HomeIcon/>}
                         >
                             <div>
-                                <UploadFiles/>
+                                <Home/>
                             </div>
                         </Tab>
                         <Tab

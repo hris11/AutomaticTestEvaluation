@@ -13,6 +13,7 @@ import ModifyBlanks from "../Class/ClassCreation/ModifyBlanks";
 import PrintPage from "../CreateTemplateComponents/PrintPage/PrintPage";
 import RestCalls from "../RESTCalls/RestCalls";
 import BlankResult from "../Class/ClassCreation/BlankResult";
+import UploadFiles from "../CreateTemplateComponents/SecondStep/UploadFiles";
 
 class AccountManager extends Component {
     constructor(props) {
@@ -89,6 +90,8 @@ class AccountManager extends Component {
                     handleNewBlank={(blankTitle) => this.handleNewBlank(blankTitle)}
                     displayBlank={(response) => this.displayBlank(response)}
                     displayBlankResult={(response) => this.displayBlankResult(response)}
+                    displayMaterialBar={(id) => this.displayMaterialBar(id)}
+                    handlePreviewClasses={(evt) => this.handlePreviewClasses(evt)}
                 />
             }
             case 'new-blank': {
@@ -126,6 +129,14 @@ class AccountManager extends Component {
             case 'display-result': {
                 return (
                     <BlankResult
+                        blankId={this.state.blankId}
+                    />
+                );
+            }
+            case 'new-materials-bar': {
+                return (
+                    <UploadFiles
+                        handlePreviewClasses={(evt) => this.handlePreviewClasses(evt)}
                         blankId={this.state.blankId}
                     />
                 );
@@ -213,6 +224,13 @@ class AccountManager extends Component {
 
         RestCalls.get(url, callback)
 
+    }
+
+    displayMaterialBar(id) {
+        this.setState({
+            blankId: id,
+            navigationDisplayContent: 'new-materials-bar'
+        })
     }
 }
 
