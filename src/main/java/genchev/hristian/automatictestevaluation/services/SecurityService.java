@@ -1,6 +1,5 @@
 package genchev.hristian.automatictestevaluation.services;
 
-import genchev.hristian.automatictestevaluation.rest.AuthService;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;

@@ -17,12 +17,12 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 
 @Path("auth")
-public class AuthService {
+public class AuthRESTImpl implements AuthREST {
     private UserService userService;
     private SecurityService securityService;
 
     @Inject
-    public AuthService(UserService userService, SecurityService securityService) {
+    public AuthRESTImpl(UserService userService, SecurityService securityService) {
         this.userService = userService;
         this.securityService = securityService;
     }
@@ -30,6 +30,7 @@ public class AuthService {
     @POST
     @Path("login")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Override
     public Response login(LoginUser loginUser) {
         loginUser.setPassword(
                 securityService.encryptPassword(loginUser.getPassword())
@@ -68,6 +69,7 @@ public class AuthService {
 
     @POST
     @Path("logout")
+    @Override
     public Response logout() {
         Subject currentUser = SecurityUtils.getSubject();
         if (currentUser.isAuthenticated()) {
@@ -81,6 +83,7 @@ public class AuthService {
     @Path("register")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    @Override
     public User register(User u) {
 
         u.setPassword(
