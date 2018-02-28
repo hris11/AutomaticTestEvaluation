@@ -3,7 +3,7 @@ package genchev.hristian.automatictestevaluation.rest;
 import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.inputModels.NewStudentInput;
 import genchev.hristian.automatictestevaluation.models.Student;
-import genchev.hristian.automatictestevaluation.services.StudentService;
+import genchev.hristian.automatictestevaluation.services.StudentServiceImpl;
 import com.google.inject.Inject;
 
 import javax.ws.rs.*;
@@ -15,11 +15,11 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 @RequiresAuthentication
 public class StudentRESTImpl implements StudentREST {
 
-    private StudentService studentService;
+    private StudentServiceImpl studentServiceImpl;
 
     @Inject
-    public StudentRESTImpl(StudentService studentService) {
-        this.studentService = studentService;
+    public StudentRESTImpl(StudentServiceImpl studentServiceImpl) {
+        this.studentServiceImpl = studentServiceImpl;
     }
 
     @GET
@@ -27,7 +27,7 @@ public class StudentRESTImpl implements StudentREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public List<Student> getStudentsByClassId(@PathParam("classId") Integer classId) {
-        return studentService.getStudentsById(classId);
+        return studentServiceImpl.getStudentsById(classId);
     }
 
 
@@ -37,7 +37,7 @@ public class StudentRESTImpl implements StudentREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public List<Student> getStudents(NewClassInput input) {
-        return studentService.getStudents(input);
+        return studentServiceImpl.getStudents(input);
     }
 
     @POST
@@ -46,8 +46,8 @@ public class StudentRESTImpl implements StudentREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public List<Student> newStudent (NewStudentInput input) {
-        studentService.insert(input);
+        studentServiceImpl.insert(input);
 
-        return studentService.getStudents(input.getNewClassInput());
+        return studentServiceImpl.getStudents(input.getNewClassInput());
     }
 }

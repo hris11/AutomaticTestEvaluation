@@ -1,7 +1,7 @@
 package genchev.hristian.automatictestevaluation.servlet.modules;
 
 import genchev.hristian.automatictestevaluation.inputModels.LoginUser;
-import genchev.hristian.automatictestevaluation.services.UserService;
+import genchev.hristian.automatictestevaluation.services.UserServiceImpl;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -15,10 +15,10 @@ import org.apache.shiro.subject.PrincipalCollection;
 
 public class CustomShiroRealm extends AuthorizingRealm {
     
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
     
-    public CustomShiroRealm(UserService userService) {
-        this.userService = userService;
+    public CustomShiroRealm(UserServiceImpl userServiceImpl) {
+        this.userServiceImpl = userServiceImpl;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class CustomShiroRealm extends AuthorizingRealm {
         UsernamePasswordToken upToken = (UsernamePasswordToken) token;
                 
         LoginUser user = new LoginUser(upToken.getUsername(), new String(upToken.getPassword()));
-        if (!userService.authLoginUser(user)) {
+        if (!userServiceImpl.authLoginUser(user)) {
             throw new IncorrectCredentialsException();
         }
         SimpleAuthenticationInfo authn = new SimpleAuthenticationInfo(token.getPrincipal(), token.getCredentials(), getName());

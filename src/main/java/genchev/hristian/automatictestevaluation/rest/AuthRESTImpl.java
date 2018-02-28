@@ -3,8 +3,8 @@ package genchev.hristian.automatictestevaluation.rest;
 import com.google.inject.Inject;
 import genchev.hristian.automatictestevaluation.inputModels.LoginUser;
 import genchev.hristian.automatictestevaluation.models.User;
-import genchev.hristian.automatictestevaluation.services.SecurityService;
-import genchev.hristian.automatictestevaluation.services.UserService;
+import genchev.hristian.automatictestevaluation.services.SecurityServiceImpl;
+import genchev.hristian.automatictestevaluation.services.UserServiceImpl;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -18,13 +18,13 @@ import org.apache.shiro.subject.Subject;
 
 @Path("auth")
 public class AuthRESTImpl implements AuthREST {
-    private UserService userService;
-    private SecurityService securityService;
+    private UserServiceImpl userServiceImpl;
+    private SecurityServiceImpl securityServiceImpl;
 
     @Inject
-    public AuthRESTImpl(UserService userService, SecurityService securityService) {
-        this.userService = userService;
-        this.securityService = securityService;
+    public AuthRESTImpl(UserServiceImpl userServiceImpl, SecurityServiceImpl securityServiceImpl) {
+        this.userServiceImpl = userServiceImpl;
+        this.securityServiceImpl = securityServiceImpl;
     }
 
     @POST
@@ -33,7 +33,7 @@ public class AuthRESTImpl implements AuthREST {
     @Override
     public Response login(LoginUser loginUser) {
         loginUser.setPassword(
-                securityService.encryptPassword(loginUser.getPassword())
+                securityServiceImpl.encryptPassword(loginUser.getPassword())
         );
 
         /*
@@ -87,10 +87,10 @@ public class AuthRESTImpl implements AuthREST {
     public User register(User u) {
 
         u.setPassword(
-                securityService.encryptPassword(u.getPassword())
+                securityServiceImpl.encryptPassword(u.getPassword())
         );
 
-        userService.registerUser(u);
+        userServiceImpl.registerUser(u);
 
         return u;
     }

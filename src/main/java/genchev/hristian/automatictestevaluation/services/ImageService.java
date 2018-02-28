@@ -25,13 +25,13 @@ import java.util.*;
 
 public class ImageService {
 
-    private BlankService blankService;
+    private BlankServiceImpl blankServiceImpl;
 
     private ResultRepository resultRepository;
 
     @Inject
-    public ImageService(BlankService blankService, ResultRepository resultRepository) {
-        this.blankService = blankService;
+    public ImageService(BlankServiceImpl blankServiceImpl, ResultRepository resultRepository) {
+        this.blankServiceImpl = blankServiceImpl;
         this.resultRepository = resultRepository;
     }
 
@@ -62,7 +62,7 @@ public class ImageService {
             throw new ImageAccessException("cannot convert to mat");
         }
 
-        Blank blank = blankService.getBlankById(blankId);
+        Blank blank = blankServiceImpl.getBlankById(blankId);
 
         Mat colorsub = getBlankAndWhite(src.clone());
 

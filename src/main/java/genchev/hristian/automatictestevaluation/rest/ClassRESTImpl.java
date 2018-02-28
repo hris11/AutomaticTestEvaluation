@@ -5,8 +5,8 @@ import genchev.hristian.automatictestevaluation.inputModels.NewClassInput;
 import genchev.hristian.automatictestevaluation.models.Class;
 import genchev.hristian.automatictestevaluation.inputModels.InputEmail;
 import genchev.hristian.automatictestevaluation.models.Student;
-import genchev.hristian.automatictestevaluation.services.ClassService;
-import genchev.hristian.automatictestevaluation.services.StudentService;
+import genchev.hristian.automatictestevaluation.services.ClassServiceImpl;
+import genchev.hristian.automatictestevaluation.services.StudentServiceImpl;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -18,14 +18,14 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 @RequiresAuthentication
 public class ClassRESTImpl implements ClassREST {
 
-    private ClassService classService;
+    private ClassServiceImpl classServiceImpl;
 
-    private StudentService studentService;
+    private StudentServiceImpl studentServiceImpl;
 
     @Inject
-    public ClassRESTImpl(ClassService classService, StudentService studentService) {
-        this.classService = classService;
-        this.studentService = studentService;
+    public ClassRESTImpl(ClassServiceImpl classServiceImpl, StudentServiceImpl studentServiceImpl) {
+        this.classServiceImpl = classServiceImpl;
+        this.studentServiceImpl = studentServiceImpl;
     }
 
     @POST
@@ -36,7 +36,7 @@ public class ClassRESTImpl implements ClassREST {
     public List<Class> getClasses(InputEmail input) {
         String mail = input.getEmail();
 
-        return classService.getAllClasses(mail);
+        return classServiceImpl.getAllClasses(mail);
     }
 
     @GET
@@ -45,7 +45,7 @@ public class ClassRESTImpl implements ClassREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public List<Class> getClasses(@PathParam("user_id") Integer userId) {
-        return classService.getAllClassesById(userId);
+        return classServiceImpl.getAllClassesById(userId);
     }
 
     @POST
@@ -55,8 +55,8 @@ public class ClassRESTImpl implements ClassREST {
     @Override
     public List<Student> createClass(NewClassInput input) {
 
-        classService.createClass(input);
-        return studentService.getStudents(input);
+        classServiceImpl.createClass(input);
+        return studentServiceImpl.getStudents(input);
     }
 
     @GET
@@ -64,7 +64,7 @@ public class ClassRESTImpl implements ClassREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public Class getClassById(@PathParam("id") Integer classId) {
-        return classService.getClassById(classId);
+        return classServiceImpl.getClassById(classId);
     }
 
 
@@ -72,7 +72,7 @@ public class ClassRESTImpl implements ClassREST {
     @Path("classes/{id}")
     @Override
     public Response deleteClassById(@PathParam("id") Integer classId) {
-        classService.deleteById(classId);
+        classServiceImpl.deleteById(classId);
 
         return Response.ok().build();
     }

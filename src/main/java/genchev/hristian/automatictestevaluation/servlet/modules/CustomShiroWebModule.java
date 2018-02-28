@@ -3,7 +3,7 @@ package genchev.hristian.automatictestevaluation.servlet.modules;
 import com.google.inject.Inject;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import genchev.hristian.automatictestevaluation.services.UserService;
+import genchev.hristian.automatictestevaluation.services.UserServiceImpl;
 import javax.servlet.ServletContext;
 import org.apache.shiro.guice.web.ShiroWebModule;
 
@@ -33,8 +33,8 @@ public class CustomShiroWebModule extends ShiroWebModule {
     @Provides
     @Singleton
     @Inject
-    CustomShiroRealm loadCustomShiroRealm(UserService userService) {
-      CustomShiroRealm realm = new CustomShiroRealm(userService);
+    CustomShiroRealm loadCustomShiroRealm(UserServiceImpl userServiceImpl) {
+      CustomShiroRealm realm = new CustomShiroRealm(userServiceImpl);
       
       return realm;
     }

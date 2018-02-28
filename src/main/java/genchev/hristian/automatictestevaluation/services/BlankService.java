@@ -1,39 +1,17 @@
 package genchev.hristian.automatictestevaluation.services;
 
 import genchev.hristian.automatictestevaluation.models.Blank;
-import genchev.hristian.automatictestevaluation.repository.BlankRepository;
-import com.google.inject.Inject;
 
 import java.util.List;
 
-public class BlankService {
-    private BlankRepository blankRepository;
+public interface BlankService {
+    List<Blank> getClassBlanksByClassId(Integer classId);
 
-    @Inject
-    public BlankService(BlankRepository blankRepository) {
-        this.blankRepository = blankRepository;
-    }
+    Blank insert(Integer classId, Blank blank);
 
-    public List<Blank> getClassBlanksByClassId(Integer classId) {
-        return blankRepository.getClassBlanksByClassId(classId);
-    }
+    void deleteBlankById(Integer blankId);
 
-    public Blank insert(Integer classId, Blank blank) {
-        blank.setClassId(classId);
-        blankRepository.insert(blank);
-        return blankRepository.getBlankByClassIdAndBlankName(classId, blank);
-    }
+    Blank getBlankById(Integer blankId);
 
-    public void deleteBlankById(Integer blankId) {
-        Blank blank = blankRepository.getById(blankId);
-        blankRepository.delete(blank);
-    }
-
-    public Blank getBlankById(Integer blankId) {
-        return blankRepository.getById(blankId);
-    }
-
-    public List<Blank> getAllBlanks() {
-        return blankRepository.getAllBlanks();
-    }
+    List<Blank> getAllBlanks();
 }

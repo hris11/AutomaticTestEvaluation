@@ -1,7 +1,7 @@
 package genchev.hristian.automatictestevaluation.rest;
 
 import genchev.hristian.automatictestevaluation.models.Blank;
-import genchev.hristian.automatictestevaluation.services.BlankService;
+import genchev.hristian.automatictestevaluation.services.BlankServiceImpl;
 
 import com.google.inject.Inject;
 import javax.ws.rs.*;
@@ -11,11 +11,11 @@ import java.util.List;
 @Path("users/classes")
 public class BlankRESTImpl implements BlankREST {
 
-    private BlankService blankService;
+    private BlankServiceImpl blankServiceImpl;
 
     @Inject
-    public BlankRESTImpl(BlankService blankService) {
-        this.blankService = blankService;
+    public BlankRESTImpl(BlankServiceImpl blankServiceImpl) {
+        this.blankServiceImpl = blankServiceImpl;
     }
 
 
@@ -24,7 +24,7 @@ public class BlankRESTImpl implements BlankREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public List<Blank> getClassBlanksById(@PathParam("class_id") Integer classId) {
-        return blankService.getClassBlanksByClassId(classId);
+        return blankServiceImpl.getClassBlanksByClassId(classId);
     }
 
     @GET
@@ -32,7 +32,7 @@ public class BlankRESTImpl implements BlankREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public List<Blank> getAllBlanks() {
-        return blankService.getAllBlanks();
+        return blankServiceImpl.getAllBlanks();
     }
 
     @GET
@@ -40,7 +40,7 @@ public class BlankRESTImpl implements BlankREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public Blank getBlankById(@PathParam("blank_id") Integer blankId) {
-        return blankService.getBlankById(blankId);
+        return blankServiceImpl.getBlankById(blankId);
     }
 
     @POST
@@ -49,14 +49,14 @@ public class BlankRESTImpl implements BlankREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public Blank createNewBlank(@PathParam("class_id") Integer classId, Blank blank) {
-        return blankService.insert(classId, blank);
+        return blankServiceImpl.insert(classId, blank);
     }
 
     @DELETE
     @Path("blanks/{blank_id}")
     @Override
     public void deleteBlankById(@PathParam("blank_id") Integer blank_id) {
-        blankService.deleteBlankById(blank_id);
+        blankServiceImpl.deleteBlankById(blank_id);
     }
 
 
