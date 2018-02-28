@@ -163,7 +163,7 @@ class AccountManager extends Component {
                         primary={true}
                         label="Излизане от профила"
                         icon={<ExitAccount/>}
-                        onClick={(event) => this.props.logout(event)}
+                        onClick={(event) => this.logout(event)}
                     />
                     <RaisedButton
                         className="account-navigation-button"
@@ -231,6 +231,18 @@ class AccountManager extends Component {
             blankId: id,
             navigationDisplayContent: 'new-materials-bar'
         })
+    }
+
+    logout(event) {
+        const url = "/rest/auth/logout";
+
+        let callback = (response) => {
+            if (response.ok) {
+                this.props.logout(event);
+            }
+        };
+
+        RestCalls.post(url, undefined, undefined, callback)
     }
 }
 

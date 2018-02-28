@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import MainNavigationComponent from './Navigation/TopNavigation'
 
-/*
-* Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
-Copyright (c) 1995-2003 by Internet Software Consortium*/
+
 
 class App extends Component {
 
