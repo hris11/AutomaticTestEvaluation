@@ -1,7 +1,10 @@
-.paper-wrapper {
-    padding: 10%;
+.paper-wrapper .paper-body {
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: justify;
 }
 
-.paper-body > p {
-    background: black;
+.paper-body {
+    padding-top: 30px;
 }
