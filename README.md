@@ -3,6 +3,10 @@ Automatic Test Evaluation
 
 Web application to evaluate student tests automatically.
 
+# Link to the documentation
+
+https://docs.google.com/document/d/17gYOPXAMHpW6dtfh98ACDjW1XqDAk4P00AlXQR6QSaQ/edit
+
 # How to start developing
 
 First run the backend as shown below and then the frontend.
