@@ -43,6 +43,7 @@
     text-align: left;
     width: 100%;
     height: 650px;
+    min-width: 900px;
 }
 
 .blank-lines-block li {
