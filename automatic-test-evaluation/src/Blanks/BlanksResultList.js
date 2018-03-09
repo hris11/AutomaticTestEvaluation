@@ -16,7 +16,7 @@ class  BlanksResultList extends Component {
     }
 
     fetchBlanks() {
-        /*const url = "/rest/users/classes/blanks";
+        const url = "/rest/users/classes/blanks";
         let self = this;
         let callback = (response) => {
             response.json().then(function (response) {
@@ -26,7 +26,7 @@ class  BlanksResultList extends Component {
             });
         };
 
-        RestCalls.get(url, callback);*/
+        RestCalls.get(url, callback);
     }
 
     getAllBlanks() {
@@ -73,7 +73,7 @@ class  BlanksResultList extends Component {
         }
         return (
             <div className="blank-result-list">
-
+                <h1>Резултати от бланки</h1>
                 <RaisedButton
                     label="обновяване на резултати"
                     primary={true}

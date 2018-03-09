@@ -79,6 +79,8 @@ public class ImageService {
 
         List<Point> orderedPoints = getAllRowsOrdered(circles, blank.getNumberOfAnswers());
 
+        System.out.println("ordered points" + orderedPoints.size());
+
         List<Boolean> marked = new ArrayList<>();
         for (Point orderedPoint : orderedPoints) {
             double[] res = colorsub.get((int) orderedPoint.y, (int) orderedPoint.x);

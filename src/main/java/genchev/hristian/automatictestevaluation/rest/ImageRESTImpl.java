@@ -1,5 +1,6 @@
 package genchev.hristian.automatictestevaluation.rest;
 
+import com.google.inject.persist.Transactional;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 import genchev.hristian.automatictestevaluation.services.ImageService;

@@ -20,31 +20,42 @@ public class FileUploadRepository implements RepositoryInterface<File> {
 
     @Override
     public void insert(File file) {
+        this.entityManager.getTransaction().begin();
         entityManager.persist(file);
+        this.entityManager.getTransaction().commit();
     }
 
     @Override
     public void delete(File file) {
+        this.entityManager.getTransaction().begin();
         entityManager.remove(file);
+        this.entityManager.getTransaction().commit();
     }
 
     @Override
     public void update(File file) {
+        this.entityManager.getTransaction().begin();
         entityManager.merge(file);
+        this.entityManager.getTransaction().commit();
     }
 
     public List<File> getAllMaterials(Integer blankId) {
         List<File> result;
+        this.entityManager.getTransaction().begin();
         result = entityManager.createQuery("from File where blank_id = :blankId", File.class)
                 .setParameter("blankId", blankId)
                 .getResultList();
-
+        this.entityManager.getTransaction().commit();
         return result;
     }
 
     public File getMaterial(Integer materialId) {
-        return entityManager.createQuery("from File where id = :material_id", File.class)
+        File file = null;
+        this.entityManager.getTransaction().begin();
+        file =  entityManager.createQuery("from File where id = :material_id", File.class)
                 .setParameter("material_id", materialId)
                 .getSingleResult();
+        this.entityManager.getTransaction().commit();
+        return file;
     }
 }

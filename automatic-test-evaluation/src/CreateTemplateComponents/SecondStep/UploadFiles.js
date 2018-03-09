@@ -32,7 +32,7 @@ class UploadFiles extends Component {
             <div className="image-upload-box">
                 <form action="" onSubmit={(evt) => this.submitForm(evt)}>
                     <input type="file" accept="*/*" name="files" multiple/>
-                    <input type="submit" value="качване на снимка"/>
+                    <input type="submit" value="качване на материали"/>
                 </form>
             </div>
         );

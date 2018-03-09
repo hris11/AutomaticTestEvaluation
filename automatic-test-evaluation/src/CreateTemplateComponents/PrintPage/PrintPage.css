@@ -43,7 +43,7 @@
     text-align: left;
     width: 100%;
     height: 650px;
-    min-width: 900px;
+    /*min-width: 900px;*/
 }
 
 .blank-lines-block li {
@@ -84,7 +84,7 @@
     
     .navigation-main {
         position: absolute;
-        top: -90px;
+        top: -80px;
     }
 
     .final-step-header {

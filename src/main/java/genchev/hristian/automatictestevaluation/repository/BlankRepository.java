@@ -6,9 +6,7 @@ import genchev.hristian.automatictestevaluation.models.Blank;
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
-import javax.transaction.Transactional;
 
-@Transactional
 public class BlankRepository implements RepositoryInterface<Blank> {
 
     private EntityManager entityManager;
@@ -80,8 +78,6 @@ public class BlankRepository implements RepositoryInterface<Blank> {
         result = entityManager.createQuery("from Blank", Blank.class)
                 .getResultList();
         this.entityManager.getTransaction().commit();
-
-        System.out.println("teeeeeeeeeeeest");
 
         for (Blank blank : result) {
             System.out.println(blank.getId());

@@ -37,13 +37,16 @@ public class FilesUploadRESTImpl implements FilesUploadREST {
             ContentDisposition meta = part.getContentDisposition();
 
             File file = null;
+            System.out.println("before try");
             try {
+                System.out.println("in try");
                 byte[] bytes = IOUtils.toByteArray(is);
                 file = new File();
                 file.setFile(bytes);
                 file.setFilename(meta.getFileName());
                 file.setBlankId(blank_id);
             } catch (IOException e) {
+                System.out.println("exc");
                 e.printStackTrace();
             }
 
