@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3bb1c67-adb4-4619-a9b8-5837bfe239dd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js" />
-      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
-      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/UploadFiles.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/UploadFiles.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ResultRepository.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ResultRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageRESTImpl.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageRESTImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ImageService.java" afterPath="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ImageService.java" />
+      <change beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
     </list>
     <ignored path="$PROJECT_DIR$/automatic-test-evaluation/node_modules/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,16 +31,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-343">
               <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Transactional.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-persist/3.0/guice-persist-3.0.jar!/com/google/inject/persist/Transactional.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -118,14 +100,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlanksResultList.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlanksResultList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="75" column="44" lean-forward="false" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
+            <state relative-caret-position="391">
+              <caret line="83" column="29" lean-forward="true" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Procfile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ResultREST.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/Blank.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/models/File.java" />
@@ -226,6 +217,7 @@
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
@@ -714,7 +706,7 @@
       <workItem from="1520449943746" duration="1365000" />
       <workItem from="1520472823105" duration="612000" />
       <workItem from="1520623692209" duration="4438000" />
-      <workItem from="1520631185719" duration="2647000" />
+      <workItem from="1520631185719" duration="2805000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented blank iterating and align rows and if circle is black or white">
       <created>1517160130172</created>
@@ -828,11 +820,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520450898571</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixing issues">
+      <created>1520634816816</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1520634816817</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224116000" />
+    <option name="totallyTimeSpent" value="224274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -892,7 +891,8 @@
     <MESSAGE value="Adding logout request and documentation for NOIT as pdf with name 634" />
     <MESSAGE value="Home css" />
     <MESSAGE value="PrintPage CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="PrintPage CSS" />
+    <MESSAGE value="Fixing issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing issues" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -901,13 +901,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/DisplayMaterial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RESTCalls/Widget.js" />
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/Widget.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1282,11 +1275,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="75" column="44" lean-forward="false" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
+        <state relative-caret-position="391">
+          <caret line="83" column="29" lean-forward="true" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
