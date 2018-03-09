@@ -115,8 +115,8 @@
       <file leaf-file-name="Procfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="83" lean-forward="false" selection-start-line="0" selection-start-column="83" selection-end-line="0" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -706,7 +706,7 @@
       <workItem from="1520449943746" duration="1365000" />
       <workItem from="1520472823105" duration="612000" />
       <workItem from="1520623692209" duration="4438000" />
-      <workItem from="1520631185719" duration="2805000" />
+      <workItem from="1520631185719" duration="2921000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented blank iterating and align rows and if circle is black or white">
       <created>1517160130172</created>
@@ -827,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520634816817</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="PORT">
+      <created>1520634937628</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1520634937628</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224274000" />
+    <option name="totallyTimeSpent" value="224390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -892,7 +899,8 @@
     <MESSAGE value="Home css" />
     <MESSAGE value="PrintPage CSS" />
     <MESSAGE value="Fixing issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing issues" />
+    <MESSAGE value="PORT" />
+    <option name="LAST_COMMIT_MESSAGE" value="PORT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1285,8 +1293,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="83" lean-forward="false" selection-start-line="0" selection-start-column="83" selection-end-line="0" selection-end-column="83" />
           <folding />
         </state>
       </provider>
