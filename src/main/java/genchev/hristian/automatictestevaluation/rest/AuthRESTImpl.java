@@ -88,7 +88,7 @@ public class AuthRESTImpl implements AuthREST {
 
         u.setPassword(
                 securityServiceImpl.encryptPassword(u.getPassword())
-        );
+    );
 
         userServiceImpl.registerUser(u);
 

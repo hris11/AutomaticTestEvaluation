@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MainNavigationComponent from './Navigation/TopNavigation'
+import RestCalls from "./RESTCalls/RestCalls";
 
 
 
@@ -18,8 +19,18 @@ class App extends Component {
 
     handleLogout(event) {
         this.setState({
-            loginStatus: false
+            loginStatus: false,
+            loggedMail: ''
         });
+        this.setCookie("email", "", "expires=Thu, 01 Jan 1970 00:00:01 GMT");
+
+        const url = '/rest/auth/logout';
+
+        let callback = (response) => {
+
+        }
+
+        RestCalls.post(url, undefined, null, callback, null);
     }
 
     handleLogin(email) {
@@ -36,6 +47,11 @@ class App extends Component {
             this.setState({
                 loginStatus: true,
                 loggedMail: this.getCookie('email')
+            });
+        } else {
+            this.setState({
+                loginStatus: false,
+                loggedMail: ''
             });
         }
     }

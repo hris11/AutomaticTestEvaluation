@@ -95,9 +95,6 @@ class MainNavigationComponent extends Component {
                         </Tab>
                     </Tabs>
                 </MuiThemeProvider>
-                <div className="printable-page">
-
-                </div>
             </div>
         );
     }
