@@ -88,8 +88,8 @@ class App extends Component {
 
 
     render() {
-        console.log("width", window.innerWidth);
-        if (window.innerWidth <= 576) {
+        console.log("width", window);
+        if (window.innerWidth <= 800 && window.innerHeight <= 600) {
             return (
                 <div>
                     <MuiThemeProvider>
