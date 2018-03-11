@@ -10,6 +10,7 @@
     "react-cookie": "^2.1.2",
     "react-d3-radar": "^0.2.6",
     "react-dom": "^16.2.0",
+    "react-notifications": "^1.4.3",
     "react-qr-component": "^0.7.3",
     "react-scripts": "1.0.14",
     "react-tap-event-plugin": "^3.0.2"

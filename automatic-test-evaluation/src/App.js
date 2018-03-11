@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import MainNavigationComponent from './Navigation/TopNavigation'
 import RestCalls from "./RESTCalls/RestCalls";
+import UploadPicture from "./Navigation/UploadPicture";
+import {MuiThemeProvider} from "material-ui";
 
 
 
@@ -83,7 +85,19 @@ class App extends Component {
         return "";
     }
 
+
+
     render() {
+        console.log("width", window.innerWidth);
+        if (window.innerWidth <= 576) {
+            return (
+                <div>
+                    <MuiThemeProvider>
+                    <UploadPicture/>
+                    </MuiThemeProvider>
+                </div>
+            );
+        }
         return (
             <div>
                 <MainNavigationComponent

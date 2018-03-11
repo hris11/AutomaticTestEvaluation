@@ -3,7 +3,8 @@ import RestCalls from "../RESTCalls/RestCalls";
 import './UploadPicture.css'
 import {Paper} from "material-ui";
 import {CircularProgress} from "material-ui";
-import getSnack from "./CustomSnack";
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import createNotification from "./CustomSnack";
 
 class UploadPicture extends Component {
 
@@ -47,11 +48,11 @@ class UploadPicture extends Component {
             <span>В процес на обработка</span>
             <CircularProgress/>
         </div>;
-        let snack = null;
 
-        if (this.state.snackMessage !== '') {
-            snack = getSnack(this.state.snackMessage);
-        }
+        // if (this.state.snackMessage !== '') {
+        //     createNotification('success', "dsa");
+        // }
+
         return (
             <Paper zDepth={3}>
                 <div className="image-upload-box">
@@ -70,7 +71,7 @@ class UploadPicture extends Component {
                     <div>
                         {this.state.processing && processing}
                     </div>
-                    {snack}
+                    <NotificationContainer/>
                 </div>
 
             </Paper>

@@ -36,12 +36,12 @@ class MainNavigationComponent extends Component {
                     <Tabs
                         value={this.state.value}
                         onChange={(value) => this.handleChange(value)}
-
                     >
                         <Tab
                             label="Начало"
                             value="a"
                             icon={<HomeIcon/>}
+
                         >
                             <div>
                                 <Home/>
