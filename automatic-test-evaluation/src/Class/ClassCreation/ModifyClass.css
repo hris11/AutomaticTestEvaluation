@@ -1,0 +1,32 @@
+.class-modify-student-li {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.class-modify-box {
+    width: 300px;
+}
+
+.class-modify-student-first-name, .class-modify-student-last-name {
+    width: 130px;
+}
+
+.class-modify-student-number {
+    width: 30px;
+}
+
+.class-modify-student-first-name span, .class-modify-student-last-name span {
+    float: left;
+}
+
+.class-modify-student-number span {
+    float: right;
+}
+
+.class-box-content-holder {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}

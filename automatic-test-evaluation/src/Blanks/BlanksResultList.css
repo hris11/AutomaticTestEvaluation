@@ -11,7 +11,7 @@
 }
 .result-list li {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: 1px solid #9e9e9e;
 }
 

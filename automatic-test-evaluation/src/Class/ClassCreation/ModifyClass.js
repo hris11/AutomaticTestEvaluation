@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import AddNewStudent from "./AddNewStudent";
 import {RaisedButton} from "material-ui";
 import RestCalls from "../../RESTCalls/RestCalls";
+import './ModifyClass.css';
 
 class ModifyClass extends Component {
     constructor(props) {
@@ -42,12 +43,18 @@ class ModifyClass extends Component {
         let result = [];
 
         for (let i = 0; i < this.state.data.length; i++) {
-            let key = "mn test" + i;
+            let key = `class-modify-${i}-single-key`;
             result.push(
-                <li key={key}>
-                    {this.state.data[i].firstName}
-                    {this.state.data[i].lastName}
-                    {this.state.data[i].number}
+                <li key={key} className="class-modify-student-li">
+                    <div className="class-modify-student-first-name">
+                        <span>{this.state.data[i].firstName}</span>
+                    </div>
+                    <div className="class-modify-student-last-name">
+                        <span>{this.state.data[i].lastName}</span>
+                    </div>
+                    <div className="class-modify-student-number">
+                        <span>{this.state.data[i].number}</span>
+                    </div>
                 </li>
             )
         }
@@ -146,8 +153,8 @@ class ModifyClass extends Component {
     render() {
         return (
             <div className="class-box-content-holder">
-                <div>
-                    Students:
+                <div className="class-modify-box">
+                    <h2>Ученици</h2>
                     <ol>
                         {this.getStudents()}
                     </ol>
