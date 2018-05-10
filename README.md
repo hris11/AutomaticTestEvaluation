@@ -58,7 +58,7 @@ How to run frontend
     `$ heroku open`
 3. Open your browser and paste the URL that heroku provided to you
 
-Database relations
+Database relations /// OUTDATED
 ------------------
 1. *User login information*: 
 
