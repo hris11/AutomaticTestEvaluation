@@ -1,5 +1,22 @@
-.refresh-results {
-    margin: 10px 0 0 40px;
+
+.blank-result-list {
+    width: 505px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.result-list {
+    text-align: unset;
+}
+.result-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #9e9e9e;
+}
+
+.blank-result-name {
+    margin-top: 3%;
 }
 
 .result-list li div {
@@ -8,4 +25,8 @@
 
 .result-list li div button div {
     margin: 0;
+}
+
+.blank-result-name {
+
 }

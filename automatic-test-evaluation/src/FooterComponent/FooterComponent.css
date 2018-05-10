@@ -127,3 +127,9 @@
     }
 }
 
+@media print {
+    #container {
+        display: none;
+    }
+}
+

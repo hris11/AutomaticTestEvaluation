@@ -35,8 +35,9 @@ class  BlanksResultList extends Component {
         return blanks.map(function (blank) {
             return (
                 <li>
-                    <span>{blank.name}</span>
+                    <span className="blank-result-name">{blank.name}</span>
                     <RaisedButton
+                        className="result-button"
                         label="Резултати"
                         primary={true}
                         onClick={(id) => self.setBlankId(blank.id)}
@@ -73,10 +74,12 @@ class  BlanksResultList extends Component {
         }
         return (
             <div className="blank-result-list">
-                <h1>Резултати от бланки</h1>
+                <h1>Резултати от бланки</h1> {/*header*/}
+
+                {/*refresh button*/}
                 <RaisedButton
                     label="обновяване на резултати"
-                    primary={true}
+                    secondary={true}
                     onClick={() => this.fetchBlanks()}
                     className="refresh-results"
                 />
