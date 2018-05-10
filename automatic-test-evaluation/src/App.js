@@ -3,6 +3,7 @@ import MainNavigationComponent from './Navigation/TopNavigation'
 import RestCalls from "./RESTCalls/RestCalls";
 import UploadPicture from "./Navigation/UploadPicture";
 import {MuiThemeProvider} from "material-ui";
+import FooterComponent from "./FooterComponent/FooterComponent";
 
 
 
@@ -107,6 +108,8 @@ class App extends Component {
                     setMail={(mail) => this.setMail(mail)}
                     email={this.state.loggedMail}
                 />
+
+                <FooterComponent/>
             </div>
         );
     }
