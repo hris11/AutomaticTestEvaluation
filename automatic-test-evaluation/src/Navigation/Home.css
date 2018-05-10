@@ -1,10 +1,36 @@
 .paper-wrapper .paper-body {
-    width: 600px;
+    width: 800px;
     height: 100%;
     margin: 0 auto;
     text-align: justify;
 }
 
+.paper-body p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
 .paper-body {
     padding-top: 30px;
+    font-family: 'Lato', 'Open Sans', 'Helvetica Neue', 'Arial', 'San-serif', serif;
+    font-size: 18px;
+    line-height: 2em;
+    font-weight: 400;
+    margin-bottom: 1.25em;
+    text-rendering: optimizeLegibility;
+    color: #333;
+}
+
+.pt { color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; text-shadow: 0 1px 1px #fff; padding-top: 20px; }
+
+
+.creator-of-quote { font-style: italic; color: #B6B6B6; font-size: 24px; margin-top: 20px; text-align: center; text-shadow: 0 1px 1px #fff; }
+
+
+.home-quote-box {
+    width: 400px;
+    margin: 0 auto;
 }
