@@ -1,0 +1,25 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "genchev.hristian"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "genchev.hristian"
+    },
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "genchev.hristian"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "genchev.hristian"
+    }
+  }
+}
