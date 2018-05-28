@@ -64,4 +64,15 @@ public class UserServiceImpl implements UserService {
     public boolean authLoginUser(LoginUser loginUser) {
         return userRepository.checkLogin(loginUser);
     }
+
+    public User getUserByEmail(String email) {
+        List<User> usersWithThisEmail = userRepository.findByEmail(email);
+
+        if (usersWithThisEmail.size() >= 1) {
+            return usersWithThisEmail.get(0);
+        } else {
+            return null;
+        }
+
+    }
 }

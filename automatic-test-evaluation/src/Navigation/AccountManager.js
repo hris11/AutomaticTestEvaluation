@@ -14,6 +14,7 @@ import PrintPage from "../CreateTemplateComponents/PrintPage/PrintPage";
 import RestCalls from "../RESTCalls/RestCalls";
 import BlankResult from "../Class/ClassCreation/BlankResult";
 import UploadFiles from "../CreateTemplateComponents/SecondStep/UploadFiles";
+import ClassMarks from "../Blanks/ClassMarks";
 
 class AccountManager extends Component {
     constructor(props) {
@@ -33,6 +34,12 @@ class AccountManager extends Component {
     handleNewClassButton(event) {
         this.setState({
             navigationDisplayContent: 'class-box'
+        });
+    }
+
+    handleAllClassMarks(event) {
+        this.setState({
+            navigationDisplayContent: 'class-marks'
         });
     }
 
@@ -73,17 +80,20 @@ class AccountManager extends Component {
                     modifyBlanks={(classId) => this.handleModifyBlanks(classId)}
                 />
             }
+
             case 'class-box': {
                 return <ClassBox
                     email={this.props.email}
                 />
             }
+
             case 'modify-class': {
                 return <ModifyClass
                     classTitle={this.state.currentClass}
                     email={this.props.email}
                 />
             }
+
             case 'modify-blanks': {
                 return <ModifyBlanks
                     classId={this.state.currentClassId}
@@ -94,6 +104,7 @@ class AccountManager extends Component {
                     handlePreviewClasses={(evt) => this.handlePreviewClasses(evt)}
                 />
             }
+
             case 'new-blank': {
                 return <BlankManager
                     blankTitle={this.state.newBlankName}
@@ -102,6 +113,7 @@ class AccountManager extends Component {
                     classId={this.state.currentClassId}
                 />
             }
+
             case 'display-blank': {
                 let data = Object.assign([], this.state.students);
                 let self = this;
@@ -126,6 +138,7 @@ class AccountManager extends Component {
                     );
                 });
             }
+
             case 'display-result': {
                 return (
                     <BlankResult
@@ -133,12 +146,19 @@ class AccountManager extends Component {
                     />
                 );
             }
+
             case 'new-materials-bar': {
                 return (
                     <UploadFiles
                         handlePreviewClasses={(evt) => this.handlePreviewClasses(evt)}
                         blankId={this.state.blankId}
                     />
+                );
+            }
+
+            case 'class-marks': {
+                return (
+                    <ClassMarks/>
                 );
             }
         }
@@ -182,7 +202,7 @@ class AccountManager extends Component {
                     <RaisedButton
                         className="account-navigation-button"
                         primary={true}
-                        onClick={(event) => this.handleNewClassButton(event)}
+                        onClick={(event) => this.handleAllClassMarks(event)}
                         label="Сравняване на класове"
                         icon={<Compare/>}
                     />

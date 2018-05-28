@@ -17,7 +17,6 @@ class App extends Component {
             loginStatus: false,
             loggedMail: ''
         };
-        console.log(props);
     }
 
     handleLogout(event) {
@@ -31,7 +30,7 @@ class App extends Component {
 
         let callback = (response) => {
 
-        }
+        };
 
         RestCalls.post(url, undefined, null, callback, null);
     }

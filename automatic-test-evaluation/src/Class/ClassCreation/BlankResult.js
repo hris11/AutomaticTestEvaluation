@@ -3,7 +3,6 @@ import Radar from 'react-d3-radar';
 import RestCalls from "../../RESTCalls/RestCalls";
 import {CircularProgress, RaisedButton} from "material-ui";
 import './BlankResult.css';
-import FileDownload from "../../WgetComponent/FileDownload";
 import * as FileSaver from "file-saver";
 
 class BlankResult extends Component {

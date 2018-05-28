@@ -58,6 +58,16 @@ public class ResultRepository implements RepositoryInterface<Result> {
         return result;
     }
 
+    public Double getAverageMarkFromBlank(Integer blankId) {
+        List<Result> blanks = getBlankResult(blankId);
+        Double sum = 0.0;
+        for (Result blank : blanks) {
+            sum += blank.getMark();
+        }
+
+        return (sum/blanks.size());
+    }
+
     public BlankMarks getBlankmarks(Integer blankId) {       
         BlankMarks blankMarks;
 

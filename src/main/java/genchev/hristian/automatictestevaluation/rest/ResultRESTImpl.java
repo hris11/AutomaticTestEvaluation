@@ -2,14 +2,14 @@ package genchev.hristian.automatictestevaluation.rest;
 
 import com.google.inject.Inject;
 import genchev.hristian.automatictestevaluation.OutputModels.BlankMarks;
+import genchev.hristian.automatictestevaluation.OutputModels.ClassMarks;
 import genchev.hristian.automatictestevaluation.OutputModels.StudentMark;
+import genchev.hristian.automatictestevaluation.inputModels.InputEmail;
 import genchev.hristian.automatictestevaluation.models.Result;
 import genchev.hristian.automatictestevaluation.services.ResultServiceImpl;
+import genchev.hristian.automatictestevaluation.services.UserServiceImpl;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -18,9 +18,12 @@ public class ResultRESTImpl implements ResultREST {
 
     private ResultServiceImpl resultService;
 
+    private UserServiceImpl userService;
+
     @Inject
-    public ResultRESTImpl(ResultServiceImpl resultService) {
+    public ResultRESTImpl(ResultServiceImpl resultService, UserServiceImpl userService) {
         this.resultService = resultService;
+        this.userService = userService;
     }
 
 
@@ -53,5 +56,17 @@ public class ResultRESTImpl implements ResultREST {
     @Override
     public BlankMarks getBlankMarks(@PathParam("blank_id") Integer blankId) {
         return resultService.getBlankMarks(blankId);
+    }
+
+    @POST
+    @Path("classes/marks")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<ClassMarks> getClassMarks(InputEmail emailObj) {
+//        return resultService.getClassMarks(classId);
+        System.out.println(emailObj.getEmail());
+
+
+        return resultService.getClassesMarks(emailObj.getEmail());
     }
 }

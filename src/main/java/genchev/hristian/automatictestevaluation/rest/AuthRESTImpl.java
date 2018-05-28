@@ -49,6 +49,7 @@ public class AuthRESTImpl implements AuthREST {
                 currentUser.login(token);
                 //System.out.println("if no exception, that's it, we're done!");
                 status = 200;
+
             } catch (UnknownAccountException uae) {
                 //username wasn't in the system, show them an error message?
                 //System.out.println("username wasn't in the system, show them an error message?");
@@ -63,7 +64,7 @@ public class AuthRESTImpl implements AuthREST {
                 //System.out.println("unexpected condition - error?");
             }
         }
-        
+
         return Response.status(status).build();
     }
 
