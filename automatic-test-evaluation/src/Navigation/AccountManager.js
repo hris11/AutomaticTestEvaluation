@@ -158,7 +158,9 @@ class AccountManager extends Component {
 
             case 'class-marks': {
                 return (
-                    <ClassMarks/>
+                    <ClassMarks
+                        email={this.props.email}
+                    />
                 );
             }
         }

@@ -1,0 +1,57 @@
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.result-li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+.result-li:last-child {
+    border: none;
+}
+
+.result-li:first-child {
+    background: rgb(0, 188, 212);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    border: none;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px
+}
+
+.result-li .class-mark-result-list {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.result-li .class-mark-result-list:hover {
+    font-size: 30px;
+    background: #f6f6f6;
+}
+
+.class-mark-result-list-name-header {
+    float: left;
+}
+
+.class-mark-result-list-mark-header {
+    float: right;
+}
+
+.class-mark-result-box-headers {
+    width: 400px;
+}
