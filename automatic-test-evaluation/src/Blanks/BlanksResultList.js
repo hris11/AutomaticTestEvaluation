@@ -35,13 +35,17 @@ class  BlanksResultList extends Component {
         return blanks.map(function (blank) {
             return (
                 <li>
-                    <span className="blank-result-name">{blank.name}</span>
-                    <RaisedButton
-                        className="result-button"
-                        label="Резултати"
-                        primary={true}
-                        onClick={(id) => self.setBlankId(blank.id)}
-                    />
+                    <div className="result-li-box">
+                        <span className="blank-result-name">{blank.name}</span>
+                    </div>
+                    <div className="result-li-box">
+                        <RaisedButton
+                            className="result-button"
+                            label="Резултати"
+                            primary={true}
+                            onClick={(id) => self.setBlankId(blank.id)}
+                        />
+                    </div>
                 </li>
             );
         });

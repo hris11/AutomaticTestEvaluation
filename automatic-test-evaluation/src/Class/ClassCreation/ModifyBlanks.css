@@ -5,3 +5,21 @@
 .modify-blanks-blanks-list ul li div button div {
     margin: 0;    
 }
+
+.blank-name-box {
+    width: 100px;
+}
+
+.blank-name-box span {
+    float: left;
+}
+
+.list-of-blanks-ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-of-blanks-box-div {
+    width: 1000px;
+    margin: 0 auto;
+}

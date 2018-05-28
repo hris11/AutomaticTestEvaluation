@@ -1,7 +1,7 @@
-li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.result-list-classes li {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #9e9e9e;
 }
 
 .result-li {
@@ -22,7 +22,6 @@ li {
     text-decoration-color: initial;
     border: none;
     border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px
 }
 
 .result-li .class-mark-result-list {
@@ -46,12 +45,23 @@ li {
 
 .class-mark-result-list-name-header {
     float: left;
+    border-right: solid 2px white;
+    padding-right: 15px;
 }
 
 .class-mark-result-list-mark-header {
     float: right;
+    border-left: solid 2px white;
+    padding-left: 15px;
 }
 
 .class-mark-result-box-headers {
     width: 400px;
+}
+
+.class-mark-result-list-name-header, .class-mark-result-list-mark-header {
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

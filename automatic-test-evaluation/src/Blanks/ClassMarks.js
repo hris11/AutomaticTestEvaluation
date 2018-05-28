@@ -22,7 +22,7 @@ class ClassMarks extends Component {
         return (
             <div>
                 <h1>Сравняване на класове</h1>
-                <ul className="result-list">
+                <ul className="result-list-classes">
                     <li className="result-li">
                         <div className="class-mark-result-box-headers">
                             <div className="class-mark-result-list-name-header">Име на класа</div>
@@ -42,7 +42,11 @@ class ClassMarks extends Component {
                 <li className="result-li">
                     <div className="class-mark-result-list">
                         <span className="class-mark-result-list-name">{aClass.className}</span>
-                        <span className="class-mark-result-list-mark">{aClass.averageMark}</span>
+                        <span className="class-mark-result-list-mark">
+                            {(aClass.averageMark === 0)?
+                            "Няма оценка" :
+                            parseFloat(Math.round(aClass.averageMark * 100) / 100).toFixed(2)}
+                        </span>
                     </div>
                 </li>
             );

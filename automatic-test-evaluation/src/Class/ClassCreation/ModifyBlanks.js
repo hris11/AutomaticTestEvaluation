@@ -45,7 +45,9 @@ class ModifyBlanks extends Component {
         result = data.map(function (blank) {
             return (
                 <li>
-                    <span>{blank.name}</span>
+                    <div className="blank-name-box">
+                        <span>{blank.name}</span>
+                    </div>
                     <RaisedButton
                         label="Принтиране"
                         onClick={() => self.printBlank(blank.id)}
@@ -74,9 +76,11 @@ class ModifyBlanks extends Component {
             return "Все още нямате бланки";
         } else {
             return (
-                <ul>
-                    {result}
-                </ul>
+                <div className="list-of-blanks-box-div">
+                    <ul className="list-of-blanks-ul">
+                        {result}
+                    </ul>
+                </div>
             );
         }
     }
