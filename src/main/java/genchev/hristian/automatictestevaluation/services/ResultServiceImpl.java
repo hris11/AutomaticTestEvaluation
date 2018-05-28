@@ -66,21 +66,32 @@ public class ResultServiceImpl implements ResultService {
                 blanksMarks.add(resultRepository.getAverageMarkFromBlank(classBlank.getId()));
             }
 
-            classMarks.add(new ClassMarks(aClass.getName(), calcAverageOfDoubleList(blanksMarks)));
+            classMarks.add(new ClassMarks(aClass.getName(), calcAverageMarkOfMarkList(blanksMarks)));
 
         }
 
         return classMarks;
     }
 
-    public Double calcAverageOfDoubleList(List<Double> list) {
-        if (list != null) {
+    public Double calcAverageMarkOfMarkList(List<Double> marks) {
+        if (marks != null) {
             Double result = 0.0;
-            for (Double aDouble : list) {
-                result += aDouble;
+            int counterWithMarksDifFromZero = 0;
+            for (Double aDouble : marks) {
+                if (aDouble >= 2.0) {
+                    result += aDouble;
+                    counterWithMarksDifFromZero++;
+                }
             }
 
-            return (result / list.size());
+            Double avrMark = 0.0;
+
+            if (counterWithMarksDifFromZero != 0) {
+                avrMark = result / (double)counterWithMarksDifFromZero;
+            }
+            /*System.out.println("Average Mark for Class");
+            System.out.println(avrMark);*/
+            return avrMark;
         }
 
         return 0.0;

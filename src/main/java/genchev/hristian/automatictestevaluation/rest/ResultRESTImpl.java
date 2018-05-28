@@ -63,10 +63,6 @@ public class ResultRESTImpl implements ResultREST {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public List<ClassMarks> getClassMarks(InputEmail emailObj) {
-//        return resultService.getClassMarks(classId);
-        System.out.println(emailObj.getEmail());
-
-
         return resultService.getClassesMarks(emailObj.getEmail());
     }
 }
