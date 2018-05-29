@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bb1c67-adb4-4619-a9b8-5837bfe239dd" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/App.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/App.js" />
+      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/package.json" afterPath="$PROJECT_DIR$/automatic-test-evaluation/package.json" />
+      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.css" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.css" />
+      <change beforePath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.js" afterPath="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.js" />
     </list>
     <ignored path="$PROJECT_DIR$/automatic-test-evaluation/node_modules/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,45 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UploadPicture.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.js">
+      <file leaf-file-name="ClassBox.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ClassBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="19" column="15" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlankManagerSecondStepHandler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/BlankManagerSecondStepHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlankManager.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="570" column="5" lean-forward="false" selection-start-line="570" selection-start-column="5" selection-end-line="570" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="91" column="68" lean-forward="true" selection-start-line="91" selection-start-column="68" selection-end-line="91" selection-end-column="68" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,8 +35,18 @@
       <file leaf-file-name="ModifyClass.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-82">
-              <caret line="143" column="4" lean-forward="false" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="4" />
+            <state relative-caret-position="-480">
+              <caret line="51" column="66" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankManager.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-126">
+              <caret line="306" column="18" lean-forward="false" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -72,46 +54,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js">
+      <file leaf-file-name="ClassMarksCharts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UploadPicture.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomSnack.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/CustomSnack.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TopNavigation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/TopNavigation.js">
+      <file leaf-file-name="ClassMarksBarChart.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="306">
+              <caret line="54" column="18" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="18" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lodash.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/node_modules/lodash/lodash.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassMarksBarChart.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassMarks.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassMarks.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassMarksCharts.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,18 +137,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>npm</find>
-      <find>@</find>
-      <find>#722040;</find>
       <find>acce</find>
       <find>google</find>
       <find>@POST</find>
@@ -146,6 +159,23 @@
       <find>upload-image-button</find>
       <find>compo</find>
       <find>prepa</find>
+      <find>footer-right</find>
+      <find>blank-for-print</find>
+      <find>class-box-content-holder</find>
+      <find>this.props</find>
+      <find>class-list-preview</find>
+      <find>loggedMail</find>
+      <find>blank-result-name</find>
+      <find>blank-result-list</find>
+      <find>class-mark-result-list</find>
+      <find>result-li</find>
+      <find>result-li-box</find>
+      <find>result-list</find>
+      <find>Access-Control-Allow-Origin</find>
+      <find>class</find>
+      <find>for</find>
+      <find>uti</find>
+      <find>_</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\hrist\Desktop\AutomaticTestEvaluation\src\main</dir>
@@ -164,57 +194,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadREST.java" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/servlet/modules/CustomShiroWebModule.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/DisplayMaterial.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/RepositoryInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/FileUploadServiceImpl.java" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/RESTCalls/Widget.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/Widget.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/FileDownload.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentREST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/StudentRESTImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageREST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ClassREST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ClassRESTImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankREST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/BlankRESTImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthREST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ClassService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ClassServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/SecurityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/SecurityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/AccountManager.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/Home.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/Home.css" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/UploadFiles.js" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ImageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageRESTImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ResultRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthRESTImpl.java" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.css" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/CustomSnack.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.js" />
-        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/TopNavigation.js" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/MobileMenu.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/FooterComponent/FooterComponent.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyClass.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyClass.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/Home.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/Home.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/WgetComponent/FileDownload.js" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthRESTImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthREST.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/ClassMarks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ResultServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ResultRepository.java" />
         <option value="$PROJECT_DIR$/automatic-test-evaluation/src/App.js" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ResultRESTImpl.java" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyBlanks.css" />
+        <option value="$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageRESTImpl.java" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation-cordova-android/www/js/index.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation-cordova-android/www/index.html" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation-cordova-android/www/css/index.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/ClassesListPreview.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyBlanks.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/TopNavigation.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/FooterComponent/FooterComponent.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/AccountManager.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/SingleAnswerBlankList.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ClassBox.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarkCharts.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.css" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.js" />
+        <option value="$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.js" />
       </list>
     </option>
   </component>
@@ -232,13 +262,15 @@
     </option>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/automatic-test-evaluation-cordova-android/node_modules" />
+    <handled-path value="$PROJECT_DIR$/automatic-test-evaluation-cordova-android/platforms/android/cordova/node_modules" />
+    <handled-path value="$PROJECT_DIR$/automatic-test-evaluation-cordova-android/platforms/browser/cordova/node_modules" />
     <handled-path value="$PROJECT_DIR$/automatic-test-evaluation/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="816" />
-    <option name="height" value="576" />
+    <option name="x" value="670" />
+    <option name="width" value="703" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -258,7 +290,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -328,22 +360,6 @@
               <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CreateTemplateComponents" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstStep" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateTemplateComponents" type="462c0819:PsiDirectoryNode" />
-              <item name="PrintPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateTemplateComponents" type="462c0819:PsiDirectoryNode" />
               <item name="SecondStep" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,27 +375,6 @@
               <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="RegisterLoginComponents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="RESTCalls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="automatic-test-evaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="WgetComponent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
@@ -499,25 +494,11 @@
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutomaticTestEvaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutomaticTestEvaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Problems">
           <expand>
@@ -540,7 +521,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -705,6 +685,14 @@
       <workItem from="1520623692209" duration="4438000" />
       <workItem from="1520631185719" duration="2921000" />
       <workItem from="1520794918244" duration="2107000" />
+      <workItem from="1520882299765" duration="51000" />
+      <workItem from="1525967963844" duration="11425000" />
+      <workItem from="1526065288024" duration="1572000" />
+      <workItem from="1526132316643" duration="753000" />
+      <workItem from="1527334218832" duration="7223000" />
+      <workItem from="1527504921318" duration="8462000" />
+      <workItem from="1527528972515" duration="826000" />
+      <workItem from="1527593492738" duration="18217000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented blank iterating and align rows and if circle is black or white">
       <created>1517160130172</created>
@@ -846,11 +834,95 @@
       <option name="project" value="LOCAL" />
       <updated>1520801127776</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Changing phone detect">
+      <created>1520801577960</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1520801577960</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added Footer and design for it">
+      <created>1525973152476</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1525973152476</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Result design changed and now when printing the footer wont show">
+      <created>1525974980691</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1525974980691</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Well css is trash at all i regret choosing it over pdf generating">
+      <created>1525976017099</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1525976017099</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Design for students adding panel">
+      <created>1525977673610</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1525977673610</updated>
+    </task>
+    <task id="LOCAL-00026" summary="HomePage CSS">
+      <created>1525979077634</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1525979077634</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Class comparison backend">
+      <created>1527506953577</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1527506953577</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Comparison fixes">
+      <created>1527508535894</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1527508535894</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Comparison frontend">
+      <created>1527511153134</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1527511153134</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Css and display fixes">
+      <created>1527513428014</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1527513428014</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Android application is ready">
+      <created>1527602497050</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1527602497050</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fixing errors and warnings">
+      <created>1527607247282</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1527607247282</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233450000" />
+    <option name="totallyTimeSpent" value="283210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -862,35 +934,43 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22697368" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49506578" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22697368" sideWeight="0.49092284" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.04276316" sideWeight="0.49394855" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23903178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33585477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49506578" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -901,14 +981,14 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2282092" sideWeight="0.49394855" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04276316" sideWeight="0.49394855" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3477306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30862328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -917,14 +997,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented blank iterating and align rows and if circle is black or white" />
-    <MESSAGE value="Changed the value of QR codes and requests before printing" />
-    <MESSAGE value="Fix the alignment algorithm" />
-    <MESSAGE value="Finished the algorithm for evaluation and models" />
-    <MESSAGE value="Fixing frontend and adding style for upload" />
-    <MESSAGE value="Adding result radar diagram and each student result" />
-    <MESSAGE value="Created get all blanks method" />
-    <MESSAGE value="Implemented get ALL results" />
     <MESSAGE value="Fixing numbering in printable page" />
     <MESSAGE value="Small removes" />
     <MESSAGE value="Implementing each material download" />
@@ -937,7 +1009,20 @@
     <MESSAGE value="PORT" />
     <MESSAGE value="Fixing logout" />
     <MESSAGE value="Mobile upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mobile upload" />
+    <MESSAGE value="Added Footer and design for it" />
+    <MESSAGE value="Result design changed and now when printing the footer wont show" />
+    <MESSAGE value="Well css is trash at all i regret choosing it over pdf generating" />
+    <MESSAGE value="Design for students adding panel" />
+    <MESSAGE value="HomePage CSS" />
+    <MESSAGE value="Class comparison backend" />
+    <MESSAGE value="Changing phone detect" />
+    <MESSAGE value="Comparison fixes" />
+    <MESSAGE value="Comparison frontend" />
+    <MESSAGE value="Css and display fixes" />
+    <MESSAGE value="Android application is ready" />
+    <MESSAGE value="Fixing errors and warnings" />
+    <MESSAGE value="Charts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Charts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -945,357 +1030,335 @@
     </breakpoint-manager>
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="40" column="37" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/BlankService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/servlet/modules/CustomShiroWebModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+        <state relative-caret-position="299">
+          <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ClassService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ClassServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/SecurityService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthREST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/SecurityServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ResultRESTImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="325">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2448">
-          <caret line="147" column="29" lean-forward="false" selection-start-line="147" selection-start-column="29" selection-end-line="147" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/OptionsHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/PrintPage/PrintPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="15" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/UploadFiles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="33" column="75" lean-forward="false" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="323">
+          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/Home.css">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/AccountManager.js">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyBlanks.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2941">
-          <caret line="188" column="22" lean-forward="false" selection-start-line="188" selection-start-column="22" selection-end-line="188" selection-end-column="22" />
+        <state relative-caret-position="391">
+          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/FilesUploadRESTImpl.java">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="52" column="31" lean-forward="false" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/registerServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutomaticTestEvaluation.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-274">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2084">
-          <caret line="238" column="27" lean-forward="false" selection-start-line="238" selection-start-column="27" selection-end-line="238" selection-end-column="27" />
+        <state relative-caret-position="-1632">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageREST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ImageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ResultServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-persist/3.0/guice-persist-3.0.jar!/com/google/inject/persist/Transactional.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageRESTImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/RepositoryInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/StudentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ResultRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/FileUploadRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/ClassRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/repository/BlankRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="83" column="29" lean-forward="false" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/BlankMarks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/OutputModels/StudentMark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="84" lean-forward="false" selection-start-line="0" selection-start-column="84" selection-end-line="0" selection-end-column="84" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/RegisterLoginAccountManager.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/AuthRESTImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="75" column="27" lean-forward="false" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/subject/Subject.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/shiro.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/main.95407a47.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/service-worker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/services/ImageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genchev/hristian/automatictestevaluation/rest/ImageRESTImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="42" column="60" lean-forward="false" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation-cordova-android/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
           <folding>
-            <marker date="1519739886162" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1519739886162" expanded="false" signature="148:737" ph="..." />
-            <marker date="1519739886162" expanded="true" signature="2418:5430" ph="{...}" />
-            <marker date="1519739886162" expanded="false" signature="2553:2568" ph=" { " />
-            <marker date="1519739886162" expanded="false" signature="2609:2619" ph=" }" />
-            <marker date="1519739886162" expanded="true" signature="2677:3295" ph="{...}" />
-            <marker date="1519739886162" expanded="false" signature="3357:3372" ph=" { " />
-            <marker date="1519739886162" expanded="false" signature="3407:3417" ph=" }" />
-            <marker date="1519739886162" expanded="false" signature="3471:3486" ph=" { " />
-            <marker date="1519739886162" expanded="false" signature="3513:3523" ph=" }" />
-            <marker date="1519739886162" expanded="true" signature="3590:3739" ph="{...}" />
-            <marker date="1519739886162" expanded="true" signature="3790:3937" ph="{...}" />
-            <marker date="1519739886162" expanded="true" signature="3995:4138" ph="{...}" />
-            <marker date="1519739886162" expanded="true" signature="4214:4384" ph="{...}" />
-            <marker date="1519739886162" expanded="true" signature="4457:4561" ph="{...}" />
-            <marker date="1519739886162" expanded="true" signature="4631:4732" ph="{...}" />
-            <marker date="1519739886162" expanded="true" signature="4826:5297" ph="{...}" />
-            <marker date="1519739886162" expanded="false" signature="5336:5351" ph=" { " />
-            <marker date="1519739886162" expanded="false" signature="5414:5424" ph=" }" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/RegisterLoginComponents/Login.js">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation-cordova-android/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation-cordova-android/www/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/ClassesListPreview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassesPreview/SingleClassPreview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyBlanks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="47" column="51" lean-forward="false" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/BlanksResultList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/BlankResult.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="178" column="68" lean-forward="false" selection-start-line="178" selection-start-column="68" selection-end-line="178" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/TopNavigation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.css">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        <state relative-caret-position="85">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/BlankManagerSecondStepHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="570" column="5" lean-forward="false" selection-start-line="570" selection-start-column="5" selection-end-line="570" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/CustomSnack.js">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/FooterComponent/FooterComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/AccountManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="166" column="28" lean-forward="false" selection-start-line="166" selection-start-column="28" selection-end-line="166" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/SingleAnswerBlankList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/SecondStep/GroupsBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>
@@ -1304,15 +1367,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ClassBox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Class/ClassCreation/ModifyClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="51" column="66" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/CreateTemplateComponents/BlankManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="306" column="18" lean-forward="false" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/MobileMenu.js">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1320,31 +1399,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/UploadPicture.js">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/node_modules/lodash/lodash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="19" column="15" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Navigation/TopNavigation.js">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="204">
+          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="41" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/App.js">
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarks.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="91" column="68" lean-forward="true" selection-start-line="91" selection-start-column="68" selection-end-line="91" selection-end-column="68" />
+        <state relative-caret-position="526">
+          <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksCharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automatic-test-evaluation/src/Blanks/ClassMarksBarChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="54" column="18" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

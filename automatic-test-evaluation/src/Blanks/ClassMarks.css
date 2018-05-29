@@ -65,3 +65,8 @@
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+.chart-box {
+    display: flex;
+    justify-content: space-around;
+}

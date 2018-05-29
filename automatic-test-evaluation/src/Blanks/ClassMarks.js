@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import RestCalls from "../RESTCalls/RestCalls";
 import {CircularProgress} from "material-ui";
 import './ClassMarks.css';
+import ClassMarksCharts from "./ClassMarksCharts";
+import Demo from "./ClassMarksBarChart";
 
 
 class ClassMarks extends Component {
@@ -31,6 +33,19 @@ class ClassMarks extends Component {
                     </li>
                     {this.getClassesMarksTable()}
                 </ul>
+
+                <div className="chart-box">
+                    <div>
+                        <ClassMarksCharts
+                            marks={this.state.marks}
+                        />
+                    </div>
+                    <div>
+                        <Demo
+                            marks={this.state.marks}
+                        />
+                    </div>
+                </div>
             </div>
         );
     }
