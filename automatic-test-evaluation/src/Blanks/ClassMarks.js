@@ -37,9 +37,9 @@ class ClassMarks extends Component {
 
     getClassesMarksTable() {
         let classes = Object.assign([], this.state.marks);
-        return classes.map(function (aClass) {
+        return classes.map(function (aClass, index) {
             return (
-                <li className="result-li">
+                <li className="result-li" key={`class-marks-key-${index}`}>
                     <div className="class-mark-result-list">
                         <span className="class-mark-result-list-name">{aClass.className}</span>
                         <span className="class-mark-result-list-mark">

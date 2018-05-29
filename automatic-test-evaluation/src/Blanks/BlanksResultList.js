@@ -32,9 +32,11 @@ class  BlanksResultList extends Component {
     getAllBlanks() {
         let blanks = Object.assign([], this.state.result);
         let self = this;
-        return blanks.map(function (blank) {
+        return blanks.map(function (blank, index) {
             return (
-                <li>
+                <li
+                    key={`blank-result-list-key-${index}`}
+                >
                     <div className="result-li-box">
                         <span className="blank-result-name">{blank.name}</span>
                     </div>

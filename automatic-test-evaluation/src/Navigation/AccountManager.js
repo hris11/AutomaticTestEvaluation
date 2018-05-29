@@ -163,6 +163,9 @@ class AccountManager extends Component {
                     />
                 );
             }
+            default: {
+                return null;
+            }
         }
     }
 

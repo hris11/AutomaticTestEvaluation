@@ -79,9 +79,9 @@ class BlankResult extends Component {
 
     getEachStudentMark() {
         return (
-            this.state.studentMarks.map(function (studentResult) {
+            this.state.studentMarks.map(function (studentResult, index) {
                 return (
-                    <li className="result-li">
+                    <li className="result-li-blanks" key={`blank-result-key-${index}`}>
                         <div className="blank-result-list">
                             <span className="student-result-list-name">
                                 {studentResult.name}
@@ -173,9 +173,11 @@ class BlankResult extends Component {
             let mats = Object.assign([], this.state.materials);
             let self = this;
             return (
-                mats.map(function (material) {
+                mats.map(function (material, index) {
                     return (
-                        <li>
+                        <li
+                            key={`blank-result-materials-key-${index}`}
+                        >
                             <span>{material.name}</span>
                             <RaisedButton
                                 label="сваляне"

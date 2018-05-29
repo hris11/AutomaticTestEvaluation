@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './GroupsBar.css';
 import {Divider, DropDownMenu, MenuItem, RaisedButton} from "material-ui";
 import TextField from 'material-ui/TextField';
-import UploadFiles from "./UploadFiles";
 
 class GroupsBar extends Component {
 

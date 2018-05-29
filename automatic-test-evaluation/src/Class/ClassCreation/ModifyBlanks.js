@@ -42,9 +42,11 @@ class ModifyBlanks extends Component {
 
         let self = this;
 
-        result = data.map(function (blank) {
+        result = data.map(function (blank, index) {
             return (
-                <li>
+                <li
+                    key={`modify-blanks-key-${index}`}
+                >
                     <div className="blank-name-box">
                         <span>{blank.name}</span>
                     </div>

@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {RaisedButton, TextField} from "material-ui";
-import AddNewStudent from "./AddNewStudent";
 import './ClassBox.css';
 import ClassNamePicker from "./NamePicker";
 import RestCalls from "../../RESTCalls/RestCalls";

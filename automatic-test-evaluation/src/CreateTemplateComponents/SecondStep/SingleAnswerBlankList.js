@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Checkbox, DropDownMenu, MenuItem, RadioButton, RadioButtonGroup} from "material-ui";
+import {DropDownMenu, MenuItem, RadioButton, RadioButtonGroup} from "material-ui";
 import './SingleAnswerBlankList.css'
 
 class SingleAnswerBlankList extends Component {

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RegisterLoginComponent from "../RegisterLoginComponents/RegisterLoginScreen";
-import AddNewStudentComponent from "../Class/ClassCreation/AddNewStudent";
 import BlankManager from "../CreateTemplateComponents/BlankManager";
 import RegisterLoginAccountManager from "./RegisterLoginAccountManager";
 import HomeIcon from 'material-ui/svg-icons/action/home';
@@ -12,7 +10,6 @@ import Upload from 'material-ui/svg-icons/file/file-upload';
 import Results from 'material-ui/svg-icons/action/assignment';
 import UploadPicture from "./UploadPicture";
 import BlanksResultList from "../Blanks/BlanksResultList";
-import UploadFiles from "../CreateTemplateComponents/SecondStep/UploadFiles";
 import Home from "./Home";
 
 class MainNavigationComponent extends Component {

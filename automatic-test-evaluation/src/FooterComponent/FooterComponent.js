@@ -1,9 +1,5 @@
 import React, {Component} from 'react'
 import './FooterComponent.css'
-import IconButton from 'material-ui/IconButton';
-import {FontIcon, MuiThemeProvider} from "material-ui";
-import {blue500} from "material-ui/styles/colors";
-import ActionHome from 'material-ui/svg-icons/action/home';
 
 class FooterComponent extends Component {
     render() {

@@ -37,7 +37,9 @@ class ClassesListPreview extends Component {
         let data = Object.assign([], this.state.data);
 
         for (let i = 0; i < data.length; i++) {
+            let key = `single-class-preview-${i}`;
             result.push(<SingleClassPreview
+                key={key}
                 data={data[i]}
                 modifyClass={(classTitle) => this.props.modifyClass(classTitle)}
                 modifyBlanks={(classId) => this.props.modifyBlanks(classId)}
