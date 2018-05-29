@@ -31,9 +31,6 @@ var app = {
             function (data) {
                 console.log(data);
 
-                var image = document.getElementById('myImage');
-                image.src = "data:image/jpeg;base64," + data;
-
                 const options = {
                     method: 'post',
                     data: { id: 12, message: 'test' },

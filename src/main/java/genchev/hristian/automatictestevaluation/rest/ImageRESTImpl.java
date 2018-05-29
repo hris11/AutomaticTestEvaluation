@@ -40,7 +40,7 @@ public class ImageRESTImpl implements ImageREST {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response test(String nesh) {
 		System.out.println(nesh);
-		return Response.status(200).build();
+		return Response.status(200).header("Access-Control-Allow-Origin", "*").build();
 	}
 	
 }
