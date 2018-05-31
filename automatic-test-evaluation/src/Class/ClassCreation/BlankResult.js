@@ -157,7 +157,7 @@ class BlankResult extends Component {
                         </div>
                     </div>
                     <div className="materials">
-                        <ul>
+                        <ul className="result-list">
                             {this.getMaterials()}
                         </ul>
                     </div>
@@ -177,6 +177,7 @@ class BlankResult extends Component {
                     return (
                         <li
                             key={`blank-result-materials-key-${index}`}
+                            className="result-li-blanks"
                         >
                             <span>{material.name}</span>
                             <RaisedButton
