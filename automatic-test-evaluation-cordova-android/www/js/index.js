@@ -33,8 +33,8 @@ var app = {
 
                 const options = {
                     method: 'post',
-                    data: { id: 12, message: 'test' },
-                    headers: { Authorization: 'OAuth2: token' }
+                    data: { image: data },
+                    headers: { ContentType: 'application/json' }
                 };
 
                 cordova.plugin.http.sendRequest('http://localhost:8080/rest/image/test', options, function(response) {

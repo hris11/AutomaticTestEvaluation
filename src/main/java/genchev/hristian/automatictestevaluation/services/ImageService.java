@@ -35,8 +35,13 @@ public class ImageService {
         this.resultRepository = resultRepository;
     }
 
-    public void uploadImage(InputStream inputStream, FormDataContentDisposition fileDetail) throws Exception {
+    public void StreamRec(InputStream inputStream, FormDataContentDisposition fileDetail) throws Exception {
         byte bytes[] = streamToByteArray(inputStream, fileDetail);
+        uploadImage(bytes);
+    }
+
+    public void uploadImage(byte bytes[]) throws Exception {
+//        byte bytes[] = streamToByteArray(inputStream, fileDetail);
         Mat src = Imgcodecs.imdecode(new MatOfByte(bytes), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
         Core.rotate(src, src, Core.ROTATE_90_CLOCKWISE); //ROTATE_180 or ROTATE_90_COUNTERCLOCKWISE
         BufferedImage bf = Mat2BufferedImage(src);

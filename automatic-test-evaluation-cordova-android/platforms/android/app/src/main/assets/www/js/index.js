@@ -16,10 +16,52 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+function test() {
+    console.log("success");
+}
 var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.getElementById('button').addEventListener('click', this.pesto);
+    },
+
+    pesto: function () {
+        navigator.camera.getPicture(
+            function (data) {
+                console.log(data);
+
+                const options = {
+                    method: 'post',
+                    data: { id: 12, message: 'test' },
+                    headers: { Authorization: 'OAuth2: token' }
+                };
+
+                cordova.plugin.http.sendRequest('http://localhost:8080/rest/image/test', options, function(response) {
+                    // prints 200
+                    console.log(response.status);
+                }, function(response) {
+                    // prints 403
+                    console.log(response.status);
+
+                    //prints Permission denied
+                    console.log(response.error);
+                });
+            },
+            function (message) {
+                alert('An Error occurred: ' + message);
+            },
+            {});
+    },
+
+    cameraCallback: function (imageData) {
+        console.log("imageData");
+        /*var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;*/
+    },
+
+    cameraError: function (message) {
+        console.log("error");
     },
 
     // deviceready Event Handler

@@ -18,7 +18,8 @@ public class GenericGuiceContextListener extends GuiceServletContextListener{
     protected Injector getInjector() {
         // Loads OpenCV Java and native library
         nu.pattern.OpenCV.loadShared();
-        Injector injector = Guice.createInjector(new BootstrapServletModule(),
+        Injector injector = Guice.createInjector(
+                new BootstrapServletModule(),
                 new DbModule(),
                 new CustomShiroWebModule(servletContext),
                 new ShiroAopModule()

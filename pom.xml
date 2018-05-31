@@ -111,6 +111,7 @@
             <artifactId>joda-time</artifactId>
             <version>2.4</version>
         </dependency>
+        <!-- OpenCV -->
         <dependency>
             <groupId>org.openpnp</groupId>
             <artifactId>opencv</artifactId>
@@ -123,6 +124,7 @@
             <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -133,11 +135,13 @@
             <artifactId>hibernate-c3p0</artifactId>
             <version>${version.hibernate}</version>
         </dependency>
+        <!-- PostgreSQL -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4.1208</version>
         </dependency>
+        <!-- Jackson -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-asl</artifactId>
@@ -154,12 +158,14 @@
             <artifactId>jackson-jaxrs-json-provider</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <!-- maven-clean-plugin The Maven Clean Plugin is a plugin that removes files generated at build-time in a project's directory.-->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-clean-plugin</artifactId>
             <version>3.0.0</version>
             <type>maven-plugin</type>
         </dependency>
+        <!-- Shiro -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
@@ -176,6 +182,7 @@
             <version>${shiro.version}</version>
         </dependency>
     </dependencies>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <resources>
@@ -185,6 +192,7 @@
             </resource>
         </resources>
         <plugins>
+            <!-- The Compiler Plugin is used to compile the sources of your project. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -194,6 +202,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!-- A plugin to allow execution of system and Java programs -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -216,6 +225,7 @@
                     </execution>
                 </executions>                        
             </plugin>
+            <!-- The Resources Plugin handles the copying of project resources to the output directory. -->
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.2</version>
@@ -241,6 +251,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- The Maven Clean Plugin is a plugin that removes files generated at build-time in a project's directory. -->
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.0.0</version>
@@ -256,6 +267,7 @@
                     </filesets>
                 </configuration>
             </plugin>
+            <!--Provides utility goals to work with dependencies like copying, unpacking, analyzing, resolving and many more.-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -268,6 +280,7 @@
                         </goals>
                         <configuration>
                             <artifactItems>
+                                <!-- Webapp runner is designed to allow you to launch an exploded or compressed war that is on your filesystem into a tomcat container with a simple java -jar command. -->
                                 <artifactItem>
                                     <groupId>com.github.jsimone</groupId>
                                     <artifactId>webapp-runner</artifactId>
